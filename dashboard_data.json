@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-13T16:32:51Z",
+    "aktualisiert": "2026-06-13T16:43:01Z",
     "rang": {
       "platz": "15.",
       "punkte": 4,
@@ -95,7 +95,7 @@
       "dates": "28. Jun–3. Jul",
       "phase": "ko",
       "analysisTs": null,
-      "tipsSubmitted": true
+      "tipsSubmitted": false
     },
     {
       "nr": 12,
@@ -103,7 +103,7 @@
       "dates": "4.–7. Jul",
       "phase": "ko",
       "analysisTs": null,
-      "tipsSubmitted": true
+      "tipsSubmitted": false
     },
     {
       "nr": 13,
@@ -111,7 +111,7 @@
       "dates": "9.–12. Jul",
       "phase": "ko",
       "analysisTs": null,
-      "tipsSubmitted": true
+      "tipsSubmitted": false
     },
     {
       "nr": 14,
@@ -119,7 +119,7 @@
       "dates": "14.–15. Jul",
       "phase": "ko",
       "analysisTs": null,
-      "tipsSubmitted": true
+      "tipsSubmitted": false
     },
     {
       "nr": 15,
@@ -127,7 +127,7 @@
       "dates": "18.–19. Jul",
       "phase": "ko",
       "analysisTs": null,
-      "tipsSubmitted": true
+      "tipsSubmitted": false
     }
   ],
   "st_starts_utc": [
