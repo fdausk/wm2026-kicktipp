@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-13T16:43:01Z",
+    "aktualisiert": "2026-06-13T17:05:27Z",
     "rang": {
       "platz": "15.",
       "punkte": 4,
@@ -1005,10 +1005,10 @@
   "knockout": {
     "R32": [
       {
-        "id": "M73",
-        "date": "28.06 21:00",
-        "home": "2A",
-        "away": "2B",
+        "id": "M74",
+        "date": "29.06 22:30",
+        "home": "1E",
+        "away": "3. Pl.",
         "tip": null,
         "analysisTip": null,
         "conf": null,
@@ -1017,10 +1017,22 @@
         "injuries": null
       },
       {
-        "id": "M74",
-        "date": "29.06 22:30",
-        "home": "1E",
+        "id": "M77",
+        "date": "30.06 23:00",
+        "home": "1I",
         "away": "3. Pl.",
+        "tip": null,
+        "analysisTip": null,
+        "conf": null,
+        "result": null,
+        "note": null,
+        "injuries": null
+      },
+      {
+        "id": "M73",
+        "date": "28.06 21:00",
+        "home": "2A",
+        "away": "2B",
         "tip": null,
         "analysisTip": null,
         "conf": null,
@@ -1041,10 +1053,10 @@
         "injuries": null
       },
       {
-        "id": "M76",
-        "date": "29.06 19:00",
-        "home": "1C",
-        "away": "2F",
+        "id": "M83",
+        "date": "02.07 01:00",
+        "home": "2K",
+        "away": "2L",
         "tip": null,
         "analysisTip": null,
         "conf": null,
@@ -1053,10 +1065,46 @@
         "injuries": null
       },
       {
-        "id": "M77",
-        "date": "30.06 23:00",
-        "home": "1I",
+        "id": "M84",
+        "date": "02.07 21:00",
+        "home": "1H",
+        "away": "2J",
+        "tip": null,
+        "analysisTip": null,
+        "conf": null,
+        "result": null,
+        "note": null,
+        "injuries": null
+      },
+      {
+        "id": "M81",
+        "date": "01.07 22:00",
+        "home": "1D",
         "away": "3. Pl.",
+        "tip": null,
+        "analysisTip": null,
+        "conf": null,
+        "result": null,
+        "note": null,
+        "injuries": null
+      },
+      {
+        "id": "M82",
+        "date": "01.07 22:00",
+        "home": "1G",
+        "away": "3. Pl.",
+        "tip": null,
+        "analysisTip": null,
+        "conf": null,
+        "result": null,
+        "note": null,
+        "injuries": null
+      },
+      {
+        "id": "M76",
+        "date": "29.06 19:00",
+        "home": "1C",
+        "away": "2F",
         "tip": null,
         "analysisTip": null,
         "conf": null,
@@ -1101,10 +1149,10 @@
         "injuries": null
       },
       {
-        "id": "M81",
-        "date": "01.07 22:00",
-        "home": "1D",
-        "away": "3. Pl.",
+        "id": "M86",
+        "date": "03.07 00:00",
+        "home": "1J",
+        "away": "2H",
         "tip": null,
         "analysisTip": null,
         "conf": null,
@@ -1113,34 +1161,10 @@
         "injuries": null
       },
       {
-        "id": "M82",
-        "date": "01.07 22:00",
-        "home": "1G",
-        "away": "3. Pl.",
-        "tip": null,
-        "analysisTip": null,
-        "conf": null,
-        "result": null,
-        "note": null,
-        "injuries": null
-      },
-      {
-        "id": "M83",
-        "date": "02.07 01:00",
-        "home": "2K",
-        "away": "2L",
-        "tip": null,
-        "analysisTip": null,
-        "conf": null,
-        "result": null,
-        "note": null,
-        "injuries": null
-      },
-      {
-        "id": "M84",
-        "date": "02.07 21:00",
-        "home": "1H",
-        "away": "2J",
+        "id": "M88",
+        "date": "03.07 19:00",
+        "home": "2D",
+        "away": "2G",
         "tip": null,
         "analysisTip": null,
         "conf": null,
@@ -1161,34 +1185,10 @@
         "injuries": null
       },
       {
-        "id": "M86",
-        "date": "03.07 00:00",
-        "home": "1J",
-        "away": "2H",
-        "tip": null,
-        "analysisTip": null,
-        "conf": null,
-        "result": null,
-        "note": null,
-        "injuries": null
-      },
-      {
         "id": "M87",
         "date": "03.07 03:30",
         "home": "1K",
         "away": "3. Pl.",
-        "tip": null,
-        "analysisTip": null,
-        "conf": null,
-        "result": null,
-        "note": null,
-        "injuries": null
-      },
-      {
-        "id": "M88",
-        "date": "03.07 19:00",
-        "home": "2D",
-        "away": "2G",
         "tip": null,
         "analysisTip": null,
         "conf": null,
@@ -1223,30 +1223,6 @@
         "injuries": null
       },
       {
-        "id": "M91",
-        "date": "05.07 22:00",
-        "home": "W M76",
-        "away": "W M78",
-        "tip": null,
-        "analysisTip": null,
-        "conf": null,
-        "result": null,
-        "note": null,
-        "injuries": null
-      },
-      {
-        "id": "M92",
-        "date": "05.07 02:00",
-        "home": "W M79",
-        "away": "W M80",
-        "tip": null,
-        "analysisTip": null,
-        "conf": null,
-        "result": null,
-        "note": null,
-        "injuries": null
-      },
-      {
         "id": "M93",
         "date": "06.07 21:00",
         "home": "W M83",
@@ -1263,6 +1239,30 @@
         "date": "06.07 02:00",
         "home": "W M81",
         "away": "W M82",
+        "tip": null,
+        "analysisTip": null,
+        "conf": null,
+        "result": null,
+        "note": null,
+        "injuries": null
+      },
+      {
+        "id": "M91",
+        "date": "05.07 22:00",
+        "home": "W M76",
+        "away": "W M78",
+        "tip": null,
+        "analysisTip": null,
+        "conf": null,
+        "result": null,
+        "note": null,
+        "injuries": null
+      },
+      {
+        "id": "M92",
+        "date": "05.07 02:00",
+        "home": "W M79",
+        "away": "W M80",
         "tip": null,
         "analysisTip": null,
         "conf": null,
