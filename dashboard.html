@@ -396,9 +396,9 @@
   <div class="analysis-card">
     <div class="analysis-card-header">
       <h2 id="analysisCardTitle">📊 Analyse-Methodik</h2>
-      <button class="analysis-collapse-btn" onclick="toggleAnalysis()" id="analysisCollapseBtn">▲ Einklappen</button>
+      <button class="analysis-collapse-btn" onclick="toggleAnalysis()" id="analysisCollapseBtn">▼ Ausklappen</button>
     </div>
-    <div class="analysis-card-body" id="analysisCardBody">
+    <div class="analysis-card-body collapsed" id="analysisCardBody">
     <div class="analysis-grid">
       <div class="analysis-item">
         <h3>📈 Wettmarkt-Konsens <span style="color:var(--muted);font-weight:400">35%</span></h3>
@@ -1253,7 +1253,7 @@ function drawBracketConnectors() {
 }
 
 // ── Analyse-Methodik (phasenspezifisch, einklappbar) ─────────────────
-let analysisCollapsed = false;
+let analysisCollapsed = true;
 
 function toggleAnalysis() {
   analysisCollapsed = !analysisCollapsed;
