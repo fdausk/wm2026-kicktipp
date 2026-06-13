@@ -49,6 +49,7 @@
   body { background: var(--bg); color: var(--text); font-family: Helvetica, Arial, sans-serif; font-size: 14px; }
   .team-abbr { display: none; }
   .mob-ico { display: none; }
+  .show-mob { display: none; }
 
   /* Header */
   header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
@@ -293,10 +294,17 @@
     .stats-bar { grid-template-columns: repeat(3, 1fr); }
     .spieltage-grid { grid-template-columns: repeat(2, 1fr) !important; }
     .match-table { min-width: unset; width: 100%; }
-    .col-date { width: 72px; }
-    .col-tip, .col-result { width: 44px; }
-    .col-status { width: 36px; }
-    .col-conf { width: 36px; }
+    .hide-mob { display: none; }
+    .show-mob { display: table-cell; }
+    .col-date { width: 68px; }
+    .col-mob-score { width: 80px; }
+    .col-status { width: 32px; }
+    .col-mob-conf { width: 28px; text-align: center; }
+    .mob-score { font-size: 11px; white-space: nowrap; }
+    .mob-score .score { font-size: 11px; padding: 2px 4px; }
+    .mob-arrow { color: var(--muted); margin: 0 3px; }
+    .mob-date { display: inline; }
+    .desk-date { display: none; }
     .bracket-outer { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .bracket-outer::after { content: '← scrollbar →'; display: block; text-align: center; font-size: 10px; color: var(--muted); padding: 4px 0 2px; }
     .countdown-card { padding: 14px 12px; }
@@ -977,9 +985,16 @@ function teamHtml(name) {
 }
 
 function confLabel(c) {
-  if (c === 'high')     return '<span class="conf conf-high"><span class="mob-txt">Hoch</span><span class="mob-ico">🟢</span></span>';
-  if (c === 'med-high') return '<span class="conf conf-med-high"><span class="mob-txt">Mittel-Hoch</span><span class="mob-ico">🟡</span></span>';
-  return '<span class="conf conf-med"><span class="mob-txt">Mittel</span><span class="mob-ico">🟠</span></span>';
+  if (c === 'high')     return '<span class="conf conf-high">Hoch</span>';
+  if (c === 'med-high') return '<span class="conf conf-med-high">Mittel-Hoch</span>';
+  return '<span class="conf conf-med">Mittel</span>';
+}
+
+function confIcon(c) {
+  if (c === 'high')     return '🟢';
+  if (c === 'med-high') return '🟡';
+  if (c === 'med')      return '🟠';
+  return '';
 }
 
 function scoreSpan(s, type) {
@@ -1015,14 +1030,23 @@ function renderGroups() {
       const tipDisplay = m.tip
         ? scoreSpan(m.tip, 'tip')
         : '<span class="score score-pending">—</span>';
+      const resultDisplay = m.result
+        ? scoreSpan(m.result, 'result')
+        : '<span class="score score-pending">—</span>';
+      const mobDate = m.date.replace(' ', ' / ');
+      const mobScoreHtml = m.result
+        ? `${tipDisplay}<span class="mob-arrow">→</span>${resultDisplay}`
+        : tipDisplay;
 
       rows += `<tr class="${m.result ? 'match-played' : 'match-pending'}">
-        <td class="date-col">${m.date}</td>
+        <td class="date-col"><span class="desk-date">${m.date}</span><span class="mob-date">${mobDate}</span></td>
         <td class="matchup">${teamHtml(m.home)} <span class="vs">vs</span> ${teamHtml(m.away)}</td>
-        <td>${tipDisplay}</td>
-        <td>${m.result ? scoreSpan(m.result, 'result') : '<span class="score score-pending">—</span>'}</td>
+        <td class="hide-mob">${tipDisplay}</td>
+        <td class="hide-mob">${resultDisplay}</td>
+        <td class="show-mob mob-score">${mobScoreHtml}</td>
         <td>${statusCell(m)}</td>
-        <td>${showAnalysis ? `<span class="analysis-tip">Analyse: ${scoreSpan(m.analysisTip,'tip')}</span>` : (m.result ? '' : (m.tip ? confLabel(m.conf) : ''))}</td>
+        <td class="hide-mob">${showAnalysis ? `<span class="analysis-tip">Analyse: ${scoreSpan(m.analysisTip,'tip')}</span>` : (m.result ? '' : (m.tip ? confLabel(m.conf) : ''))}</td>
+        <td class="show-mob" style="text-align:center">${confIcon(m.conf)}</td>
       </tr>`;
     }
 
@@ -1033,10 +1057,10 @@ function renderGroups() {
       </div>
       <div class="table-scroll-wrap"><table class="match-table">
         <colgroup>
-          <col class="col-date"><col class="col-matchup"><col class="col-tip"><col class="col-result"><col class="col-status"><col class="col-conf">
+          <col class="col-date"><col class="col-matchup"><col class="col-tip hide-mob"><col class="col-result hide-mob"><col class="col-mob-score show-mob"><col class="col-status"><col class="col-conf hide-mob"><col class="col-mob-conf show-mob">
         </colgroup>
         <thead><tr>
-          <th>Datum</th><th>Paarung</th><th>Tipp</th><th>Ergebnis</th><th>Status</th><th class="th-conf"><span>Konfidenz / Analyse</span></th>
+          <th>Datum</th><th>Paarung</th><th class="hide-mob">Tipp</th><th class="hide-mob">Ergebnis</th><th class="show-mob">Score</th><th>Status</th><th class="hide-mob th-conf"><span>Konfidenz / Analyse</span></th><th class="show-mob">K</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table></div>
