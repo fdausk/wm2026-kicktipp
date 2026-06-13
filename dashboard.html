@@ -283,6 +283,13 @@
   .bracket-p3-label { font-size: 9px; color: var(--muted); text-align: center; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
   .ko-rule-note { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25); border-radius: 8px; padding: 8px 12px; font-size: 11px; color: var(--yellow); margin-bottom: 16px; }
   .ko-rule-note strong { color: var(--yellow); }
+  .ko-view-toggle { display: flex; gap: 6px; margin-bottom: 14px; }
+  .ko-tab { padding: 6px 16px; font-size: 12px; font-weight: 600; border: 1px solid var(--border); border-radius: 6px; cursor: pointer; background: transparent; color: var(--muted); transition: all 0.15s; }
+  .ko-tab.active { background: var(--accent); color: white; border-color: var(--accent); }
+  .ko-tab:hover:not(.active) { color: var(--text); border-color: var(--muted); }
+  .prognose-winner { color: var(--green) !important; font-weight: 700 !important; }
+  .prognose-loser { opacity: 0.45; }
+  .prognose-tbd { color: var(--muted); font-style: italic; font-weight: 400; }
 
   /* Responsive */
   .table-scroll-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -328,6 +335,7 @@
     .mob-ico { display: inline; }
     .match-table th.th-conf::after { content: 'K/A'; }
     .match-table th.th-conf span { display: none; }
+    .ko-tab { padding: 6px 12px; font-size: 11px; }
   }
 </style>
 </head>
@@ -499,7 +507,12 @@
     <div class="bracket-section">
       <h2>🏆 K.O.-Bracket</h2>
       <div class="ko-rule-note">⚡ <strong>Kicktipp-Regel:</strong> Alle K.O.-Tipps müssen das Ergebnis nach Elfmeterschießen berücksichtigen. Bei ausgeglichenen Spielen (Markt 45–65%): 1:1 tippen + PE-Sieger prognostizieren. Quellen: Transfermarkt PE-Bilanz · FBref Torwart-Save-Rate · Oddspedia Schützen-Cheatsheet.</div>
-      <div class="bracket-grid" id="bracketGrid"></div>
+      <div class="ko-view-toggle">
+        <button class="ko-tab active" id="koTabPrognose" onclick="switchKOView('prognose')">🔮 Prognose</button>
+        <button class="ko-tab" id="koTabBracket" onclick="switchKOView('bracket')">📋 Bracket</button>
+      </div>
+      <div id="bracketPrognoseGrid"></div>
+      <div class="bracket-grid" id="bracketGrid" style="display:none"></div>
     </div>
   </div>
 
@@ -1119,7 +1132,15 @@ function switchPhase(phase) {
   document.getElementById('phaseGruppe').style.display = phase === 'gruppe' ? '' : 'none';
   document.getElementById('phaseKO').style.display = phase === 'ko' ? '' : 'none';
   renderSpieltage();
-  if (phase === 'ko') setTimeout(drawBracketConnectors, 0);
+  if (phase === 'ko') {
+    // Ensure prognose is the active view
+    koView = 'prognose';
+    document.getElementById('koTabPrognose').classList.add('active');
+    document.getElementById('koTabBracket').classList.remove('active');
+    document.getElementById('bracketPrognoseGrid').style.display = '';
+    document.getElementById('bracketGrid').style.display = 'none';
+    setTimeout(() => drawConnectorsInWrap('bracketPrognoseWrap'), 0);
+  }
   renderAnalysis();
 }
 
@@ -1211,9 +1232,13 @@ function addSvgLine(svg, x1, y1, x2, y2) {
   svg.appendChild(l);
 }
 
-function drawBracketConnectors() {
-  const wrap = document.getElementById('bracketWrap');
+function drawBracketConnectors() { drawConnectorsInWrap('bracketWrap'); }
+
+function drawConnectorsInWrap(wrapId) {
+  const wrap = document.getElementById(wrapId);
   if (!wrap) return;
+  // Clear existing SVGs before redrawing
+  wrap.querySelectorAll('.bracket-connector svg').forEach(s => s.remove());
   wrap.querySelectorAll('.bracket-connector').forEach(conn => {
     const fromRound = wrap.querySelector(`.bracket-round[data-round="${conn.dataset.from}"]`);
     const toRound   = conn.nextElementSibling;
@@ -1250,6 +1275,201 @@ function drawBracketConnectors() {
 
     conn.appendChild(svg);
   });
+}
+
+// ── KO-Prognose ───────────────────────────────────────────────────────
+
+let koView = 'prognose';
+
+function switchKOView(view) {
+  koView = view;
+  document.getElementById('koTabPrognose').classList.toggle('active', view === 'prognose');
+  document.getElementById('koTabBracket').classList.toggle('active', view === 'bracket');
+  document.getElementById('bracketPrognoseGrid').style.display = view === 'prognose' ? '' : 'none';
+  document.getElementById('bracketGrid').style.display = view === 'bracket' ? '' : 'none';
+  if (view === 'bracket') setTimeout(drawBracketConnectors, 0);
+  else setTimeout(() => drawConnectorsInWrap('bracketPrognoseWrap'), 0);
+}
+
+// Parse a score string to {h, a, winnerSide}
+function parseScoreGoals(score) {
+  if (!score) return null;
+  const clean = score.replace(/\s*n\.[VE]\.\s*\([^)]+\)/, '').replace(/\s*\([^)]+\)/, '').trim();
+  const parts = clean.split(':');
+  if (parts.length !== 2) return null;
+  const h = parseInt(parts[0]), a = parseInt(parts[1]);
+  if (isNaN(h) || isNaN(a)) return null;
+  return { h, a, winnerSide: h > a ? 'home' : a > h ? 'away' : null };
+}
+
+// Extract winning team from a tip/result string (handles "1:1 n.E. (Spanien)")
+function extractWinnerTeam(score, home, away) {
+  if (!score) return null;
+  const peMatch = score.match(/\(([^)]+)\)/);
+  if (peMatch) return peMatch[1];
+  const g = parseScoreGoals(score);
+  if (!g) return null;
+  if (g.winnerSide === 'home') return home;
+  if (g.winnerSide === 'away') return away;
+  return null;
+}
+
+// Compute group standings using result if available, otherwise analysisTip
+function computeGroupStandings() {
+  const result = {};
+  for (const [grp, gd] of Object.entries(GROUPS)) {
+    const teams = gd.teams.split(' · ');
+    const stats = {};
+    teams.forEach(t => { stats[t] = { pts: 0, gf: 0, ga: 0 }; });
+
+    for (const m of gd.matches) {
+      const score = m.result || m.analysisTip;
+      const g = parseScoreGoals(score);
+      if (!g) continue;
+      stats[m.home].gf += g.h; stats[m.home].ga += g.a;
+      stats[m.away].gf += g.a; stats[m.away].ga += g.h;
+      if (g.h > g.a)      { stats[m.home].pts += 3; }
+      else if (g.a > g.h) { stats[m.away].pts += 3; }
+      else                { stats[m.home].pts += 1; stats[m.away].pts += 1; }
+    }
+
+    result[grp] = teams
+      .map(t => ({ team: t, grp, ...stats[t], gd2: stats[t].gf - stats[t].ga }))
+      .sort((a, b) => b.pts - a.pts || b.gd2 - a.gd2 || b.gf - a.gf);
+  }
+  return result;
+}
+
+// Get the 8 best third-place teams (sorted by pts, gd, gf)
+function getBest3rds(standings) {
+  return Object.values(standings)
+    .map(arr => arr[2]).filter(Boolean)
+    .sort((a, b) => b.pts - a.pts || b.gd2 - a.gd2 || b.gf - a.gf)
+    .slice(0, 8)
+    .map(t => t.team);
+}
+
+// Build full prediction bracket
+function buildPrediction() {
+  const standings = computeGroupStandings();
+  const thirds = getBest3rds(standings);
+  let thirdsIdx = 0;
+
+  // Rank map: team → finishing position (1/2/3)
+  const rankMap = {};
+  for (const arr of Object.values(standings))
+    arr.forEach((t, i) => { rankMap[t.team] = i + 1; });
+
+  // Resolve placeholder like "1A", "2B", "3. Pl."
+  function resolvePH(ph) {
+    const m2 = ph.match(/^([12])([A-L])$/);
+    if (m2) {
+      const grp = standings[m2[2]];
+      return grp ? grp[parseInt(m2[1]) - 1]?.team || ph : ph;
+    }
+    if (ph.includes('3.') || ph.includes('Pl.')) return thirds[thirdsIdx++] || '?';
+    return ph; // already real
+  }
+
+  const koWinners = {}; // matchId → winning team name
+  const resolvedMatches = {};
+
+  function resolveKO(ph) {
+    const wm = ph.match(/^W (M\d+)$/);
+    if (wm) return koWinners[wm[1]] || ph;
+    const vm = ph.match(/^V (M\d+)$/);
+    if (vm) {
+      const id = vm[1];
+      if (koWinners[id] && resolvedMatches[id]) {
+        const r = resolvedMatches[id];
+        return koWinners[id] === r.home ? r.away : r.home;
+      }
+      return ph;
+    }
+    return ph; // real team name
+  }
+
+  function buildRound(matches, isR32) {
+    return matches.map(m => {
+      const home = isR32 ? resolvePH(m.home) : resolveKO(m.home);
+      const away = isR32 ? resolvePH(m.away) : resolveKO(m.away);
+      const winner = extractWinnerTeam(m.analysisTip, home, away)
+        || ((rankMap[home] || 3) <= (rankMap[away] || 3) ? home : away);
+      koWinners[m.id] = winner;
+      resolvedMatches[m.id] = { home, away };
+      return { ...m, home, away, predictedWinner: winner };
+    });
+  }
+
+  const r32 = buildRound(KNOCKOUT.R32, true);
+  const r16 = buildRound(KNOCKOUT.R16, false);
+  const qf  = buildRound(KNOCKOUT.QF, false);
+  const sf  = buildRound(KNOCKOUT.SF, false);
+
+  // P3: losers of SF
+  const p3h = sf[0] ? (koWinners[sf[0].id] === sf[0].home ? sf[0].away : sf[0].home) : '?';
+  const p3a = sf[1] ? (koWinners[sf[1].id] === sf[1].home ? sf[1].away : sf[1].home) : '?';
+  const p3m = KNOCKOUT.P3[0];
+  const p3w = extractWinnerTeam(p3m.analysisTip, p3h, p3a) || p3h;
+  const p3 = [{ ...p3m, home: p3h, away: p3a, predictedWinner: p3w }];
+
+  const fh = koWinners[KNOCKOUT.SF[0].id] || '?';
+  const fa = koWinners[KNOCKOUT.SF[1].id] || '?';
+  const fm = KNOCKOUT.F[0];
+  const fw = extractWinnerTeam(fm.analysisTip, fh, fa) || fh;
+  const f = [{ ...fm, home: fh, away: fa, predictedWinner: fw }];
+
+  return { R32: r32, R16: r16, QF: qf, SF: sf, P3: p3, F: f };
+}
+
+function predCard(m, isFinal) {
+  const isTbd = t => !t || t === '?';
+  const hClass = isTbd(m.home) ? 'prognose-tbd' : m.predictedWinner === m.home ? 'prognose-winner' : 'prognose-loser';
+  const aClass = isTbd(m.away) ? 'prognose-tbd' : m.predictedWinner === m.away ? 'prognose-winner' : 'prognose-loser';
+  const confPart = m.conf ? ` ${confIcon(m.conf)}` : '';
+  const tipPart  = m.analysisTip ? `<span class="bracket-analysis-tip" style="font-size:9px">${m.analysisTip}</span>` : '';
+  const footer   = (tipPart || confPart) ? `<div class="bracket-card-footer">${tipPart}${confPart}</div>` : '';
+  const winMark  = (t) => m.predictedWinner === t && !isTbd(t) ? ' ▶' : '';
+
+  return `<div class="bracket-card${isFinal ? ' final-card' : ''}" data-id="${m.id}">
+    <div class="bracket-card-date">${m.date || '—'}${isFinal ? ' <span style="color:var(--accent);font-weight:700">FINALE</span>' : ''}</div>
+    <div class="bracket-card-team ${hClass}">${teamHtml(m.home)}${winMark(m.home)}</div>
+    <div class="bracket-card-team ${aClass}">${teamHtml(m.away)}${winMark(m.away)}</div>
+    ${footer}
+  </div>`;
+}
+
+function renderKOPrognose() {
+  const pred = buildPrediction();
+  const rounds = [
+    { key:'R32', label:'Runde d. letzten 32' },
+    { key:'R16', label:'Achtelfinale' },
+    { key:'QF',  label:'Viertelfinale' },
+    { key:'SF',  label:'Halbfinale' },
+    { key:'F',   label:'Finale' },
+  ];
+  let html = '<div class="bracket-outer"><div class="bracket-wrap" id="bracketPrognoseWrap">';
+  rounds.forEach((r, ri) => {
+    html += `<div class="bracket-round" data-round="${r.key}">`;
+    html += `<div class="bracket-round-title">${r.label}</div>`;
+    if (r.key === 'F') {
+      html += '<div class="bracket-final-body">';
+      html += predCard(pred.F[0], true);
+      html += '<div style="border-top:1px dashed var(--border);margin:0 6px"></div>';
+      html += predCard(pred.P3[0], false);
+      html += '<div class="bracket-p3-label">Spiel um Platz 3</div>';
+      html += '</div>';
+    } else {
+      html += '<div class="bracket-round-body">';
+      for (const m of pred[r.key]) html += predCard(m, false);
+      html += '</div>';
+    }
+    html += '</div>';
+    if (ri < rounds.length - 1) html += `<div class="bracket-connector" data-from="${r.key}"></div>`;
+  });
+  html += '</div></div>';
+  document.getElementById('bracketPrognoseGrid').innerHTML = html;
+  setTimeout(() => drawConnectorsInWrap('bracketPrognoseWrap'), 0);
 }
 
 // ── Analyse-Methodik (phasenspezifisch, einklappbar) ─────────────────
@@ -1357,6 +1577,7 @@ function renderAnalysis() {
 function renderAll() {
   renderGroups();
   renderKO();
+  renderKOPrognose();
   renderSpieltage();
   renderAnalysis();
 }
