@@ -45,6 +45,7 @@
     --orange: #fb923c;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { overflow-x: hidden; max-width: 100%; }
   body { background: var(--bg); color: var(--text); font-family: Helvetica, Arial, sans-serif; font-size: 14px; }
 
   /* Header */
@@ -283,15 +284,21 @@
   .table-scroll-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
 
   @media (max-width: 768px) {
+    header { padding: 12px 16px; flex-wrap: wrap; gap: 8px; }
+    header h1 { font-size: 16px; }
     .container { padding: 12px; }
     .analysis-grid { grid-template-columns: 1fr; }
     .stats-bar { grid-template-columns: repeat(3, 1fr); }
+    .spieltage-grid { grid-template-columns: repeat(2, 1fr) !important; }
     .match-table { min-width: 560px; }
     .bracket-outer { overflow-x: auto; -webkit-overflow-scrolling: touch; }
     .bracket-outer::after { content: '← scrollbar →'; display: block; text-align: center; font-size: 10px; color: var(--muted); padding: 4px 0 2px; }
+    .countdown-card { padding: 16px; }
     .countdown-top { flex-direction: column; }
     .countdown-timer { justify-content: center; }
     .countdown-right { min-width: unset; width: 100%; }
+    .phase-nav { width: 100%; }
+    .phase-tab { flex: 1; padding: 8px 12px; }
   }
 </style>
 </head>
