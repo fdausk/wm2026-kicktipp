@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-13T16:21:41Z",
+    "aktualisiert": "2026-06-13T16:32:51Z",
     "rang": {
       "platz": "15.",
       "punkte": 4,
@@ -22,7 +22,7 @@
       "label": "Spieltag 2",
       "dates": "14.–16. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-12T12:31:00Z",
+      "analysisTs": "2026-06-13T16:32:51Z",
       "tipsSubmitted": true
     },
     {
@@ -442,21 +442,21 @@
           "away": "Curaçao",
           "tip": "4:0",
           "analysisTip": "4:0",
-          "conf": "high",
+          "conf": "med-high",
           "result": null,
-          "injuries": "❌ Gnabry | ❌ ter Stegen",
-          "note": "GER -2500. Gnabry/ter Stegen OUT. Neuer im Tor. Curaçao WM-Debütant. Klarer Favorit."
+          "injuries": "⚠️ Neuer (Wade, fraglich)",
+          "note": "GER 95% Favorit. Kimmich/Havertz/Wirtz. Eröffnungsspiel-Varianz."
         },
         {
           "date": "15.06 01:00",
           "home": "Elfenbeinküste",
           "away": "Ecuador",
           "tip": "0:1",
-          "analysisTip": "0:1",
+          "analysisTip": "1:1",
           "conf": "med",
           "result": null,
           "injuries": null,
-          "note": "ECU 60% Favorit (Wettmarkt). CIV ohne Haller. 0:1 spiegelt ECU-Vorteil."
+          "note": "Kalshi: ECU 41%/CIV 28%/Draw 34%. ECU stärkste CONMEBOL-Abwehr. Ausgeglichen."
         },
         {
           "date": "20.06 22:00",
@@ -512,22 +512,22 @@
           "home": "Niederlande",
           "away": "Japan",
           "tip": "2:1",
-          "analysisTip": "2:1",
+          "analysisTip": "1:1",
           "conf": "med",
           "result": null,
-          "injuries": "❌ Timber | ❌ Simons | ❌ de Ligt | ❌ Schouten — JPN: ❌ Minamino | ❌ Mitoma",
-          "note": "NED massiv dezimiert (4 Stammspieler OUT). JPN ohne Minamino/Mitoma. Tipp 2:1 bleibt."
+          "injuries": "❌ Simons (VKB) | ❌ Timber | ⚠️ Memphis (Hamstring) | ⚠️ de Ligt — JPN: ❌ Mitoma (Hamstring)",
+          "note": "NED 50% — fast Gleichgewicht. Simons+Timber fehlen. Japan 5 Siege inkl. England."
         },
         {
           "date": "15.06 04:00",
           "home": "Schweden",
           "away": "Tunesien",
           "tip": "2:0",
-          "analysisTip": "2:0",
-          "conf": "med-high",
+          "analysisTip": "1:0",
+          "conf": "med",
           "result": null,
           "injuries": null,
-          "note": "Schweden -180 Favorit. Isak fit. 2:0 plausibel."
+          "note": "SWE 52% — Gleichgewichts-Zone. TUN 51% non-loss → defensiver Score. Gyokeres/Isak."
         },
         {
           "date": "20.06 19:00",
@@ -583,22 +583,22 @@
           "home": "Belgien",
           "away": "Ägypten",
           "tip": "2:1",
-          "analysisTip": "2:1",
+          "analysisTip": "2:0",
           "conf": "med-high",
           "result": null,
-          "injuries": null,
-          "note": "Belgien -163 (62%) — kein klarer Walk-over. Ägypten kompakt. 2:1 korrekt."
+          "injuries": "⚠️ De Bruyne (Augenverletzung) | ⚠️ Lukaku (Hüfte)",
+          "note": "BEL 73%. EGY 44% non-loss → Score defensiver (2:1→2:0). De Bruyne/Lukaku fraglich."
         },
         {
           "date": "16.06 03:00",
           "home": "Iran",
           "away": "Neuseeland",
           "tip": "2:0",
-          "analysisTip": "2:0",
-          "conf": "med-high",
+          "analysisTip": "1:0",
+          "conf": "med",
           "result": null,
           "injuries": null,
-          "note": "Iran -300. NZL Außenseiter. 2:0 realistisch."
+          "note": "IRN 54% — Gleichgewichts-Zone. NZL 43% non-loss → defensiver. Taremi entscheidend."
         },
         {
           "date": "21.06 21:00",
@@ -655,10 +655,10 @@
           "away": "Kap Verde",
           "tip": "3:0",
           "analysisTip": "3:0",
-          "conf": "high",
+          "conf": "med-high",
           "result": null,
           "injuries": "❌ Fermín López | ⚠️ Yamal (erwartet fit 15.06)",
-          "note": "Spanien -1200 (92%). Fermín OUT, Yamal erwartet fit. 3:0 gerechtfertigt."
+          "note": "ESP 91% (-1000). Kap Verde WM-Debüt. Over 3.5 bei -107. Eröffnungsspiel → med-high."
         },
         {
           "date": "16.06 00:00",
@@ -666,10 +666,10 @@
           "away": "Uruguay",
           "tip": "0:2",
           "analysisTip": "0:2",
-          "conf": "high",
+          "conf": "med-high",
           "result": null,
           "injuries": "URU: Giménez ❌",
-          "note": "Uruguay -250 Favorit. Suárez/Núñez fit. KSA nach 2022-Sieg gegen ARG nun schwächer."
+          "note": "URU 68% unter Bielsa. SAU non-loss 33% — Außenseiter-Regel greift nicht. Eröffnungsspiel."
         },
         {
           "date": "21.06 18:00",
