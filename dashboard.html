@@ -4,6 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WM 2026 — Tipp-Dashboard ClaudeFC</title>
+<script>
+(function() {
+  const HASH = '34b7d646a103d31bdcbc01ff4451e3dac717953ddfd0d6b67a05ac20e18db062';
+  const SESSION_KEY = 'wm2026_auth';
+
+  async function sha256(str) {
+    const buf = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(str));
+    return Array.from(new Uint8Array(buf)).map(b => b.toString(16).padStart(2, '0')).join('');
+  }
+
+  async function check() {
+    if (sessionStorage.getItem(SESSION_KEY) === '1') return;
+    document.documentElement.style.visibility = 'hidden';
+    const pw = prompt('Passwort:');
+    if (!pw) { document.body.innerHTML = ''; return; }
+    const hash = await sha256(pw);
+    if (hash === HASH) {
+      sessionStorage.setItem(SESSION_KEY, '1');
+      document.documentElement.style.visibility = '';
+    } else {
+      document.body.innerHTML = '<div style="font-family:sans-serif;text-align:center;margin-top:40vh;color:#888">Falsches Passwort.</div>';
+    }
+  }
+  check();
+})();
+</script>
 <style>
   :root {
     --bg: #0f1117;
