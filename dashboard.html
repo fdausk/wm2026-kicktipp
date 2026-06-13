@@ -511,6 +511,14 @@
         <button class="ko-tab active" id="koTabPrognose" onclick="switchKOView('prognose')">🔮 Prognose</button>
         <button class="ko-tab" id="koTabBracket" onclick="switchKOView('bracket')">📋 Turnierbaum</button>
       </div>
+      <div id="prognoseInfo" style="margin-bottom:14px;padding:12px 16px;background:var(--surface2);border-radius:8px;border:1px solid var(--border);font-size:12px;line-height:1.7">
+        <div style="font-weight:700;color:var(--text);margin-bottom:6px">🔮 So funktioniert die Prognose</div>
+        <div style="display:flex;flex-wrap:wrap;gap:10px 24px;color:var(--muted)">
+          <div><strong style="color:var(--text)">1. Analyse-Tipps</strong> — Liegt ein Analyse-Tipp vor, wird der prognostizierte Sieger direkt daraus abgelesen.</div>
+          <div><strong style="color:var(--text)">2. Outright-Quoten</strong> — Steht noch kein Tipp bereit, entscheidet die aktuelle Turniersieg-Wahrscheinlichkeit (Kalshi / Betfair), welche Mannschaft weiterkommt.</div>
+          <div><strong style="color:var(--text)">Aktualisierung</strong> — Die Prognose wird bei jeder Spieltagsanalyse automatisch neu berechnet; Quoten werden nach jeder K.O.-Runde aktualisiert.</div>
+        </div>
+      </div>
       <div id="bracketPrognoseGrid"></div>
       <div class="bracket-grid" id="bracketGrid" style="display:none"></div>
     </div>
