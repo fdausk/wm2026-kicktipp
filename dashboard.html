@@ -300,9 +300,13 @@
     .col-mob-score { width: 80px; }
     .col-status { width: 32px; }
     .col-mob-conf { width: 28px; text-align: center; }
-    .mob-score { font-size: 11px; white-space: nowrap; }
-    .mob-score .score { font-size: 11px; padding: 2px 4px; }
-    .mob-arrow { color: var(--muted); margin: 0 3px; }
+    .mob-score { font-size: 12px; white-space: nowrap; }
+    .mob-score .score { font-size: 12px; padding: 3px 6px; }
+    .mob-arrow { color: var(--muted); margin: 0 5px; }
+    .match-table td, .match-table th { padding: 12px 8px; }
+    .match-table td.date-col { padding-left: 4px; font-size: 12px; line-height: 1.4; }
+    .match-table td.matchup { font-size: 13px; line-height: 1.5; }
+    .match-table thead tr th { font-size: 10px; padding: 8px 8px; }
     .mob-date { display: inline; }
     .desk-date { display: none; }
     .bracket-outer { overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -1035,7 +1039,7 @@ function renderGroups() {
         : '<span class="score score-pending">—</span>';
       const mobDate = m.date.replace(' ', ' / ');
       const mobScoreHtml = m.result
-        ? `${tipDisplay}<span class="mob-arrow">→</span>${resultDisplay}`
+        ? `${tipDisplay}<span class="mob-arrow">/</span>${resultDisplay}`
         : tipDisplay;
 
       rows += `<tr class="${m.result ? 'match-played' : 'match-pending'}">
@@ -1060,7 +1064,7 @@ function renderGroups() {
           <col class="col-date"><col class="col-matchup"><col class="col-tip hide-mob"><col class="col-result hide-mob"><col class="col-mob-score show-mob"><col class="col-status"><col class="col-conf hide-mob"><col class="col-mob-conf show-mob">
         </colgroup>
         <thead><tr>
-          <th>Datum</th><th>Paarung</th><th class="hide-mob">Tipp</th><th class="hide-mob">Ergebnis</th><th class="show-mob">Score</th><th>Status</th><th class="hide-mob th-conf"><span>Konfidenz / Analyse</span></th><th class="show-mob">K</th>
+          <th>Datum</th><th>Paarung</th><th class="hide-mob">Tipp</th><th class="hide-mob">Ergebnis</th><th class="show-mob">Score</th><th>S</th><th class="hide-mob th-conf"><span>Konfidenz / Analyse</span></th><th class="show-mob">K</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table></div>
