@@ -280,11 +280,18 @@
   .ko-rule-note strong { color: var(--yellow); }
 
   /* Responsive */
+  .table-scroll-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+
   @media (max-width: 768px) {
-    .container { padding: 16px; }
+    .container { padding: 12px; }
     .analysis-grid { grid-template-columns: 1fr; }
     .stats-bar { grid-template-columns: repeat(3, 1fr); }
-    .bracket-grid { grid-template-columns: 1fr 1fr; }
+    .match-table { min-width: 560px; }
+    .bracket-outer { overflow-x: auto; -webkit-overflow-scrolling: touch; }
+    .bracket-outer::after { content: '← scrollbar →'; display: block; text-align: center; font-size: 10px; color: var(--muted); padding: 4px 0 2px; }
+    .countdown-top { flex-direction: column; }
+    .countdown-timer { justify-content: center; }
+    .countdown-right { min-width: unset; width: 100%; }
   }
 </style>
 </head>
@@ -979,7 +986,7 @@ function renderGroups() {
         <span class="group-badge">GRUPPE ${grp}</span>
         <span class="group-teams">${data.teams}</span>
       </div>
-      <table class="match-table">
+      <div class="table-scroll-wrap"><table class="match-table">
         <colgroup>
           <col class="col-date"><col class="col-matchup"><col class="col-tip"><col class="col-result"><col class="col-status"><col class="col-conf">
         </colgroup>
@@ -987,7 +994,7 @@ function renderGroups() {
           <th>Datum</th><th>Paarung</th><th>Tipp</th><th>Ergebnis</th><th>Status</th><th>Konfidenz / Analyse</th>
         </tr></thead>
         <tbody>${rows}</tbody>
-      </table>
+      </table></div>
     </div>`;
   }
 
