@@ -1,0 +1,1391 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WM 2026 — Tipp-Dashboard ClaudeFC</title>
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #242736;
+    --border: #2e3249;
+    --text: #e8eaf0;
+    --muted: #7c8098;
+    --accent: #4f7ef8;
+    --green: #22c55e;
+    --red: #ef4444;
+    --yellow: #f59e0b;
+    --orange: #fb923c;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: Helvetica, Arial, sans-serif; font-size: 14px; }
+
+  /* Header */
+  header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+  header h1 { font-size: 20px; font-weight: 700; letter-spacing: -0.3px; }
+  header h1 span { color: var(--accent); }
+  .subtitle { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  .updated { font-size: 11px; color: var(--muted); background: var(--surface2); padding: 4px 10px; border-radius: 20px; border: 1px solid var(--border); }
+
+  /* Layout */
+  .container { max-width: 1200px; margin: 0 auto; padding: 24px 32px; }
+
+  /* Analysis Summary */
+  .analysis-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 28px; }
+  .analysis-card-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 0; }
+  .analysis-card h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin: 0; }
+  .analysis-collapse-btn { background: none; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); font-size: 11px; font-weight: 600; padding: 3px 10px; cursor: pointer; transition: all 0.15s; }
+  .analysis-collapse-btn:hover { border-color: var(--accent); color: var(--text); }
+  .analysis-card-body { margin-top: 16px; }
+  .analysis-card-body.collapsed { display: none; }
+  .analysis-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
+  .analysis-item { background: var(--surface2); border-radius: 8px; padding: 12px 16px; border: 1px solid var(--border); }
+  .analysis-item h3 { font-size: 11px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.6px; margin-bottom: 8px; }
+  .analysis-item p { font-size: 13px; line-height: 1.5; color: var(--text); }
+  .sources { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .source-tag { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 3px 10px; font-size: 11px; color: var(--muted); }
+
+  /* Stats bar */
+  .stats-bar { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 28px; }
+  .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; text-align: center; }
+  .stat-value { font-size: 28px; font-weight: 700; line-height: 1; margin-bottom: 4px; }
+  .stat-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+  .stat-value.green { color: var(--green); }
+  .stat-value.red { color: var(--red); }
+  .stat-value.yellow { color: var(--yellow); }
+  .stat-value.blue { color: var(--accent); }
+
+  /* Group tabs */
+  .group-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
+  .tab { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 6px 4px; font-size: 12px; cursor: pointer; transition: all 0.15s; color: var(--muted); font-weight: 500; flex: 1; display: flex; align-items: center; justify-content: center; white-space: nowrap; }
+  .tab:hover { border-color: var(--accent); color: var(--text); }
+  .tab.active { background: var(--accent); border-color: var(--accent); color: white; }
+  .tab-all { font-weight: 600; }
+
+  /* Group section */
+  .group-section { margin-bottom: 28px; }
+  .group-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .group-badge { background: var(--accent); color: white; font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 4px; letter-spacing: 0.5px; }
+  .group-teams { font-size: 12px; color: var(--muted); }
+
+  /* Match table */
+  .match-table { width: 100%; border-collapse: separate; border-spacing: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; table-layout: fixed; }
+  .match-table col.col-date { width: 90px; }
+  .match-table col.col-matchup { }
+  .match-table col.col-tip { width: 70px; }
+  .match-table col.col-result { width: 80px; }
+  .match-table col.col-status { width: 100px; }
+  .match-table col.col-conf { width: 180px; }
+  .match-table th { background: var(--surface2); padding: 10px 14px; text-align: left; font-size: 11px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); border-bottom: 1px solid var(--border); font-weight: 600; }
+  .match-table td { padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .match-table tr:last-child td { border-bottom: none; }
+  .match-table tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* Match states */
+  .match-played { }
+  .match-pending { opacity: 0.85; }
+  .match-live td { background: rgba(79,126,248,0.05) !important; }
+
+  /* Date */
+  .date-col { color: var(--muted); font-size: 12px; white-space: nowrap; }
+
+  /* Teams */
+  .matchup { font-weight: 600; font-size: 13px; }
+  .matchup .vs { color: var(--muted); font-weight: 400; margin: 0 6px; font-size: 12px; }
+
+  /* Result / Tip */
+  .score { font-family: Helvetica, Arial, sans-serif; font-size: 13px; font-weight: 600; padding: 3px 8px; border-radius: 5px; display: inline-block; min-width: 40px; text-align: center; }
+  .score-result { background: var(--surface2); color: var(--text); }
+  .score-tip { background: rgba(79,126,248,0.15); color: var(--accent); }
+  .score-pending { background: var(--surface2); color: var(--text); white-space: nowrap; }
+
+  /* Status */
+  .status { display: inline-flex; align-items: center; gap: 5px; font-size: 12px; font-weight: 600; padding: 3px 8px; border-radius: 5px; white-space: nowrap; }
+  .status-correct { background: rgba(34,197,94,0.15); color: var(--green); }
+  .status-wrong { background: rgba(239,68,68,0.1); color: var(--red); }
+  .status-pending { background: var(--surface2); color: var(--muted); }
+  .status-tendenz { background: rgba(245,158,11,0.15); color: var(--yellow); }
+  .status-live { background: rgba(79,126,248,0.2); color: var(--accent); animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:0.6 } }
+
+  /* Confidence */
+  .conf { font-size: 11px; padding: 2px 7px; border-radius: 4px; font-weight: 500; white-space: nowrap; }
+  .conf-high { background: rgba(34,197,94,0.15); color: var(--green); }
+  .conf-med-high { background: rgba(245,158,11,0.15); color: var(--yellow); }
+  .conf-med { background: rgba(239,68,68,0.1); color: var(--orange); }
+
+  /* Analysis col */
+  .analysis-tip { font-size: 11px; color: var(--muted); }
+  .analysis-tip .score { font-size: 11px; padding: 2px 6px; }
+
+  /* Tip blur */
+  body.tips-hidden .score-tip { filter: blur(5px); user-select: none; pointer-events: none; }
+
+  /* Hidden */
+  .group-section.hidden { display: none; }
+
+  /* Spieltage Overview */
+  .spieltage-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 28px; }
+  .st-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+  .st-card.clickable { cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+  .st-card.clickable:hover { border-color: var(--accent); background: color-mix(in srgb, var(--surface) 90%, var(--accent) 10%); }
+  .st-card-detail-icon { color: var(--muted); opacity: 0.5; flex-shrink: 0; transition: opacity 0.15s, color 0.15s; }
+  .st-card.clickable:hover .st-card-detail-icon { opacity: 1; color: var(--accent); }
+  .st-card-header { display: flex; align-items: center; justify-content: space-between; }
+  .st-card-name { font-size: 13px; font-weight: 700; }
+  .st-card-date { font-size: 12px; color: var(--muted); }
+  .st-card-stats { font-size: 12px; color: var(--muted); }
+  .st-card-stats span { color: var(--text); font-weight: 600; }
+  .st-submitted { font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 600; display: inline-block; margin-top: 4px; background: rgba(34,197,94,0.15); color: var(--green); }
+  .st-badge { font-size: 10px; padding: 2px 6px; border-radius: 4px; font-weight: 600; }
+  .st-badge-done { background: rgba(34,197,94,0.15); color: var(--green); }
+  .st-badge-ready { background: rgba(79,126,248,0.2); color: var(--accent); }
+  .st-badge-future { background: var(--surface2); color: var(--muted); }
+  .st-badge-live { background: rgba(245,158,11,0.2); color: var(--yellow); }
+  .analysis-badge { font-size: 10px; padding: 2px 7px; border-radius: 4px; font-weight: 600; display: inline-block; margin-top: 4px; }
+  .analysis-fresh { background: rgba(34,197,94,0.15); color: var(--green); }
+  .analysis-stale { background: rgba(245,158,11,0.15); color: var(--yellow); }
+  .analysis-missing { background: rgba(239,68,68,0.1); color: var(--red); }
+  .analysis-urgent { background: rgba(239,68,68,0.15); color: var(--red); animation: pulse 1.5s infinite; }
+
+  /* Modal */
+  .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.7); z-index: 100; align-items: center; justify-content: center; }
+  .modal-overlay.open { display: flex; }
+  .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; width: min(680px, 95vw); max-height: 85vh; display: flex; flex-direction: column; overflow: hidden; }
+  .modal-header { padding: 18px 22px 14px; border-bottom: 1px solid var(--border); }
+  .modal-header-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .modal-title { font-size: 15px; font-weight: 700; }
+  .modal-subtitle { font-size: 11px; color: var(--muted); margin-top: 3px; }
+  .modal-summary { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 10px; }
+  .modal-close { background: none; border: none; color: var(--muted); font-size: 20px; cursor: pointer; padding: 4px 8px; border-radius: 6px; flex-shrink: 0; }
+  .modal-close:hover { background: var(--surface2); color: var(--text); }
+  .modal-body { overflow-y: auto; padding: 10px 16px 12px; flex: 1; }
+  .modal-group-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.8px; color: var(--muted); padding: 10px 2px 5px; }
+  .modal-group-label:first-child { padding-top: 2px; }
+  /* unified badge token — all badges same height + font */
+  .mbadge { display: inline-flex; align-items: center; height: 20px; padding: 0 8px; border-radius: 4px; font-size: 11px; font-weight: 500; line-height: 1; white-space: nowrap; }
+  .mbadge-score { background: rgba(79,126,248,0.15); color: var(--accent); font-family: Helvetica, Arial, sans-serif; font-weight: 700; letter-spacing: 0.3px; }
+  .mbadge-score-done { background: rgba(34,197,94,0.15); color: var(--green); font-family: Helvetica, Arial, sans-serif; font-weight: 700; letter-spacing: 0.3px; }
+  .mbadge-high { background: rgba(34,197,94,0.15); color: var(--green); }
+  .mbadge-mh { background: rgba(245,158,11,0.15); color: var(--yellow); }
+  .mbadge-med { background: rgba(251,146,60,0.15); color: var(--orange); }
+  .mbadge-done { background: rgba(34,197,94,0.15); color: var(--green); }
+  .mbadge-inj { background: var(--surface2); color: var(--muted); gap: 4px; }
+  /* match card */
+  .modal-match { background: var(--surface2); border: 1px solid var(--border); border-left-width: 3px; border-radius: 8px; margin-bottom: 6px; overflow: hidden; }
+  .modal-match-high { border-left-color: var(--green); }
+  .modal-match-mh   { border-left-color: var(--yellow); }
+  .modal-match-med  { border-left-color: var(--orange); }
+  .modal-match-top { display: flex; align-items: center; gap: 10px; padding: 9px 12px 8px; }
+  .modal-match-info { flex: 1; min-width: 0; }
+  .modal-match-name { font-size: 13px; font-weight: 600; }
+  .modal-match-meta { font-size: 11px; color: var(--muted); margin-top: 2px; }
+  .modal-match-badges { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+  /* injury section */
+  .modal-inj-section { border-top: 1px solid var(--border); padding: 7px 12px 8px; display: flex; flex-direction: column; gap: 5px; background: rgba(245,158,11,0.03); }
+  .modal-inj-team { display: flex; align-items: flex-start; gap: 8px; }
+  .modal-inj-flag { font-size: 11px; font-weight: 600; color: var(--muted); min-width: 32px; padding-top: 1px; flex-shrink: 0; }
+  .modal-inj-players { display: flex; flex-wrap: wrap; gap: 4px; }
+  .inj-badge { display: inline-flex; align-items: center; height: 20px; padding: 0 7px; border-radius: 4px; font-size: 11px; font-weight: 500; white-space: nowrap; }
+  .inj-out   { background: rgba(239,68,68,0.1);    color: var(--red); }
+  .inj-doubt { background: rgba(245,158,11,0.12);  color: var(--yellow); }
+  .inj-ok    { background: rgba(34,197,94,0.12);   color: var(--green); }
+  /* note */
+  .modal-match-note { border-top: 1px solid var(--border); padding: 6px 12px 8px; font-size: 11px; color: var(--muted); line-height: 1.5; }
+  .modal-footer { padding: 12px 18px; border-top: 1px solid var(--border); display: flex; gap: 10px; justify-content: flex-end; align-items: center; }
+  .modal-btn { padding: 8px 18px; font-size: 13px; font-weight: 600; border: none; border-radius: 8px; cursor: pointer; transition: all 0.15s; }
+  .modal-btn-secondary { background: var(--surface2); color: var(--text); border: 1px solid var(--border); }
+  .modal-btn-secondary:hover { border-color: var(--accent); }
+
+  /* Countdown */
+  .countdown-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 28px; display: flex; flex-direction: column; gap: 16px; }
+  .countdown-top { display: flex; align-items: stretch; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+  .countdown-left h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 6px; }
+  .countdown-spieltag { font-size: 15px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+  .countdown-meta { font-size: 12px; color: var(--muted); }
+  .countdown-timer { display: flex; gap: 12px; align-items: stretch; }
+  .countdown-unit { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 12px 16px; text-align: center; min-width: 64px; display: flex; flex-direction: column; justify-content: center; }
+  .countdown-num { font-size: 28px; font-weight: 700; font-family: Helvetica, Arial, sans-serif; line-height: 1; color: var(--accent); }
+  .countdown-lbl { font-size: 10px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.5px; margin-top: 4px; }
+  .countdown-sep { font-size: 24px; font-weight: 700; color: var(--muted); align-self: center; }
+  .countdown-right { flex: 1; min-width: 220px; display: flex; flex-direction: column; }
+  .analysis-rec { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; flex: 1; box-sizing: border-box; }
+  .analysis-rec-title { font-size: 11px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.6px; margin-bottom: 6px; }
+  .analysis-rec-time { font-size: 14px; font-weight: 600; color: var(--yellow); margin-bottom: 4px; }
+  .analysis-rec-note { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .countdown-done { font-size: 18px; font-weight: 700; color: var(--green); }
+  .countdown-rank { padding-top: 14px; border-top: 1px solid var(--border); }
+  .countdown-rank-header { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 10px; }
+  .countdown-rank-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+  .cd-rank-pill { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 14px 12px; text-align: center; }
+  .cd-rank-pill-value { font-size: 28px; font-weight: 700; line-height: 1; }
+  .cd-rank-pill-label { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; }
+
+  /* Phase navigation */
+  .phase-nav { display: flex; gap: 4px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 4px; margin-bottom: 28px; width: fit-content; }
+  .phase-tab { padding: 8px 24px; font-size: 13px; font-weight: 600; border: none; border-radius: 7px; cursor: pointer; transition: all 0.15s; color: var(--muted); background: transparent; }
+  .phase-tab:hover { color: var(--text); }
+  .phase-tab.active { background: var(--accent); color: white; }
+
+  /* K.O. Bracket */
+  .bracket-section { margin-bottom: 28px; }
+  .bracket-section h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.8px; color: var(--accent); margin-bottom: 16px; }
+  .bracket-outer { overflow-x: auto; padding-bottom: 8px; }
+  .bracket-wrap { display: flex; align-items: stretch; min-width: 880px; overflow: visible; }
+  .bracket-round { display: flex; flex-direction: column; flex: 1; min-width: 130px; }
+  .bracket-round-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; text-align: center; padding: 6px 0 8px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
+  .bracket-round-body { display: flex; flex-direction: column; justify-content: space-around; flex: 1; padding: 6px 0; }
+  .bracket-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; margin: 3px 6px; overflow: hidden; position: relative; z-index: 1; }
+  .bracket-card.final-card { border-color: var(--accent); }
+  .bracket-card-date { font-size: 9px; color: var(--muted); padding: 3px 8px; border-bottom: 1px solid var(--border); }
+  .bracket-card-team { display: flex; align-items: center; justify-content: space-between; padding: 4px 8px; font-size: 11px; font-weight: 600; min-height: 22px; gap: 6px; }
+  .bracket-card-team.tbd { color: var(--muted); font-style: italic; font-weight: 400; }
+  .bracket-card-team.winner { color: var(--green); }
+  .bracket-card-team + .bracket-card-team { border-top: 1px solid var(--border); }
+  .bracket-card-footer { border-top: 1px solid var(--border); padding: 3px 8px; font-size: 9px; color: var(--muted); display: flex; align-items: center; gap: 5px; }
+  .bracket-card-footer .conf { font-size: 9px; padding: 1px 4px; }
+  .bracket-analysis-tip { color: var(--accent); font-weight: 600; }
+  .bracket-connector { width: 24px; flex-shrink: 0; position: relative; align-self: stretch; overflow: visible; }
+  .bracket-connector svg { position: absolute; top: 0; left: 0; pointer-events: none; }
+  .bracket-final-body { display: flex; flex-direction: column; justify-content: center; gap: 12px; flex: 1; padding: 6px 0; }
+  .bracket-p3-label { font-size: 9px; color: var(--muted); text-align: center; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+  .ko-rule-note { background: rgba(245,158,11,0.08); border: 1px solid rgba(245,158,11,0.25); border-radius: 8px; padding: 8px 12px; font-size: 11px; color: var(--yellow); margin-bottom: 16px; }
+  .ko-rule-note strong { color: var(--yellow); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .container { padding: 16px; }
+    .analysis-grid { grid-template-columns: 1fr; }
+    .stats-bar { grid-template-columns: repeat(3, 1fr); }
+    .bracket-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div>
+    <h1>WM 2026 — <span>ClaudeFC</span> Tipp-Dashboard</h1>
+    <div class="subtitle">KI-gestützte Analyse · WM 2026 · 48 Teams · 104 Spiele</div>
+  </div>
+  <div style="display:flex;align-items:center;gap:10px">
+    <button id="tipToggleBtn" onclick="toggleTips()" style="display:flex;align-items:center;gap:6px;font-size:12px;font-weight:600;padding:5px 12px;border-radius:6px;border:1px solid var(--border);background:var(--surface2);color:var(--text);cursor:pointer;transition:all 0.15s">
+      <span id="tipToggleIcon">👁</span><span id="tipToggleLabel">Tipps ausblenden</span>
+    </button>
+    <div class="updated" id="dashUpdated">Lade Daten…</div>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Countdown (immer oben) -->
+  <div class="countdown-card" id="countdownCard">
+    <div class="countdown-top">
+      <div class="countdown-left">
+        <h2>⏱ Nächstes Spiel</h2>
+        <div class="countdown-spieltag" id="cdSpieltag">—</div>
+        <div class="countdown-meta" id="cdMeta">—</div>
+      </div>
+      <div class="countdown-timer" id="cdTimer">
+        <div class="countdown-unit"><div class="countdown-num" id="cdDays">00</div><div class="countdown-lbl">Tage</div></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><div class="countdown-num" id="cdHours">00</div><div class="countdown-lbl">Std</div></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><div class="countdown-num" id="cdMins">00</div><div class="countdown-lbl">Min</div></div>
+        <div class="countdown-sep">:</div>
+        <div class="countdown-unit"><div class="countdown-num" id="cdSecs">00</div><div class="countdown-lbl">Sek</div></div>
+      </div>
+      <div class="countdown-right">
+        <div class="analysis-rec">
+          <div class="analysis-rec-title">📋 Letzte Analyse</div>
+          <div class="analysis-rec-time" id="cdAnalysisTime">—</div>
+          <div class="analysis-rec-note" id="cdAnalysisNote">—</div>
+        </div>
+      </div>
+    </div>
+    <div class="countdown-rank">
+      <div class="countdown-rank-header" id="cdRankHeader">🏆 Aktueller Stand — tip-it-like-i22 · Spieltag 2</div>
+      <div class="countdown-rank-grid">
+        <div class="cd-rank-pill">
+          <div class="cd-rank-pill-value" style="color:var(--yellow)" id="cdRankPlace">15.</div>
+          <div class="cd-rank-pill-label">Platz</div>
+        </div>
+        <div class="cd-rank-pill">
+          <div class="cd-rank-pill-value" id="cdRankPoints">4</div>
+          <div class="cd-rank-pill-label">Punkte</div>
+        </div>
+        <div class="cd-rank-pill">
+          <div class="cd-rank-pill-value" style="color:var(--muted)" id="cdRankTotal">24</div>
+          <div class="cd-rank-pill-label">Teilnehmer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Analysis Summary -->
+  <div class="analysis-card">
+    <div class="analysis-card-header">
+      <h2 id="analysisCardTitle">📊 Analyse-Methodik</h2>
+      <button class="analysis-collapse-btn" onclick="toggleAnalysis()" id="analysisCollapseBtn">▲ Einklappen</button>
+    </div>
+    <div class="analysis-card-body" id="analysisCardBody">
+    <div class="analysis-grid">
+      <div class="analysis-item">
+        <h3>📈 Wettmarkt-Konsens <span style="color:var(--muted);font-weight:400">35%</span></h3>
+        <p>Primäres Signal. <strong>Betfair Exchange</strong> (ohne Bookmaker-Marge), <strong>Kalshi/Polymarket</strong> (Prediction Markets) und <strong>Bet365/DraftKings</strong> werden zu einer impliziten Gewinnwahrscheinlichkeit zusammengefasst. Dimers & Forebet liefern den wahrscheinlichsten Endstand.</p>
+      </div>
+      <div class="analysis-item">
+        <h3>⚡ xG & Formkurve <span style="color:var(--muted);font-weight:400">25%</span></h3>
+        <p><strong>Expected Goals</strong> der letzten 3–5 Spiele (FootyStats, FBref) zeigen Chancenqualität unabhängig vom Ergebnis. Ergänzt durch Ø Tore, Ø kassierte Tore und W/D/L-Bilanz der letzten 10 Spiele.</p>
+      </div>
+      <div class="analysis-item">
+        <h3>🏥 Verletzungen & Kader <span style="color:var(--muted);font-weight:400">20%</span></h3>
+        <p><strong>ESPN Injury Tracker</strong> für bestätigte Ausfälle. <strong>Yahoo Sports / Goal.com / Squawka</strong> für Aufstellungstrends und Pressekonferenz-Aussagen. Abruf so nah wie möglich am Anstoß.</p>
+      </div>
+      <div class="analysis-item">
+        <h3>🏆 Turnier-Formkurve <span style="color:var(--muted);font-weight:400">12%</span></h3>
+        <p>Ab Spieltag 2 laufend aktualisiert. <strong>Sofascore</strong> und <strong>CBS Sports Standings</strong> liefern die Ergebnisse aus dem laufenden Turnier. Gewicht steigt mit jedem gespielten Spieltag.</p>
+      </div>
+      <div class="analysis-item">
+        <h3>🔁 Head-to-Head <span style="color:var(--muted);font-weight:400">Teil von 8%</span></h3>
+        <p>WM- und EM-Direktduelle werden <strong>höher gewichtet</strong> als Freundschaftsspiele (FootyStats H2H, FIFA.com). Nur relevant bei engen Spielen — kein eigener Datenpunkt bei klaren Favoriten.</p>
+      </div>
+      <div class="analysis-item">
+        <h3>🌡️ Klima, Höhe & Stadion <span style="color:var(--muted);font-weight:400">Teil von 8%</span></h3>
+        <p><strong>Geschlossene Stadien</strong> (Houston NRG, Dallas AT&T, Atlanta, Vancouver) = kein Hitzefaktor. <strong>Freistadien</strong> im Sommer: Erschöpfungsrisiko. <strong>Azteca 2240m</strong>: Höhenvorteil für südamerikanische Teams.</p>
+      </div>
+    </div>
+    <div style="margin-top:14px;padding:12px 16px;background:var(--surface2);border-radius:8px;border:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.6">
+      <strong style="color:var(--text)">Konfidenz-Logik:</strong>
+      <strong style="color:var(--green)"> Hoch</strong> = Favorit ≥70% Marktwahrsch. + Quellen-Konsens + keine Schlüsselverletzungen ·
+      <strong style="color:var(--yellow)"> Mittel-Hoch</strong> = 60–70% + Restrisiko ·
+      <strong style="color:var(--orange)"> Mittel</strong> = 50–60%, BTTS wahrscheinlich oder H2H überraschend
+    </div>
+    </div><!-- /.analysis-card-body -->
+  </div><!-- /.analysis-card -->
+
+  <!-- Phase Navigation -->
+  <div class="phase-nav">
+    <button class="phase-tab active" onclick="switchPhase('gruppe')">⚽ Gruppenphase</button>
+    <button class="phase-tab" onclick="switchPhase('ko')">🏆 K.O.-Phase</button>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar" id="statsBar">
+    <div class="stat"><div class="stat-value blue" id="statTotal">0</div><div class="stat-label">Spiele gesamt</div></div>
+    <div class="stat"><div class="stat-value" id="statPlayed">0</div><div class="stat-label">Gespielt</div></div>
+    <div class="stat"><div class="stat-value green" id="statCorrect">0</div><div class="stat-label">Tipp ✓</div></div>
+    <div class="stat"><div class="stat-value yellow" id="statTendenz">0</div><div class="stat-label">Tendenz ✓</div></div>
+    <div class="stat"><div class="stat-value red" id="statWrong">0</div><div class="stat-label">Tipp ✗</div></div>
+    <div class="stat"><div class="stat-value yellow" id="statRate">—</div><div class="stat-label">Trefferquote</div></div>
+  </div>
+
+  <!-- Spieltage Overview -->
+  <div id="spieltageGrid"></div>
+
+  <!-- Modal -->
+  <div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+    <div class="modal">
+      <div class="modal-header">
+        <div class="modal-header-top">
+          <div>
+            <div class="modal-title" id="modalTitle">Spieltag</div>
+            <div class="modal-subtitle" id="modalSubtitle"></div>
+          </div>
+          <button class="modal-close" onclick="closeModal()">✕</button>
+        </div>
+        <div class="modal-summary" id="modalSummary"></div>
+      </div>
+      <div class="modal-body" id="modalBody"></div>
+      <div class="modal-footer">
+        <button class="modal-btn modal-btn-secondary" onclick="closeModal()">Schließen</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Gruppenphase -->
+  <div id="phaseGruppe">
+    <!-- Group Tabs -->
+    <div class="group-tabs">
+      <div class="tab tab-all active" onclick="filterGroup('all')">Alle</div>
+      <div class="tab" onclick="filterGroup('A')">Gruppe A</div>
+      <div class="tab" onclick="filterGroup('B')">Gruppe B</div>
+      <div class="tab" onclick="filterGroup('C')">Gruppe C</div>
+      <div class="tab" onclick="filterGroup('D')">Gruppe D</div>
+      <div class="tab" onclick="filterGroup('E')">Gruppe E</div>
+      <div class="tab" onclick="filterGroup('F')">Gruppe F</div>
+      <div class="tab" onclick="filterGroup('G')">Gruppe G</div>
+      <div class="tab" onclick="filterGroup('H')">Gruppe H</div>
+      <div class="tab" onclick="filterGroup('I')">Gruppe I</div>
+      <div class="tab" onclick="filterGroup('J')">Gruppe J</div>
+      <div class="tab" onclick="filterGroup('K')">Gruppe K</div>
+      <div class="tab" onclick="filterGroup('L')">Gruppe L</div>
+    </div>
+    <div id="groups"></div>
+  </div>
+
+  <!-- K.O.-Phase -->
+  <div id="phaseKO" style="display:none">
+    <div class="bracket-section">
+      <h2>🏆 K.O.-Bracket</h2>
+      <div class="ko-rule-note">⚡ <strong>Kicktipp-Regel:</strong> Alle K.O.-Tipps müssen das Ergebnis nach Elfmeterschießen berücksichtigen. Bei ausgeglichenen Spielen (Markt 45–65%): 1:1 tippen + PE-Sieger prognostizieren. Quellen: Transfermarkt PE-Bilanz · FBref Torwart-Save-Rate · Oddspedia Schützen-Cheatsheet.</div>
+      <div class="bracket-grid" id="bracketGrid"></div>
+    </div>
+  </div>
+
+</div>
+
+<script>
+// ── Data (loaded from dashboard_data.json) ────────────────────────────
+let GROUPS, KNOCKOUT, SPIELTAG_INFO, ST_STARTS_UTC;
+let _lastAktualisiert = null;
+
+async function loadDashboardData() {
+  try {
+    const r = await fetch('./dashboard_data.json?_=' + Date.now());
+    if (!r.ok) throw new Error('HTTP ' + r.status);
+    const d = await r.json();
+    GROUPS       = d.groups;
+    KNOCKOUT     = d.knockout;
+    SPIELTAG_INFO = d.spieltag_info;
+    ST_STARTS_UTC = d.st_starts_utc.map(s => s ? new Date(s) : null);
+    // Rank display
+    const rng = d.meta.rang;
+    document.getElementById('cdRankPlace').textContent  = rng.platz;
+    document.getElementById('cdRankPoints').textContent = rng.punkte;
+    document.getElementById('cdRankTotal').textContent  = rng.total;
+    document.getElementById('cdRankHeader').textContent = '🏆 Aktueller Stand — tip-it-like-i22 · ' + rng.spieltag;
+    document.getElementById('dashUpdated').textContent  = 'Daten: ' + new Date(d.meta.aktualisiert).toLocaleString('de-DE', { timeZone:'Europe/Berlin', dateStyle:'short', timeStyle:'short' }) + ' MESZ';
+    return d.meta.aktualisiert;
+  } catch(e) {
+    GROUPS        = GROUPS_PLACEHOLDER;
+    KNOCKOUT      = KNOCKOUT_PLACEHOLDER;
+    SPIELTAG_INFO = SPIELTAG_INFO_PLACEHOLDER;
+    ST_STARTS_UTC = ST_STARTS_UTC_PLACEHOLDER;
+    document.getElementById('dashUpdated').textContent = 'Offline-Modus — ./serve.sh für Live-Daten';
+    console.warn('dashboard_data.json nicht erreichbar — starte lokalen Server mit serve.sh', e);
+    return null;
+  }
+}
+
+// ── Dummy initializers so GROUPS references below don't throw ─────────
+// (replaced by loadDashboardData before first render)
+// ── Groups A–L ────────────────────────────────────────────────────────
+// NOTE: All match data lives in dashboard_data.json — edit that file,
+//       not this HTML. The dashboard fetches it on load and every 60s.
+const GROUPS_PLACEHOLDER = {
+  A: { teams: 'Mexiko · Südkorea · Tschechien · Südafrika', matches: [
+    { date:'11.06 21:00', home:'Mexiko',    away:'Südafrika',         tip:'2:1', analysisTip:'2:0', conf:'high',     result:'2:0' },
+    { date:'12.06 04:00', home:'Südkorea',  away:'Tschechien',        tip:'1:1', analysisTip:'1:1', conf:'med',      result:'2:1' },
+    { date:'18.06 18:00', home:'Tschechien',away:'Südafrika',         tip:null,  analysisTip:'2:0', conf:'high',     result:null },
+    { date:'19.06 03:00', home:'Mexiko',    away:'Südkorea',          tip:null,  analysisTip:'1:1', conf:'med',      result:null },
+    { date:'25.06 03:00', home:'Südafrika', away:'Südkorea',          tip:null,  analysisTip:'0:2', conf:'high',     result:null },
+    { date:'25.06 03:00', home:'Tschechien',away:'Mexiko',            tip:null,  analysisTip:'1:2', conf:'med-high', result:null },
+  ]},
+  B: { teams: 'Kanada · Schweiz · Bosnien-Herzegowina · Katar', matches: [
+    { date:'12.06 21:00', home:'Kanada',          away:'Bosnien-Herzegowina', tip:'2:1', analysisTip:'2:1', conf:'med-high', result:'1:1', injuries:'CAN: Davies ⚠️, Bombito ❌, Flores ❌ | BIH: Tabakovic ⚠️', note:'Kanada -120 Favorit. Davies fraglich (Hamstring), Bombito OUT. Jonathan David fit (39 Länderspieltore). Dzeko 40J. startet.' },
+    { date:'13.06 21:00', home:'Katar',           away:'Schweiz',            tip:'0:2', analysisTip:'0:2', conf:'high',     result:null, injuries:null, note:'Schweiz 81% (Kalshi), -334. Xhaka/Freuler/Zakaria fit. Katar ohne WM-Sieg seit 2022. Kontrollierter Auswärtssieg.' },
+    { date:'18.06 21:00', home:'Schweiz',         away:'Bosnien-Herzegowina',tip:null,  analysisTip:'2:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'19.06 00:00', home:'Kanada',          away:'Katar',              tip:null,  analysisTip:'3:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'24.06 21:00', home:'Bosnien-Herzegowina',away:'Katar',           tip:null,  analysisTip:'2:0', conf:'med-high', result:null, injuries:null, note:null },
+    { date:'24.06 21:00', home:'Schweiz',         away:'Kanada',             tip:null,  analysisTip:'1:1', conf:'med',      result:null, injuries:null, note:null },
+  ]},
+  C: { teams: 'Brasilien · Marokko · Schottland · Haiti', matches: [
+    { date:'14.06 00:00', home:'Brasilien', away:'Marokko',   tip:'2:0', analysisTip:'2:0', conf:'high',     result:null, injuries:'BRA: Rodrygo ❌, Estêvão ❌, Militão ❌, Neymar ❌ | MAR: Hakimi ⚠️, Aguerd ⚠️, Ezzalzouli ❌', note:'Brasilien -145. Neymar offiziell OUT (Ancelotti bestätigt), Igor Thiago startet. Vinicius/Raphinha dominant. Hakimi fraglich.' },
+    { date:'14.06 03:00', home:'Haiti',     away:'Schottland',tip:'0:2', analysisTip:'0:2', conf:'high',     result:null, injuries:'SCO: Gilmour ❌, McTominay ✅', note:'Schottland 8/13 Favorit. McTominay FIT ✅ (Schlüsselspieler). Gilmour OUT. SCO: 4:1 vs Curaçao, 4:0 vs Bolivien in Vorbereitung.' },
+    { date:'20.06 00:00', home:'Schottland',away:'Marokko',   tip:null,  analysisTip:'0:2', conf:'high',     result:null, injuries:null, note:null },
+    { date:'20.06 02:30', home:'Brasilien', away:'Haiti',     tip:null,  analysisTip:'4:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'25.06 00:00', home:'Marokko',   away:'Haiti',     tip:null,  analysisTip:'3:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'25.06 00:00', home:'Schottland',away:'Brasilien', tip:null,  analysisTip:'0:3', conf:'high',     result:null, injuries:null, note:null },
+  ]},
+  D: { teams: 'USA · Türkei · Paraguay · Australien', matches: [
+    { date:'13.06 03:00', home:'USA',       away:'Paraguay',  tip:'1:0', analysisTip:'1:0', conf:'med',      result:'4:1', injuries:'USA: Cardoso ❌, Agyemang ❌ | PAR: Enciso ❌', note:'USA 53% (SoFi Stadium LA). Cardoso OUT (Knöchel-OP), Enciso OUT (Oberschenkel). Adams/McKennie im Mittelfeld.' },
+    { date:'14.06 06:00', home:'Australien',away:'Türkei',    tip:'1:2', analysisTip:'1:2', conf:'med-high', result:null, injuries:'AUS: Miller ❌ | TUR: Yildiz ⚠️, Calhanoglu ⚠️, Kadioglu ⚠️', note:'Türkei Favorit. 3 game-time decisions: Yildiz/Calhanoglu/Kadioglu (alle Wade). Güler FIT ✅ startet. BC Place Vancouver (Dach).' },
+    { date:'19.06 21:00', home:'USA',       away:'Australien',tip:null,  analysisTip:'2:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'20.06 05:00', home:'Türkei',    away:'Paraguay',  tip:null,  analysisTip:'2:1', conf:'med-high', result:null, injuries:null, note:null },
+    { date:'26.06 04:00', home:'Paraguay',  away:'Australien',tip:null,  analysisTip:'2:1', conf:'med',      result:null, injuries:null, note:null },
+    { date:'26.06 04:00', home:'Türkei',    away:'USA',       tip:null,  analysisTip:'1:2', conf:'med-high', result:null, injuries:null, note:null },
+  ]},
+  E: { teams: 'Deutschland · Ecuador · Elfenbeinküste · Curaçao', matches: [
+    { date:'14.06 19:00', home:'Deutschland',   away:'Curaçao',       tip:'4:0', analysisTip:'4:0', conf:'high',     result:null, injuries:'DE: Gnabry ❌, Karl ❌, ter Stegen ❌, Neuer ✅', note:'Deutschland 1/20 Favorit (~95%), 9-Spiele-Serie. Curaçao erste WM-Teilnahme, 5:1 vs Australien.' },
+    { date:'15.06 01:00', home:'Elfenbeinküste',away:'Ecuador',       tip:'0:1', analysisTip:'0:1', conf:'med',      result:null, injuries:null, note:'Ecuador leichter Favorit (+145, 52%), Under-Partie erwartet (xG 1.54, 80% u2.5).' },
+    { date:'20.06 22:00', home:'Deutschland',   away:'Elfenbeinküste',tip:null,  analysisTip:'2:1', conf:'med-high', result:null, injuries:null, note:null },
+    { date:'21.06 02:00', home:'Ecuador',       away:'Curaçao',       tip:null,  analysisTip:'3:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'25.06 22:00', home:'Curaçao',       away:'Elfenbeinküste',tip:null,  analysisTip:'0:3', conf:'high',     result:null, injuries:null, note:null },
+    { date:'25.06 22:00', home:'Ecuador',       away:'Deutschland',   tip:null,  analysisTip:'0:2', conf:'high',     result:null, injuries:null, note:null },
+  ]},
+  F: { teams: 'Niederlande · Japan · Schweden · Tunesien', matches: [
+    { date:'14.06 22:00', home:'Niederlande',away:'Japan',    tip:'2:1', analysisTip:'2:1', conf:'med',      result:null, injuries:'NED: Simons ❌, Schouten ❌, Timber ❌, de Ligt ❌ | JPN: Mitoma ❌, Minamino ❌, Endo ⚠️', note:'Nahezu 50/50 (-105/+100). Japan 6 Siege in Folge (u.a. Brasilien, England). NED verlor vs Algerien.' },
+    { date:'15.06 04:00', home:'Schweden',   away:'Tunesien', tip:'2:0', analysisTip:'2:0', conf:'med-high', result:null, injuries:null, note:'Schweden ~51% (10/11). Tunesien verlor 5:0 vs Belgien in Vorbereitung. Kontrollierter Sieg.' },
+    { date:'20.06 19:00', home:'Niederlande',away:'Schweden', tip:null,  analysisTip:'3:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'21.06 06:00', home:'Tunesien',   away:'Japan',    tip:null,  analysisTip:'0:2', conf:'high',     result:null, injuries:null, note:null },
+    { date:'26.06 01:00', home:'Japan',      away:'Schweden', tip:null,  analysisTip:'2:1', conf:'med-high', result:null, injuries:null, note:null },
+    { date:'26.06 01:00', home:'Tunesien',   away:'Niederlande',tip:null,analysisTip:'0:2', conf:'high',     result:null, injuries:null, note:null },
+  ]},
+  G: { teams: 'Belgien · Ägypten · Iran · Neuseeland', matches: [
+    { date:'15.06 21:00', home:'Belgien',    away:'Ägypten',   tip:'2:1', analysisTip:'2:1', conf:'med-high', result:null, injuries:null, note:'Belgien 60% (De Bruyne, Doku). Ägypten +425 (Salah). Belgien gewinnt, aber nicht sauber.' },
+    { date:'16.06 03:00', home:'Iran',       away:'Neuseeland',tip:'2:0', analysisTip:'2:0', conf:'med-high', result:null, injuries:null, note:'Iran 53-54% (-118). NZL verlor 9 von 11, zuletzt 4:0 vs Haiti. Knappes Iran-Heimspiel.' },
+    { date:'21.06 21:00', home:'Belgien',    away:'Iran',      tip:null,  analysisTip:'3:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'22.06 03:00', home:'Neuseeland', away:'Ägypten',   tip:null,  analysisTip:'0:2', conf:'high',     result:null, injuries:null, note:null },
+    { date:'27.06 05:00', home:'Neuseeland', away:'Belgien',   tip:null,  analysisTip:'0:3', conf:'high',     result:null, injuries:null, note:null },
+    { date:'27.06 05:00', home:'Ägypten',    away:'Iran',      tip:null,  analysisTip:'1:1', conf:'med',      result:null, injuries:null, note:null },
+  ]},
+  H: { teams: 'Spanien · Uruguay · Saudi-Arabien · Kap Verde', matches: [
+    { date:'15.06 18:00', home:'Spanien',    away:'Kap Verde',    tip:'3:0', analysisTip:'3:0', conf:'high',     result:null, injuries:'ESP: Fermín ❌, Yamal ⚠️ ~15min', note:'Spanien 86% Siegchance (1/10). Fermín OUT. Yamal heute zurück im Training, ~15 Min geplant.' },
+    { date:'16.06 00:00', home:'Saudi-Arabien',away:'Uruguay',    tip:'0:2', analysisTip:'0:2', conf:'high',     result:null, injuries:'URU: Giménez ❌', note:'Uruguay 69% (-200). Giménez fehlt. Supercomputer 66.6% Uruguay. Sicherer Auswärtssieg.' },
+    { date:'21.06 18:00', home:'Spanien',    away:'Saudi-Arabien',tip:null,  analysisTip:'4:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'22.06 00:00', home:'Uruguay',    away:'Kap Verde',   tip:null,  analysisTip:'3:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'27.06 02:00', home:'Uruguay',    away:'Spanien',     tip:null,  analysisTip:'0:2', conf:'high',     result:null, injuries:null, note:null },
+    { date:'27.06 02:00', home:'Kap Verde',  away:'Saudi-Arabien',tip:null, analysisTip:'2:1', conf:'med',      result:null, injuries:null, note:null },
+  ]},
+  I: { teams: 'Frankreich · Senegal · Irak · Norwegen', matches: [
+    { date:'16.06 21:00', home:'Frankreich', away:'Senegal',  tip:null,  analysisTip:'2:1', conf:'med-high', result:null, injuries:'FRA: Ekitike ❌, Mbappe ⚠️', note:'Frankreich -225 (~69%). Ekitike OUT (Achillessehne), Mateta ersetzt. Mbappe erwartet fit. Senegal mit Jackson/Ndiaye/Mane gefährlich.' },
+    { date:'17.06 00:00', home:'Irak',       away:'Norwegen', tip:null,  analysisTip:'0:3', conf:'high',     result:null, injuries:null, note:'Norwegen 82% (Kalshi). Irak erstmals seit 40 Jahren bei WM. Klarer, hoher Norwegen-Sieg erwartet.' },
+    { date:'22.06 23:00', home:'Frankreich', away:'Irak',     tip:null,  analysisTip:'4:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'23.06 02:00', home:'Norwegen',   away:'Senegal',  tip:null,  analysisTip:'1:1', conf:'med',      result:null, injuries:null, note:null },
+    { date:'26.06 21:00', home:'Norwegen',   away:'Frankreich',tip:null, analysisTip:'0:2', conf:'high',     result:null, injuries:null, note:null },
+    { date:'26.06 21:00', home:'Senegal',    away:'Irak',     tip:null,  analysisTip:'2:0', conf:'high',     result:null, injuries:null, note:null },
+  ]},
+  J: { teams: 'Argentinien · Österreich · Algerien · Jordanien', matches: [
+    { date:'17.06 03:00', home:'Argentinien',away:'Algerien', tip:null,  analysisTip:'3:0', conf:'high',     result:null, injuries:'ARG: Messi ⚠️, Romero ⚠️, Molina ❌', note:'Argentinien -256, Titelverteidiger. Messi erwartet fit (Hamstring verwaltet). Molina OUT. Algerien klar unterlegen.' },
+    { date:'17.06 06:00', home:'Österreich', away:'Jordanien',tip:null,  analysisTip:'3:1', conf:'high',     result:null, injuries:null, note:'Österreich 74% (Kalshi). Erstmals seit 1998 bei WM. Jordanien 10%. Klarer Sieg erwartet, Jordanien kann kontern.' },
+    { date:'22.06 19:00', home:'Argentinien',away:'Österreich',tip:null, analysisTip:'2:0', conf:'med-high', result:null, injuries:null, note:null },
+    { date:'23.06 05:00', home:'Jordanien',  away:'Algerien', tip:null,  analysisTip:'0:2', conf:'high',     result:null, injuries:null, note:null },
+    { date:'28.06 04:00', home:'Algerien',   away:'Österreich',tip:null, analysisTip:'1:1', conf:'med',      result:null, injuries:null, note:null },
+    { date:'28.06 04:00', home:'Jordanien',  away:'Argentinien',tip:null,analysisTip:'0:3', conf:'high',     result:null, injuries:null, note:null },
+  ]},
+  K: { teams: 'Portugal · Kolumbien · DR Kongo · Usbekistan', matches: [
+    { date:'17.06 19:00', home:'Portugal',  away:'DR Kongo',  tip:null,  analysisTip:'3:0', conf:'high',     result:null, injuries:null, note:'Portugal -350 (~78%). SoFi Stadium (überdacht). Ronaldo/Bruno/Joao Felix. DR Kongo WM-Neuling, kein Schutz gegen Angriffswucht.' },
+    { date:'18.06 04:00', home:'Usbekistan',away:'Kolumbien', tip:null,  analysisTip:'0:2', conf:'high',     result:null, injuries:null, note:'Kolumbien -250 (~71%). Luiz Diaz/James Rodriguez. Usbekistan erstmals bei WM. Klarer Favorit.' },
+    { date:'23.06 19:00', home:'Portugal',  away:'Usbekistan',tip:null,  analysisTip:'4:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'24.06 04:00', home:'Kolumbien', away:'DR Kongo',  tip:null,  analysisTip:'3:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'28.06 01:30', home:'DR Kongo',  away:'Usbekistan',tip:null,  analysisTip:'2:1', conf:'med',      result:null, injuries:null, note:null },
+    { date:'28.06 01:30', home:'Kolumbien', away:'Portugal',  tip:null,  analysisTip:'1:1', conf:'med',      result:null, injuries:null, note:null },
+  ]},
+  L: { teams: 'England · Kroatien · Ghana · Panama', matches: [
+    { date:'17.06 22:00', home:'England',  away:'Kroatien',tip:null,  analysisTip:'2:0', conf:'high',     result:null, injuries:'ENG: Saka ⚠️', note:'England 58% (Kalshi). AT&T Stadium Dallas (Klimaanlage). Saka fraglich (Achillessehne), erwartet zu starten. Modrić fit.' },
+    { date:'18.06 01:00', home:'Ghana',    away:'Panama',  tip:null,  analysisTip:'1:1', conf:'med',      result:null, injuries:'GHA: Kudus ⚠️', note:'Ghana +115 vs Panama +230 — nahezu ausgeglichen. Kudus fraglich (Hamstring). Semenyo führt an.' },
+    { date:'23.06 22:00', home:'England',  away:'Ghana',   tip:null,  analysisTip:'3:0', conf:'high',     result:null, injuries:null, note:null },
+    { date:'24.06 01:00', home:'Panama',   away:'Kroatien',tip:null,  analysisTip:'0:2', conf:'high',     result:null, injuries:null, note:null },
+    { date:'27.06 23:00', home:'Kroatien', away:'Ghana',   tip:null,  analysisTip:'2:1', conf:'med-high', result:null, injuries:null, note:null },
+    { date:'27.06 23:00', home:'Panama',   away:'England', tip:null,  analysisTip:'0:3', conf:'high',     result:null, injuries:null, note:null },
+  ]},
+};
+
+// ── K.O.-Phase data ───────────────────────────────────────────────────
+// WM 2026: 48 Teams → 32 qualifizieren sich → 5 K.O.-Runden
+// R32 = Runde der letzten 32 (neu), R16 = Achtelfinale, QF = Viertelfinale
+const KNOCKOUT_PLACEHOLDER = {
+  R32: [
+    // 28. Jun – 3. Jul (MESZ)
+    { id:'M73', date:'28.06 21:00', home:'2A', away:'2B',     tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M74', date:'29.06 22:30', home:'1E', away:'3. Pl.', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M75', date:'29.06 01:00', home:'1F', away:'2C',     tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M76', date:'29.06 19:00', home:'1C', away:'2F',     tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M77', date:'30.06 23:00', home:'1I', away:'3. Pl.', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M78', date:'30.06 19:00', home:'2E', away:'2I',     tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M79', date:'30.06 03:00', home:'1A', away:'3. Pl.', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M80', date:'01.07 20:00', home:'1L', away:'3. Pl.', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M81', date:'01.07 22:00', home:'1D', away:'3. Pl.', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M82', date:'01.07 22:00', home:'1G', away:'3. Pl.', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M83', date:'02.07 01:00', home:'2K', away:'2L',     tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M84', date:'02.07 21:00', home:'1H', away:'2J',     tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M85', date:'02.07 05:00', home:'1B', away:'3. Pl.', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M86', date:'03.07 00:00', home:'1J', away:'2H',     tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M87', date:'03.07 03:30', home:'1K', away:'3. Pl.', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M88', date:'03.07 19:00', home:'2D', away:'2G',     tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+  ],
+  R16: [
+    // 4.–7. Jul (Achtelfinale, MESZ)
+    { id:'M89', date:'04.07 23:00', home:'W M74', away:'W M77', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M90', date:'04.07 19:00', home:'W M73', away:'W M75', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M91', date:'05.07 22:00', home:'W M76', away:'W M78', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M92', date:'05.07 02:00', home:'W M79', away:'W M80', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M93', date:'06.07 21:00', home:'W M83', away:'W M84', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M94', date:'06.07 02:00', home:'W M81', away:'W M82', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M95', date:'07.07 20:00', home:'W M86', away:'W M88', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M96', date:'07.07 03:00', home:'W M85', away:'W M87', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+  ],
+  QF: [
+    // 9.–12. Jul (Viertelfinale, MESZ)
+    { id:'M97',  date:'09.07 22:00', home:'W M89', away:'W M90', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M98',  date:'10.07 21:00', home:'W M93', away:'W M94', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M99',  date:'11.07 23:00', home:'W M91', away:'W M92', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M100', date:'12.07 03:00', home:'W M95', away:'W M96', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+  ],
+  SF: [
+    // 14.–15. Jul (Halbfinale, MESZ)
+    { id:'M101', date:'14.07 21:00', home:'W M97', away:'W M98',  tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+    { id:'M102', date:'15.07 21:00', home:'W M99', away:'W M100', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+  ],
+  P3: [
+    { id:'M103', date:'18.07 23:00', home:'V M101', away:'V M102', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+  ],
+  F: [
+    { id:'M104', date:'19.07 21:00', home:'W M101', away:'W M102', tip:null, analysisTip:null, conf:null, result:null, note:null, injuries:null },
+  ],
+};
+
+// ── Spieltag mapping ─────────────────────────────────────────────────
+const SPIELTAG_INFO_PLACEHOLDER = [
+  { nr:1,  label:'Spieltag 1',  dates:'11.–13. Jun', phase:'gruppe', analysisTs:'2026-06-13T10:44:10Z', tipsSubmitted:true  },
+  { nr:2,  label:'Spieltag 2',  dates:'14.–16. Jun', phase:'gruppe', analysisTs:'2026-06-12T12:31:00Z', tipsSubmitted:true  },
+  { nr:3,  label:'Spieltag 3',  dates:'16.–18. Jun', phase:'gruppe', analysisTs:'2026-06-13T10:31:16Z', tipsSubmitted:false },
+  { nr:4,  label:'Spieltag 4',  dates:'18.–20. Jun', phase:'gruppe', analysisTs:null,                   tipsSubmitted:false },
+  { nr:5,  label:'Spieltag 5',  dates:'20.–22. Jun', phase:'gruppe', analysisTs:null,                   tipsSubmitted:false },
+  { nr:6,  label:'Spieltag 6',  dates:'22.–24. Jun', phase:'gruppe', analysisTs:null,                   tipsSubmitted:false },
+  { nr:7,  label:'Spieltag 7',  dates:'24.–25. Jun', phase:'gruppe', analysisTs:null,                   tipsSubmitted:false },
+  { nr:8,  label:'Spieltag 8',  dates:'25.–26. Jun', phase:'gruppe', analysisTs:null,                   tipsSubmitted:false },
+  { nr:9,  label:'Spieltag 9',  dates:'26.–27. Jun', phase:'gruppe', analysisTs:null,                   tipsSubmitted:false },
+  { nr:10, label:'Spieltag 10', dates:'27.–28. Jun', phase:'gruppe', analysisTs:null,                   tipsSubmitted:false },
+  { nr:11, label:'Runde d. letzten 32', dates:'28. Jun–3. Jul', phase:'ko', analysisTs:null, tipsSubmitted:false },
+  { nr:12, label:'Achtelfinale',        dates:'4.–7. Jul',     phase:'ko', analysisTs:null, tipsSubmitted:false },
+  { nr:13, label:'Viertelfinale',       dates:'9.–12. Jul',    phase:'ko', analysisTs:null, tipsSubmitted:false },
+  { nr:14, label:'Halbfinale',          dates:'14.–15. Jul',   phase:'ko', analysisTs:null, tipsSubmitted:false },
+  { nr:15, label:'Pl. 3 & Finale',      dates:'18.–19. Jul',   phase:'ko', analysisTs:null, tipsSubmitted:false },
+];
+
+// Kickoff times in CEST (UTC+2) for spieltag boundary detection
+const ST_STARTS_UTC_PLACEHOLDER = [
+  null,                            // index 0 unused
+  new Date('2026-06-11T19:00Z'),   // ST1
+  new Date('2026-06-14T17:00Z'),   // ST2
+  new Date('2026-06-16T19:00Z'),   // ST3
+  new Date('2026-06-18T16:00Z'),   // ST4
+  new Date('2026-06-20T17:00Z'),   // ST5
+  new Date('2026-06-22T17:00Z'),   // ST6
+  new Date('2026-06-24T19:00Z'),   // ST7
+  new Date('2026-06-25T20:00Z'),   // ST8
+  new Date('2026-06-26T19:00Z'),   // ST9
+  new Date('2026-06-27T21:00Z'),   // ST10
+  new Date('2026-06-28T19:00Z'),   // ST11 Runde d. 32 (M73, 28. Jun 21:00 MESZ)
+  new Date('2026-07-04T17:00Z'),   // ST12 Achtelfinale (M89, 4. Jul 19:00 MESZ)
+  new Date('2026-07-09T20:00Z'),   // ST13 Viertelfinale (M97, 9. Jul 22:00 MESZ)
+  new Date('2026-07-14T19:00Z'),   // ST14 Halbfinale (M101, 14. Jul 21:00 MESZ)
+  new Date('2026-07-18T21:00Z'),   // ST15 Pl.3 + Finale (M103, 18. Jul 23:00 MESZ)
+];
+
+// Initialize globals from inline fallback data (overridden by fetch in HTTP mode)
+GROUPS        = GROUPS_PLACEHOLDER;
+KNOCKOUT      = KNOCKOUT_PLACEHOLDER;
+SPIELTAG_INFO = SPIELTAG_INFO_PLACEHOLDER;
+ST_STARTS_UTC = ST_STARTS_UTC_PLACEHOLDER;
+
+function getSpieltag(dateStr) {
+  // dateStr: 'DD.MM HH:MM'
+  const [datePart, timePart] = dateStr.split(' ');
+  const [day, month] = datePart.split('.').map(Number);
+  const [hour, min] = timePart.split(':').map(Number);
+  // Build a comparable UTC date (matches are given in CEST = UTC+2)
+  const utc = new Date(Date.UTC(2026, month - 1, day, hour - 2, min));
+  for (let i = ST_STARTS_UTC.length - 1; i >= 1; i--) {
+    if (utc >= ST_STARTS_UTC[i]) return i;
+  }
+  return 1;
+}
+
+// Build per-spieltag match list (groups only; KO uses KNOCKOUT directly)
+function getMatchesBySpieltag() {
+  const map = {};
+  for (let i = 1; i <= 15; i++) map[i] = [];
+  for (const [grp, data] of Object.entries(GROUPS)) {
+    for (const m of data.matches) {
+      const st = getSpieltag(m.date);
+      map[st].push({ ...m, group: grp });
+    }
+  }
+  // Attach KO matches to their spieltage
+  const koMap = { R32: [11], R16: [12], QF: [13], SF: [14], P3: [15], F: [15] };
+  for (const [round, stNrs] of Object.entries(koMap)) {
+    const perSt = Math.ceil(KNOCKOUT[round].length / stNrs.length);
+    KNOCKOUT[round].forEach((m, i) => {
+      const st = stNrs[Math.min(Math.floor(i / perSt), stNrs.length - 1)];
+      map[st].push({ ...m, group: round });
+    });
+  }
+  return map;
+}
+
+// ── Spieltage render ─────────────────────────────────────────────────
+let currentModalSt = null;
+const stMatches = getMatchesBySpieltag();
+
+function renderSpieltage() {
+  const now = new Date();
+  const filtered = SPIELTAG_INFO.filter(i => i.phase === currentPhase);
+  const cols = filtered.length <= 5 ? filtered.length : 5;
+  let html = `<div class="spieltage-grid" style="grid-template-columns:repeat(${cols},1fr)">`;
+  for (const info of filtered) {
+    const matches = stMatches[info.nr] || [];
+    const total = matches.length;
+    const tipped = matches.filter(m => m.tip !== null).length;
+    const played = matches.filter(m => m.result !== null).length;
+    const allDone = tipped === total;
+    const stStart = ST_STARTS_UTC[info.nr];
+    const started = stStart && now >= stStart;
+    const hasTippable = matches.some(m => m.tip === null);
+
+    // Analysis freshness
+    let analysisBadge;
+    const windowOpen = stStart && (now >= new Date(stStart.getTime() - 24 * 3600000));
+    if (played === total && total > 0) {
+      analysisBadge = '';
+    } else if (info.analysisTs) {
+      const ageMs = now - new Date(info.analysisTs);
+      const tsDate = new Date(info.analysisTs);
+      const tz = {timeZone:'Europe/Berlin'};
+      const tsStr = tsDate.toLocaleDateString('de-DE', {...tz, day:'2-digit', month:'2-digit', year:'numeric'})
+        + ' – ' + tsDate.toLocaleTimeString('de-DE', {...tz, hour:'2-digit', minute:'2-digit'}) + ' Uhr';
+      if (ageMs < 24 * 3600000) {
+        analysisBadge = `<span class="analysis-badge analysis-fresh">Analyse: ${tsStr}</span>`;
+      } else if (windowOpen) {
+        analysisBadge = `<span class="analysis-badge analysis-urgent">Analyse veraltet: ${tsStr}</span>`;
+      } else {
+        analysisBadge = `<span class="analysis-badge analysis-stale">Analyse: ${tsStr}</span>`;
+      }
+    } else if (windowOpen) {
+      analysisBadge = '<span class="analysis-badge analysis-urgent">Keine Analyse — jetzt starten</span>';
+    } else {
+      analysisBadge = '<span class="analysis-badge analysis-missing">Keine Analyse</span>';
+    }
+
+    let badge;
+    if (played === total && total > 0) {
+      badge = '<span class="st-badge st-badge-done">✓ Gespielt</span>';
+    } else if (started && hasTippable) {
+      badge = '<span class="st-badge st-badge-live">⚡ Läuft</span>';
+    } else if (info.tipsSubmitted) {
+      badge = '<span class="st-badge st-badge-done">✓ Übermittelt</span>';
+    } else {
+      badge = '<span class="st-badge st-badge-ready">● Offen</span>';
+    }
+
+    const submittedBadge = played === total && total > 0
+      ? ''
+      : info.tipsSubmitted
+        ? '<span class="st-submitted">Tipps übermittelt</span>'
+        : '<span class="analysis-badge analysis-missing">Keine Tipps übermittelt</span>';
+
+    const koNote = info.phase === 'ko' ? '<span style="font-size:10px;color:var(--yellow);margin-top:2px;display:block;">⚡ Tipp inkl. Elfmeterschießen</span>' : '';
+
+    const clickable = info.analysisTs ? 'clickable' : '';
+    const clickHandler = info.analysisTs ? `onclick="openTipModal(${info.nr})"` : '';
+    const detailIcon = info.analysisTs
+      ? `<svg class="st-card-detail-icon" width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><line x1="8" y1="5" x2="8" y2="8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11" r="0.75" fill="currentColor"/></svg>`
+      : '';
+    html += `<div class="st-card ${clickable}" ${clickHandler}>
+      <div class="st-card-header">${badge}${detailIcon}</div>
+      <div class="st-card-name">${info.label}</div>
+      <div class="st-card-date">${info.dates}</div>
+      ${koNote}
+      <div class="st-card-stats">Getippt: <span>${tipped}/${total}</span></div>
+      ${analysisBadge}
+      ${submittedBadge}
+    </div>`;
+  }
+  html += '</div>';
+  document.getElementById('spieltageGrid').innerHTML = html;
+}
+
+function renderInjuries(injStr) {
+  if (!injStr) return '';
+  const teams = injStr.split(' | ');
+  const rows = teams.map(t => {
+    const ci = t.indexOf(': ');
+    if (ci === -1) return '';
+    const flag = t.slice(0, ci);
+    const players = t.slice(ci + 2).split(', ');
+    const badges = players.map(p => {
+      const cls = p.includes('❌') ? 'inj-out' : p.includes('⚠️') ? 'inj-doubt' : p.includes('✅') ? 'inj-ok' : 'inj-doubt';
+      return `<span class="inj-badge ${cls}">${p}</span>`;
+    }).join('');
+    return `<div class="modal-inj-team"><span class="modal-inj-flag">${flag}</span><div class="modal-inj-players">${badges}</div></div>`;
+  }).join('');
+  return `<div class="modal-inj-section">${rows}</div>`;
+}
+
+function openTipModal(stNr) {
+  currentModalSt = stNr;
+  const info = SPIELTAG_INFO[stNr - 1];
+  if (!info.analysisTs) return;
+  const matches = stMatches[stNr] || [];
+
+  // summary counts
+  let cHigh = 0, cMh = 0, cMed = 0, cInj = 0;
+  matches.forEach(m => {
+    if (m.conf === 'high') cHigh++;
+    else if (m.conf === 'med-high') cMh++;
+    else if (m.conf === 'med') cMed++;
+    if (m.injuries) cInj++;
+  });
+  const tsDate = new Date(info.analysisTs);
+  const tz = {timeZone:'Europe/Berlin'};
+  const tsStr = tsDate.toLocaleDateString('de-DE', {...tz, day:'2-digit', month:'2-digit', year:'numeric'})
+    + ' – ' + tsDate.toLocaleTimeString('de-DE', {...tz, hour:'2-digit', minute:'2-digit'}) + ' Uhr';
+
+  document.getElementById('modalTitle').textContent = info.label + ' — Analyse';
+  document.getElementById('modalSubtitle').textContent = info.dates + ' · ' + matches.length + ' Spiele · Analyse: ' + tsStr;
+
+  const summaryChips = [
+    cHigh  ? `<span class="mbadge mbadge-high">${cHigh}× Hoch</span>` : '',
+    cMh    ? `<span class="mbadge mbadge-mh">${cMh}× Mittel-Hoch</span>` : '',
+    cMed   ? `<span class="mbadge mbadge-med">${cMed}× Mittel</span>` : '',
+    cInj   ? `<span class="mbadge mbadge-inj">⚠ ${cInj} Verletzungshinweise</span>` : '',
+  ].filter(Boolean).join('');
+  document.getElementById('modalSummary').innerHTML = summaryChips;
+
+  // group matches by group letter
+  const grouped = {};
+  const groupOrder = [];
+  matches.forEach(m => {
+    const g = m.group || '?';
+    if (!grouped[g]) { grouped[g] = []; groupOrder.push(g); }
+    grouped[g].push(m);
+  });
+
+  let body = '';
+  for (const g of groupOrder) {
+    const isKo = ['R32','R16','QF','SF','P3','F'].includes(g);
+    const labelMap = {R32:'Runde der letzten 32', R16:'Achtelfinale', QF:'Viertelfinale', SF:'Halbfinale', P3:'Spiel um Platz 3', F:'Finale'};
+    const label = isKo ? (labelMap[g] || g) : `Gruppe ${g}`;
+    body += `<div class="modal-group-label">${label}</div>`;
+
+    for (const m of grouped[g]) {
+      const confClass = m.conf === 'high' ? 'modal-match-high' : m.conf === 'med-high' ? 'modal-match-mh' : 'modal-match-med';
+
+      let badges = '';
+      if (m.tip) {
+        badges = `<span class="mbadge mbadge-score-done">${m.tip}</span><span class="mbadge mbadge-done">Übermittelt</span>`;
+        if (m.analysisTip && m.analysisTip !== m.tip)
+          badges += `<span class="mbadge mbadge-inj">Empf: ${m.analysisTip}</span>`;
+      } else if (m.analysisTip) {
+        const confBadge = m.conf === 'high' ? 'mbadge-high' : m.conf === 'med-high' ? 'mbadge-mh' : 'mbadge-med';
+        const confText = m.conf === 'high' ? 'Hoch' : m.conf === 'med-high' ? 'Mittel-Hoch' : 'Mittel';
+        badges = `<span class="mbadge mbadge-score">${m.analysisTip}</span><span class="mbadge ${confBadge}">${confText}</span>`;
+      } else {
+        badges = `<span class="mbadge mbadge-inj">—</span>`;
+      }
+
+      const injSection = renderInjuries(m.injuries);
+      const noteBar = m.note ? `<div class="modal-match-note">${m.note}</div>` : '';
+
+      body += `<div class="modal-match ${confClass}">
+        <div class="modal-match-top">
+          <div class="modal-match-info">
+            <div class="modal-match-name">${m.home} vs ${m.away}</div>
+            <div class="modal-match-meta">${m.date}</div>
+          </div>
+          <div class="modal-match-badges">${badges}</div>
+        </div>${injSection}${noteBar}
+      </div>`;
+    }
+  }
+  document.getElementById('modalBody').innerHTML = body;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  currentModalSt = null;
+}
+
+
+// ── Render ────────────────────────────────────────────────────────────
+function tendenz(score) {
+  if (!score) return null;
+  const [h, a] = score.split(':').map(Number);
+  return h > a ? 'H' : h < a ? 'A' : 'D';
+}
+
+function confLabel(c) {
+  if (c === 'high')     return '<span class="conf conf-high">Hoch</span>';
+  if (c === 'med-high') return '<span class="conf conf-med-high">Mittel-Hoch</span>';
+  return '<span class="conf conf-med">Mittel</span>';
+}
+
+function scoreSpan(s, type) {
+  if (!s) return '<span class="score score-pending">—</span>';
+  return `<span class="score score-${type}">${s}</span>`;
+}
+
+function statusCell(m) {
+  if (!m.result) {
+    if (!m.tip) return '<span class="status status-pending">Ausstehend</span>';
+    return '<span class="status status-pending">Getippt</span>';
+  }
+  if (m.tip === m.result) return '<span class="status status-correct">✓ Richtig</span>';
+  if (m.tip && tendenz(m.tip) === tendenz(m.result))
+    return '<span class="status status-tendenz">~ Tendenz</span>';
+  return '<span class="status status-wrong">✗ Falsch</span>';
+}
+
+function renderGroups() {
+  let totalPlayed = 0, totalCorrect = 0, totalTendenz = 0, totalWrong = 0, totalGames = 0;
+  let html = '';
+
+  for (const [grp, data] of Object.entries(GROUPS)) {
+    totalGames += data.matches.length;
+    let rows = '';
+    for (const m of data.matches) {
+      if (m.result) totalPlayed++;
+      if (m.result && m.tip === m.result) totalCorrect++;
+      else if (m.result && m.tip && tendenz(m.tip) === tendenz(m.result)) totalTendenz++;
+      if (m.result && m.tip && m.tip !== m.result && tendenz(m.tip) !== tendenz(m.result)) totalWrong++;
+
+      const showAnalysis = m.result && m.tip !== m.result;
+      const tipDisplay = m.tip
+        ? scoreSpan(m.tip, 'tip')
+        : '<span class="score score-pending">—</span>';
+
+      rows += `<tr class="${m.result ? 'match-played' : 'match-pending'}">
+        <td class="date-col">${m.date}</td>
+        <td class="matchup">${m.home} <span class="vs">vs</span> ${m.away}</td>
+        <td>${tipDisplay}</td>
+        <td>${m.result ? scoreSpan(m.result, 'result') : '<span class="score score-pending">—</span>'}</td>
+        <td>${statusCell(m)}</td>
+        <td>${showAnalysis ? `<span class="analysis-tip">Analyse: ${scoreSpan(m.analysisTip,'tip')}</span>` : (m.result ? '' : (m.tip ? confLabel(m.conf) : ''))}</td>
+      </tr>`;
+    }
+
+    html += `<div class="group-section" data-group="${grp}">
+      <div class="group-header">
+        <span class="group-badge">GRUPPE ${grp}</span>
+        <span class="group-teams">${data.teams}</span>
+      </div>
+      <table class="match-table">
+        <colgroup>
+          <col class="col-date"><col class="col-matchup"><col class="col-tip"><col class="col-result"><col class="col-status"><col class="col-conf">
+        </colgroup>
+        <thead><tr>
+          <th>Datum</th><th>Paarung</th><th>Tipp</th><th>Ergebnis</th><th>Status</th><th>Konfidenz / Analyse</th>
+        </tr></thead>
+        <tbody>${rows}</tbody>
+      </table>
+    </div>`;
+  }
+
+  document.getElementById('groups').innerHTML = html;
+
+  // Stats — include K.O. matches
+  let koTotal = 0, koPlayed = 0, koCorrect = 0, koTendenz = 0, koWrong = 0;
+  for (const matches of Object.values(KNOCKOUT)) {
+    for (const m of matches) {
+      koTotal++;
+      if (m.result) {
+        koPlayed++;
+        if (m.tip === m.result) koCorrect++;
+        else if (m.tip && tendenz(m.tip) === tendenz(m.result)) koTendenz++;
+        else if (m.tip && tendenz(m.tip) !== tendenz(m.result)) koWrong++;
+      }
+    }
+  }
+  const allTotal   = totalGames + koTotal;
+  const allPlayed  = totalPlayed + koPlayed;
+  const allCorrect = totalCorrect + koCorrect;
+  const allTendenz = totalTendenz + koTendenz;
+  const allWrong   = totalWrong + koWrong;
+  document.getElementById('statTotal').textContent = allTotal;
+  document.getElementById('statPlayed').textContent = allPlayed;
+  document.getElementById('statCorrect').textContent = allCorrect;
+  document.getElementById('statTendenz').textContent = allTendenz;
+  document.getElementById('statWrong').textContent = allWrong;
+  const rate = allPlayed > 0 ? Math.round(allCorrect / allPlayed * 100) + '%' : '—';
+  document.getElementById('statRate').textContent = rate;
+}
+
+function filterGroup(grp) {
+  document.querySelectorAll('#phaseGruppe .tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.querySelectorAll('.group-section').forEach(s => {
+    s.classList.toggle('hidden', grp !== 'all' && s.dataset.group !== grp);
+  });
+}
+
+// ── Phase switch ──────────────────────────────────────────────────────
+let currentPhase = 'gruppe';
+function switchPhase(phase) {
+  currentPhase = phase;
+  document.querySelectorAll('.phase-tab').forEach(t => t.classList.remove('active'));
+  event.target.classList.add('active');
+  document.getElementById('phaseGruppe').style.display = phase === 'gruppe' ? '' : 'none';
+  document.getElementById('phaseKO').style.display = phase === 'ko' ? '' : 'none';
+  renderSpieltage();
+  if (phase === 'ko') setTimeout(drawBracketConnectors, 0);
+  renderAnalysis();
+}
+
+// ── K.O. Bracket render ───────────────────────────────────────────────
+function isTbdTeam(t) {
+  return !t || t.startsWith('W ') || t.startsWith('V ') || /^[12][A-L]$/.test(t) || t.includes('Pl.') || t.includes('3.');
+}
+
+function bracketCard(m, isFinal) {
+  const hClass = isTbdTeam(m.home) ? 'tbd' : '';
+  const aClass = isTbdTeam(m.away) ? 'tbd' : '';
+  const tipHtml = m.tip    ? `<span class="score score-tip"    style="font-size:10px;padding:1px 5px">${m.tip}</span>`    : '';
+  const resHtml = m.result ? `<span class="score score-result" style="font-size:10px;padding:1px 5px">${m.result}</span>` : '';
+
+  let statusHtml = '';
+  if (m.result && m.tip) {
+    if (m.tip === m.result)
+      statusHtml = '<span class="status status-correct" style="font-size:11px;padding:2px 6px">✓ Richtig</span>';
+    else if (tendenz(m.tip) === tendenz(m.result))
+      statusHtml = '<span class="status status-tendenz" style="font-size:11px;padding:2px 6px">~ Tendenz</span>';
+    else
+      statusHtml = '<span class="status status-wrong" style="font-size:11px;padding:2px 6px">✗ Falsch</span>';
+  }
+
+  let footer = '';
+  if (statusHtml || m.analysisTip || m.conf) {
+    const tipPart = m.analysisTip ? `<span class="bracket-analysis-tip">Empf: ${m.analysisTip}</span>` : '';
+    const confPart = (m.conf && m.tip) ? confLabel(m.conf) : '';
+    footer = `<div class="bracket-card-footer">${statusHtml}${statusHtml && (tipPart || confPart) ? '<span style="color:var(--border)">·</span>' : ''}${tipPart}${tipPart && confPart ? '<span style="color:var(--border)">·</span>' : ''}${confPart}</div>`;
+  }
+  const noteHtml = m.note ? `<div class="modal-match-note" style="margin:4px 8px 6px;font-size:11px">${m.note}</div>` : '';
+
+  return `<div class="bracket-card${isFinal ? ' final-card' : ''}" data-id="${m.id}">
+    <div class="bracket-card-date">${m.date}${isFinal ? ' <span style="color:var(--accent);font-weight:700">FINALE</span>' : ''}</div>
+    <div class="bracket-card-team ${hClass}">${m.home}${tipHtml ? ' ' + tipHtml : ''}</div>
+    <div class="bracket-card-team ${aClass}">${m.away}${resHtml ? ' ' + resHtml : ''}</div>
+    ${footer}${noteHtml}
+  </div>`;
+}
+
+function renderKO() {
+  const rounds = [
+    { key:'R32', label:'Runde d. letzten 32' },
+    { key:'R16', label:'Achtelfinale' },
+    { key:'QF',  label:'Viertelfinale' },
+    { key:'SF',  label:'Halbfinale' },
+    { key:'F',   label:'Finale' },
+  ];
+
+  let html = '<div class="bracket-outer"><div class="bracket-wrap" id="bracketWrap">';
+
+  rounds.forEach((r, ri) => {
+    html += `<div class="bracket-round" data-round="${r.key}">`;
+    html += `<div class="bracket-round-title">${r.label}</div>`;
+
+    if (r.key === 'F') {
+      html += '<div class="bracket-final-body">';
+      html += bracketCard(KNOCKOUT.F[0], true);
+      html += '<div style="border-top:1px dashed var(--border);margin:0 6px"></div>';
+      html += bracketCard(KNOCKOUT.P3[0], false);
+      html += '<div class="bracket-p3-label">Spiel um Platz 3</div>';
+      html += '</div>';
+    } else {
+      html += '<div class="bracket-round-body">';
+      for (const m of KNOCKOUT[r.key]) html += bracketCard(m, false);
+      html += '</div>';
+    }
+
+    html += '</div>';
+    if (ri < rounds.length - 1) {
+      html += `<div class="bracket-connector" data-from="${r.key}"></div>`;
+    }
+  });
+
+  html += '</div></div>';
+  document.getElementById('bracketGrid').innerHTML = html;
+  // Lines are drawn by switchPhase after the div is visible; skip here if hidden
+  if (document.getElementById('phaseKO').style.display !== 'none') {
+    setTimeout(drawBracketConnectors, 0);
+  }
+}
+
+function addSvgLine(svg, x1, y1, x2, y2) {
+  const l = document.createElementNS('http://www.w3.org/2000/svg', 'line');
+  l.setAttribute('x1', x1); l.setAttribute('y1', y1);
+  l.setAttribute('x2', x2); l.setAttribute('y2', y2);
+  l.setAttribute('stroke', '#3d4466'); l.setAttribute('stroke-width', '1.5');
+  l.setAttribute('stroke-linecap', 'round');
+  svg.appendChild(l);
+}
+
+function drawBracketConnectors() {
+  const wrap = document.getElementById('bracketWrap');
+  if (!wrap) return;
+  wrap.querySelectorAll('.bracket-connector').forEach(conn => {
+    const fromRound = wrap.querySelector(`.bracket-round[data-round="${conn.dataset.from}"]`);
+    const toRound   = conn.nextElementSibling;
+    if (!fromRound || !toRound) return;
+
+    const fromCards = fromRound.querySelectorAll('.bracket-card');
+    const toCards   = toRound.querySelectorAll('.bracket-card');
+    if (!fromCards.length || !toCards.length) return;
+
+    const connRect  = conn.getBoundingClientRect();
+    const h = Math.max(connRect.height, 10);
+    const w = 24;
+
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('width', w);
+    svg.setAttribute('height', h);
+    svg.setAttribute('overflow', 'visible');
+    svg.style.cssText = `position:absolute;top:0;left:0;width:${w}px;height:${h}px;overflow:visible;`;
+
+    const ratio = fromCards.length / toCards.length;
+    toCards.forEach((toCard, ti) => {
+      const toR  = toCard.getBoundingClientRect();
+      const toCY = toR.top + toR.height / 2 - connRect.top;
+      const fi0  = Math.round(ti * ratio);
+      const fi1  = Math.round((ti + 1) * ratio) - 1;
+      for (let fi = fi0; fi <= fi1 && fi < fromCards.length; fi++) {
+        const fromR  = fromCards[fi].getBoundingClientRect();
+        const fromCY = fromR.top + fromR.height / 2 - connRect.top;
+        addSvgLine(svg, 0,    fromCY, w/2,  fromCY);  // horizontal out
+        addSvgLine(svg, w/2,  fromCY, w/2,  toCY);    // vertical bridge
+        addSvgLine(svg, w/2,  toCY,   w,    toCY);    // horizontal in
+      }
+    });
+
+    conn.appendChild(svg);
+  });
+}
+
+// ── Analyse-Methodik (phasenspezifisch, einklappbar) ─────────────────
+let analysisCollapsed = false;
+
+function toggleAnalysis() {
+  analysisCollapsed = !analysisCollapsed;
+  document.getElementById('analysisCardBody').classList.toggle('collapsed', analysisCollapsed);
+  document.getElementById('analysisCollapseBtn').textContent = analysisCollapsed ? '▼ Ausklappen' : '▲ Einklappen';
+}
+
+const ANALYSE_GRUPPE = `
+  <div class="analysis-grid">
+    <div class="analysis-item">
+      <h3>📈 Wettmarkt-Konsens <span style="color:var(--muted);font-weight:400">35%</span></h3>
+      <p><strong>Betfair Exchange</strong> (ohne Bookmaker-Marge), <strong>Kalshi/Polymarket</strong> und <strong>Bet365/DraftKings</strong> → implizite Gewinnwahrscheinlichkeit. Dimers & Forebet liefern den wahrscheinlichsten Endstand.</p>
+    </div>
+    <div class="analysis-item">
+      <h3>⚡ xG & Formkurve <span style="color:var(--muted);font-weight:400">25%</span></h3>
+      <p><strong>Expected Goals</strong> der letzten 3–5 Spiele (FootyStats, FBref). Ergänzt durch Ø Tore, Ø kassierte Tore und W/D/L-Bilanz der letzten 10 Spiele.</p>
+    </div>
+    <div class="analysis-item">
+      <h3>🏥 Verletzungen & Kader <span style="color:var(--muted);font-weight:400">20%</span></h3>
+      <p><strong>ESPN Injury Tracker</strong> für bestätigte Ausfälle. <strong>Yahoo Sports / Goal.com / Squawka</strong> für Aufstellungstrends und Pressekonferenz-Aussagen.</p>
+    </div>
+    <div class="analysis-item">
+      <h3>🏆 Turnier-Formkurve <span style="color:var(--muted);font-weight:400">12%</span></h3>
+      <p>Ab Spieltag 2 laufend aktualisiert. <strong>Sofascore</strong> und <strong>CBS Sports Standings</strong>. Gewicht steigt mit jedem gespielten Spieltag.</p>
+    </div>
+    <div class="analysis-item">
+      <h3>🔁 Head-to-Head <span style="color:var(--muted);font-weight:400">Teil von 8%</span></h3>
+      <p>WM- und EM-Direktduelle werden <strong>höher gewichtet</strong> als Freundschaftsspiele (FootyStats H2H, FIFA.com). Nur tiebreak bei engen Spielen.</p>
+    </div>
+    <div class="analysis-item">
+      <h3>🌡️ Klima, Höhe & Stadion <span style="color:var(--muted);font-weight:400">Teil von 8%</span></h3>
+      <p><strong>Geschlossene Stadien</strong> (NRG, AT&T, Atlanta, Vancouver) = kein Hitzefaktor. <strong>Azteca 2240m</strong>: Höhenvorteil südamerikanischer Teams.</p>
+    </div>
+  </div>
+  <div style="margin-top:14px;padding:12px 16px;background:var(--surface2);border-radius:8px;border:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.6">
+    <strong style="color:var(--text)">Konfidenz-Logik:</strong>
+    <strong style="color:var(--green)"> Hoch</strong> = Favorit ≥70% + Quellen-Konsens + keine Schlüsselverletzungen ·
+    <strong style="color:var(--yellow)"> Mittel-Hoch</strong> = 60–70% + Restrisiko ·
+    <strong style="color:var(--orange)"> Mittel</strong> = 50–60%, BTTS wahrscheinlich oder H2H überraschend
+  </div>
+  <div class="sources" style="margin-top:12px">
+    <span class="source-tag">Betfair Exchange</span><span class="source-tag">Kalshi / Polymarket</span>
+    <span class="source-tag">Bet365 / DraftKings</span><span class="source-tag">Dimers / SportsCasting</span>
+    <span class="source-tag">Forebet</span><span class="source-tag">FootyStats / FBref (xG)</span>
+    <span class="source-tag">ESPN Injury Tracker</span><span class="source-tag">Goal.com / Yahoo Sports</span>
+    <span class="source-tag">Squawka Teamnews</span><span class="source-tag">Sofascore (Turnierlive)</span>
+    <span class="source-tag">FIFA-Ranking Juni 2026</span><span class="source-tag">ESPN Power Rankings</span>
+    <span class="source-tag">Opta Supercomputer</span><span class="source-tag">Stadion-Stammdaten</span>
+    <span class="source-tag">Weather.com / Climate Central</span>
+  </div>`;
+
+const ANALYSE_KO = `
+  <div style="margin-bottom:12px;padding:8px 12px;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.25);border-radius:8px;font-size:11px;color:var(--yellow)">
+    ⚡ <strong>K.O.-Regel:</strong> Tipps müssen das Ergebnis nach Elfmeterschießen berücksichtigen.
+  </div>
+  <div class="analysis-grid">
+    <div class="analysis-item">
+      <h3>📈 Wettmarkt-Konsens <span style="color:var(--muted);font-weight:400">28%</span></h3>
+      <p>Reduziert (−7%) — Märkte bepreisen Elfmeterschießen weniger zuverlässig. <strong>Betfair Exchange</strong>, <strong>Kalshi/Polymarket</strong>, Bet365.</p>
+    </div>
+    <div class="analysis-item">
+      <h3>⚡ xG & Formkurve <span style="color:var(--muted);font-weight:400">18%</span></h3>
+      <p>Reduziert (−7%) — xG korreliert schlecht mit PE-Ausgängen. FootyStats, FBref.</p>
+    </div>
+    <div class="analysis-item">
+      <h3>🏥 Verletzungen & Kader <span style="color:var(--muted);font-weight:400">22%</span></h3>
+      <p>Erhöht (+2%) — Kadertiefe für Verlängerung entscheidend. ESPN Injury Tracker, Sofascore Fitness-Daten.</p>
+    </div>
+    <div class="analysis-item">
+      <h3>🏆 Turnier-Formkurve <span style="color:var(--muted);font-weight:400">15%</span></h3>
+      <p>Erhöht (+3%) — Momentum in der K.O.-Runde. Sofascore, CBS Sports.</p>
+    </div>
+    <div class="analysis-item">
+      <h3>🔁 H2H & Umfeld <span style="color:var(--muted);font-weight:400">7%</span></h3>
+      <p>Leicht reduziert — K.O.-Dynamik überlagert historische Muster.</p>
+    </div>
+    <div class="analysis-item">
+      <h3>🥅 Elfmeterschießen <span style="color:var(--muted);font-weight:400">10%</span></h3>
+      <p><strong>Torwart-Save-Rate</strong> (FBref, FIFA.com) · <strong>Team-PE-Bilanz</strong> (Transfermarkt /elfmeterschiessen/) · <strong>Schützenqualität</strong> (Oddspedia Cheatsheet).</p>
+    </div>
+  </div>
+  <div style="margin-top:14px;padding:12px 16px;background:var(--surface2);border-radius:8px;border:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.6">
+    <strong style="color:var(--text)">Tipp-Entscheidung:</strong>
+    <strong style="color:var(--green)"> Klarer Sieg</strong> = Favorit &gt;65% ·
+    <strong style="color:var(--yellow)"> 1:0 / 0:1</strong> = ausgeglichen, 45–65% ·
+    <strong style="color:var(--orange)"> 1:1 + PE-Sieger</strong> = offen &lt;45%, PE-Kompetenz entscheidet
+  </div>
+  <div class="sources" style="margin-top:12px">
+    <span class="source-tag">Betfair Exchange</span><span class="source-tag">Kalshi / Polymarket</span>
+    <span class="source-tag">FootyStats / FBref (xG)</span><span class="source-tag">ESPN Injury Tracker</span>
+    <span class="source-tag">Sofascore (Turnierlive)</span><span class="source-tag">Transfermarkt PE-Bilanz</span>
+    <span class="source-tag">FBref Torwart-Save-%</span><span class="source-tag">FIFA.com WM-PE-Rekorde</span>
+    <span class="source-tag">Oddspedia Schützen-Cheatsheet</span>
+  </div>`;
+
+function renderAnalysis() {
+  document.getElementById('analysisCardBody').innerHTML =
+    currentPhase === 'ko' ? ANALYSE_KO : ANALYSE_GRUPPE;
+}
+
+function renderAll() {
+  renderGroups();
+  renderKO();
+  renderSpieltage();
+  renderAnalysis();
+}
+
+async function initDashboard() {
+  const ts = await loadDashboardData();
+  _lastAktualisiert = ts;
+  renderAll();
+  // Auto-refresh: re-fetch every 60s, re-render only if data changed
+  setInterval(async () => {
+    const newTs = await loadDashboardData();
+    if (newTs && newTs !== _lastAktualisiert) {
+      _lastAktualisiert = newTs;
+      renderAll();
+    }
+  }, 60000);
+}
+
+initDashboard();
+
+// ── Tip toggle ────────────────────────────────────────────────────────
+let tipsHidden = false;
+function toggleTips() {
+  tipsHidden = !tipsHidden;
+  document.body.classList.toggle('tips-hidden', tipsHidden);
+  document.getElementById('tipToggleIcon').textContent = tipsHidden ? '🙈' : '👁';
+  document.getElementById('tipToggleLabel').textContent = tipsHidden ? 'Tipps anzeigen' : 'Tipps ausblenden';
+}
+
+// ── Countdown ─────────────────────────────────────────────────────────
+// Spieltag schedule: [name, first kick-off in UTC, last kick-off in UTC, analysis window hours before]
+const SPIELTAGE = [
+  { name: 'Spieltag 1',      label: '11.–14. Jun', start: new Date('2026-06-11T19:00:00Z'), analysisBefore: 24 },
+  { name: 'Spieltag 2',      label: '14.–16. Jun', start: new Date('2026-06-14T17:00:00Z'), analysisBefore: 24 },
+  { name: 'Spieltag 3',      label: '16.–18. Jun', start: new Date('2026-06-16T19:00:00Z'), analysisBefore: 24 },
+  { name: 'Spieltag 4',      label: '18.–20. Jun', start: new Date('2026-06-18T16:00:00Z'), analysisBefore: 24 },
+  { name: 'Spieltag 5',      label: '20.–22. Jun', start: new Date('2026-06-20T17:00:00Z'), analysisBefore: 24 },
+  { name: 'Spieltag 6',      label: '22.–24. Jun', start: new Date('2026-06-22T16:00:00Z'), analysisBefore: 24 },
+  { name: 'Spieltag 7',      label: '24.–25. Jun', start: new Date('2026-06-24T21:00:00Z'), analysisBefore: 12 },
+  { name: 'Spieltag 8',      label: '25.–26. Jun', start: new Date('2026-06-25T22:00:00Z'), analysisBefore: 12 },
+  { name: 'Spieltag 9',      label: '26.–27. Jun', start: new Date('2026-06-26T19:00:00Z'), analysisBefore: 12 },
+  { name: 'Spieltag 10',     label: '27.–28. Jun', start: new Date('2026-06-27T19:00:00Z'), analysisBefore: 12 },
+  { name: 'Runde d. letzten 32', label: '28. Jun–3. Jul', start: new Date('2026-06-28T19:00:00Z'), analysisBefore: 24 },
+  { name: 'Achtelfinale',        label: '4.–7. Jul',     start: new Date('2026-07-04T17:00:00Z'), analysisBefore: 24 },
+  { name: 'Viertelfinale',       label: '9.–12. Jul',    start: new Date('2026-07-09T20:00:00Z'), analysisBefore: 24 },
+  { name: 'Halbfinale',          label: '14.–15. Jul',   start: new Date('2026-07-14T19:00:00Z'), analysisBefore: 24 },
+  { name: 'Pl. 3 & Finale',      label: '18.–19. Jul',   start: new Date('2026-07-18T21:00:00Z'), analysisBefore: 24 },
+];
+
+function pad(n) { return String(n).padStart(2, '0'); }
+
+// Parse "DD.MM HH:MM" strings from dashboard_data.json as MESZ (UTC+2)
+function parseMatchDate(str) {
+  const [datePart, timePart] = str.split(' ');
+  const [day, month] = datePart.split('.').map(Number);
+  const [hour, min] = timePart.split(':').map(Number);
+  return new Date(Date.UTC(2026, month - 1, day, hour - 2, min));
+}
+
+// Find the next unplayed match across all groups and knockout rounds
+function findNextMatch() {
+  const now = new Date();
+  let best = null;
+  for (const g of Object.values(GROUPS)) {
+    for (const m of g.matches) {
+      if (m.result !== null) continue;
+      const d = parseMatchDate(m.date);
+      if (d > now && (!best || d < best.date)) {
+        best = { date: d, home: m.home, away: m.away };
+      }
+    }
+  }
+  for (const round of Object.values(KNOCKOUT)) {
+    for (const m of round) {
+      if (m.result !== null) continue;
+      const d = parseMatchDate(m.date);
+      if (d > now && (!best || d < best.date)) {
+        best = { date: d, home: m.home, away: m.away };
+      }
+    }
+  }
+  return best;
+}
+
+// Find the most recent completed analysis across all spieltage
+function getLastAnalysis() {
+  if (!SPIELTAG_INFO) return null;
+  let best = null;
+  for (const s of SPIELTAG_INFO) {
+    if (s.analysisTs && (!best || s.analysisTs > best.ts)) {
+      best = { ts: s.analysisTs, label: s.label };
+    }
+  }
+  return best;
+}
+
+function updateCountdown() {
+  const now = new Date();
+  const next = findNextMatch();
+
+  // Last analysis info (static — only changes when JSON reloads)
+  const lastAnalysis = getLastAnalysis();
+  if (lastAnalysis) {
+    const aDate = new Date(lastAnalysis.ts);
+    const aFmt = aDate.toLocaleString('de-DE', { timeZone: 'Europe/Berlin', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+    document.getElementById('cdAnalysisTime').textContent = aFmt + ' Uhr MESZ';
+    document.getElementById('cdAnalysisNote').textContent = lastAnalysis.label;
+  } else {
+    document.getElementById('cdAnalysisTime').textContent = 'Noch keine Analyse';
+    document.getElementById('cdAnalysisNote').textContent = '—';
+  }
+
+  if (!next) {
+    document.getElementById('cdSpieltag').textContent = 'Turnier abgeschlossen';
+    document.getElementById('cdMeta').textContent = 'Alle 104 Spiele sind beendet.';
+    document.getElementById('cdTimer').innerHTML = '<span class="countdown-done">🏁 Fertig</span>';
+    return;
+  }
+
+  document.getElementById('cdSpieltag').textContent = next.home + ' vs ' + next.away;
+  document.getElementById('cdMeta').textContent = 'Anstoß: ' + next.date.toLocaleString('de-DE', { timeZone: 'Europe/Berlin', day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' }) + ' Uhr MESZ';
+
+  const diffMs = next.date - now;
+  const totalSecs = Math.floor(diffMs / 1000);
+  const days  = Math.floor(totalSecs / 86400);
+  const hours = Math.floor((totalSecs % 86400) / 3600);
+  const mins  = Math.floor((totalSecs % 3600) / 60);
+  const secs  = totalSecs % 60;
+
+  document.getElementById('cdDays').textContent  = pad(days);
+  document.getElementById('cdHours').textContent = pad(hours);
+  document.getElementById('cdMins').textContent  = pad(mins);
+  document.getElementById('cdSecs').textContent  = pad(secs);
+}
+
+updateCountdown();
+setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>

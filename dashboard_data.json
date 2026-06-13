@@ -1,0 +1,190 @@
+{
+  "meta": {
+    "aktualisiert": "2026-06-13T10:44:10Z",
+    "rang": {
+      "platz": "15.",
+      "punkte": 4,
+      "total": 24,
+      "spieltag": "Spieltag 3"
+    }
+  },
+  "spieltag_info": [
+    { "nr": 1,  "label": "Spieltag 1",           "dates": "11.–13. Jun",  "phase": "gruppe", "analysisTs": "2026-06-13T10:44:10Z", "tipsSubmitted": true  },
+    { "nr": 2,  "label": "Spieltag 2",           "dates": "14.–16. Jun",  "phase": "gruppe", "analysisTs": "2026-06-12T12:31:00Z", "tipsSubmitted": true  },
+    { "nr": 3,  "label": "Spieltag 3",           "dates": "16.–18. Jun",  "phase": "gruppe", "analysisTs": "2026-06-13T10:31:16Z", "tipsSubmitted": false },
+    { "nr": 4,  "label": "Spieltag 4",           "dates": "18.–20. Jun",  "phase": "gruppe", "analysisTs": null,                   "tipsSubmitted": false },
+    { "nr": 5,  "label": "Spieltag 5",           "dates": "20.–22. Jun",  "phase": "gruppe", "analysisTs": null,                   "tipsSubmitted": false },
+    { "nr": 6,  "label": "Spieltag 6",           "dates": "22.–24. Jun",  "phase": "gruppe", "analysisTs": null,                   "tipsSubmitted": false },
+    { "nr": 7,  "label": "Spieltag 7",           "dates": "24.–25. Jun",  "phase": "gruppe", "analysisTs": null,                   "tipsSubmitted": false },
+    { "nr": 8,  "label": "Spieltag 8",           "dates": "25.–26. Jun",  "phase": "gruppe", "analysisTs": null,                   "tipsSubmitted": false },
+    { "nr": 9,  "label": "Spieltag 9",           "dates": "26.–27. Jun",  "phase": "gruppe", "analysisTs": null,                   "tipsSubmitted": false },
+    { "nr": 10, "label": "Spieltag 10",          "dates": "27.–28. Jun",  "phase": "gruppe", "analysisTs": null,                   "tipsSubmitted": false },
+    { "nr": 11, "label": "Runde d. letzten 32",  "dates": "28. Jun–3. Jul","phase": "ko",     "analysisTs": null,                   "tipsSubmitted": false },
+    { "nr": 12, "label": "Achtelfinale",         "dates": "4.–7. Jul",    "phase": "ko",     "analysisTs": null,                   "tipsSubmitted": false },
+    { "nr": 13, "label": "Viertelfinale",        "dates": "9.–12. Jul",   "phase": "ko",     "analysisTs": null,                   "tipsSubmitted": false },
+    { "nr": 14, "label": "Halbfinale",           "dates": "14.–15. Jul",  "phase": "ko",     "analysisTs": null,                   "tipsSubmitted": false },
+    { "nr": 15, "label": "Pl. 3 & Finale",       "dates": "18.–19. Jul",  "phase": "ko",     "analysisTs": null,                   "tipsSubmitted": false }
+  ],
+  "st_starts_utc": [
+    null,
+    "2026-06-11T19:00:00Z",
+    "2026-06-14T17:00:00Z",
+    "2026-06-16T19:00:00Z",
+    "2026-06-18T16:00:00Z",
+    "2026-06-20T17:00:00Z",
+    "2026-06-22T17:00:00Z",
+    "2026-06-24T19:00:00Z",
+    "2026-06-25T20:00:00Z",
+    "2026-06-26T19:00:00Z",
+    "2026-06-27T21:00:00Z",
+    "2026-06-28T19:00:00Z",
+    "2026-07-04T17:00:00Z",
+    "2026-07-09T20:00:00Z",
+    "2026-07-14T19:00:00Z",
+    "2026-07-18T21:00:00Z"
+  ],
+  "groups": {
+    "A": { "teams": "Mexiko · Südkorea · Tschechien · Südafrika", "matches": [
+      { "date": "11.06 21:00", "home": "Mexiko",     "away": "Südafrika",  "tip": "2:1", "analysisTip": "2:0", "conf": "high",     "result": "2:0", "injuries": null, "note": null },
+      { "date": "12.06 04:00", "home": "Südkorea",   "away": "Tschechien", "tip": "1:1", "analysisTip": "1:1", "conf": "med",      "result": "2:1", "injuries": null, "note": null },
+      { "date": "18.06 18:00", "home": "Tschechien", "away": "Südafrika",  "tip": null,  "analysisTip": "2:0", "conf": "high",     "result": null,  "injuries": null, "note": null },
+      { "date": "19.06 03:00", "home": "Mexiko",     "away": "Südkorea",   "tip": null,  "analysisTip": "1:1", "conf": "med",      "result": null,  "injuries": null, "note": null },
+      { "date": "25.06 03:00", "home": "Südafrika",  "away": "Südkorea",   "tip": null,  "analysisTip": "0:2", "conf": "high",     "result": null,  "injuries": null, "note": null },
+      { "date": "25.06 03:00", "home": "Tschechien", "away": "Mexiko",     "tip": null,  "analysisTip": "1:2", "conf": "med-high", "result": null,  "injuries": null, "note": null }
+    ]},
+    "B": { "teams": "Kanada · Schweiz · Bosnien-Herzegowina · Katar", "matches": [
+      { "date": "12.06 21:00", "home": "Kanada",           "away": "Bosnien-Herzegowina", "tip": "2:1", "analysisTip": "2:1", "conf": "med-high", "result": "1:1", "injuries": "CAN: Davies ⚠️, Bombito ❌, Flores ❌ | BIH: Tabakovic ⚠️", "note": "Kanada -120 Favorit. Davies fraglich (Hamstring), Bombito OUT. Jonathan David fit (39 Länderspieltore). Dzeko 40J. startet." },
+      { "date": "13.06 21:00", "home": "Katar",            "away": "Schweiz",            "tip": "0:2", "analysisTip": "0:2", "conf": "high",     "result": null,  "injuries": null, "note": "Schweiz 81% (Kalshi), -334. Xhaka/Freuler/Zakaria fit. Katar ohne WM-Sieg seit 2022. Kontrollierter Auswärtssieg." },
+      { "date": "18.06 21:00", "home": "Schweiz",          "away": "Bosnien-Herzegowina","tip": null,  "analysisTip": "2:0", "conf": "high",     "result": null,  "injuries": null, "note": null },
+      { "date": "19.06 00:00", "home": "Kanada",           "away": "Katar",              "tip": null,  "analysisTip": "3:0", "conf": "high",     "result": null,  "injuries": null, "note": null },
+      { "date": "24.06 21:00", "home": "Bosnien-Herzegowina","away": "Katar",            "tip": null,  "analysisTip": "2:0", "conf": "med-high", "result": null,  "injuries": null, "note": null },
+      { "date": "24.06 21:00", "home": "Schweiz",          "away": "Kanada",             "tip": null,  "analysisTip": "1:1", "conf": "med",      "result": null,  "injuries": null, "note": null }
+    ]},
+    "C": { "teams": "Brasilien · Marokko · Schottland · Haiti", "matches": [
+      { "date": "14.06 00:00", "home": "Brasilien", "away": "Marokko",   "tip": "2:0", "analysisTip": "2:0", "conf": "high",     "result": null, "injuries": "BRA: Rodrygo ❌, Estêvão ❌, Militão ❌, Neymar ❌ | MAR: Hakimi ⚠️, Aguerd ⚠️, Ezzalzouli ❌", "note": "Brasilien -145. Neymar offiziell OUT (Ancelotti bestätigt), Igor Thiago startet. Vinicius/Raphinha dominant. Hakimi fraglich." },
+      { "date": "14.06 03:00", "home": "Haiti",     "away": "Schottland","tip": "0:2", "analysisTip": "0:2", "conf": "high",     "result": null, "injuries": "SCO: Gilmour ❌, McTominay ✅", "note": "Schottland 8/13 Favorit. McTominay FIT ✅ (Schlüsselspieler). Gilmour OUT. SCO: 4:1 vs Curaçao, 4:0 vs Bolivien in Vorbereitung." },
+      { "date": "20.06 00:00", "home": "Schottland","away": "Marokko",   "tip": null,  "analysisTip": "0:2", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "20.06 02:30", "home": "Brasilien", "away": "Haiti",     "tip": null,  "analysisTip": "4:0", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "25.06 00:00", "home": "Marokko",   "away": "Haiti",     "tip": null,  "analysisTip": "3:0", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "25.06 00:00", "home": "Schottland","away": "Brasilien", "tip": null,  "analysisTip": "0:3", "conf": "high",     "result": null, "injuries": null, "note": null }
+    ]},
+    "D": { "teams": "USA · Türkei · Paraguay · Australien", "matches": [
+      { "date": "13.06 03:00", "home": "USA",       "away": "Paraguay",  "tip": "1:0", "analysisTip": "1:0", "conf": "med",      "result": "4:1", "injuries": "USA: Cardoso ❌, Agyemang ❌ | PAR: Enciso ❌", "note": "USA 53% (SoFi Stadium LA). Cardoso OUT (Knöchel-OP), Enciso OUT (Oberschenkel). Adams/McKennie im Mittelfeld." },
+      { "date": "14.06 06:00", "home": "Australien","away": "Türkei",    "tip": "1:2", "analysisTip": "1:2", "conf": "med-high", "result": null,  "injuries": "AUS: Miller ❌ | TUR: Yildiz ⚠️, Calhanoglu ⚠️, Kadioglu ⚠️", "note": "Türkei Favorit. 3 game-time decisions: Yildiz/Calhanoglu/Kadioglu (alle Wade). Güler FIT ✅ startet. BC Place Vancouver (Dach)." },
+      { "date": "19.06 21:00", "home": "USA",       "away": "Australien","tip": null,  "analysisTip": "2:0", "conf": "high",     "result": null,  "injuries": null, "note": null },
+      { "date": "20.06 05:00", "home": "Türkei",    "away": "Paraguay",  "tip": null,  "analysisTip": "2:1", "conf": "med-high", "result": null,  "injuries": null, "note": null },
+      { "date": "26.06 04:00", "home": "Paraguay",  "away": "Australien","tip": null,  "analysisTip": "2:1", "conf": "med",      "result": null,  "injuries": null, "note": null },
+      { "date": "26.06 04:00", "home": "Türkei",    "away": "USA",       "tip": null,  "analysisTip": "1:2", "conf": "med-high", "result": null,  "injuries": null, "note": null }
+    ]},
+    "E": { "teams": "Deutschland · Ecuador · Elfenbeinküste · Curaçao", "matches": [
+      { "date": "14.06 19:00", "home": "Deutschland",    "away": "Curaçao",        "tip": "4:0", "analysisTip": "4:0", "conf": "high",     "result": null, "injuries": "DE: Gnabry ❌, Karl ❌, ter Stegen ❌, Neuer ✅", "note": "Deutschland 1/20 Favorit (~95%), 9-Spiele-Serie. Curaçao erste WM-Teilnahme, 5:1 vs Australien." },
+      { "date": "15.06 01:00", "home": "Elfenbeinküste", "away": "Ecuador",        "tip": "0:1", "analysisTip": "0:1", "conf": "med",      "result": null, "injuries": null, "note": "Ecuador leichter Favorit (+145, 52%), Under-Partie erwartet (xG 1.54, 80% u2.5)." },
+      { "date": "20.06 22:00", "home": "Deutschland",    "away": "Elfenbeinküste", "tip": null,  "analysisTip": "2:1", "conf": "med-high", "result": null, "injuries": null, "note": null },
+      { "date": "21.06 02:00", "home": "Ecuador",        "away": "Curaçao",        "tip": null,  "analysisTip": "3:0", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "25.06 22:00", "home": "Curaçao",        "away": "Elfenbeinküste", "tip": null,  "analysisTip": "0:3", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "25.06 22:00", "home": "Ecuador",        "away": "Deutschland",    "tip": null,  "analysisTip": "0:2", "conf": "high",     "result": null, "injuries": null, "note": null }
+    ]},
+    "F": { "teams": "Niederlande · Japan · Schweden · Tunesien", "matches": [
+      { "date": "14.06 22:00", "home": "Niederlande","away": "Japan",    "tip": "2:1", "analysisTip": "2:1", "conf": "med",      "result": null, "injuries": "NED: Simons ❌, Schouten ❌, Timber ❌, de Ligt ❌ | JPN: Mitoma ❌, Minamino ❌, Endo ⚠️", "note": "Nahezu 50/50 (-105/+100). Japan 6 Siege in Folge (u.a. Brasilien, England). NED verlor vs Algerien." },
+      { "date": "15.06 04:00", "home": "Schweden",   "away": "Tunesien", "tip": "2:0", "analysisTip": "2:0", "conf": "med-high", "result": null, "injuries": null, "note": "Schweden ~51% (10/11). Tunesien verlor 5:0 vs Belgien in Vorbereitung. Kontrollierter Sieg." },
+      { "date": "20.06 19:00", "home": "Niederlande","away": "Schweden", "tip": null,  "analysisTip": "3:0", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "21.06 06:00", "home": "Tunesien",   "away": "Japan",    "tip": null,  "analysisTip": "0:2", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "26.06 01:00", "home": "Japan",      "away": "Schweden", "tip": null,  "analysisTip": "2:1", "conf": "med-high", "result": null, "injuries": null, "note": null },
+      { "date": "26.06 01:00", "home": "Tunesien",   "away": "Niederlande","tip": null,"analysisTip": "0:2", "conf": "high",     "result": null, "injuries": null, "note": null }
+    ]},
+    "G": { "teams": "Belgien · Ägypten · Iran · Neuseeland", "matches": [
+      { "date": "15.06 21:00", "home": "Belgien",    "away": "Ägypten",   "tip": "2:1", "analysisTip": "2:1", "conf": "med-high", "result": null, "injuries": null, "note": "Belgien 60% (De Bruyne, Doku). Ägypten +425 (Salah). Belgien gewinnt, aber nicht sauber." },
+      { "date": "16.06 03:00", "home": "Iran",       "away": "Neuseeland","tip": "2:0", "analysisTip": "2:0", "conf": "med-high", "result": null, "injuries": null, "note": "Iran 53-54% (-118). NZL verlor 9 von 11, zuletzt 4:0 vs Haiti. Knappes Iran-Heimspiel." },
+      { "date": "21.06 21:00", "home": "Belgien",    "away": "Iran",      "tip": null,  "analysisTip": "3:0", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "22.06 03:00", "home": "Neuseeland", "away": "Ägypten",   "tip": null,  "analysisTip": "0:2", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "27.06 05:00", "home": "Neuseeland", "away": "Belgien",   "tip": null,  "analysisTip": "0:3", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "27.06 05:00", "home": "Ägypten",    "away": "Iran",      "tip": null,  "analysisTip": "1:1", "conf": "med",      "result": null, "injuries": null, "note": null }
+    ]},
+    "H": { "teams": "Spanien · Uruguay · Saudi-Arabien · Kap Verde", "matches": [
+      { "date": "15.06 18:00", "home": "Spanien",      "away": "Kap Verde",    "tip": "3:0", "analysisTip": "3:0", "conf": "high",     "result": null, "injuries": "ESP: Fermín ❌, Yamal ⚠️ ~15min", "note": "Spanien 86% Siegchance (1/10). Fermín OUT. Yamal heute zurück im Training, ~15 Min geplant." },
+      { "date": "16.06 00:00", "home": "Saudi-Arabien","away": "Uruguay",      "tip": "0:2", "analysisTip": "0:2", "conf": "high",     "result": null, "injuries": "URU: Giménez ❌", "note": "Uruguay 69% (-200). Giménez fehlt. Supercomputer 66.6% Uruguay. Sicherer Auswärtssieg." },
+      { "date": "21.06 18:00", "home": "Spanien",      "away": "Saudi-Arabien","tip": null,  "analysisTip": "4:0", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "22.06 00:00", "home": "Uruguay",      "away": "Kap Verde",    "tip": null,  "analysisTip": "3:0", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "27.06 02:00", "home": "Uruguay",      "away": "Spanien",      "tip": null,  "analysisTip": "0:2", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "27.06 02:00", "home": "Kap Verde",    "away": "Saudi-Arabien","tip": null,  "analysisTip": "2:1", "conf": "med",      "result": null, "injuries": null, "note": null }
+    ]},
+    "I": { "teams": "Frankreich · Senegal · Irak · Norwegen", "matches": [
+      { "date": "16.06 21:00", "home": "Frankreich", "away": "Senegal", "tip": null, "analysisTip": "2:1", "conf": "med-high", "result": null, "injuries": "FRA: Ekitike ❌, Mbappe ⚠️", "note": "Frankreich -225 (~69%). Ekitike OUT (Achillessehne), Mateta ersetzt. Mbappe erwartet fit. Senegal mit Jackson/Ndiaye/Mane gefährlich." },
+      { "date": "17.06 00:00", "home": "Irak",       "away": "Norwegen","tip": null, "analysisTip": "0:3", "conf": "high",     "result": null, "injuries": null, "note": "Norwegen 82% (Kalshi). Irak erstmals seit 40 Jahren bei WM. Klarer, hoher Norwegen-Sieg erwartet." },
+      { "date": "22.06 23:00", "home": "Frankreich", "away": "Irak",    "tip": null, "analysisTip": "4:0", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "23.06 02:00", "home": "Norwegen",   "away": "Senegal", "tip": null, "analysisTip": "1:1", "conf": "med",      "result": null, "injuries": null, "note": null },
+      { "date": "26.06 21:00", "home": "Norwegen",   "away": "Frankreich","tip": null,"analysisTip": "0:2", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "26.06 21:00", "home": "Senegal",    "away": "Irak",    "tip": null, "analysisTip": "2:0", "conf": "high",     "result": null, "injuries": null, "note": null }
+    ]},
+    "J": { "teams": "Argentinien · Österreich · Algerien · Jordanien", "matches": [
+      { "date": "17.06 03:00", "home": "Argentinien","away": "Algerien", "tip": null, "analysisTip": "3:0", "conf": "high",     "result": null, "injuries": "ARG: Messi ⚠️, Romero ⚠️, Molina ❌", "note": "Argentinien -256, Titelverteidiger. Messi erwartet fit (Hamstring verwaltet). Molina OUT. Algerien klar unterlegen." },
+      { "date": "17.06 06:00", "home": "Österreich", "away": "Jordanien","tip": null, "analysisTip": "3:1", "conf": "high",     "result": null, "injuries": null, "note": "Österreich 74% (Kalshi). Erstmals seit 1998 bei WM. Jordanien 10%. Klarer Sieg erwartet, Jordanien kann kontern." },
+      { "date": "22.06 19:00", "home": "Argentinien","away": "Österreich","tip": null,"analysisTip": "2:0", "conf": "med-high", "result": null, "injuries": null, "note": null },
+      { "date": "23.06 05:00", "home": "Jordanien",  "away": "Algerien", "tip": null, "analysisTip": "0:2", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "28.06 04:00", "home": "Algerien",   "away": "Österreich","tip": null,"analysisTip": "1:1", "conf": "med",      "result": null, "injuries": null, "note": null },
+      { "date": "28.06 04:00", "home": "Jordanien",  "away": "Argentinien","tip": null,"analysisTip": "0:3","conf": "high",     "result": null, "injuries": null, "note": null }
+    ]},
+    "K": { "teams": "Portugal · Kolumbien · DR Kongo · Usbekistan", "matches": [
+      { "date": "17.06 19:00", "home": "Portugal",  "away": "DR Kongo",  "tip": null, "analysisTip": "3:0", "conf": "high",     "result": null, "injuries": null, "note": "Portugal -350 (~78%). SoFi Stadium (überdacht). Ronaldo/Bruno/Joao Felix. DR Kongo WM-Neuling, kein Schutz gegen Angriffswucht." },
+      { "date": "18.06 04:00", "home": "Usbekistan","away": "Kolumbien", "tip": null, "analysisTip": "0:2", "conf": "high",     "result": null, "injuries": null, "note": "Kolumbien -250 (~71%). Luiz Diaz/James Rodriguez. Usbekistan erstmals bei WM. Klarer Favorit." },
+      { "date": "23.06 19:00", "home": "Portugal",  "away": "Usbekistan","tip": null, "analysisTip": "4:0", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "24.06 04:00", "home": "Kolumbien", "away": "DR Kongo",  "tip": null, "analysisTip": "3:0", "conf": "high",     "result": null, "injuries": null, "note": null },
+      { "date": "28.06 01:30", "home": "DR Kongo",  "away": "Usbekistan","tip": null, "analysisTip": "2:1", "conf": "med",      "result": null, "injuries": null, "note": null },
+      { "date": "28.06 01:30", "home": "Kolumbien", "away": "Portugal",  "tip": null, "analysisTip": "1:1", "conf": "med",      "result": null, "injuries": null, "note": null }
+    ]},
+    "L": { "teams": "England · Kroatien · Ghana · Panama", "matches": [
+      { "date": "17.06 22:00", "home": "England", "away": "Kroatien","tip": null, "analysisTip": "2:0", "conf": "high",  "result": null, "injuries": "ENG: Saka ⚠️", "note": "England 58% (Kalshi). AT&T Stadium Dallas (Klimaanlage). Saka fraglich (Achillessehne), erwartet zu starten. Modrić fit." },
+      { "date": "18.06 01:00", "home": "Ghana",   "away": "Panama",  "tip": null, "analysisTip": "1:1", "conf": "med",   "result": null, "injuries": "GHA: Kudus ⚠️", "note": "Ghana +115 vs Panama +230 — nahezu ausgeglichen. Kudus fraglich (Hamstring). Semenyo führt an." },
+      { "date": "23.06 22:00", "home": "England", "away": "Ghana",   "tip": null, "analysisTip": "3:0", "conf": "high",  "result": null, "injuries": null, "note": null },
+      { "date": "24.06 01:00", "home": "Panama",  "away": "Kroatien","tip": null, "analysisTip": "0:2", "conf": "high",  "result": null, "injuries": null, "note": null },
+      { "date": "27.06 23:00", "home": "Kroatien","away": "Ghana",   "tip": null, "analysisTip": "2:1", "conf": "med-high","result": null,"injuries": null, "note": null },
+      { "date": "27.06 23:00", "home": "Panama",  "away": "England", "tip": null, "analysisTip": "0:3", "conf": "high",  "result": null, "injuries": null, "note": null }
+    ]}
+  },
+  "knockout": {
+    "R32": [
+      { "id": "M73",  "date": "28.06 21:00", "home": "2A",    "away": "2B",     "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M74",  "date": "29.06 22:30", "home": "1E",    "away": "3. Pl.", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M75",  "date": "29.06 01:00", "home": "1F",    "away": "2C",     "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M76",  "date": "29.06 19:00", "home": "1C",    "away": "2F",     "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M77",  "date": "30.06 23:00", "home": "1I",    "away": "3. Pl.", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M78",  "date": "30.06 19:00", "home": "2E",    "away": "2I",     "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M79",  "date": "30.06 03:00", "home": "1A",    "away": "3. Pl.", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M80",  "date": "01.07 20:00", "home": "1L",    "away": "3. Pl.", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M81",  "date": "01.07 22:00", "home": "1D",    "away": "3. Pl.", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M82",  "date": "01.07 22:00", "home": "1G",    "away": "3. Pl.", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M83",  "date": "02.07 01:00", "home": "2K",    "away": "2L",     "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M84",  "date": "02.07 21:00", "home": "1H",    "away": "2J",     "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M85",  "date": "02.07 05:00", "home": "1B",    "away": "3. Pl.", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M86",  "date": "03.07 00:00", "home": "1J",    "away": "2H",     "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M87",  "date": "03.07 03:30", "home": "1K",    "away": "3. Pl.", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M88",  "date": "03.07 19:00", "home": "2D",    "away": "2G",     "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null }
+    ],
+    "R16": [
+      { "id": "M89",  "date": "04.07 23:00", "home": "W M74", "away": "W M77", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M90",  "date": "04.07 19:00", "home": "W M73", "away": "W M75", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M91",  "date": "05.07 22:00", "home": "W M76", "away": "W M78", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M92",  "date": "05.07 02:00", "home": "W M79", "away": "W M80", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M93",  "date": "06.07 21:00", "home": "W M83", "away": "W M84", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M94",  "date": "06.07 02:00", "home": "W M81", "away": "W M82", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M95",  "date": "07.07 20:00", "home": "W M86", "away": "W M88", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M96",  "date": "07.07 03:00", "home": "W M85", "away": "W M87", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null }
+    ],
+    "QF": [
+      { "id": "M97",  "date": "09.07 22:00", "home": "W M89", "away": "W M90", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M98",  "date": "10.07 21:00", "home": "W M93", "away": "W M94", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M99",  "date": "11.07 23:00", "home": "W M91", "away": "W M92", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M100", "date": "12.07 03:00", "home": "W M95", "away": "W M96", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null }
+    ],
+    "SF": [
+      { "id": "M101", "date": "14.07 21:00", "home": "W M97",  "away": "W M98",  "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null },
+      { "id": "M102", "date": "15.07 21:00", "home": "W M99",  "away": "W M100", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null }
+    ],
+    "P3": [
+      { "id": "M103", "date": "18.07 23:00", "home": "V M101", "away": "V M102", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null }
+    ],
+    "F": [
+      { "id": "M104", "date": "19.07 21:00", "home": "W M101", "away": "W M102", "tip": null, "analysisTip": null, "conf": null, "result": null, "note": null, "injuries": null }
+    ]
+  }
+}

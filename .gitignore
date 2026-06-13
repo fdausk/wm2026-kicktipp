@@ -1,0 +1,5 @@
+# Nur dashboard.html und dashboard_data.json werden veröffentlicht
+*
+!.gitignore
+!dashboard.html
+!dashboard_data.json
