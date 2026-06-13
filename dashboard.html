@@ -520,7 +520,7 @@
 
 <script>
 // ── Data (loaded from dashboard_data.json) ────────────────────────────
-let GROUPS, KNOCKOUT, SPIELTAG_INFO, ST_STARTS_UTC;
+let GROUPS, KNOCKOUT, SPIELTAG_INFO, ST_STARTS_UTC, TEAM_ODDS = {};
 let _lastAktualisiert = null;
 
 async function loadDashboardData() {
@@ -532,6 +532,7 @@ async function loadDashboardData() {
     KNOCKOUT     = d.knockout;
     SPIELTAG_INFO = d.spieltag_info;
     ST_STARTS_UTC = d.st_starts_utc.map(s => s ? new Date(s) : null);
+    TEAM_ODDS     = (d.meta && d.meta.teamOdds) || {};
     // Rank display
     const rng = d.meta.rang;
     document.getElementById('cdRankPlace').textContent  = rng.platz;
@@ -1393,7 +1394,6 @@ function buildPrediction() {
     return matches.map(m => {
       const home = isR32 ? resolvePH(m.home) : resolveKO(m.home);
       const away = isR32 ? resolvePH(m.away) : resolveKO(m.away);
-      const TEAM_ODDS = (DATA && DATA.meta && DATA.meta.teamOdds) || {};
       const oddsH = TEAM_ODDS[home] || 0;
       const oddsA = TEAM_ODDS[away] || 0;
       const winner = extractWinnerTeam(m.analysisTip, home, away)
