@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-13T17:05:27Z",
+    "aktualisiert": "2026-06-14T05:01:33Z",
     "rang": {
       "platz": "15.",
       "punkte": 4,
@@ -8,11 +8,11 @@
       "spieltag": "Spieltag 1"
     },
     "teamOdds": {
-      "Spanien": 0.182,
-      "Frankreich": 0.174,
+      "Spanien": 0.185,
+      "Frankreich": 0.162,
       "England": 0.125,
       "Brasilien": 0.111,
-      "Portugal": 0.1,
+      "Portugal": 0.106,
       "Argentinien": 0.1,
       "Deutschland": 0.067,
       "Niederlande": 0.048,
@@ -56,7 +56,7 @@
       "Curaçao": 0.001,
       "Panama": 0.002
     },
-    "teamOddsTs": "2026-06-13T18:00:00Z"
+    "teamOddsTs": "2026-06-14T05:01:33Z"
   },
   "spieltag_info": [
     {
@@ -72,7 +72,7 @@
       "label": "Spieltag 2",
       "dates": "14.–16. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-13T16:32:51Z",
+      "analysisTs": "2026-06-14T05:01:33Z",
       "tipsSubmitted": true
     },
     {
@@ -291,7 +291,7 @@
           "tip": "0:2",
           "analysisTip": "0:2",
           "conf": "high",
-          "result": null,
+          "result": "1:1",
           "injuries": "⚠️ Vargas (SUI, fraglich)",
           "note": "Schweiz 84% (DraftKings -450). Xhaka/Freuler/Kobel fit. Katar ohne WM-Sieg. Vargas fraglich."
         },
@@ -351,7 +351,7 @@
           "tip": "1:0",
           "analysisTip": "1:0",
           "conf": "med-high",
-          "result": null,
+          "result": "1:1",
           "injuries": "❌ Rodrygo | ❌ Militão | ❌ Estêvão | ⚠️ Neymar (Hüfte) — MAR: ❌ Aguerd | ❌ Ezzalzouli | ⚠️ Mazraoui",
           "note": "BRA massiv dezimiert (Rodrygo/Militão/Estêvão OUT, Neymar fraglich). MAR: Aguerd/Ezzalzouli OUT. Knappes BRA-Sieg."
         },
@@ -362,7 +362,7 @@
           "tip": "0:2",
           "analysisTip": "0:2",
           "conf": "high",
-          "result": null,
+          "result": "0:1",
           "injuries": null,
           "note": "Schottland klarer Favorit. Haiti Turnier-Debütant, rein defensiv erwartet."
         },
@@ -433,7 +433,7 @@
           "tip": "1:2",
           "analysisTip": "1:2",
           "conf": "med",
-          "result": null,
+          "result": "1:1",
           "injuries": "⚠️ Güler (TUR, Hamstring fraglich)",
           "note": "Güler (TUR) fraglich → TUR ohne Schlüsselspieler geschwächt. 1:2 bleibt, conf gesenkt."
         },
@@ -492,10 +492,10 @@
           "away": "Curaçao",
           "tip": "4:0",
           "analysisTip": "4:0",
-          "conf": "med-high",
+          "conf": "high",
           "result": null,
-          "injuries": "⚠️ Neuer (Wade, fraglich)",
-          "note": "GER 95% Favorit. Kimmich/Havertz/Wirtz. Eröffnungsspiel-Varianz."
+          "injuries": null,
+          "note": "GER 95%+ Favorit. Lineup bestätigt 4-2-3-1 (Neuer/Kimmich/Wirtz/Musiala/Havertz). Curaçao WM-Debüt."
         },
         {
           "date": "15.06 01:00",
@@ -562,11 +562,11 @@
           "home": "Niederlande",
           "away": "Japan",
           "tip": "2:1",
-          "analysisTip": "1:1",
+          "analysisTip": "2:1",
           "conf": "med",
           "result": null,
-          "injuries": "❌ Simons (VKB) | ❌ Timber | ⚠️ Memphis (Hamstring) | ⚠️ de Ligt — JPN: ❌ Mitoma (Hamstring)",
-          "note": "NED 50% — fast Gleichgewicht. Simons+Timber fehlen. Japan 5 Siege inkl. England."
+          "injuries": "❌ Simons (VKB) | ❌ Timber | ❌ Schouten (VKB) — JPN: ❌ Endo (verletzt, tritt zurück) | ❌ Mitoma",
+          "note": "Endo OUT (neu, Juni 11) + Mitoma OUT. NED auch dezimiert aber Vorteil → 2:1. 52-65% Zone."
         },
         {
           "date": "15.06 04:00",
@@ -705,21 +705,21 @@
           "away": "Kap Verde",
           "tip": "3:0",
           "analysisTip": "3:0",
-          "conf": "med-high",
+          "conf": "high",
           "result": null,
-          "injuries": "❌ Fermín López | ⚠️ Yamal (erwartet fit 15.06)",
-          "note": "ESP 91% (-1000). Kap Verde WM-Debüt. Over 3.5 bei -107. Eröffnungsspiel → med-high."
+          "injuries": "❌ Fermín López | ✅ Yamal (fit bestätigt)",
+          "note": "ESP 91%. Yamal fit bestätigt → kein Eröffnungsspiel-Cap. Kap Verde WM-Debüt. Over 3.5."
         },
         {
           "date": "16.06 00:00",
           "home": "Saudi-Arabien",
           "away": "Uruguay",
           "tip": "0:2",
-          "analysisTip": "0:2",
-          "conf": "med-high",
+          "analysisTip": "1:1",
+          "conf": "med",
           "result": null,
-          "injuries": "URU: Giménez ❌",
-          "note": "URU 68% unter Bielsa. SAU non-loss 33% — Außenseiter-Regel greift nicht. Eröffnungsspiel."
+          "injuries": "URU: ❌ Araujo (1. Spiel) | ❌ Giménez | ❌ De Arrascaeta (ges. Grp.) | ❌ Piquerez",
+          "note": "URU 4 Schlüsselspieler OUT. ~58% Favorit → knappe Zone → Unentschieden gleichwertig."
         },
         {
           "date": "21.06 18:00",
