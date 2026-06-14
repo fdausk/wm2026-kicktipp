@@ -175,9 +175,10 @@
   .spieltage-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 28px; }
   .st-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
   .st-card.clickable { cursor: pointer; transition: border-color 0.15s, background 0.15s; }
-  .st-card.clickable:hover { border-color: var(--accent); background: color-mix(in srgb, var(--surface) 90%, var(--accent) 10%); }
+  .st-card.clickable:not(.st-card-done):hover { border-color: var(--accent); background: color-mix(in srgb, var(--surface) 90%, var(--accent) 10%); }
   .st-card-detail-icon { color: var(--muted); opacity: 0.5; flex-shrink: 0; transition: opacity 0.15s, color 0.15s; }
-  .st-card.clickable:hover .st-card-detail-icon { opacity: 1; color: var(--accent); }
+  .st-card.clickable:not(.st-card-done):hover .st-card-detail-icon { opacity: 1; color: var(--accent); }
+  .st-card.st-card-done { opacity: 0.45; }
   .st-card-header { display: flex; align-items: center; justify-content: space-between; }
   .st-card-name { font-size: 13px; font-weight: 700; }
   .st-card-date { font-size: 12px; color: var(--muted); }
@@ -900,12 +901,14 @@ function renderSpieltage() {
 
     const koNote = info.phase === 'ko' ? '<span style="font-size:10px;color:var(--yellow);margin-top:2px;display:block;">⚡ Tipp inkl. Elfmeterschießen</span>' : '';
 
+    const isFullyPlayed = played === total && total > 0;
     const clickable = info.analysisTs ? 'clickable' : '';
+    const doneCls = isFullyPlayed ? ' st-card-done' : '';
     const clickHandler = info.analysisTs ? `onclick="openTipModal(${info.nr})"` : '';
     const detailIcon = info.analysisTs
       ? `<svg class="st-card-detail-icon" width="13" height="13" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.5"/><line x1="8" y1="5" x2="8" y2="8.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="8" cy="11" r="0.75" fill="currentColor"/></svg>`
       : '';
-    html += `<div class="st-card ${clickable}" ${clickHandler}>
+    html += `<div class="st-card ${clickable}${doneCls}" ${clickHandler}>
       <div class="st-card-header">${badge}${detailIcon}</div>
       <div class="st-card-name">${info.label}</div>
       <div class="st-card-date">${info.dates}</div>
