@@ -1109,7 +1109,7 @@ function renderGroups() {
         <td class="hide-mob">${resultDisplay}</td>
         <td class="show-mob mob-score">${mobScoreHtml}</td>
         <td>${statusCell(m)}</td>
-        <td class="hide-mob">${showAnalysis ? `<span class="analysis-tip">Analyse: ${scoreSpan(m.analysisTip,'tip')}</span>` : (m.result ? '' : (m.tip ? confLabel(m.conf) : ''))}</td>
+        <td class="hide-mob">${confLabel(m.conf)}</td>
         <td class="show-mob" style="text-align:center">${confIcon(m.conf)}</td>
       </tr>`;
     }
@@ -1124,7 +1124,7 @@ function renderGroups() {
           <col class="col-date"><col class="col-matchup"><col class="col-tip hide-mob"><col class="col-result hide-mob"><col class="col-mob-score show-mob"><col class="col-status"><col class="col-conf hide-mob"><col class="col-mob-conf show-mob">
         </colgroup>
         <thead><tr>
-          <th>Datum</th><th>Paarung</th><th class="hide-mob">Tipp</th><th class="hide-mob">Ergebnis</th><th class="show-mob">Score</th><th><span class="mob-date">S</span><span class="desk-date">Status</span></th><th class="hide-mob th-conf"><span>Konfidenz / Analyse</span></th><th class="show-mob">K</th>
+          <th>Datum</th><th>Paarung</th><th class="hide-mob">Tipp</th><th class="hide-mob">Ergebnis</th><th class="show-mob">Score</th><th><span class="mob-date">S</span><span class="desk-date">Status</span></th><th class="hide-mob th-conf"><span>Konfidenz</span></th><th class="show-mob">K</th>
         </tr></thead>
         <tbody>${rows}</tbody>
       </table></div>
