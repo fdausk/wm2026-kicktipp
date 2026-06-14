@@ -414,34 +414,35 @@
     <div class="analysis-grid">
       <div class="analysis-item">
         <h3>📈 Wettmarkt-Konsens <span style="color:var(--muted);font-weight:400">35%</span></h3>
-        <p>Primäres Signal. <strong>Betfair Exchange</strong> (ohne Bookmaker-Marge), <strong>Kalshi/Polymarket</strong> (Prediction Markets) und <strong>Bet365/DraftKings</strong> werden zu einer impliziten Gewinnwahrscheinlichkeit zusammengefasst. Dimers & Forebet liefern den wahrscheinlichsten Endstand.</p>
+        <p>Primäres Signal. <strong>Betfair Exchange</strong> (margenfreie Quoten), <strong>Kalshi/Polymarket</strong> (Prediction Markets) und <strong>Pinnacle</strong> werden zu einer impliziten Gewinnwahrscheinlichkeit zusammengefasst. Zusätzlich: <strong>Correct-Score-Markt</strong> (Top-3 Betfair) und <strong>Over/Under 2.5 Tore</strong> (Under &gt;65% → max. 1 Tor pro Team; Over &gt;65% → Score ≥3).</p>
       </div>
       <div class="analysis-item">
-        <h3>⚡ xG & Formkurve <span style="color:var(--muted);font-weight:400">25%</span></h3>
-        <p><strong>Expected Goals</strong> der letzten 3–5 Spiele (FootyStats, FBref) zeigen Chancenqualität unabhängig vom Ergebnis. Ergänzt durch Ø Tore, Ø kassierte Tore und W/D/L-Bilanz der letzten 10 Spiele.</p>
+        <h3>⚡ xG, Form & Taktik <span style="color:var(--muted);font-weight:400">25%</span></h3>
+        <p><strong>Expected Goals</strong> der letzten 3–5 Spiele (FootyStats, FBref) zeigen Chancenqualität unabhängig vom Ergebnis. Ergänzt durch W/D/L-Bilanz und taktischen Archetyp-Match: <strong>Low-Block-Teams</strong> (Marokko, Türkei, Katar u. a.) → Favoriten-Score –1 Tor, Unentschieden +10%.</p>
       </div>
       <div class="analysis-item">
-        <h3>🏥 Verletzungen & Kader <span style="color:var(--muted);font-weight:400">20%</span></h3>
-        <p><strong>ESPN Injury Tracker</strong> für bestätigte Ausfälle. <strong>Yahoo Sports / Goal.com / Squawka</strong> für Aufstellungstrends und Pressekonferenz-Aussagen. Abruf so nah wie möglich am Anstoß.</p>
+        <h3>🏥 Verletzungen & Sperren <span style="color:var(--muted);font-weight:400">20%</span></h3>
+        <p><strong>ESPN Injury Tracker</strong> für bestätigte Ausfälle. <strong>Yahoo Sports / Goal.com / Squawka</strong> für Aufstellungstrends (so nah wie möglich am Anstoß). Kartensperren & Gelbbelastung werden separat ausgewertet: 🔴 Rotsperre · 🟨 Gelbsperre · ⚠️ auf Bewährung.</p>
       </div>
       <div class="analysis-item">
-        <h3>🏆 Turnier-Formkurve <span style="color:var(--muted);font-weight:400">12%</span></h3>
-        <p>Ab Spieltag 2 laufend aktualisiert. <strong>Sofascore</strong> und <strong>CBS Sports Standings</strong> liefern die Ergebnisse aus dem laufenden Turnier. Gewicht steigt mit jedem gespielten Spieltag.</p>
+        <h3>🏆 Turnier-Kontext <span style="color:var(--muted);font-weight:400">12%</span></h3>
+        <p>Ab ST2 laufend aktualisiert (Sofascore, CBS Sports). <strong>Spieltag-3-Motivation:</strong> Wenn beide Teams mit Remis weiterkommen, wird Unentschieden bis Favorit 60% gleichwertig gewertet. Bereits ausgeschiedene Teams rotieren → Score-Erwartung sinkt.</p>
       </div>
       <div class="analysis-item">
-        <h3>🔁 Head-to-Head <span style="color:var(--muted);font-weight:400">Teil von 8%</span></h3>
-        <p>WM- und EM-Direktduelle werden <strong>höher gewichtet</strong> als Freundschaftsspiele (FootyStats H2H, FIFA.com). Nur relevant bei engen Spielen — kein eigener Datenpunkt bei klaren Favoriten.</p>
+        <h3>🔁 Head-to-Head & Ruhezeiten <span style="color:var(--muted);font-weight:400">Teil von 8%</span></h3>
+        <p>WM-/EM-Direktduelle werden höher gewichtet als Freundschaftsspiele (FootyStats H2H, FIFA.com). Zusätzlich: <strong>Ruhedifferenz ≥ 2 Tage</strong> zwischen den Teams → fitteres Team +0,5 Tore.</p>
       </div>
       <div class="analysis-item">
-        <h3>🌡️ Klima, Höhe & Stadion <span style="color:var(--muted);font-weight:400">Teil von 8%</span></h3>
-        <p><strong>Geschlossene Stadien</strong> (Houston NRG, Dallas AT&T, Atlanta, Vancouver) = kein Hitzefaktor. <strong>Freistadien</strong> im Sommer: Erschöpfungsrisiko. <strong>Azteca 2240m</strong>: Höhenvorteil für südamerikanische Teams.</p>
+        <h3>🌡️ Klima, Höhe & Schiedsrichter <span style="color:var(--muted);font-weight:400">Teil von 8%</span></h3>
+        <p><strong>Geschlossene Stadien</strong> (Houston, Dallas, Atlanta, Vancouver) = kein Hitzefaktor. <strong>Azteca 2240m</strong>: Höhenvorteil Südamerika. Schiedsrichter-Profil: Ø Karten/Spiel und bekannte Stile beeinflussen Foul-/Elfmeterrisiko.</p>
       </div>
     </div>
     <div style="margin-top:14px;padding:12px 16px;background:var(--surface2);border-radius:8px;border:1px solid var(--border);font-size:12px;color:var(--muted);line-height:1.6">
       <strong style="color:var(--text)">Konfidenz-Logik:</strong>
-      <strong style="color:var(--green)"> Hoch</strong> = Favorit ≥70% Marktwahrsch. + Quellen-Konsens + keine Schlüsselverletzungen ·
-      <strong style="color:var(--yellow)"> Mittel-Hoch</strong> = 60–70% + Restrisiko ·
-      <strong style="color:var(--orange)"> Mittel</strong> = 50–60%, BTTS wahrscheinlich oder H2H überraschend
+      <strong style="color:var(--green)"> Hoch</strong> = Favorit ≥70% + Quellen-Konsens + keine Schlüsselverletzungen ·
+      <strong style="color:var(--yellow)"> Mittel-Hoch</strong> = 60–70% oder Restrisiko vorhanden ·
+      <strong style="color:var(--orange)"> Mittel</strong> = 50–60%, knappe Zone oder Low-Block-Gegner ·
+      <span>Eröffnungsspiel + Zusatzfaktor → max. Mittel-Hoch</span>
     </div>
     </div><!-- /.analysis-card-body -->
   </div><!-- /.analysis-card -->
@@ -518,9 +519,11 @@
       <div id="prognoseInfo" style="margin-bottom:14px;padding:12px 16px;background:var(--surface2);border-radius:8px;border:1px solid var(--border);font-size:12px;line-height:1.7">
         <div style="font-weight:700;color:var(--text);margin-bottom:6px">🔮 So funktioniert die Prognose</div>
         <div style="display:flex;flex-wrap:wrap;gap:10px 24px;color:var(--muted)">
-          <div><strong style="color:var(--text)">1. Analyse-Tipps</strong> — Liegt ein Analyse-Tipp vor, wird der prognostizierte Sieger direkt daraus abgelesen.</div>
-          <div><strong style="color:var(--text)">2. Outright-Quoten</strong> — Steht noch kein Tipp bereit, entscheidet die aktuelle Turniersieg-Wahrscheinlichkeit (Kalshi / Betfair), welche Mannschaft weiterkommt.</div>
-          <div><strong style="color:var(--text)">Aktualisierung</strong> — Die Prognose wird bei jeder Spieltagsanalyse automatisch neu berechnet; Quoten werden nach jeder K.O.-Runde aktualisiert.</div>
+          <div><strong style="color:var(--text)">1. Echtes Ergebnis</strong> — Steht das Spielergebnis fest, wird der tatsächliche Sieger direkt übernommen.</div>
+          <div><strong style="color:var(--text)">2. Analyse-Tipp</strong> — Fehlt noch ein Ergebnis, leitet die Prognose den Sieger aus dem aktuellen Analyse-Tipp ab.</div>
+          <div><strong style="color:var(--text)">3. Outright-Quoten</strong> — Steht noch kein Analyse-Tipp bereit, entscheidet die Turniersieg-Wahrscheinlichkeit (Kalshi / Betfair), welche Mannschaft weiterkommt.</div>
+          <div><strong style="color:var(--text)">4. FIFA-Ranking</strong> — Fallback, falls für beide Teams keine Quoten hinterlegt sind.</div>
+          <div><strong style="color:var(--text)">Aktualisierung</strong> — Prognose wird bei jedem Daten-Refresh (alle 60 s) neu berechnet; Outright-Quoten werden nach jeder K.O.-Runde aktualisiert.</div>
         </div>
       </div>
       <div id="bracketPrognoseGrid"></div>
@@ -1439,7 +1442,7 @@ function buildPrediction() {
       const away = isR32 ? resolvePH(m.away) : resolveKO(m.away);
       const oddsH = TEAM_ODDS[home] || 0;
       const oddsA = TEAM_ODDS[away] || 0;
-      const winner = extractWinnerTeam(m.analysisTip, home, away)
+      const winner = extractWinnerTeam(m.result || m.analysisTip, home, away)
         || (oddsH !== oddsA ? (oddsH >= oddsA ? home : away) : ((rankMap[home] || 3) <= (rankMap[away] || 3) ? home : away));
       koWinners[m.id] = winner;
       resolvedMatches[m.id] = { home, away };
@@ -1456,13 +1459,13 @@ function buildPrediction() {
   const p3h = sf[0] ? (koWinners[sf[0].id] === sf[0].home ? sf[0].away : sf[0].home) : '?';
   const p3a = sf[1] ? (koWinners[sf[1].id] === sf[1].home ? sf[1].away : sf[1].home) : '?';
   const p3m = KNOCKOUT.P3[0];
-  const p3w = extractWinnerTeam(p3m.analysisTip, p3h, p3a) || p3h;
+  const p3w = extractWinnerTeam(p3m.result || p3m.analysisTip, p3h, p3a) || p3h;
   const p3 = [{ ...p3m, home: p3h, away: p3a, predictedWinner: p3w }];
 
   const fh = koWinners[KNOCKOUT.SF[0].id] || '?';
   const fa = koWinners[KNOCKOUT.SF[1].id] || '?';
   const fm = KNOCKOUT.F[0];
-  const fw = extractWinnerTeam(fm.analysisTip, fh, fa) || fh;
+  const fw = extractWinnerTeam(fm.result || fm.analysisTip, fh, fa) || fh;
   const f = [{ ...fm, home: fh, away: fa, predictedWinner: fw }];
 
   return { R32: r32, R16: r16, QF: qf, SF: sf, P3: p3, F: f };
