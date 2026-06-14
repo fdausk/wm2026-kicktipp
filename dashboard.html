@@ -140,6 +140,10 @@
   .status-live { background: rgba(79,126,248,0.2); color: var(--accent); animation: pulse 1.5s infinite; }
   @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:0.6 } }
 
+  /* Next match highlight */
+  tr.match-next { box-shadow: inset 3px 0 0 var(--accent); background: rgba(99,102,241,0.06) !important; }
+  .bracket-card.match-next { box-shadow: 0 0 0 1px var(--accent), inset 3px 0 0 var(--accent); background: rgba(99,102,241,0.08) !important; }
+
   /* Confidence */
   .conf { font-size: 11px; padding: 2px 7px; border-radius: 4px; font-weight: 500; white-space: nowrap; }
   .conf-high { background: rgba(34,197,94,0.15); color: var(--green); }
@@ -1041,9 +1045,37 @@ function statusCell(m) {
   return '<span class="status status-wrong"><span class="mob-txt">✗ Falsch</span><span class="mob-ico">✗</span></span>';
 }
 
+function nextMatchKey() {
+  // Returns "home|away" of the earliest upcoming unplayed match across groups + KO
+  const now = Date.now();
+  function parseMesz(dateStr) {
+    const [dm, t] = dateStr.split(' ');
+    const [d, mo] = dm.split('.');
+    const [h, mi] = t.split(':');
+    return Date.UTC(2026, parseInt(mo)-1, parseInt(d), parseInt(h)-2, parseInt(mi));
+  }
+  let best = null, bestTs = Infinity;
+  for (const data of Object.values(GROUPS)) {
+    for (const m of data.matches) {
+      if (m.result) continue;
+      const ts = parseMesz(m.date);
+      if (ts > now && ts < bestTs) { bestTs = ts; best = m.home + '|' + m.away; }
+    }
+  }
+  for (const rounds of Object.values(KNOCKOUT)) {
+    for (const m of rounds) {
+      if (m.result) continue;
+      const ts = parseMesz(m.date);
+      if (ts > now && ts < bestTs) { bestTs = ts; best = '__ko__' + m.id; }
+    }
+  }
+  return best;
+}
+
 function renderGroups() {
   let totalPlayed = 0, totalCorrect = 0, totalTendenz = 0, totalWrong = 0, totalGames = 0;
   let html = '';
+  const nmKey = nextMatchKey();
 
   for (const [grp, data] of Object.entries(GROUPS)) {
     totalGames += data.matches.length;
@@ -1066,7 +1098,8 @@ function renderGroups() {
         ? `${tipDisplay}<span class="mob-arrow">/</span>${resultDisplay}`
         : tipDisplay;
 
-      rows += `<tr class="${m.result ? 'match-played' : 'match-pending'}">
+      const isNext = !m.result && nmKey === m.home + '|' + m.away;
+      rows += `<tr class="${m.result ? 'match-played' : 'match-pending'}${isNext ? ' match-next' : ''}">
         <td class="date-col"><span class="desk-date">${m.date}</span><span class="mob-date">${mobDate}</span></td>
         <td class="matchup">${teamHtml(m.home)} <span class="vs">vs</span> ${teamHtml(m.away)}</td>
         <td class="hide-mob">${tipDisplay}</td>
@@ -1158,7 +1191,7 @@ function isTbdTeam(t) {
   return !t || t.startsWith('W ') || t.startsWith('V ') || /^[12][A-L]$/.test(t) || t.includes('Pl.') || t.includes('3.');
 }
 
-function bracketCard(m, isFinal) {
+function bracketCard(m, isFinal, nmKey) {
   const hClass = isTbdTeam(m.home) ? 'tbd' : '';
   const aClass = isTbdTeam(m.away) ? 'tbd' : '';
   const tipHtml = m.tip    ? `<span class="score score-tip"    style="font-size:10px;padding:1px 5px">${m.tip}</span>`    : '';
@@ -1182,7 +1215,8 @@ function bracketCard(m, isFinal) {
   }
   const noteHtml = m.note ? `<div class="modal-match-note" style="margin:4px 8px 6px;font-size:11px">${m.note}</div>` : '';
 
-  return `<div class="bracket-card${isFinal ? ' final-card' : ''}" data-id="${m.id}">
+  const isNext = !m.result && nmKey === '__ko__' + m.id;
+  return `<div class="bracket-card${isFinal ? ' final-card' : ''}${isNext ? ' match-next' : ''}" data-id="${m.id}">
     <div class="bracket-card-date">${m.date}${isFinal ? ' <span style="color:var(--accent);font-weight:700">FINALE</span>' : ''}</div>
     <div class="bracket-card-team ${hClass}">${m.home}${tipHtml ? ' ' + tipHtml : ''}</div>
     <div class="bracket-card-team ${aClass}">${m.away}${resHtml ? ' ' + resHtml : ''}</div>
@@ -1199,6 +1233,7 @@ function renderKO() {
     { key:'F',   label:'Finale' },
   ];
 
+  const nmKey = nextMatchKey();
   let html = '<div class="bracket-outer"><div class="bracket-wrap" id="bracketWrap">';
 
   rounds.forEach((r, ri) => {
@@ -1207,14 +1242,14 @@ function renderKO() {
 
     if (r.key === 'F') {
       html += '<div class="bracket-final-body">';
-      html += bracketCard(KNOCKOUT.F[0], true);
+      html += bracketCard(KNOCKOUT.F[0], true, nmKey);
       html += '<div style="border-top:1px dashed var(--border);margin:0 6px"></div>';
-      html += bracketCard(KNOCKOUT.P3[0], false);
+      html += bracketCard(KNOCKOUT.P3[0], false, nmKey);
       html += '<div class="bracket-p3-label">Spiel um Platz 3</div>';
       html += '</div>';
     } else {
       html += '<div class="bracket-round-body">';
-      for (const m of KNOCKOUT[r.key]) html += bracketCard(m, false);
+      for (const m of KNOCKOUT[r.key]) html += bracketCard(m, false, nmKey);
       html += '</div>';
     }
 
