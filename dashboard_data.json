@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-14T21:56:00Z",
+    "aktualisiert": "2026-06-15T07:25:16Z",
     "rang": {
       "platz": "18.",
       "punkte": 6,
@@ -15,7 +15,7 @@
       "Argentinien": 0.088,
       "Brasilien": 0.074,
       "Deutschland": 0.052,
-      "Niederlande": 0.050,
+      "Niederlande": 0.05,
       "Norwegen": 0.025,
       "USA": 0.023,
       "Marokko": 0.023,
@@ -28,7 +28,7 @@
       "Kroatien": 0.007,
       "Ecuador": 0.007,
       "Senegal": 0.006,
-      "Kanada": 0.010,
+      "Kanada": 0.01,
       "Österreich": 0.006,
       "Australien": 0.005,
       "Schweden": 0.005,
@@ -504,7 +504,7 @@
           "tip": "0:1",
           "analysisTip": "1:1",
           "conf": "med",
-          "result": null,
+          "result": "1:0",
           "injuries": null,
           "note": "Kalshi: ECU 41%/CIV 28%/Draw 34%. ECU stärkste CONMEBOL-Abwehr. Ausgeglichen."
         },
@@ -575,7 +575,7 @@
           "tip": "2:0",
           "analysisTip": "2:0",
           "conf": "med",
-          "result": null,
+          "result": "5:1",
           "injuries": null,
           "note": "SWE 52%. Gyokeres/Isak — Markt Over 2.5 (+120). TUN Low-Block aber SWE Offensivpower → 2:0."
         },
