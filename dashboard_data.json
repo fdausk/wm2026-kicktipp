@@ -1,8 +1,8 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-15T07:25:16Z",
+    "aktualisiert": "2026-06-16T00:42:00Z",
     "rang": {
-      "platz": "17.",
+      "platz": "20.",
       "punkte": 10,
       "total": 25,
       "spieltag": "Spieltag 2"
@@ -72,7 +72,7 @@
       "label": "Spieltag 2",
       "dates": "14.–16. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-14T12:44:31Z",
+      "analysisTs": "2026-06-16T00:42:00Z",
       "tipsSubmitted": true
     },
     {
@@ -635,7 +635,7 @@
           "tip": "2:1",
           "analysisTip": "2:0",
           "conf": "med-high",
-          "result": null,
+          "result": "1:1",
           "injuries": "⚠️ De Bruyne (Augenverletzung) | ⚠️ Lukaku (Hüfte)",
           "note": "BEL 73%. EGY 44% non-loss → Score defensiver (2:1→2:0). De Bruyne/Lukaku fraglich."
         },
@@ -644,11 +644,11 @@
           "home": "Iran",
           "away": "Neuseeland",
           "tip": "2:0",
-          "analysisTip": "1:0",
+          "analysisTip": "0:0",
           "conf": "med",
           "result": null,
-          "injuries": null,
-          "note": "IRN 54% — Gleichgewichts-Zone. NZL 43% non-loss → defensiver. Taremi entscheidend."
+          "injuries": "⚠️ Taremi (Oberschenkel, fraglich)",
+          "note": "IRN 53% (knappe Zone → Unentschieden gleichwertig). NZL Non-Loss 47% → Außenseiter-Regel. Under-Lean (9/11 IRN WM-Spiele unter 2.5). → 0:0."
         },
         {
           "date": "21.06 21:00",
@@ -706,8 +706,8 @@
           "tip": "3:0",
           "analysisTip": "3:0",
           "conf": "high",
-          "result": null,
-          "injuries": "❌ Fermín López | ✅ Yamal (fit bestätigt)",
+          "result": "0:0",
+          "injuries": "❌ Fermín López | ⚠️ Yamal (Bank) | ⚠️ Williams (Bank)",
           "note": "ESP 91%. Yamal fit bestätigt → kein Eröffnungsspiel-Cap. Kap Verde WM-Debüt. Over 3.5."
         },
         {
@@ -715,11 +715,11 @@
           "home": "Saudi-Arabien",
           "away": "Uruguay",
           "tip": "0:2",
-          "analysisTip": "0:2",
+          "analysisTip": "0:1",
           "conf": "med-high",
           "result": null,
-          "injuries": "URU: ❌ Araujo (1. Spiel) | ❌ Giménez | ❌ De Arrascaeta (ges. Grp.) | ❌ Piquerez",
-          "note": "Markt: URU 64-68% (Squawka/KickOff). Trotz 4 Ausfällen klar favorit. SAU Low-Block 12%. 0:2."
+          "injuries": "URU: ❌ Araujo | ❌ Giménez | ❌ De Arrascaeta (ges. Grp.) | ❌ Piquerez | SAU: Low-Block (4-2-3-1)",
+          "note": "URU 69% Favorit. SAU Low-Block → -1 Tor (0:2→0:1). De Arrascaeta ❌. Correct Score Markt: 0:2 häufigster, Low-Block-Abzug → 0:1."
         },
         {
           "date": "21.06 18:00",
