@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-16T00:42:00Z",
+    "aktualisiert": "2026-06-16T08:45:00Z",
     "rang": {
       "platz": "20.",
       "punkte": 10,
@@ -8,30 +8,30 @@
       "spieltag": "Spieltag 2"
     },
     "teamOdds": {
-      "Spanien": 0.166,
-      "Frankreich": 0.165,
-      "Portugal": 0.116,
-      "England": 0.098,
-      "Argentinien": 0.088,
-      "Brasilien": 0.074,
-      "Deutschland": 0.052,
-      "Niederlande": 0.05,
-      "Norwegen": 0.025,
-      "USA": 0.023,
-      "Marokko": 0.023,
+      "Spanien": 0.152,
+      "Frankreich": 0.171,
+      "Portugal": 0.117,
+      "England": 0.104,
+      "Argentinien": 0.087,
+      "Brasilien": 0.065,
+      "Deutschland": 0.06,
+      "Niederlande": 0.049,
+      "Norwegen": 0.022,
+      "USA": 0.039,
+      "Marokko": 0.022,
       "Belgien": 0.019,
-      "Kolumbien": 0.014,
-      "Japan": 0.013,
-      "Mexiko": 0.011,
+      "Kolumbien": 0.017,
+      "Japan": 0.017,
+      "Mexiko": 0.019,
       "Schweiz": 0.009,
-      "Uruguay": 0.008,
+      "Uruguay": 0.01,
       "Kroatien": 0.007,
       "Ecuador": 0.007,
       "Senegal": 0.006,
       "Kanada": 0.01,
       "Österreich": 0.006,
       "Australien": 0.005,
-      "Schweden": 0.005,
+      "Schweden": 0.01,
       "Südkorea": 0.005,
       "Ghana": 0.004,
       "Iran": 0.003,
@@ -56,7 +56,7 @@
       "Curaçao": 0.001,
       "Panama": 0.001
     },
-    "teamOddsTs": "2026-06-14T12:44:31Z"
+    "teamOddsTs": "2026-06-16T08:45:00Z"
   },
   "spieltag_info": [
     {
@@ -80,7 +80,7 @@
       "label": "Spieltag 3",
       "dates": "16.–18. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-13T16:09:55Z",
+      "analysisTs": "2026-06-16T08:45:00Z",
       "tipsSubmitted": true
     },
     {
@@ -646,7 +646,7 @@
           "tip": "2:0",
           "analysisTip": "0:0",
           "conf": "med",
-          "result": null,
+          "result": "2:2",
           "injuries": "⚠️ Taremi (Oberschenkel, fraglich)",
           "note": "IRN 53% (knappe Zone → Unentschieden gleichwertig). NZL Non-Loss 47% → Außenseiter-Regel. Under-Lean (9/11 IRN WM-Spiele unter 2.5). → 0:0."
         },
@@ -717,7 +717,7 @@
           "tip": "0:2",
           "analysisTip": "0:1",
           "conf": "med-high",
-          "result": null,
+          "result": "1:1",
           "injuries": "URU: ❌ Araujo | ❌ Giménez | ❌ De Arrascaeta (ges. Grp.) | ❌ Piquerez | SAU: Low-Block (4-2-3-1)",
           "note": "URU 69% Favorit. SAU Low-Block → -1 Tor (0:2→0:1). De Arrascaeta ❌. Correct Score Markt: 0:2 häufigster, Low-Block-Abzug → 0:1."
         },
@@ -778,8 +778,8 @@
           "analysisTip": "2:1",
           "conf": "med-high",
           "result": null,
-          "injuries": "❌ Ekitike (FRA)",
-          "note": "Frankreich -209 (67%). Ekitike OUT, Mbappé/Griezmann fit. Senegal stark defensiv."
+          "injuries": "❌ Ekitike (FRA) | ⚠️ Saliba (Rücken, best. fit) | SEN: ⚠️ Diao | ⚠️ Gueye",
+          "note": "FRA 67%. Mbappe/Dembele/Olise. Saliba fit, Senegal Mané fit. Aufst. n. best. → med-high."
         },
         {
           "date": "17.06 00:00",
@@ -787,10 +787,10 @@
           "away": "Norwegen",
           "tip": "0:3",
           "analysisTip": "0:3",
-          "conf": "high",
+          "conf": "med-high",
           "result": null,
           "injuries": null,
-          "note": "Norwegen -450. Haaland fit. Irak Außenseiter. 0:3 bleibt."
+          "note": "NOR 83%. Haaland WM-Debüt (16 Quali-Tore), Odegaard 7 Assists Quali. Irak chancenlos."
         },
         {
           "date": "22.06 23:00",
@@ -847,21 +847,21 @@
           "away": "Algerien",
           "tip": "3:0",
           "analysisTip": "3:0",
-          "conf": "high",
+          "conf": "med-high",
           "result": null,
-          "injuries": "⚠️ Romero (ARG, Knie fraglich) | ⚠️ Molina (ARG, Oberschenkel fraglich)",
-          "note": "ARG -300 (75%). Messi erwartet fit. Romero/Molina fraglich. 3:0 bleibt."
+          "injuries": "⚠️ Romero (Knie) | ⚠️ Molina (Oberschenkel) | ALG: ❌ Bennacer | ❌ Hadjam | ❌ Tougai",
+          "note": "ARG 71%. Algerien 5 Ausfälle inkl. Bennacer. Messi erwartet fit. Aufst. n. best."
         },
         {
           "date": "17.06 06:00",
           "home": "Österreich",
           "away": "Jordanien",
           "tip": "3:1",
-          "analysisTip": "3:1",
-          "conf": "high",
+          "analysisTip": "2:1",
+          "conf": "med-high",
           "result": null,
           "injuries": null,
-          "note": "Österreich -600. Arnautovic fit. Jordanien WM-Debütant. 3:1 bleibt."
+          "note": "AUT 73%. Jordanien kompakt (AFCON-Finalist 2023). Low-Block-Abzug 3:1→2:1. Aufst. n. best."
         },
         {
           "date": "22.06 19:00",
@@ -917,11 +917,11 @@
           "home": "Portugal",
           "away": "DR Kongo",
           "tip": "3:0",
-          "analysisTip": "3:0",
-          "conf": "high",
+          "analysisTip": "2:0",
+          "conf": "med-high",
           "result": null,
-          "injuries": null,
-          "note": "Portugal -800 (89%). Ronaldo/Bernardo fit. COD Außenseiter. 3:0 bleibt."
+          "injuries": "⚠️ Leao (Rot Freundschaftssp., Sperre unklar) | ⚠️ Ruben Dias (Fitness)",
+          "note": "POR 79%. DRC ultra-defensiv (Low-Block). Leao ⚠️. 3:0→2:0. Aufst. n. best."
         },
         {
           "date": "18.06 04:00",
@@ -929,10 +929,10 @@
           "away": "Kolumbien",
           "tip": "0:2",
           "analysisTip": "0:2",
-          "conf": "high",
+          "conf": "med-high",
           "result": null,
           "injuries": null,
-          "note": "Kolumbien -600 (87%). Díaz/Cuadrado fit. 0:2 bleibt."
+          "note": "KOL 72%. Usbekistan WM-Debüt. Díaz/Borré fit. Aufst. n. best. → med-high."
         },
         {
           "date": "23.06 19:00",
@@ -988,11 +988,11 @@
           "home": "England",
           "away": "Kroatien",
           "tip": "2:0",
-          "analysisTip": "2:0",
-          "conf": "high",
+          "analysisTip": "1:1",
+          "conf": "med",
           "result": null,
-          "injuries": "❌ Livramento (ENG)",
-          "note": "England -300 (75%). Livramento OUT. Kane/Bellingham fit. 2:0 bleibt."
+          "injuries": "❌ Livramento (ENG) | ⚠️ Saka (Fitness, mögl. Bank) | CRO: ⚠️ Modric (Jochbeinbruch)",
+          "note": "ENG 58% (knappe Zone → Unentschieden). Saka fraglich, Modric ⚠️. Perf.-Regel: 1:1."
         },
         {
           "date": "18.06 01:00",
@@ -1002,8 +1002,8 @@
           "analysisTip": "1:1",
           "conf": "med",
           "result": null,
-          "injuries": "GHA: Kudus ⚠️",
-          "note": "Ghana -130. Enges Spiel erwartet. 1:1 bleibt."
+          "injuries": "GHA: ⚠️ Kudus (Fitness)",
+          "note": "Ghana 47% (nahe Pick-em). Panama kompakt (CONCACAF-3.). Kudus fraglich. 1:1."
         },
         {
           "date": "23.06 22:00",
