@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-17T08:05:37Z",
+    "aktualisiert": "2026-06-17T09:33:01Z",
     "rang": {
       "platz": "11.",
       "punkte": 23,
@@ -8,42 +8,42 @@
       "spieltag": "Spieltag 3"
     },
     "teamOdds": {
-      "Spanien": 0.152,
-      "Frankreich": 0.171,
-      "Portugal": 0.117,
-      "England": 0.104,
-      "Argentinien": 0.087,
-      "Brasilien": 0.065,
-      "Deutschland": 0.06,
-      "Niederlande": 0.049,
-      "Norwegen": 0.022,
-      "USA": 0.039,
+      "Frankreich": 0.176,
+      "Spanien": 0.139,
+      "Portugal": 0.109,
+      "England": 0.1,
+      "Argentinien": 0.09,
+      "Brasilien": 0.062,
+      "Deutschland": 0.065,
+      "Niederlande": 0.045,
+      "Norwegen": 0.028,
+      "USA": 0.042,
       "Marokko": 0.022,
-      "Belgien": 0.019,
-      "Kolumbien": 0.017,
+      "Belgien": 0.018,
+      "Kolumbien": 0.018,
       "Japan": 0.017,
-      "Mexiko": 0.019,
+      "Mexiko": 0.02,
       "Schweiz": 0.009,
       "Uruguay": 0.01,
       "Kroatien": 0.007,
-      "Ecuador": 0.007,
-      "Senegal": 0.006,
+      "Ecuador": 0.006,
+      "Senegal": 0.004,
       "Kanada": 0.01,
-      "Österreich": 0.006,
-      "Australien": 0.005,
-      "Schweden": 0.01,
+      "Österreich": 0.008,
+      "Australien": 0.006,
+      "Schweden": 0.015,
       "Südkorea": 0.005,
-      "Ghana": 0.004,
+      "Ghana": 0.003,
       "Iran": 0.003,
       "Elfenbeinküste": 0.004,
-      "Türkei": 0.003,
-      "Algerien": 0.003,
-      "Schottland": 0.002,
+      "Türkei": 0.002,
+      "Algerien": 0.002,
+      "Schottland": 0.003,
       "Tschechien": 0.002,
       "Saudi-Arabien": 0.002,
-      "Tunesien": 0.002,
+      "Tunesien": 0.001,
       "Katar": 0.001,
-      "Paraguay": 0.002,
+      "Paraguay": 0.001,
       "DR Kongo": 0.002,
       "Bosnien-Herzegowina": 0.002,
       "Irak": 0.001,
@@ -52,11 +52,12 @@
       "Usbekistan": 0.001,
       "Haiti": 0.001,
       "Neuseeland": 0.001,
-      "Kap Verde": 0.001,
-      "Curaçao": 0.001,
-      "Panama": 0.001
+      "Kap Verde": 0.002,
+      "Curaçao": 0.0,
+      "Panama": 0.001,
+      "Ägypten": 0.001
     },
-    "teamOddsTs": "2026-06-16T08:45:00Z"
+    "teamOddsTs": "2026-06-17T09:33:01Z"
   },
   "spieltag_info": [
     {
@@ -80,7 +81,7 @@
       "label": "Spieltag 3",
       "dates": "16.–18. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-16T08:45:00Z",
+      "analysisTs": "2026-06-17T09:33:01Z",
       "tipsSubmitted": true
     },
     {
@@ -920,8 +921,8 @@
           "analysisTip": "2:0",
           "conf": "med-high",
           "result": null,
-          "injuries": "⚠️ Leao (Rot Freundschaftssp., Sperre unklar) | ⚠️ Ruben Dias (Fitness)",
-          "note": "POR 79%. DRC ultra-defensiv (Low-Block). Leao ⚠️. 3:0→2:0. Aufst. n. best."
+          "injuries": null,
+          "note": "Portugal 77% (Betfair), DR Kongo 5-3-2 Low Block dämpft Score; Ronaldo vs. Debütant."
         },
         {
           "date": "18.06 04:00",
@@ -932,7 +933,7 @@
           "conf": "med-high",
           "result": null,
           "injuries": null,
-          "note": "KOL 72%. Usbekistan WM-Debüt. Díaz/Borré fit. Aufst. n. best. → med-high."
+          "note": "Kolumbien 73% (Betfair), Azteca 2240m klarer Südamerika-Vorteil; Usbekistans WM-Debüt."
         },
         {
           "date": "23.06 19:00",
@@ -991,8 +992,8 @@
           "analysisTip": "1:1",
           "conf": "med",
           "result": null,
-          "injuries": "❌ Livramento (ENG) | ⚠️ Saka (Fitness, mögl. Bank) | CRO: ⚠️ Modric (Jochbeinbruch)",
-          "note": "ENG 58% (knappe Zone → Unentschieden). Saka fraglich, Modric ⚠️. Perf.-Regel: 1:1."
+          "injuries": "⚠️ Saka (fraglich)",
+          "note": "England 58% knappe Fav., Kroatien non-loss 44% → beide Regeln aktiv; Under 2.5 Markt-Konsens."
         },
         {
           "date": "18.06 01:00",
@@ -1002,8 +1003,8 @@
           "analysisTip": "1:1",
           "conf": "med",
           "result": null,
-          "injuries": "GHA: ⚠️ Kudus (Fitness)",
-          "note": "Ghana 47% (nahe Pick-em). Panama kompakt (CONCACAF-3.). Kudus fraglich. 1:1."
+          "injuries": "❌ Partey (Visum verweigert)",
+          "note": "Ghana ohne Partey (Visum), 5v6 Niederlagen; Panama besser in Form. Ausgeglichenes Opener."
         },
         {
           "date": "23.06 22:00",
@@ -1060,10 +1061,10 @@
         "home": "1E",
         "away": "3. Pl.",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Deutschland (5.2%) vs 3. Pl. — GER klarer Favorit (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1072,10 +1073,10 @@
         "home": "1I",
         "away": "3. Pl.",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Frankreich (16.5%) vs 3. Pl. — FRA klarer Favorit (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1084,10 +1085,10 @@
         "home": "2A",
         "away": "2B",
         "tip": null,
-        "analysisTip": "0:2",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Schweiz (0.9%) vs Südkorea (0.5%) — SUI bevorzugt (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1096,10 +1097,10 @@
         "home": "1F",
         "away": "2C",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Niederlande (5.0%) vs Marokko (2.3%) — NED bevorzugt (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1108,10 +1109,10 @@
         "home": "2K",
         "away": "2L",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Kolumbien (1.4%) vs Kroatien (0.7%) — COL bevorzugt (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1120,10 +1121,10 @@
         "home": "1H",
         "away": "2J",
         "tip": null,
-        "analysisTip": "3:0",
-        "conf": "high",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Spanien (16.6%) vs Österreich (1.0%) — ESP klarer Favorit (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1132,10 +1133,10 @@
         "home": "1D",
         "away": "3. Pl.",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "USA (2.3%) vs 3. Pl. — USA bevorzugt (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1144,10 +1145,10 @@
         "home": "1G",
         "away": "3. Pl.",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Belgien (1.9%) vs 3. Pl. — BEL bevorzugt (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1156,10 +1157,10 @@
         "home": "1C",
         "away": "2F",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "med-high",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Brasilien (7.4%) vs Japan (1.3%) — BRA klarer Favorit (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1171,7 +1172,7 @@
         "analysisTip": "0:2",
         "conf": "med",
         "result": null,
-        "note": "Norwegen (2.5%) vs Elfenbeinküste (0.4%) — NOR bevorzugt (preliminär, teamOdds)",
+        "note": "ICI (0.4%) oder GER (6%) vs FRA (17.6%) oder NOR (2.8%) — Group-I-Runner-up klar bevorzugt.",
         "injuries": null
       },
       {
@@ -1180,10 +1181,10 @@
         "home": "1A",
         "away": "3. Pl.",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Mexiko (1.1%) vs 3. Pl. — MEX bevorzugt (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1192,10 +1193,10 @@
         "home": "1L",
         "away": "3. Pl.",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "England (9.8%) vs 3. Pl. — ENG klarer Favorit (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1204,10 +1205,10 @@
         "home": "1J",
         "away": "2H",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "high",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Argentinien (8.8%) vs Uruguay (0.8%) — ARG klarer Favorit (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1216,10 +1217,10 @@
         "home": "2D",
         "away": "2G",
         "tip": null,
-        "analysisTip": "2:1",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Australien vs Ägypten — ausgeglichen, AUS nach 2:0 vs TUR bevorzugt (preliminär)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1228,10 +1229,10 @@
         "home": "1B",
         "away": "3. Pl.",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Kanada (1.0%) vs 3. Pl. — CAN bevorzugt (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1240,10 +1241,10 @@
         "home": "1K",
         "away": "3. Pl.",
         "tip": null,
-        "analysisTip": "3:0",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Portugal (11.6%) vs 3. Pl. — POR klarer Favorit (preliminär, teamOdds)",
+        "note": null,
         "injuries": null
       }
     ],
@@ -1254,10 +1255,10 @@
         "home": "W M74",
         "away": "W M77",
         "tip": null,
-        "analysisTip": "1:2",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Frankreich (16.5%) vs Deutschland (5.2%) — FRA Favorit (erwartet: GER vs FRA)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1266,10 +1267,10 @@
         "home": "W M73",
         "away": "W M75",
         "tip": null,
-        "analysisTip": "0:2",
-        "conf": "med-high",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Niederlande (5.0%) vs Schweiz (0.9%) — NED klarer Favorit (erwartet: SUI vs NED)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1278,10 +1279,10 @@
         "home": "W M83",
         "away": "W M84",
         "tip": null,
-        "analysisTip": "0:3",
-        "conf": "high",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Spanien (16.6%) vs Kolumbien (1.4%) — ESP dominiert (erwartet: COL vs ESP)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1290,10 +1291,10 @@
         "home": "W M81",
         "away": "W M82",
         "tip": null,
-        "analysisTip": "1:0",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "USA (2.3%) vs Belgien (1.9%) — knapp, USA Heimvorteil (erwartet: USA vs BEL)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1302,10 +1303,10 @@
         "home": "W M76",
         "away": "W M78",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "med-high",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Brasilien (7.4%) vs Norwegen (2.5%) — BRA bevorzugt (erwartet: BRA vs NOR)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1314,10 +1315,10 @@
         "home": "W M79",
         "away": "W M80",
         "tip": null,
-        "analysisTip": "0:2",
-        "conf": "high",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "England (9.8%) vs Mexiko (1.1%) — ENG klarer Favorit (erwartet: MEX vs ENG)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1326,10 +1327,10 @@
         "home": "W M86",
         "away": "W M88",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "high",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Argentinien (8.8%) vs Australien (0.5%) — ARG dominiert (erwartet: ARG vs AUS)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1338,10 +1339,10 @@
         "home": "W M85",
         "away": "W M87",
         "tip": null,
-        "analysisTip": "0:2",
-        "conf": "high",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Portugal (11.6%) vs Kanada (1.0%) — POR klarer Favorit (erwartet: CAN vs POR)",
+        "note": null,
         "injuries": null
       }
     ],
@@ -1352,10 +1353,10 @@
         "home": "W M89",
         "away": "W M90",
         "tip": null,
-        "analysisTip": "1:0",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Frankreich (16.5%) vs Niederlande (5.0%) — FRA Favorit (erwartet: FRA vs NED)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1364,10 +1365,10 @@
         "home": "W M93",
         "away": "W M94",
         "tip": null,
-        "analysisTip": "2:0",
-        "conf": "med-high",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Spanien (16.6%) vs USA (2.3%) — ESP klarer Favorit (erwartet: ESP vs USA)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1376,10 +1377,10 @@
         "home": "W M91",
         "away": "W M92",
         "tip": null,
-        "analysisTip": "1:2",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "England (9.8%) vs Brasilien (7.4%) — knapp, ENG leicht bevorzugt (erwartet: BRA vs ENG)",
+        "note": null,
         "injuries": null
       },
       {
@@ -1388,10 +1389,10 @@
         "home": "W M95",
         "away": "W M96",
         "tip": null,
-        "analysisTip": "1:2",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Portugal (11.6%) vs Argentinien (8.8%) — knapp, POR leicht bevorzugt (erwartet: ARG vs POR)",
+        "note": null,
         "injuries": null
       }
     ],
@@ -1402,10 +1403,10 @@
         "home": "W M97",
         "away": "W M98",
         "tip": null,
-        "analysisTip": "1:2",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Spanien (16.6%) vs Frankreich (16.5%) — Klassiker, nahezu gleich, ESP minimal bevorzugt",
+        "note": null,
         "injuries": null
       },
       {
@@ -1414,10 +1415,10 @@
         "home": "W M99",
         "away": "W M100",
         "tip": null,
-        "analysisTip": "1:2",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Portugal (11.6%) vs England (9.8%) — knapp, POR leicht bevorzugt (erwartet: ENG vs POR)",
+        "note": null,
         "injuries": null
       }
     ],
@@ -1428,10 +1429,10 @@
         "home": "V M101",
         "away": "V M102",
         "tip": null,
-        "analysisTip": "2:1",
-        "conf": "med",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "3. Platz: Frankreich vs England (erwartet) — FRA leicht bevorzugt (16.5% vs 9.8%)",
+        "note": null,
         "injuries": null
       }
     ],
@@ -1442,10 +1443,10 @@
         "home": "W M101",
         "away": "W M102",
         "tip": null,
-        "analysisTip": "2:1",
-        "conf": "med-high",
+        "analysisTip": null,
+        "conf": null,
         "result": null,
-        "note": "Finale: Spanien vs Portugal (erwartet) — ESP favorit (16.6% vs 11.6%), preliminär",
+        "note": null,
         "injuries": null
       }
     ]
