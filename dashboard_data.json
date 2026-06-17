@@ -1,11 +1,11 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-16T08:45:00Z",
+    "aktualisiert": "2026-06-17T08:05:37Z",
     "rang": {
-      "platz": "20.",
-      "punkte": 10,
+      "platz": "11.",
+      "punkte": 23,
       "total": 25,
-      "spieltag": "Spieltag 2"
+      "spieltag": "Spieltag 3"
     },
     "teamOdds": {
       "Spanien": 0.152,
@@ -777,7 +777,7 @@
           "tip": "2:1",
           "analysisTip": "2:1",
           "conf": "med-high",
-          "result": null,
+          "result": "3:1",
           "injuries": "❌ Ekitike (FRA) | ⚠️ Saliba (Rücken, best. fit) | SEN: ⚠️ Diao | ⚠️ Gueye",
           "note": "FRA 67%. Mbappe/Dembele/Olise. Saliba fit, Senegal Mané fit. Aufst. n. best. → med-high."
         },
@@ -788,7 +788,7 @@
           "tip": "0:3",
           "analysisTip": "0:3",
           "conf": "med-high",
-          "result": null,
+          "result": "1:4",
           "injuries": null,
           "note": "NOR 83%. Haaland WM-Debüt (16 Quali-Tore), Odegaard 7 Assists Quali. Irak chancenlos."
         },
@@ -848,7 +848,7 @@
           "tip": "3:0",
           "analysisTip": "3:0",
           "conf": "med-high",
-          "result": null,
+          "result": "3:0",
           "injuries": "⚠️ Romero (Knie) | ⚠️ Molina (Oberschenkel) | ALG: ❌ Bennacer | ❌ Hadjam | ❌ Tougai",
           "note": "ARG 71%. Algerien 5 Ausfälle inkl. Bennacer. Messi erwartet fit. Aufst. n. best."
         },
@@ -859,7 +859,7 @@
           "tip": "3:1",
           "analysisTip": "2:1",
           "conf": "med-high",
-          "result": null,
+          "result": "3:1",
           "injuries": null,
           "note": "AUT 73%. Jordanien kompakt (AFCON-Finalist 2023). Low-Block-Abzug 3:1→2:1. Aufst. n. best."
         },
