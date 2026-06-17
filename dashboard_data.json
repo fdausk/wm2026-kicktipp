@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-17T09:33:01Z",
+    "aktualisiert": "2026-06-17T15:57:00Z",
     "rang": {
       "platz": "11.",
       "punkte": 23,
@@ -81,7 +81,7 @@
       "label": "Spieltag 3",
       "dates": "16.–18. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-17T09:33:01Z",
+      "analysisTs": "2026-06-17T15:57:00Z",
       "tipsSubmitted": true
     },
     {
@@ -917,12 +917,12 @@
           "date": "17.06 19:00",
           "home": "Portugal",
           "away": "DR Kongo",
-          "tip": "3:0",
+          "tip": "2:0",
           "analysisTip": "2:0",
           "conf": "med-high",
           "result": null,
-          "injuries": null,
-          "note": "Portugal 77% (Betfair), DR Kongo 5-3-2 Low Block dämpft Score; Ronaldo vs. Debütant."
+          "injuries": "❌ Rúben Dias (POR, Verletzung) — Inácio ersetzt",
+          "note": "POR 77-83% Favorit (Betfair/FanDuel). Dias OUT → Inácio. COD 5-3-2 Low-Block → -1 Tor Abzug (3:0→2:0). Over 2.5 Markt -130. Correct Score: 2:0 Forebet-Favorit. WM-Debüt DR Kongo seit 1974."
         },
         {
           "date": "18.06 04:00",
