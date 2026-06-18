@@ -1,11 +1,11 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-18T08:30:00Z",
+    "aktualisiert": "2026-06-18T15:20:00Z",
     "rang": {
-      "platz": "12.",
-      "punkte": 26,
+      "platz": "14.",
+      "punkte": 28,
       "total": 25,
-      "spieltag": "Spieltag 3"
+      "spieltag": "Spieltag 4"
     },
     "teamOdds": {
       "Frankreich": 0.2,
@@ -89,7 +89,7 @@
       "label": "Spieltag 4",
       "dates": "18.–20. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-18T08:30:00Z",
+      "analysisTs": "2026-06-18T15:20:00Z",
       "tipsSubmitted": true
     },
     {
@@ -233,8 +233,8 @@
           "analysisTip": "1:0",
           "conf": "med-high",
           "result": null,
-          "injuries": "RSA: 🔴 Sithole (Rotsp.) | 🔴 Zwane (Rotsp.)",
-          "note": "CZE 54% (knappe Zone). RSA Sithole+Zwane gesperrt. Beide ohne Punkte. 1:0."
+          "injuries": "RSA: 🔴 Sithole (1 Sp. Sperre) | 🔴 Zwane (3 Sp. Sperre)",
+          "note": "CZE 57% (-130 FanDuel, knappe Zone). RSA Sithole+Zwane gesperrt, xG 0.07 (Sp.1). Under-Lean. 1:0."
         },
         {
           "date": "19.06 03:00",
