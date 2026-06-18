@@ -1,37 +1,37 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-18T07:25:29Z",
+    "aktualisiert": "2026-06-18T08:30:00Z",
     "rang": {
-      "platz": "11.",
-      "punkte": 23,
+      "platz": "12.",
+      "punkte": 26,
       "total": 25,
       "spieltag": "Spieltag 3"
     },
     "teamOdds": {
-      "Frankreich": 0.176,
-      "Spanien": 0.139,
+      "Frankreich": 0.2,
+      "Spanien": 0.167,
       "Portugal": 0.109,
-      "England": 0.1,
-      "Argentinien": 0.09,
-      "Brasilien": 0.062,
+      "England": 0.125,
+      "Argentinien": 0.1,
+      "Brasilien": 0.088,
       "Deutschland": 0.065,
-      "Niederlande": 0.045,
-      "Norwegen": 0.028,
-      "USA": 0.042,
+      "Niederlande": 0.055,
+      "Norwegen": 0.035,
+      "USA": 0.05,
       "Marokko": 0.022,
       "Belgien": 0.018,
-      "Kolumbien": 0.018,
-      "Japan": 0.017,
-      "Mexiko": 0.02,
+      "Kolumbien": 0.02,
+      "Japan": 0.018,
+      "Mexiko": 0.022,
       "Schweiz": 0.009,
       "Uruguay": 0.01,
       "Kroatien": 0.007,
       "Ecuador": 0.006,
       "Senegal": 0.004,
-      "Kanada": 0.01,
+      "Kanada": 0.012,
       "Österreich": 0.008,
-      "Australien": 0.006,
-      "Schweden": 0.015,
+      "Australien": 0.012,
+      "Schweden": 0.012,
       "Südkorea": 0.005,
       "Ghana": 0.003,
       "Iran": 0.003,
@@ -57,7 +57,7 @@
       "Panama": 0.001,
       "Ägypten": 0.001
     },
-    "teamOddsTs": "2026-06-17T09:33:01Z"
+    "teamOddsTs": "2026-06-18T08:30:00Z"
   },
   "spieltag_info": [
     {
@@ -89,7 +89,7 @@
       "label": "Spieltag 4",
       "dates": "18.–20. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-13T16:09:55Z",
+      "analysisTs": "2026-06-18T08:30:00Z",
       "tipsSubmitted": true
     },
     {
@@ -230,11 +230,11 @@
           "home": "Tschechien",
           "away": "Südafrika",
           "tip": "2:0",
-          "analysisTip": "2:0",
-          "conf": "high",
+          "analysisTip": "1:0",
+          "conf": "med-high",
           "result": null,
-          "injuries": null,
-          "note": null
+          "injuries": "RSA: 🔴 Sithole (Rotsp.) | 🔴 Zwane (Rotsp.)",
+          "note": "CZE 54% (knappe Zone). RSA Sithole+Zwane gesperrt. Beide ohne Punkte. 1:0."
         },
         {
           "date": "19.06 03:00",
@@ -245,7 +245,7 @@
           "conf": "med",
           "result": null,
           "injuries": null,
-          "note": null
+          "note": "MEX/KOR beide 3 Pkt. Nahezu gleichwertig. MEX CONCACAF-Vorteil. 1:1."
         },
         {
           "date": "25.06 03:00",
@@ -302,10 +302,10 @@
           "away": "Bosnien-Herzegowina",
           "tip": "2:0",
           "analysisTip": "2:0",
-          "conf": "high",
+          "conf": "med-high",
           "result": null,
-          "injuries": null,
-          "note": null
+          "injuries": "BIH: ❌ Celik | ⚠️ Sunjic | ⚠️ Dzeko | ⚠️ Tabakovic",
+          "note": "SUI ~68% — BIH mit 4 Ausfällen/Fragezeichen. Aufst. n. best. → med-high."
         },
         {
           "date": "19.06 00:00",
@@ -313,10 +313,10 @@
           "away": "Katar",
           "tip": "3:0",
           "analysisTip": "3:0",
-          "conf": "high",
+          "conf": "med-high",
           "result": null,
-          "injuries": null,
-          "note": null
+          "injuries": "CAN: ⚠️ Davies (Hamstring)",
+          "note": "CAN 78%. J. David fit (39 Länderspieltore). Katar schwächstes Team. Aufst. n. best."
         },
         {
           "date": "24.06 21:00",
@@ -372,22 +372,22 @@
           "home": "Schottland",
           "away": "Marokko",
           "tip": "0:2",
-          "analysisTip": "0:2",
-          "conf": "high",
+          "analysisTip": "1:1",
+          "conf": "med",
           "result": null,
           "injuries": null,
-          "note": null
+          "note": "MAR 57% (knappe Zone → Unentschieden). SCO non-loss 45% → Außenseiter-Regel. 1:1."
         },
         {
           "date": "20.06 02:30",
           "home": "Brasilien",
           "away": "Haiti",
           "tip": "4:0",
-          "analysisTip": "4:0",
-          "conf": "high",
+          "analysisTip": "3:0",
+          "conf": "med-high",
           "result": null,
-          "injuries": "❌ Rodrygo | ❌ Militão | ❌ Estêvão | ⚠️ Neymar",
-          "note": null
+          "injuries": "BRA: ❌ Militão | ❌ Rodrygo",
+          "note": "BRA 89%. Haiti ohne Punkte. Brasilien motiviert nach 1:1 gegen MAR. Aufst. n. best."
         },
         {
           "date": "25.06 00:00",
@@ -443,22 +443,22 @@
           "home": "USA",
           "away": "Australien",
           "tip": "2:0",
-          "analysisTip": "2:0",
-          "conf": "high",
+          "analysisTip": "1:1",
+          "conf": "med",
           "result": null,
           "injuries": null,
-          "note": null
+          "note": "USA 59% (knappe Zone → Unentschieden). AUS non-loss ~41%. Beide nach 3:0-ST1. 1:1."
         },
         {
           "date": "20.06 05:00",
           "home": "Türkei",
           "away": "Paraguay",
           "tip": "2:1",
-          "analysisTip": "2:1",
+          "analysisTip": "1:0",
           "conf": "med",
           "result": null,
-          "injuries": "⚠️ Güler (TUR, fraglich)",
-          "note": "Türkei Favorit. Güler fraglich → TUR geschwächt. 2:1 bleibt, conf gesenkt."
+          "injuries": null,
+          "note": "TUR 49% (kein klarer Favorit). Beide ohne Punkte. TUR Qualität-Vorteil Guler/Yildiz. 1:0."
         },
         {
           "date": "26.06 04:00",
