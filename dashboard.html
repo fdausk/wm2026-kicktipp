@@ -264,6 +264,13 @@
   .analysis-rec-title { font-size: 11px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.6px; margin-bottom: 6px; }
   .analysis-rec-time { font-size: 14px; font-weight: 600; color: var(--yellow); margin-bottom: 4px; }
   .analysis-rec-note { font-size: 12px; color: var(--muted); line-height: 1.5; }
+  .analysis-info-btn { margin-top: 10px; width: 100%; padding: 7px 12px; background: transparent; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); font-size: 11px; letter-spacing: 0.4px; cursor: pointer; transition: background 0.15s, color 0.15s; text-align: center; }
+  .analysis-info-btn:hover { background: rgba(255,255,255,0.06); color: var(--text); }
+  .info-modal-section { margin-bottom: 22px; }
+  .info-modal-section h3 { font-size: 13px; font-weight: 700; color: var(--text); margin: 0 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+  .info-modal-section p { font-size: 13px; color: var(--muted); line-height: 1.6; margin: 0 0 8px; }
+  .info-modal-section p:last-child { margin-bottom: 0; }
+  .info-modal-tag { display: inline-block; background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; font-size: 11px; color: var(--yellow); font-weight: 600; margin-bottom: 6px; }
   .countdown-done { font-size: 18px; font-weight: 700; color: var(--green); }
   .countdown-rank { padding-top: 14px; border-top: 1px solid var(--border); }
   .countdown-rank-header { font-size: 11px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.6px; margin-bottom: 10px; }
@@ -400,6 +407,7 @@
           <div class="analysis-rec-title">📋 Letzte Analyse</div>
           <div class="analysis-rec-time" id="cdAnalysisTime">—</div>
           <div class="analysis-rec-note" id="cdAnalysisNote">—</div>
+          <button class="analysis-info-btn" onclick="openInfoModal()">ℹ️ Wie funktioniert das?</button>
         </div>
       </div>
     </div>
@@ -1022,6 +1030,48 @@ function openTipModal(stNr) {
 function closeModal() {
   document.getElementById('modalOverlay').classList.remove('open');
   currentModalSt = null;
+}
+
+function openInfoModal() {
+  currentModalSt = null;
+  document.getElementById('modalTitle').textContent = 'Wie funktioniert das System?';
+  document.getElementById('modalSubtitle').textContent = 'WM 2026 Kicktipp — ClaudeFC in tip-it-like-i22';
+  document.getElementById('modalSummary').innerHTML = '';
+  document.getElementById('modalBody').innerHTML = `
+    <div class="info-modal-section">
+      <p>Dieses System analysiert WM-Spiele automatisch und gibt Tipps bei Kicktipp ab — als Spieler <strong>ClaudeFC</strong> in der Community <strong>tip-it-like-i22</strong>. Alle Entscheidungen trifft eine KI (Claude), die Wettquoten, Aufstellungen, Verletzungen und Spielstatistiken auswertet.</p>
+    </div>
+    <div class="info-modal-section">
+      <div class="info-modal-tag">🔄 Automatisch</div>
+      <h3>Spielbeobachter (läuft rund um die Uhr)</h3>
+      <p>Alle 15 Minuten prüft das System, ob ein Spiel kurz bevorsteht oder gerade beendet wurde. Liegt ein Anstoß in weniger als 75 Minuten, analysiert die KI das Spiel und gibt den Tipp direkt bei Kicktipp ab — ohne dass jemand eingreifen muss. Ist ein Spiel beendet, trägt das System das Ergebnis nach und bewertet, ob der Tipp richtig lag.</p>
+    </div>
+    <div class="info-modal-section">
+      <div class="info-modal-tag">🖱️ Manuell</div>
+      <h3>Spieltagsanalyse</h3>
+      <p>Auf Wunsch analysiert die KI alle Spiele eines bestimmten Spieltags im Detail: Wettquoten mehrerer Anbieter, bestätigte Aufstellungen, Verletzungen, aktuelle Form und Turniersituation werden gegeneinander abgewogen. Das Ergebnis ist eine Tipp-Empfehlung mit Begründung und Konfidenzgrad für jedes Spiel.</p>
+      <h3>Tipp-Eintragung</h3>
+      <p>Die Tipp-Empfehlungen aus der Analyse werden angezeigt und — nach manueller Bestätigung — bei Kicktipp eingetragen. Wenn eine neuere Analyse einen anderen Tipp empfiehlt als der bereits eingetragene, wird die Änderung gesondert markiert.</p>
+      <h3>Komplett-Aktualisierung</h3>
+      <p>Kombiniert Spieltagsanalyse, Tipp-Eintragung und KO-Prognose in einem Schritt. Aktualisiert außerdem die Turniersieger-Wahrscheinlichkeiten aller Teams anhand aktueller Wettquoten und berechnet, welche Teams voraussichtlich in die K.O.-Runde einziehen.</p>
+    </div>
+    <div class="info-modal-section">
+      <div class="info-modal-tag">📊 Dashboard</div>
+      <h3>Wo sind die Ergebnisse sichtbar?</h3>
+      <p>Alle Tipps, Ergebnisse und Analysen werden auf diesem passwortgeschützten Dashboard dargestellt. Es zeigt unter anderem:</p>
+      <p>— Alle Gruppenspiele und K.O.-Paarungen mit Tipp, Ergebnis und Status<br>
+         — Eine Trefferquote nach Kicktipp-Punktesystem (exakter Tipp, gleiche Tordifferenz, richtige Tendenz)<br>
+         — Eine KO-Prognose aus Analyse-Empfehlungen und aktuellen Wettquoten<br>
+         — Den aktuellen Rang von ClaudeFC in der Community</p>
+      <p>Das Dashboard aktualisiert sich automatisch, sobald neue Daten vorliegen.</p>
+    </div>
+    <div class="info-modal-section">
+      <div class="info-modal-tag">🧠 Lernend</div>
+      <h3>Wie lernt das System dazu?</h3>
+      <p>Nach jedem gespielten Spiel wird festgehalten, ob der Tipp korrekt war. Falsche Tipps werden nach Fehlertyp kategorisiert — zum Beispiel, ob ein Favorit unerwartet nicht gewann oder ob ein Außenseiter unterschätzt wurde. Diese Auswertung fließt in die nächste Analyse ein und passt die Tipp-Strategie automatisch an. Regeln, die sich empirisch als wirkungslos erwiesen haben, werden entfernt.</p>
+    </div>
+  `;
+  document.getElementById('modalOverlay').classList.add('open');
 }
 
 
