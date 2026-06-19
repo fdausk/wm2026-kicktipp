@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-19T08:50:00Z",
+    "aktualisiert": "2026-06-19T17:55:00Z",
     "rang": {
       "platz": "13.",
       "punkte": 34,
@@ -89,7 +89,7 @@
       "label": "Spieltag 4",
       "dates": "18.–20. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-19T08:50:00Z",
+      "analysisTs": "2026-06-19T17:55:00Z",
       "tipsSubmitted": true
     },
     {
@@ -442,12 +442,12 @@
           "date": "19.06 21:00",
           "home": "USA",
           "away": "Australien",
-          "tip": "2:0",
+          "tip": "1:1",
           "analysisTip": "1:1",
           "conf": "med",
           "result": null,
-          "injuries": "USA: ⚠️ Pulisic (fraglich, Beinverletzung) | AUS: ⚠️ Toure (Wadenprobleme)",
-          "note": "USA 59% knappe Zone → Unentschieden. AUS non-loss ~41%. Pulisic fraglich. Beide auf 3 Pkt. 1:1."
+          "injuries": "❌ Pulisic (USA, OUT bestätigt) | ✅ Toure (AUS, fit)",
+          "note": "❌ Pulisic OUT, USA 62% knappe Zone → Unentschieden. AUS Low-Block (2:0 TUR). Zwayer 0.34 Elm./Sp."
         },
         {
           "date": "20.06 05:00",
