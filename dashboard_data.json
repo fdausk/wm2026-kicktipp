@@ -1,23 +1,23 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-19T08:37:06Z",
+    "aktualisiert": "2026-06-19T08:50:00Z",
     "rang": {
-      "platz": "14.",
-      "punkte": 28,
+      "platz": "13.",
+      "punkte": 34,
       "total": 25,
       "spieltag": "Spieltag 4"
     },
     "teamOdds": {
-      "Frankreich": 0.2,
-      "Spanien": 0.167,
-      "Portugal": 0.109,
-      "England": 0.125,
-      "Argentinien": 0.1,
-      "Brasilien": 0.088,
-      "Deutschland": 0.065,
+      "Frankreich": 0.192,
+      "Spanien": 0.154,
+      "Portugal": 0.091,
+      "England": 0.143,
+      "Argentinien": 0.111,
+      "Brasilien": 0.091,
+      "Deutschland": 0.06,
       "Niederlande": 0.055,
-      "Norwegen": 0.035,
-      "USA": 0.05,
+      "Norwegen": 0.038,
+      "USA": 0.055,
       "Marokko": 0.022,
       "Belgien": 0.018,
       "Kolumbien": 0.02,
@@ -57,7 +57,7 @@
       "Panama": 0.001,
       "Ägypten": 0.001
     },
-    "teamOddsTs": "2026-06-18T08:30:00Z"
+    "teamOddsTs": "2026-06-19T08:50:00Z"
   },
   "spieltag_info": [
     {
@@ -89,7 +89,7 @@
       "label": "Spieltag 4",
       "dates": "18.–20. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-18T15:20:00Z",
+      "analysisTs": "2026-06-19T08:50:00Z",
       "tipsSubmitted": true
     },
     {
@@ -314,7 +314,7 @@
           "tip": "3:0",
           "analysisTip": "3:0",
           "conf": "med-high",
-          "result": "4:0",
+          "result": "6:0",
           "injuries": "CAN: ⚠️ Davies (Hamstring)",
           "note": "CAN 78%. J. David fit (39 Länderspieltore). Katar schwächstes Team. Aufst. n. best."
         },
@@ -376,7 +376,7 @@
           "conf": "med",
           "result": null,
           "injuries": null,
-          "note": "MAR 57% (knappe Zone → Unentschieden). SCO non-loss 45% → Außenseiter-Regel. 1:1."
+          "note": "MAR 57% knappe Zone → Unentschieden. SCO non-loss 45% ≥42% Außenseiter-Regel. SCO 3pts/MAR 1pt. 1:1."
         },
         {
           "date": "20.06 02:30",
@@ -386,8 +386,8 @@
           "analysisTip": "3:0",
           "conf": "med-high",
           "result": null,
-          "injuries": "BRA: ❌ Militão | ❌ Rodrygo",
-          "note": "BRA 89%. Haiti ohne Punkte. Brasilien motiviert nach 1:1 gegen MAR. Aufst. n. best."
+          "injuries": "BRA: ❌ Neymar (Wade) | ❌ Militão | ❌ Rodrygo",
+          "note": "BRA 89% Favorit. HAI 0pts nach 0:1 SCO. BRA motiviert nach 1:1 vs MAR. Aufst. n. best. 3:0."
         },
         {
           "date": "25.06 00:00",
@@ -446,8 +446,8 @@
           "analysisTip": "1:1",
           "conf": "med",
           "result": null,
-          "injuries": null,
-          "note": "USA 59% (knappe Zone → Unentschieden). AUS non-loss ~41%. Beide nach 3:0-ST1. 1:1."
+          "injuries": "USA: ⚠️ Pulisic (fraglich, Beinverletzung) | AUS: ⚠️ Toure (Wadenprobleme)",
+          "note": "USA 59% knappe Zone → Unentschieden. AUS non-loss ~41%. Pulisic fraglich. Beide auf 3 Pkt. 1:1."
         },
         {
           "date": "20.06 05:00",
@@ -458,7 +458,7 @@
           "conf": "med",
           "result": null,
           "injuries": null,
-          "note": "TUR 49% (kein klarer Favorit). Beide ohne Punkte. TUR Qualität-Vorteil Guler/Yildiz. 1:0."
+          "note": "TUR 49% (kein klarer Favorit). Beide 0pts. TUR-Qualitätsvorteil Guler/Yildiz/Calhanoglu. 1:0."
         },
         {
           "date": "26.06 04:00",
@@ -1082,13 +1082,13 @@
       {
         "id": "M73",
         "date": "28.06 21:00",
-        "home": "2A",
+        "home": "Südkorea",
         "away": "2B",
         "tip": null,
         "analysisTip": null,
         "conf": null,
         "result": null,
-        "note": null,
+        "note": "KOR (0.5%) vs CAN (1.2%)/SUI (0.9%) — 2B ist klarer Favorit, Paarung klärt sich ST5.",
         "injuries": null
       },
       {
