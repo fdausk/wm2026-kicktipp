@@ -43,6 +43,7 @@
     --red: #ef4444;
     --yellow: #f59e0b;
     --orange: #fb923c;
+    --teal: #2dd4bf;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html, body { overflow-x: hidden; max-width: 100%; }
@@ -78,7 +79,7 @@
   .source-tag { background: var(--surface2); border: 1px solid var(--border); border-radius: 20px; padding: 3px 10px; font-size: 11px; color: var(--muted); }
 
   /* Stats bar */
-  .stats-bar { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; margin-bottom: 12px; }
+  .stats-bar { display: grid; grid-template-columns: repeat(7, 1fr); gap: 12px; margin-bottom: 12px; }
   .conf-bar { display: flex; gap: 12px; margin-bottom: 28px; }
   .conf-bar-item { flex: 1; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; display: flex; align-items: center; gap: 10px; }
   .conf-bar-dot { width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0; }
@@ -97,6 +98,7 @@
   .stat-value.red { color: var(--red); }
   .stat-value.yellow { color: var(--yellow); }
   .stat-value.blue { color: var(--accent); }
+  .stat-value.teal { color: var(--teal); }
 
   /* Group tabs */
   .group-tabs { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 20px; }
@@ -147,6 +149,7 @@
   .status-correct { background: rgba(34,197,94,0.15); color: var(--green); }
   .status-wrong { background: rgba(239,68,68,0.1); color: var(--red); }
   .status-pending { background: var(--surface2); color: var(--muted); }
+  .status-differenz { background: rgba(45,212,191,0.15); color: var(--teal); }
   .status-tendenz { background: rgba(245,158,11,0.15); color: var(--yellow); }
   .status-live { background: rgba(79,126,248,0.2); color: var(--accent); animation: pulse 1.5s infinite; }
   @keyframes pulse { 0%,100% { opacity:1 } 50% { opacity:0.6 } }
@@ -315,7 +318,7 @@
     header h1 { font-size: 16px; }
     .container { padding: 12px; }
     .analysis-grid { grid-template-columns: 1fr; }
-    .stats-bar { grid-template-columns: repeat(3, 1fr); grid-auto-rows: 1fr; }
+    .stats-bar { grid-template-columns: repeat(4, 1fr); grid-auto-rows: 1fr; }
     .conf-bar { flex-direction: column; gap: 8px; }
     .conf-bar-item { padding: 8px 12px; }
     .conf-bar-count { font-size: 18px; }
@@ -473,6 +476,7 @@
     <div class="stat"><div class="stat-value blue" id="statTotal">0</div><div class="stat-label">Spiele gesamt</div></div>
     <div class="stat"><div class="stat-value" id="statPlayed">0</div><div class="stat-label">Gespielt</div></div>
     <div class="stat"><div class="stat-value green" id="statCorrect">0</div><div class="stat-label">Tipp ✓</div></div>
+    <div class="stat"><div class="stat-value teal" id="statDifferenz">0</div><div class="stat-label">Differenz ✓</div></div>
     <div class="stat"><div class="stat-value yellow" id="statTendenz">0</div><div class="stat-label">Tendenz ✓</div></div>
     <div class="stat"><div class="stat-value red" id="statWrong">0</div><div class="stat-label">Tipp ✗</div></div>
     <div class="stat"><div class="stat-value yellow" id="statRate">—</div><div class="stat-label">Trefferquote</div></div>
@@ -1028,6 +1032,12 @@ function tendenz(score) {
   return h > a ? 'H' : h < a ? 'A' : 'D';
 }
 
+function scoreDiff(score) {
+  if (!score) return null;
+  const [h, a] = score.split(':').map(Number);
+  return h - a;
+}
+
 const TEAMS_ABBR = {
   'Ägypten':'EGY','Algerien':'ALG','Argentinien':'ARG','Australien':'AUS',
   'Belgien':'BEL','Bosnien-Herzegowina':'BIH','Brasilien':'BRA',
@@ -1075,6 +1085,8 @@ function statusCell(m) {
     return '<span class="status status-pending"><span class="mob-txt">Getippt</span><span class="mob-ico">📌</span></span>';
   }
   if (m.tip === m.result) return '<span class="status status-correct"><span class="mob-txt">✓ Richtig</span><span class="mob-ico">✓</span></span>';
+  if (m.tip && scoreDiff(m.tip) === scoreDiff(m.result))
+    return '<span class="status status-differenz"><span class="mob-txt">± Differenz</span><span class="mob-ico">±</span></span>';
   if (m.tip && tendenz(m.tip) === tendenz(m.result))
     return '<span class="status status-tendenz"><span class="mob-txt">~ Tendenz</span><span class="mob-ico">~</span></span>';
   return '<span class="status status-wrong"><span class="mob-txt">✗ Falsch</span><span class="mob-ico">✗</span></span>';
@@ -1108,7 +1120,7 @@ function nextMatchKey() {
 }
 
 function renderGroups() {
-  let totalPlayed = 0, totalCorrect = 0, totalTendenz = 0, totalWrong = 0, totalGames = 0;
+  let totalPlayed = 0, totalCorrect = 0, totalDifferenz = 0, totalTendenz = 0, totalWrong = 0, totalGames = 0;
   let confHigh = 0, confMedHigh = 0, confMed = 0;
   let html = '';
   const nmKey = nextMatchKey();
@@ -1119,8 +1131,9 @@ function renderGroups() {
     for (const m of data.matches) {
       if (m.result) totalPlayed++;
       if (m.result && m.tip === m.result) totalCorrect++;
+      else if (m.result && m.tip && scoreDiff(m.tip) === scoreDiff(m.result)) totalDifferenz++;
       else if (m.result && m.tip && tendenz(m.tip) === tendenz(m.result)) totalTendenz++;
-      if (m.result && m.tip && m.tip !== m.result && tendenz(m.tip) !== tendenz(m.result)) totalWrong++;
+      else if (m.result && m.tip) totalWrong++;
       if (m.conf === 'high') confHigh++;
       else if (m.conf === 'med-high') confMedHigh++;
       else if (m.conf === 'med') confMed++;
@@ -1170,32 +1183,36 @@ function renderGroups() {
   document.getElementById('groups').innerHTML = html;
 
   // Stats — include K.O. matches
-  let koTotal = 0, koPlayed = 0, koCorrect = 0, koTendenz = 0, koWrong = 0;
+  let koTotal = 0, koPlayed = 0, koCorrect = 0, koDifferenz = 0, koTendenz = 0, koWrong = 0;
   for (const matches of Object.values(KNOCKOUT)) {
     for (const m of matches) {
       koTotal++;
       if (m.result) {
         koPlayed++;
         if (m.tip === m.result) koCorrect++;
+        else if (m.tip && scoreDiff(m.tip) === scoreDiff(m.result)) koDifferenz++;
         else if (m.tip && tendenz(m.tip) === tendenz(m.result)) koTendenz++;
-        else if (m.tip && tendenz(m.tip) !== tendenz(m.result)) koWrong++;
+        else if (m.tip) koWrong++;
       }
       if (m.conf === 'high') confHigh++;
       else if (m.conf === 'med-high') confMedHigh++;
       else if (m.conf === 'med') confMed++;
     }
   }
-  const allTotal   = totalGames + koTotal;
-  const allPlayed  = totalPlayed + koPlayed;
-  const allCorrect = totalCorrect + koCorrect;
-  const allTendenz = totalTendenz + koTendenz;
-  const allWrong   = totalWrong + koWrong;
+  const allTotal      = totalGames + koTotal;
+  const allPlayed     = totalPlayed + koPlayed;
+  const allCorrect    = totalCorrect + koCorrect;
+  const allDifferenz  = totalDifferenz + koDifferenz;
+  const allTendenz    = totalTendenz + koTendenz;
+  const allWrong      = totalWrong + koWrong;
   document.getElementById('statTotal').textContent = allTotal;
   document.getElementById('statPlayed').textContent = allPlayed;
   document.getElementById('statCorrect').textContent = allCorrect;
+  document.getElementById('statDifferenz').textContent = allDifferenz;
   document.getElementById('statTendenz').textContent = allTendenz;
   document.getElementById('statWrong').textContent = allWrong;
-  const rate = allPlayed > 0 ? Math.round(allCorrect / allPlayed * 100) + '%' : '—';
+  const pts = allCorrect * 4 + allDifferenz * 3 + allTendenz * 2;
+  const rate = allPlayed > 0 ? Math.round(pts / (allPlayed * 4) * 100) + '%' : '—';
   document.getElementById('statRate').textContent = rate;
   document.getElementById('confHigh').textContent = confHigh;
   document.getElementById('confMedHigh').textContent = confMedHigh;
@@ -1246,6 +1263,8 @@ function bracketCard(m, isFinal, nmKey) {
   if (m.result && m.tip) {
     if (m.tip === m.result)
       statusHtml = '<span class="status status-correct" style="font-size:11px;padding:2px 6px">✓ Richtig</span>';
+    else if (scoreDiff(m.tip) === scoreDiff(m.result))
+      statusHtml = '<span class="status status-differenz" style="font-size:11px;padding:2px 6px">± Differenz</span>';
     else if (tendenz(m.tip) === tendenz(m.result))
       statusHtml = '<span class="status status-tendenz" style="font-size:11px;padding:2px 6px">~ Tendenz</span>';
     else
