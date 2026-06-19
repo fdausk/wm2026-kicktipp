@@ -259,13 +259,16 @@
   .countdown-num { font-size: 28px; font-weight: 700; font-family: Helvetica, Arial, sans-serif; line-height: 1; color: var(--accent); }
   .countdown-lbl { font-size: 10px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.5px; margin-top: 4px; }
   .countdown-sep { font-size: 24px; font-weight: 700; color: var(--muted); align-self: center; }
-  .countdown-right { flex: 1; min-width: 220px; display: flex; flex-direction: column; }
+  .countdown-right { flex: 1; min-width: 220px; display: flex; flex-direction: row; gap: 10px; }
   .analysis-rec { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 16px; flex: 1; box-sizing: border-box; }
   .analysis-rec-title { font-size: 11px; text-transform: uppercase; color: var(--muted); letter-spacing: 0.6px; margin-bottom: 6px; }
   .analysis-rec-time { font-size: 14px; font-weight: 600; color: var(--yellow); margin-bottom: 4px; }
   .analysis-rec-note { font-size: 12px; color: var(--muted); line-height: 1.5; }
-  .analysis-info-btn { margin-top: 10px; width: 100%; padding: 7px 12px; background: transparent; border: 1px solid var(--border); border-radius: 6px; color: var(--muted); font-size: 11px; letter-spacing: 0.4px; cursor: pointer; transition: background 0.15s, color 0.15s; text-align: center; }
-  .analysis-info-btn:hover { background: rgba(255,255,255,0.06); color: var(--text); }
+  .analysis-info-tile { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; min-width: 100px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; cursor: pointer; transition: background 0.15s, border-color 0.15s; text-align: center; }
+  .analysis-info-tile:hover { background: var(--surface); border-color: var(--muted); }
+  .analysis-info-tile-icon { font-size: 20px; line-height: 1; }
+  .analysis-info-tile-label { font-size: 11px; color: var(--muted); line-height: 1.4; letter-spacing: 0.3px; }
+  .analysis-info-tile:hover .analysis-info-tile-label { color: var(--text); }
   .info-modal-section { margin-bottom: 22px; }
   .info-modal-section h3 { font-size: 13px; font-weight: 700; color: var(--text); margin: 0 0 8px; text-transform: uppercase; letter-spacing: 0.5px; }
   .info-modal-section p { font-size: 13px; color: var(--muted); line-height: 1.6; margin: 0 0 8px; }
@@ -355,7 +358,8 @@
     .countdown-unit { min-width: 54px; padding: 8px 10px; }
     .countdown-num { font-size: 22px; }
     .countdown-sep { font-size: 18px; }
-    .countdown-right { min-width: unset; width: 100%; }
+    .countdown-right { min-width: unset; width: 100%; flex-direction: row; }
+    .analysis-info-tile { min-width: 80px; }
     .phase-nav { width: 100%; }
     .phase-tab { flex: 1; padding: 8px 12px; }
     .team-full { display: none; }
@@ -407,8 +411,11 @@
           <div class="analysis-rec-title">📋 Letzte Analyse</div>
           <div class="analysis-rec-time" id="cdAnalysisTime">—</div>
           <div class="analysis-rec-note" id="cdAnalysisNote">—</div>
-          <button class="analysis-info-btn" onclick="openInfoModal()">ℹ️ Wie funktioniert das?</button>
         </div>
+        <button class="analysis-info-tile" onclick="openInfoModal()">
+          <span class="analysis-info-tile-icon">ℹ️</span>
+          <span class="analysis-info-tile-label">Wie funktioniert<br>das System?</span>
+        </button>
       </div>
     </div>
     <div class="countdown-rank">
