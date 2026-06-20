@@ -1,11 +1,11 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-19T21:59:00Z",
+    "aktualisiert": "2026-06-20T11:31:28Z",
     "rang": {
-      "platz": "13.",
-      "punkte": 34,
+      "platz": "18.",
+      "punkte": 38,
       "total": 25,
-      "spieltag": "Spieltag 4"
+      "spieltag": "5. Spieltag"
     },
     "teamOdds": {
       "Frankreich": 0.192,
@@ -374,7 +374,7 @@
           "tip": "0:2",
           "analysisTip": "1:1",
           "conf": "med",
-          "result": null,
+          "result": "0:1",
           "injuries": null,
           "note": "MAR 57% knappe Zone → Unentschieden. SCO non-loss 45% ≥42% Außenseiter-Regel. SCO 3pts/MAR 1pt. 1:1."
         },
@@ -385,7 +385,7 @@
           "tip": "4:0",
           "analysisTip": "3:0",
           "conf": "med-high",
-          "result": null,
+          "result": "3:0",
           "injuries": "BRA: ❌ Neymar (Wade) | ❌ Militão | ❌ Rodrygo",
           "note": "BRA 89% Favorit. HAI 0pts nach 0:1 SCO. BRA motiviert nach 1:1 vs MAR. Aufst. n. best. 3:0."
         },
@@ -456,7 +456,7 @@
           "tip": "2:1",
           "analysisTip": "1:0",
           "conf": "med",
-          "result": null,
+          "result": "0:1",
           "injuries": null,
           "note": "TUR 49% (kein klarer Favorit). Beide 0pts. TUR-Qualitätsvorteil Guler/Yildiz/Calhanoglu. 1:0."
         },
