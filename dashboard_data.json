@@ -1,26 +1,26 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-21T11:21:55Z",
+    "aktualisiert": "2026-06-21T11:28:27Z",
     "rang": {
-      "platz": "18.",
-      "punkte": 38,
+      "platz": "14.",
+      "punkte": 50,
       "total": 25,
       "spieltag": "5. Spieltag"
     },
     "teamOdds": {
-      "Frankreich": 0.192,
-      "Spanien": 0.154,
-      "Portugal": 0.091,
-      "England": 0.143,
-      "Argentinien": 0.111,
-      "Brasilien": 0.091,
-      "Deutschland": 0.06,
-      "Niederlande": 0.055,
+      "Frankreich": 0.20,
+      "Spanien": 0.15,
+      "Portugal": 0.09,
+      "England": 0.12,
+      "Argentinien": 0.11,
+      "Brasilien": 0.08,
+      "Deutschland": 0.07,
+      "Niederlande": 0.05,
       "Norwegen": 0.038,
-      "USA": 0.055,
+      "USA": 0.03,
       "Marokko": 0.022,
       "Belgien": 0.018,
-      "Kolumbien": 0.02,
+      "Kolumbien": 0.04,
       "Japan": 0.018,
       "Mexiko": 0.022,
       "Schweiz": 0.009,
@@ -57,7 +57,7 @@
       "Panama": 0.001,
       "Ägypten": 0.001
     },
-    "teamOddsTs": "2026-06-19T08:50:00Z"
+    "teamOddsTs": "2026-06-21T11:28:27Z"
   },
   "spieltag_info": [
     {
@@ -97,7 +97,7 @@
       "label": "Spieltag 5",
       "dates": "20.–22. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-13T16:09:55Z",
+      "analysisTs": "2026-06-21T11:28:27Z",
       "tipsSubmitted": true
     },
     {
@@ -656,22 +656,22 @@
           "home": "Belgien",
           "away": "Iran",
           "tip": "3:0",
-          "analysisTip": "3:0",
-          "conf": "high",
+          "analysisTip": "2:1",
+          "conf": "med",
           "result": null,
-          "injuries": null,
-          "note": null
+          "injuries": "✅ De Bruyne (fit) | ✅ Lukaku (fit)",
+          "note": "BEL 68% Score-Dämpfung (max 1T). IRN 1.50 xG (2:2 vs NZL) — ⚠️ Remis-Risiko: BEL≤75%+IRN xG≥0.8 → conf−1. Herrera. SoFi LA."
         },
         {
           "date": "22.06 03:00",
           "home": "Neuseeland",
           "away": "Ägypten",
           "tip": "0:2",
-          "analysisTip": "0:2",
-          "conf": "high",
+          "analysisTip": "0:1",
+          "conf": "med",
           "result": null,
           "injuries": null,
-          "note": null
+          "note": "EGY 62% Score-Dämpfung. NZL 44% Non-Loss → Außenseiter-Regel → 0:1. NZL 1.24 xG ⚠️ Remis-Risiko. Al Ali. Vancouver."
         },
         {
           "date": "27.06 05:00",
@@ -727,22 +727,22 @@
           "home": "Spanien",
           "away": "Saudi-Arabien",
           "tip": "4:0",
-          "analysisTip": "4:0",
-          "conf": "high",
+          "analysisTip": "2:0",
+          "conf": "med-high",
           "result": null,
-          "injuries": "❌ Fermín López",
-          "note": null
+          "injuries": "❌ Fermín López | SAU: Low-Block (4-2-3-1)",
+          "note": "ESP 88% (>85%, kein Deckel). SAU Low-Block → -1 Tor. ESP 2.29 xG vs CPV, motiviert nach 0:0. R.Claus. Atlanta indoor."
         },
         {
           "date": "22.06 00:00",
           "home": "Uruguay",
           "away": "Kap Verde",
           "tip": "3:0",
-          "analysisTip": "3:0",
-          "conf": "high",
+          "analysisTip": "1:0",
+          "conf": "med",
           "result": null,
-          "injuries": null,
-          "note": null
+          "injuries": "URU: ❌ Araujo | ❌ De Arrascaeta | ❌ Giménez | ❌ Piquerez",
+          "note": "URU 74% Score-Dämpfung → max 1T. CPV 0.30 xG (0:0 ESP) Low-Block. 4 URU-Ausfälle. Eskås. Miami."
         },
         {
           "date": "27.06 02:00",
