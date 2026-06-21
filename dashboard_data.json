@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-20T18:54:54Z",
+    "aktualisiert": "2026-06-21T11:21:55Z",
     "rang": {
       "platz": "18.",
       "punkte": 38,
@@ -516,7 +516,7 @@
           "tip": "2:1",
           "analysisTip": "2:1",
           "conf": "med-high",
-          "result": null,
+          "result": "2:1",
           "injuries": null,
           "note": null
         },
@@ -527,7 +527,7 @@
           "tip": "3:0",
           "analysisTip": "3:0",
           "conf": "high",
-          "result": null,
+          "result": "0:0",
           "injuries": null,
           "note": null
         },
@@ -598,7 +598,7 @@
           "tip": "0:2",
           "analysisTip": "0:2",
           "conf": "high",
-          "result": null,
+          "result": "0:4",
           "injuries": null,
           "note": null
         },
