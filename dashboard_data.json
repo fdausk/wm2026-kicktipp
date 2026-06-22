@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-21T17:55:00Z",
+    "aktualisiert": "2026-06-22T06:33:00Z",
     "rang": {
       "platz": "13.",
       "punkte": 55,
@@ -658,7 +658,7 @@
           "tip": "3:0",
           "analysisTip": "2:1",
           "conf": "med",
-          "result": null,
+          "result": "0:0",
           "injuries": "❌ Doku (Atemwegsinfektion) | ✅ De Bruyne (startet) | ⚠️ Lukaku (Bank)",
           "note": "BEL 70% Score-Dämpfung (max 1T). ❌ Doku OUT. IRN 1.50 xG (2:2 vs NZL) ⚠️ Remis-Risiko (BEL≤75%+IRN xG≥0.8). Herrera. SoFi LA."
         },
@@ -669,7 +669,7 @@
           "tip": "0:2",
           "analysisTip": "0:1",
           "conf": "med",
-          "result": null,
+          "result": "1:3",
           "injuries": null,
           "note": "EGY 62% Score-Dämpfung. NZL 44% Non-Loss → Außenseiter-Regel → 0:1. NZL 1.24 xG ⚠️ Remis-Risiko. Al Ali. Vancouver."
         },
@@ -740,7 +740,7 @@
           "tip": "3:0",
           "analysisTip": "1:0",
           "conf": "med",
-          "result": null,
+          "result": "2:2",
           "injuries": "URU: ❌ Araujo | ❌ De Arrascaeta | ❌ Giménez | ❌ Piquerez",
           "note": "URU 74% Score-Dämpfung → max 1T. CPV 0.30 xG (0:0 ESP) Low-Block. 4 URU-Ausfälle. Eskås. Miami."
         },
