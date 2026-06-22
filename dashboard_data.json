@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-22T06:33:00Z",
+    "aktualisiert": "2026-06-22T08:04:36Z",
     "rang": {
       "platz": "13.",
       "punkte": 55,
@@ -8,39 +8,39 @@
       "spieltag": "5. Spieltag"
     },
     "teamOdds": {
-      "Frankreich": 0.20,
-      "Spanien": 0.15,
-      "Portugal": 0.09,
-      "England": 0.12,
-      "Argentinien": 0.11,
-      "Brasilien": 0.08,
-      "Deutschland": 0.07,
-      "Niederlande": 0.05,
-      "Norwegen": 0.038,
-      "USA": 0.03,
+      "Frankreich": 0.195,
+      "Spanien": 0.137,
+      "England": 0.127,
+      "Argentinien": 0.119,
+      "Portugal": 0.070,
+      "Niederlande": 0.070,
+      "Brasilien": 0.057,
+      "Deutschland": 0.057,
+      "USA": 0.052,
+      "Kolumbien": 0.035,
+      "Norwegen": 0.034,
       "Marokko": 0.022,
-      "Belgien": 0.018,
-      "Kolumbien": 0.04,
-      "Japan": 0.018,
-      "Mexiko": 0.022,
-      "Schweiz": 0.009,
-      "Uruguay": 0.01,
+      "Mexiko": 0.020,
+      "Japan": 0.021,
+      "Belgien": 0.012,
+      "Schweiz": 0.004,
+      "Kanada": 0.004,
+      "Uruguay": 0.010,
       "Kroatien": 0.007,
       "Ecuador": 0.006,
       "Senegal": 0.004,
-      "Kanada": 0.012,
       "Österreich": 0.008,
       "Australien": 0.012,
       "Schweden": 0.012,
       "Südkorea": 0.005,
       "Ghana": 0.003,
-      "Iran": 0.003,
+      "Iran": 0.002,
       "Elfenbeinküste": 0.004,
       "Türkei": 0.002,
       "Algerien": 0.002,
       "Schottland": 0.003,
       "Tschechien": 0.002,
-      "Saudi-Arabien": 0.002,
+      "Saudi-Arabien": 0.001,
       "Tunesien": 0.001,
       "Katar": 0.001,
       "Paraguay": 0.001,
@@ -52,12 +52,12 @@
       "Usbekistan": 0.001,
       "Haiti": 0.001,
       "Neuseeland": 0.001,
-      "Kap Verde": 0.002,
+      "Kap Verde": 0.001,
       "Curaçao": 0.0,
       "Panama": 0.001,
       "Ägypten": 0.001
     },
-    "teamOddsTs": "2026-06-21T11:28:27Z"
+    "teamOddsTs": "2026-06-22T08:04:36Z"
   },
   "spieltag_info": [
     {
@@ -105,7 +105,7 @@
       "label": "Spieltag 6",
       "dates": "22.–24. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-13T16:09:55Z",
+      "analysisTs": "2026-06-22T08:04:36Z",
       "tipsSubmitted": true
     },
     {
@@ -802,18 +802,18 @@
           "conf": "high",
           "result": null,
           "injuries": "❌ Ekitike (FRA)",
-          "note": null
+          "note": "FRA 92% (kein Deckel). IRA 1:4 vs NOR. Mbappe/Dembele/Barcola starten. Philly."
         },
         {
           "date": "23.06 02:00",
           "home": "Norwegen",
           "away": "Senegal",
           "tip": "1:1",
-          "analysisTip": "1:1",
+          "analysisTip": "1:0",
           "conf": "med",
           "result": null,
           "injuries": null,
-          "note": null
+          "note": "NOR 43%, SEN 58% non-loss → Außenseiter-Regel → 1:0. SEN xG ~0.9 ⚠️ Remis-Risiko. MetLife NJ."
         },
         {
           "date": "26.06 21:00",
@@ -869,22 +869,22 @@
           "home": "Argentinien",
           "away": "Österreich",
           "tip": "2:0",
-          "analysisTip": "2:0",
-          "conf": "med-high",
+          "analysisTip": "2:1",
+          "conf": "med",
           "result": null,
-          "injuries": "⚠️ Romero (ARG, erwartet fit) | ⚠️ Molina (ARG, erwartet fit)",
-          "note": null
+          "injuries": "ARG: ❌ Montiel | ⚠️ Romero (fit erw.) | AUT: ⚠️ Alaba (Muskeln) | ⚠️ Posch (Kiefer)",
+          "note": "ARG 65% Score-Dämpfung. AUT 3:1 vs JOR → ⚠️ Remis-Risiko. Dallas."
         },
         {
           "date": "23.06 05:00",
           "home": "Jordanien",
           "away": "Algerien",
           "tip": "0:2",
-          "analysisTip": "0:2",
-          "conf": "high",
+          "analysisTip": "0:1",
+          "conf": "med",
           "result": null,
-          "injuries": null,
-          "note": null
+          "injuries": "ALG: ❌ Bennacer",
+          "note": "ALG 61% Score-Dämpfung → 0:1. Beide 0 Pkt. JOR xG ~1.0 ⚠️ Remis-Risiko. Levi's Santa Clara."
         },
         {
           "date": "28.06 04:00",
@@ -940,22 +940,22 @@
           "home": "Portugal",
           "away": "Usbekistan",
           "tip": "4:0",
-          "analysisTip": "4:0",
-          "conf": "high",
+          "analysisTip": "2:1",
+          "conf": "med-high",
           "result": null,
-          "injuries": null,
-          "note": null
+          "injuries": "❌ Rúben Dias (POR)",
+          "note": "POR 82% Score-Dämpfung (≤85%). UZB 1:3 vs COL. POR braucht Sieg nach 1:1. Houston NRG."
         },
         {
           "date": "24.06 04:00",
           "home": "Kolumbien",
           "away": "DR Kongo",
           "tip": "3:0",
-          "analysisTip": "3:0",
-          "conf": "high",
+          "analysisTip": "2:1",
+          "conf": "med",
           "result": null,
           "injuries": null,
-          "note": null
+          "note": "COL 65% Score-Dämpfung. COD 1:1 vs POR (defensiv stark) → ⚠️ Remis-Risiko. Guadalajara."
         },
         {
           "date": "28.06 01:30",
@@ -1011,22 +1011,22 @@
           "home": "England",
           "away": "Ghana",
           "tip": "3:0",
-          "analysisTip": "3:0",
+          "analysisTip": "1:0",
           "conf": "high",
           "result": null,
-          "injuries": "❌ Livramento (ENG)",
-          "note": null
+          "injuries": "ENG: ❌ Livramento | GHA: ⚠️ Kudus (Hamstring)",
+          "note": "ENG 80% Score-Dämpfung → 1:0. ENG 8 CSs in 10 (xGA 0.26). GHA 1:0 vs PAN. Boston."
         },
         {
           "date": "24.06 01:00",
           "home": "Panama",
           "away": "Kroatien",
           "tip": "0:2",
-          "analysisTip": "0:2",
-          "conf": "high",
+          "analysisTip": "0:1",
+          "conf": "med",
           "result": null,
           "injuries": null,
-          "note": null
+          "note": "CRO 64% Score-Dämpfung → 0:1. Beide 0 Pkt. Modric/Gvardiol. Toronto."
         },
         {
           "date": "27.06 23:00",
