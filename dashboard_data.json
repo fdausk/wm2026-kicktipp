@@ -1,9 +1,9 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-21T15:57:00Z",
+    "aktualisiert": "2026-06-21T17:55:00Z",
     "rang": {
-      "platz": "14.",
-      "punkte": 50,
+      "platz": "13.",
+      "punkte": 55,
       "total": 25,
       "spieltag": "5. Spieltag"
     },
@@ -659,8 +659,8 @@
           "analysisTip": "2:1",
           "conf": "med",
           "result": null,
-          "injuries": "✅ De Bruyne (fit) | ✅ Lukaku (fit)",
-          "note": "BEL 68% Score-Dämpfung (max 1T). IRN 1.50 xG (2:2 vs NZL) — ⚠️ Remis-Risiko: BEL≤75%+IRN xG≥0.8 → conf−1. Herrera. SoFi LA."
+          "injuries": "❌ Doku (Atemwegsinfektion) | ✅ De Bruyne (startet) | ⚠️ Lukaku (Bank)",
+          "note": "BEL 70% Score-Dämpfung (max 1T). ❌ Doku OUT. IRN 1.50 xG (2:2 vs NZL) ⚠️ Remis-Risiko (BEL≤75%+IRN xG≥0.8). Herrera. SoFi LA."
         },
         {
           "date": "22.06 03:00",
@@ -729,7 +729,7 @@
           "tip": "2:0",
           "analysisTip": "2:0",
           "conf": "med-high",
-          "result": null,
+          "result": "4:0",
           "injuries": "❌ Fermín López | SAU: Low-Block (4-2-3-1)",
           "note": "ESP 88% (>85%, kein Deckel). SAU Low-Block → -1 Tor. ESP 2.29 xG vs CPV, motiviert nach 0:0. R.Claus. Atlanta indoor."
         },
