@@ -1,31 +1,31 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-22T08:04:36Z",
+    "aktualisiert": "2026-06-22T16:52:20Z",
     "rang": {
       "platz": "13.",
       "punkte": 55,
       "total": 25,
-      "spieltag": "5. Spieltag"
+      "spieltag": "6. Spieltag"
     },
     "teamOdds": {
       "Frankreich": 0.195,
       "Spanien": 0.137,
       "England": 0.127,
       "Argentinien": 0.119,
-      "Portugal": 0.070,
-      "Niederlande": 0.070,
+      "Portugal": 0.07,
+      "Niederlande": 0.07,
       "Brasilien": 0.057,
       "Deutschland": 0.057,
       "USA": 0.052,
       "Kolumbien": 0.035,
       "Norwegen": 0.034,
       "Marokko": 0.022,
-      "Mexiko": 0.020,
+      "Mexiko": 0.02,
       "Japan": 0.021,
       "Belgien": 0.012,
       "Schweiz": 0.004,
       "Kanada": 0.004,
-      "Uruguay": 0.010,
+      "Uruguay": 0.01,
       "Kroatien": 0.007,
       "Ecuador": 0.006,
       "Senegal": 0.004,
@@ -868,12 +868,12 @@
           "date": "22.06 19:00",
           "home": "Argentinien",
           "away": "Österreich",
-          "tip": "2:0",
+          "tip": "2:1",
           "analysisTip": "2:1",
           "conf": "med",
           "result": null,
-          "injuries": "ARG: ❌ Montiel | ⚠️ Romero (fit erw.) | AUT: ⚠️ Alaba (Muskeln) | ⚠️ Posch (Kiefer)",
-          "note": "ARG 65% Score-Dämpfung. AUT 3:1 vs JOR → ⚠️ Remis-Risiko. Dallas."
+          "injuries": "ARG: ❌ Montiel | ✅ Romero | AUT: ✅ Alaba, ✅ Posch",
+          "note": "ARG 67% (Score-Dämpfung ≤85%). AUT Rangnick-Press. Over 2.5. Aufst. best. Dallas."
         },
         {
           "date": "23.06 05:00",
