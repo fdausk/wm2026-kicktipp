@@ -34,7 +34,10 @@ Lies `performance.json` im Projektverzeichnis und wende die folgenden Anpassunge
 
 **Wichtig: Die Regeln 1–3 werden in genau dieser Reihenfolge sequentiell auf den Rohscore angewendet.** Erst Score-Dämpfung, dann Außenseiter-Regel, dann Eröffnungsspiel-Deckel. Niemals parallel oder in anderer Reihenfolge.
 
-1. **Score-Dämpfung bei Favoriten ≤ 85%:** Vorsprung maximal 1 Tor tippen. Aus `2:0` wird `1:0`, aus `3:1` wird `2:1`. **Kein Unentschieden** — knappe Spiele enden in WM 2026 statistisch häufiger mit knappem Sieg als mit Remis (empirisch: 0/5 Unentschieden-Tipps korrekt). Bei Unentschieden-Tendenz: 1:0 für den Favoriten bevorzugen. Bei Favorit **> 85%** gilt kein Score-Deckel — 2-Tor-Vorsprung erlaubt.
+1. **Score-Dämpfung:** Abhängig von der Gewinnwahrscheinlichkeit des Favoriten:
+   - **≤ 85%:** Vorsprung maximal 1 Tor. Aus `2:0` wird `1:0`, aus `3:1` wird `2:1`. **Kein Unentschieden** — knappe Spiele enden in WM 2026 statistisch häufiger mit knappem Sieg als mit Remis (empirisch: 0/5 korrekt). Bei Unentschieden-Tendenz: 1:0 für den Favoriten bevorzugen.
+   - **85–92%:** Vorsprung maximal 3 Tore. Aus `4:0` wird `3:0`, höhere Scores bleiben bis 3-Tor-Margin. (Empirisch: Blow-out-Siege bei >85% Favoriten treten regelmäßig auf — NED 5:1, JPN 0:4, ESP 4:0; 2-Tor-Cap war zu defensiv.)
+   - **> 92%:** Kein Deckel — Rohscore übernehmen. Extreme Favoriten gegen sehr schwache Gegner dominieren regelmäßig hoch (GER 7:1, USA 4:1, SWE 5:1).
 
 2. **Außenseiter ≥ 42%:** Auf das Ergebnis aus Regel 1: Score um 1 Tor defensiver tippen (aus `2:1` wird `1:1`, aus `3:1` wird `2:1`). Die nicht-Verlust-Wahrscheinlichkeit (Draw + Win) des Außenseiters muss ≥ 42% betragen. **Wenn die reduzierte Version Unentschieden ergibt** (z.B. `1:0` → `0:0`): stattdessen `1:0` für den Favoriten wählen.
 
@@ -160,7 +163,8 @@ Für jeden Schiedsrichter ermitteln:
 
 **Wirkung auf den Tipp:**
 - Referee mit hoher Elfmeter-Rate bei ausgeglichenem Spiel → Elfmeter-Szenario wahrscheinlicher:
-  - Favorit **>85%**: Score um +1 Tor erhöhen (kein Score-Deckel aktiv)
+  - Favorit **>92%**: Score um +1 Tor erhöhen (kein Score-Deckel aktiv)
+  - Favorit **85–92%**: Elfmeter-Bonus maximal bis an 3-Tor-Cap heranführen
   - Favorit **≤85%**: Score-Dämpfung würde +1 Tor sofort wieder kappen — stattdessen in `note` vermerken und `conf` halten
 - Sehr restriktiver Referee → Tore-Erwartung leicht senken (aus `2:1` wird eher `1:0`)
 - In K.O. besonders relevant: Elfmeterschießen-Wahrscheinlichkeit steigt bei stark spielkontrollierendem Referee

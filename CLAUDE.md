@@ -147,7 +147,7 @@ Konfidenz-Werte: `high` | `med-high` | `med`
 | Regel | Bedingung | Wirkung |
 |-------|-----------|---------|
 | ~~Knappe Favoriten~~ | ~~Favorit 52–65%~~ | ~~Unentschieden gleichwertig tippen~~ → **abgeschafft** (0/5 Trefferquote) |
-| Score-Dämpfung | Favorit ≤ 85% | Vorsprung max. 1 Tor; kein Unentschieden — stattdessen 1:0 für Favoriten. Bei >85%: kein Deckel, 2-Tor-Vorsprung erlaubt. |
+| Score-Dämpfung | nach Favorit-% | ≤85%: max. 1 Tor Vorsprung, kein Unentschieden → 1:0 für Favoriten. 85–92%: max. 3 Tore Vorsprung. >92%: kein Deckel. |
 | Außenseiter-Regel | Außenseiter ≥ 42% non-loss (Draw + Win) | Score um 1 Tor defensiver; wenn Ergebnis Unentschieden wäre → 1:0 Favorit |
 | Eröffnungsspiel | Erstes Turnierspiel **+ mind. 1 Faktor**: keine Aufstellung / Schlüsselverletzung / Spielpause >6 Mo. | max. `med-high` |
 
