@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-23T09:58:41Z",
+    "aktualisiert": "2026-06-24T05:43:00Z",
     "rang": {
       "platz": "13.",
       "punkte": 55,
@@ -942,7 +942,7 @@
           "tip": "4:0",
           "analysisTip": "2:1",
           "conf": "med-high",
-          "result": null,
+          "result": "5:0",
           "injuries": "❌ Rúben Dias (POR)",
           "note": "POR 82% Score-Dämpfung (≤85%). UZB 1:3 vs COL. POR braucht Sieg nach 1:1. Houston NRG."
         },
@@ -953,7 +953,7 @@
           "tip": "3:0",
           "analysisTip": "2:1",
           "conf": "med",
-          "result": null,
+          "result": "1:0",
           "injuries": null,
           "note": "COL 65% Score-Dämpfung. COD 1:1 vs POR (defensiv stark) → ⚠️ Remis-Risiko. Guadalajara."
         },
@@ -1013,7 +1013,7 @@
           "tip": "3:0",
           "analysisTip": "1:0",
           "conf": "high",
-          "result": null,
+          "result": "0:0",
           "injuries": "ENG: ❌ Livramento | GHA: ⚠️ Kudus (Hamstring)",
           "note": "ENG 80% Score-Dämpfung → 1:0. ENG 8 CSs in 10 (xGA 0.26). GHA 1:0 vs PAN. Boston."
         },
@@ -1024,7 +1024,7 @@
           "tip": "0:2",
           "analysisTip": "0:1",
           "conf": "med",
-          "result": null,
+          "result": "0:1",
           "injuries": null,
           "note": "CRO 64% Score-Dämpfung → 0:1. Beide 0 Pkt. Modric/Gvardiol. Toronto."
         },
