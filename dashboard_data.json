@@ -1,11 +1,11 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-24T09:57:01Z",
+    "aktualisiert": "2026-06-25T01:00:00Z",
     "rang": {
       "platz": "14.",
       "punkte": 71,
       "total": 25,
-      "spieltag": "6. Spieltag"
+      "spieltag": "7. Spieltag"
     },
     "teamOdds": {
       "Frankreich": 0.185,
@@ -113,7 +113,7 @@
       "label": "Spieltag 7",
       "dates": "24.–25. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-24T09:57:01Z",
+      "analysisTs": "2026-06-25T01:00:00Z",
       "tipsSubmitted": true
     },
     {
@@ -327,7 +327,7 @@
           "tip": "2:0",
           "analysisTip": "1:0",
           "conf": "med-high",
-          "result": null,
+          "result": "3:1",
           "injuries": null,
           "note": "BIH 65% Score-Dämpfung → 1:0. Beide 1Pkt, kämpfen um bestes 3.-Platz-Szenario. Seattle.",
           "quelle": "betfair"
@@ -339,7 +339,7 @@
           "tip": "1:1",
           "analysisTip": "1:0",
           "conf": "med",
-          "result": null,
+          "result": "2:1",
           "injuries": "CAN: ❌ Kone (Beinbruch) | ⚠️ Davies (Hamstring, Bank)",
           "note": "SUI 41% Score-Dämpfung. CAN 61% non-loss → Außenseiter-Regel → 1:1 → kein Remis → 1:0. ⚠️ Remis-Risiko (SUI≤75%, CAN xG erwartet ≥0.8). Vancouver.",
           "quelle": "betfair"
@@ -398,11 +398,11 @@
           "home": "Marokko",
           "away": "Haiti",
           "tip": "3:0",
-          "analysisTip": "1:0",
+          "analysisTip": "2:0",
           "conf": "med-high",
           "result": null,
           "injuries": null,
-          "note": "MAR 83% Score-Dämpfung (83%<85% → 1-Tor-Deckel). HAI ausgeschieden (0Pkt). MAR spielt für Gruppenplatz. Los Angeles.",
+          "note": "MAR 87% (FanDuel -650). 85–92%-Bracket → max 3T Vorsprung → 2:0. HAI 0Pkt eliminiert, 4-4-2. Beide Aufst. best. Atlanta.",
           "quelle": "betfair"
         },
         {
@@ -413,8 +413,8 @@
           "analysisTip": "0:1",
           "conf": "med",
           "result": null,
-          "injuries": "❌ Rodrygo | ❌ Militão | ❌ Estêvão",
-          "note": "BRA 71% Score-Dämpfung → 0:1. ⚠️ Remis-Risiko (BRA≤75%). BRA rotiert ggf. (Gruppenplatz gesichert), SCO kämpft um Aufstieg. Houston.",
+          "injuries": "❌ Rodrygo | ❌ Militão (→ Gabriel) | ❌ Estêvão | ✅ Vinicius Jr. (startet)",
+          "note": "BRA 74% (FanDuel -280). Score-Dämpfung ≤85% → 0:1. ✅ Vinicius startet. ⚠️ Remis-Risiko (BRA≤75%). SCO kämpft um Aufstieg. Miami.",
           "quelle": "betfair"
         }
       ]
