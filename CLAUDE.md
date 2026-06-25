@@ -109,11 +109,20 @@ Single Source of Truth für alle Spieldaten. Struktur:
 Läuft alle 15 Minuten via Claude Code Scheduled Tasks. Logik:
 
 1. Turnier-Ende-Check (≥ 2026-07-20 → Task deaktivieren)
-2. Spiele suchen: `result === null` AND (`tip === null` OR `tip !== analysisTip`) AND Anstoß 5–75 Min in der Zukunft
-3. Aufstellungs-Gate (Fall A–D, Details in SKILL.md)
-4. Vollanalyse per `prompts/analyse.md`
-5. Automatischer Tipp per `mcp__kicktipp__place_bets` (kein Bestätigungsschritt)
-6. `dashboard_data.json` pushen zu GitHub Pages
+2. Ergebnis-Check: beendete Spiele ohne `result` → Ergebnis eintragen, performance.json aktualisieren
+3. Tipp-Check: `result === null` AND (`tip === null` OR `tip !== analysisTip`) AND Anstoß **5–90 Min** in der Zukunft
+
+**Fast Path** (wenn `analysisTip` bereits gesetzt):
+- Bestätigte Aufstellungen abrufen (1 WebSearch)
+- Delta-Check: Gibt es neue Ausfälle gegenüber `injuries`-Feld? Wenn ja → `conf`/Score anpassen
+- Direkt `mcp__kicktipp__place_bets` mit (angepasstem) `analysisTip` — kein Neuanalyse-Overhead
+
+**Vollanalyse** (nur wenn `tip === null` und `analysisTip === null`):
+- Aufstellungs-Gate (Fall A–D)
+- Vollanalyse per `prompts/analyse.md`
+- `mcp__kicktipp__place_bets`
+
+4. `dashboard_data.json` pushen zu GitHub Pages
 
 Task-Prompt: `/Users/felix.dauskardt/.claude/scheduled-tasks/wm2026-match-watcher/SKILL.md`
 
