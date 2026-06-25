@@ -39,7 +39,7 @@ Lies `performance.json` im Projektverzeichnis und wende die folgenden Anpassunge
    - **85–92%:** Vorsprung maximal 3 Tore. Aus `4:0` wird `3:0`, höhere Scores bleiben bis 3-Tor-Margin. (Empirisch: Blow-out-Siege bei >85% Favoriten treten regelmäßig auf — NED 5:1, JPN 0:4, ESP 4:0; 2-Tor-Cap war zu defensiv.)
    - **> 92%:** Kein Deckel — Rohscore übernehmen. Extreme Favoriten gegen sehr schwache Gegner dominieren regelmäßig hoch (GER 7:1, USA 4:1, SWE 5:1).
 
-2. **Außenseiter ≥ 42%:** Auf das Ergebnis aus Regel 1: Score um 1 Tor defensiver tippen (aus `2:1` wird `1:1`, aus `3:1` wird `2:1`). Die nicht-Verlust-Wahrscheinlichkeit (Draw + Win) des Außenseiters muss ≥ 42% betragen. **Wenn die reduzierte Version Unentschieden ergibt** (z.B. `1:0` → `0:0`): stattdessen `1:0` für den Favoriten wählen.
+2. **Außenseiter ≥ 42%:** Auf das Ergebnis aus Regel 1: Score um 1 Tor defensiver tippen (aus `2:1` wird `1:1`, aus `3:1` wird `2:1`). Die nicht-Verlust-Wahrscheinlichkeit (Draw + Win) des Außenseiters muss ≥ 42% betragen. **Wenn die reduzierte Version Unentschieden ergibt** (z.B. `1:0` → `0:0`): stattdessen `1:0` für den Favoriten wählen. **Wenn der Rohscore nach Regel 1 bereits einen Außenseiter-Sieg zeigt** (z.B. `0:1`): Regel 2 entfällt — kein weiterer Eingriff, Außenseiter-Sieg so tippen.
 
 3. **Eröffnungsspiel eines Teams im Turnier:** Konfidenz maximal `mittel-hoch` **nur wenn** mindestens einer der folgenden Faktoren vorliegt:
    - Keine Aufstellungsbestätigung verfügbar
@@ -361,7 +361,7 @@ Speichere die Tipp-Empfehlungen in `tipps_aktuell.json` im Projektverzeichnis:
 }
 ```
 
-Konfidenz-Werte: `hoch` | `mittel-hoch` | `mittel`
+Konfidenz-Werte: `hoch` | `mittel-hoch` | `mittel` (in `tipps_aktuell.json`). Für `dashboard_data.json` → `"conf": "high"` | `"med-high"` | `"med"` (englische Bezeichnungen laut Schema).
 
 **`quelle`-Feld** (Pflicht, pro Tipp): Die für die Quoten-Hauptentscheidung genutzte Primärquelle — einer von: `kalshi` | `betfair` | `oddschecker`. Wird in `performance.json → quellen_tracking` ausgewertet, sobald das Spielergebnis bekannt ist.
 
@@ -371,6 +371,8 @@ Konfidenz-Werte: `hoch` | `mittel-hoch` | `mittel`
 - Schiedsrichter unbekannt oder Daten fehlen → keine Änderung, aber in `begruendung` vermerken
 - Saisonabschluss-Müdigkeit bei ≥3 Stammspielern eines Teams → Konfidenz eine Stufe senken
 - Diaspora-Faktor stark zugunsten des nominellen Außenseiters → Score defensiver tippen
+
+**Empirisch (M5 — ab 2026-06-25):** `high` nur bei Favorit >90% ODER (bestätigte Startelf beider Teams UND Außenseiter xG < 0.5 in letzten 3 Spielen). Bei ≤90% Favorit ohne beide Bedingungen: max. `med-high`. (Basis: 10 Spiele, high 45% vs. med-high 50% — Übervertrauen bei Dominanzprognosen gegen kompakte Außenseiter.)
 
 ---
 

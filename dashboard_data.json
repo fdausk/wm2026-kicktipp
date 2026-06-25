@@ -1,9 +1,9 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-25T01:00:00Z",
+    "aktualisiert": "2026-06-25T09:55:00Z",
     "rang": {
-      "platz": "14.",
-      "punkte": 71,
+      "platz": "12.",
+      "punkte": 92,
       "total": 25,
       "spieltag": "7. Spieltag"
     },
@@ -254,7 +254,7 @@
           "tip": "0:2",
           "analysisTip": "0:1",
           "conf": "med-high",
-          "result": null,
+          "result": "1:0",
           "injuries": null,
           "note": "KOR 59% Score-Dämpfung → 0:1. KOR sichert Platz 2, SAF kämpft um bestes 3.-Platz-Ergebnis. Monterrey.",
           "quelle": "betfair"
@@ -266,7 +266,7 @@
           "tip": "1:2",
           "analysisTip": "1:2",
           "conf": "med",
-          "result": null,
+          "result": "0:3",
           "injuries": "CZE: ❌ Jurasek (Oberschenkel)",
           "note": "MEX 50% (!). Score-Dämpfung + CZE 50% non-loss → Außenseiter-Regel → 1:1 → kein Remis → 1:2. ⚠️ Remis-Risiko. Azteca (Höhenvorteil MEX). CZE: ❌ Jurasek.",
           "quelle": "betfair"
@@ -400,7 +400,7 @@
           "tip": "3:0",
           "analysisTip": "2:0",
           "conf": "med-high",
-          "result": null,
+          "result": "4:2",
           "injuries": null,
           "note": "MAR 87% (FanDuel -650). 85–92%-Bracket → max 3T Vorsprung → 2:0. HAI 0Pkt eliminiert, 4-4-2. Beide Aufst. best. Atlanta.",
           "quelle": "betfair"
@@ -412,7 +412,7 @@
           "tip": "0:3",
           "analysisTip": "0:1",
           "conf": "med",
-          "result": null,
+          "result": "0:3",
           "injuries": "❌ Rodrygo | ❌ Militão (→ Gabriel) | ❌ Estêvão | ✅ Vinicius Jr. (startet)",
           "note": "BRA 74% (FanDuel -280). Score-Dämpfung ≤85% → 0:1. ✅ Vinicius startet. ⚠️ Remis-Risiko (BRA≤75%). SCO kämpft um Aufstieg. Miami.",
           "quelle": "betfair"
