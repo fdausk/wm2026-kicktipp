@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-26T14:30:00Z",
+    "aktualisiert": "2026-06-26T14:45:00Z",
     "rang": {
       "platz": "15.",
       "punkte": 101,
@@ -130,7 +130,7 @@
       "dates": "26.–27. Jun",
       "phase": "gruppe",
       "analysisTs": "2026-06-26T14:30:00Z",
-      "tipsSubmitted": false
+      "tipsSubmitted": true
     },
     {
       "nr": 10,
@@ -683,7 +683,7 @@
           "date": "27.06 05:00",
           "home": "Neuseeland",
           "away": "Belgien",
-          "tip": "0:3",
+          "tip": "1:2",
           "analysisTip": "1:2",
           "conf": "med-high",
           "result": null,
@@ -694,7 +694,7 @@
           "date": "27.06 05:00",
           "home": "Ägypten",
           "away": "Iran",
-          "tip": "1:1",
+          "tip": "1:0",
           "analysisTip": "1:0",
           "conf": "med",
           "result": null,
@@ -754,7 +754,7 @@
           "date": "27.06 02:00",
           "home": "Uruguay",
           "away": "Spanien",
-          "tip": "0:2",
+          "tip": "0:1",
           "analysisTip": "0:1",
           "conf": "med",
           "result": null,
@@ -765,7 +765,7 @@
           "date": "27.06 02:00",
           "home": "Kap Verde",
           "away": "Saudi-Arabien",
-          "tip": "2:1",
+          "tip": "1:0",
           "analysisTip": "1:0",
           "conf": "med",
           "result": null,
@@ -825,7 +825,7 @@
           "date": "26.06 21:00",
           "home": "Norwegen",
           "away": "Frankreich",
-          "tip": "0:2",
+          "tip": "0:1",
           "analysisTip": "0:1",
           "conf": "med",
           "result": null,
@@ -836,7 +836,7 @@
           "date": "26.06 21:00",
           "home": "Senegal",
           "away": "Irak",
-          "tip": "2:0",
+          "tip": "1:0",
           "analysisTip": "1:0",
           "conf": "med",
           "result": null,
