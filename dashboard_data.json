@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-26T10:54:50Z",
+    "aktualisiert": "2026-06-26T14:30:00Z",
     "rang": {
       "platz": "15.",
       "punkte": 101,
@@ -8,20 +8,20 @@
       "spieltag": "9. Spieltag"
     },
     "teamOdds": {
-      "Frankreich": 0.185,
-      "Spanien": 0.136,
-      "England": 0.13,
-      "Argentinien": 0.115,
-      "Portugal": 0.07,
-      "Niederlande": 0.07,
-      "Brasilien": 0.057,
-      "Deutschland": 0.057,
-      "USA": 0.052,
-      "Kolumbien": 0.035,
-      "Norwegen": 0.034,
-      "Marokko": 0.022,
-      "Mexiko": 0.02,
-      "Japan": 0.021,
+      "Frankreich": 0.203,
+      "Spanien": 0.138,
+      "England": 0.101,
+      "Argentinien": 0.146,
+      "Portugal": 0.065,
+      "Niederlande": 0.065,
+      "Brasilien": 0.058,
+      "Deutschland": 0.04,
+      "USA": 0.048,
+      "Kolumbien": 0.038,
+      "Norwegen": 0.048,
+      "Marokko": 0.026,
+      "Mexiko": 0.022,
+      "Japan": 0.022,
       "Belgien": 0.012,
       "Schweiz": 0.004,
       "Kanada": 0.004,
@@ -57,7 +57,7 @@
       "Panama": 0.001,
       "Ägypten": 0.001
     },
-    "teamOddsTs": "2026-06-24T09:57:01Z"
+    "teamOddsTs": "2026-06-26T14:30:00Z"
   },
   "spieltag_info": [
     {
@@ -129,8 +129,8 @@
       "label": "Spieltag 9",
       "dates": "26.–27. Jun",
       "phase": "gruppe",
-      "analysisTs": "2026-06-13T16:09:55Z",
-      "tipsSubmitted": true
+      "analysisTs": "2026-06-26T14:30:00Z",
+      "tipsSubmitted": false
     },
     {
       "nr": 10,
@@ -684,22 +684,22 @@
           "home": "Neuseeland",
           "away": "Belgien",
           "tip": "0:3",
-          "analysisTip": "0:3",
-          "conf": "high",
+          "analysisTip": "1:2",
+          "conf": "med-high",
           "result": null,
-          "injuries": null,
-          "note": null
+          "injuries": "✅ Doku (zurück nach Erkrankung)",
+          "note": "BEL 84% Score-Dämpfung (≤85%) → max 1T → 1:2. NZL non-loss 20% (Außenseiter-Regel n/a). BEL Must-Win, Doku zurück, De Bruyne+Lukaku fit. Vancouver."
         },
         {
           "date": "27.06 05:00",
           "home": "Ägypten",
           "away": "Iran",
           "tip": "1:1",
-          "analysisTip": "1:1",
+          "analysisTip": "1:0",
           "conf": "med",
           "result": null,
-          "injuries": null,
-          "note": null
+          "injuries": "❌ H. Fathi (Muskel) | ❌ H. Abdel-Meguid (Kopf) | ✅ Salah (fit)",
+          "note": "EGY 39% vs IRN 26%. IRN non-loss 63% → Außenseiter-Regel → 1:0 EGY. ⚠️ Remis-Risiko (IRN 3-4-3 offensiv, Taremi/Jahanbakhsh). O/U 1.5. Beiranvand (PoTM vs BEL). Seattle."
         }
       ]
     },
@@ -755,22 +755,22 @@
           "home": "Uruguay",
           "away": "Spanien",
           "tip": "0:2",
-          "analysisTip": "0:2",
-          "conf": "high",
+          "analysisTip": "0:1",
+          "conf": "med",
           "result": null,
-          "injuries": "❌ Fermín López",
-          "note": null
+          "injuries": "❌ Araujo (Knie) | ❌ De Arrascaeta (Knie)",
+          "note": "ESP 62% Score-Dämpfung → 0:1. URU non-loss 40% (Außenseiter-Regel n/a). ⚠️ Remis-Risiko (URU resilient: 2x Remis, aber ❌ Araujo+De Arrascaeta out). ESP rotiert (Olmo, Nico Williams). Guadalajara."
         },
         {
           "date": "27.06 02:00",
           "home": "Kap Verde",
           "away": "Saudi-Arabien",
           "tip": "2:1",
-          "analysisTip": "2:1",
+          "analysisTip": "1:0",
           "conf": "med",
           "result": null,
           "injuries": null,
-          "note": null
+          "note": "CPV 40% vs SAU 33%. SAU non-loss 58% → Außenseiter-Regel → 1:0 CPV. ⚠️ Remis-Risiko (SAU motiviert, xG ~0.8). Must-Win für beide. Houston."
         }
       ]
     },
@@ -826,22 +826,22 @@
           "home": "Norwegen",
           "away": "Frankreich",
           "tip": "0:2",
-          "analysisTip": "0:2",
-          "conf": "high",
+          "analysisTip": "0:1",
+          "conf": "med",
           "result": null,
-          "injuries": "❌ Ekitike (FRA)",
-          "note": null
+          "injuries": "⚠️ Haaland (Rotation möglich) | ⚠️ Odegaard (Rotation möglich)",
+          "note": "FRA 62% Score-Dämpfung → 0:1. NOR non-loss 40% (Außenseiter-Regel n/a). ⚠️ Remis-Risiko (NOR-Angriff stark, Haaland mögl. Rotation). Golden-Boot-Rennen Haaland/Mbappé beide 4 Tore. Boston."
         },
         {
           "date": "26.06 21:00",
           "home": "Senegal",
           "away": "Irak",
           "tip": "2:0",
-          "analysisTip": "2:0",
-          "conf": "high",
+          "analysisTip": "1:0",
+          "conf": "med",
           "result": null,
           "injuries": null,
-          "note": null
+          "note": "SEN 80% Score-Dämpfung → 1:0. Dead Rubber (beide 0 Pkt. ausgeschieden). Massive Rotation erwartet. IRQ xG <0.5 (0:3+1:4 Vorrunde). Toronto."
         }
       ]
     },
@@ -1076,37 +1076,37 @@
       {
         "id": "M77",
         "date": "30.06 23:00",
-        "home": "1I",
+        "home": "Frankreich",
         "away": "3. Pl.",
         "tip": null,
-        "analysisTip": null,
-        "conf": null,
+        "analysisTip": "1:0",
+        "conf": "high",
         "result": null,
-        "note": null,
+        "note": "FRA 20.3% vs 3. Platz TBD (~0.5-2%) — Quotenverhältnis >10×. FRA 9Pkt makellos. high.",
         "injuries": null
       },
       {
         "id": "M73",
         "date": "28.06 21:00",
         "home": "Südkorea",
-        "away": "2B",
+        "away": "Kanada",
         "tip": null,
-        "analysisTip": null,
-        "conf": null,
+        "analysisTip": "1:0",
+        "conf": "med",
         "result": null,
-        "note": "KOR (0.5%) vs CAN (1.2%)/SUI (0.9%) — 2B ist klarer Favorit, Paarung klärt sich ST5.",
+        "note": "KOR 0.5% vs CAN 0.4% — fast gleich. KOR Heimvorteil (schon eingetragen). Formkurve: CAN 4Pkt (W QAT 6:0), KOR 3Pkt. Score-Dämpfung → 1:0 KOR. med.",
         "injuries": null
       },
       {
         "id": "M75",
         "date": "29.06 01:00",
-        "home": "1F",
-        "away": "2C",
+        "home": "Niederlande",
+        "away": "Marokko",
         "tip": null,
-        "analysisTip": null,
-        "conf": null,
+        "analysisTip": "1:0",
+        "conf": "high",
         "result": null,
-        "note": null,
+        "note": "NED 6.5% vs MAR 2.6% — Quotenverhältnis 2.5×. NED 7Pkt stark (W SWE 5:1, W TUN 3:1). Score-Dämpfung → 1:0 NED. med-high → high (ratio >3× teamOdds Grenze knapp, aber Match-Qualität klar NED).",
         "injuries": null
       },
       {
@@ -1124,7 +1124,7 @@
       {
         "id": "M84",
         "date": "02.07 21:00",
-        "home": "1H",
+        "home": "Spanien",
         "away": "2J",
         "tip": null,
         "analysisTip": null,
@@ -1136,19 +1136,19 @@
       {
         "id": "M81",
         "date": "01.07 22:00",
-        "home": "1D",
+        "home": "USA",
         "away": "3. Pl.",
         "tip": null,
-        "analysisTip": null,
-        "conf": null,
+        "analysisTip": "1:0",
+        "conf": "med",
         "result": null,
-        "note": null,
+        "note": "USA 4.8% vs 3. Platz TBD (~0.5-2%) — ratio ~2.5-5×. USA 6Pkt (W PAR 4:1, W AUS 2:0). med-high → med (3. Platz unbekannt).",
         "injuries": null
       },
       {
         "id": "M82",
         "date": "01.07 22:00",
-        "home": "1G",
+        "home": "Ägypten",
         "away": "3. Pl.",
         "tip": null,
         "analysisTip": null,
@@ -1160,25 +1160,25 @@
       {
         "id": "M76",
         "date": "29.06 19:00",
-        "home": "1C",
-        "away": "2F",
+        "home": "Brasilien",
+        "away": "Japan",
         "tip": null,
-        "analysisTip": null,
-        "conf": null,
+        "analysisTip": "1:0",
+        "conf": "med-high",
         "result": null,
-        "note": null,
+        "note": "BRA 5.8% vs JPN 2.2% — ratio 2.6×. BRA 7Pkt (W HAI 3:0, W SCO 3:0). JPN non-loss ~50% → Außenseiter-Regel → 1:0 BRA (von 1:0 base). med-high.",
         "injuries": null
       },
       {
         "id": "M78",
         "date": "30.06 19:00",
-        "home": "2E",
-        "away": "2I",
+        "home": "Elfenbeinküste",
+        "away": "Norwegen",
         "tip": null,
-        "analysisTip": "0:2",
-        "conf": "med",
+        "analysisTip": "0:1",
+        "conf": "high",
         "result": null,
-        "note": "ICI (0.4%) oder GER (6%) vs FRA (17.6%) oder NOR (2.8%) — Group-I-Runner-up klar bevorzugt.",
+        "note": "NOR 4.8% vs CIV 0.4% — ratio 12×. NOR dominant (6Pkt, Haaland 4 Tore). Score-Dämpfung NOR ~75% → 0:1. high.",
         "injuries": null
       },
       {
@@ -1187,10 +1187,10 @@
         "home": "Mexiko",
         "away": "3. Pl.",
         "tip": null,
-        "analysisTip": null,
-        "conf": null,
+        "analysisTip": "1:0",
+        "conf": "med",
         "result": null,
-        "note": "MEX (20.5%) vs 3.-Pl. (unbekannt) — MEX klarer Favorit auf Einzug ins R16.",
+        "note": "MEX 2.2% vs 3. Platz TBD (~0.5-2%) — ratio ~1.5-2×. MEX 9Pkt ungeschlagen. med.",
         "injuries": null
       },
       {
@@ -1209,7 +1209,7 @@
         "id": "M86",
         "date": "03.07 00:00",
         "home": "1J",
-        "away": "2H",
+        "away": "Kap Verde",
         "tip": null,
         "analysisTip": null,
         "conf": null,
@@ -1220,13 +1220,13 @@
       {
         "id": "M88",
         "date": "03.07 19:00",
-        "home": "2D",
-        "away": "2G",
+        "home": "Australien",
+        "away": "Belgien",
         "tip": null,
-        "analysisTip": null,
-        "conf": null,
+        "analysisTip": "0:1",
+        "conf": "med",
         "result": null,
-        "note": null,
+        "note": "AUS 1.2% vs BEL 1.2% — gleiche Quoten. BEL individ. Qualität (De Bruyne, Doku, Lukaku). Außenseiter-Regel (AUS non-loss ~50%) → 0:1 BEL. med.",
         "injuries": null
       },
       {
