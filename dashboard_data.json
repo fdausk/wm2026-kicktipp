@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-26T14:45:00Z",
+    "aktualisiert": "2026-06-28T10:13:55Z",
     "rang": {
       "platz": "15.",
       "punkte": 101,
@@ -686,7 +686,7 @@
           "tip": "1:2",
           "analysisTip": "1:2",
           "conf": "med-high",
-          "result": null,
+          "result": "1:5",
           "injuries": "✅ Doku (zurück nach Erkrankung)",
           "note": "BEL 84% Score-Dämpfung (≤85%) → max 1T → 1:2. NZL non-loss 20% (Außenseiter-Regel n/a). BEL Must-Win, Doku zurück, De Bruyne+Lukaku fit. Vancouver."
         },
@@ -697,7 +697,7 @@
           "tip": "1:0",
           "analysisTip": "1:0",
           "conf": "med",
-          "result": null,
+          "result": "1:1",
           "injuries": "❌ H. Fathi (Muskel) | ❌ H. Abdel-Meguid (Kopf) | ✅ Salah (fit)",
           "note": "EGY 39% vs IRN 26%. IRN non-loss 63% → Außenseiter-Regel → 1:0 EGY. ⚠️ Remis-Risiko (IRN 3-4-3 offensiv, Taremi/Jahanbakhsh). O/U 1.5. Beiranvand (PoTM vs BEL). Seattle."
         }
@@ -757,7 +757,7 @@
           "tip": "0:1",
           "analysisTip": "0:1",
           "conf": "med",
-          "result": null,
+          "result": "0:1",
           "injuries": "❌ Araujo (Knie) | ❌ De Arrascaeta (Knie)",
           "note": "ESP 62% Score-Dämpfung → 0:1. URU non-loss 40% (Außenseiter-Regel n/a). ⚠️ Remis-Risiko (URU resilient: 2x Remis, aber ❌ Araujo+De Arrascaeta out). ESP rotiert (Olmo, Nico Williams). Guadalajara."
         },
@@ -768,7 +768,7 @@
           "tip": "1:0",
           "analysisTip": "1:0",
           "conf": "med",
-          "result": null,
+          "result": "0:0",
           "injuries": null,
           "note": "CPV 40% vs SAU 33%. SAU non-loss 58% → Außenseiter-Regel → 1:0 CPV. ⚠️ Remis-Risiko (SAU motiviert, xG ~0.8). Must-Win für beide. Houston."
         }
@@ -828,7 +828,7 @@
           "tip": "0:1",
           "analysisTip": "0:1",
           "conf": "med",
-          "result": null,
+          "result": "1:4",
           "injuries": "⚠️ Haaland (Rotation möglich) | ⚠️ Odegaard (Rotation möglich)",
           "note": "FRA 62% Score-Dämpfung → 0:1. NOR non-loss 40% (Außenseiter-Regel n/a). ⚠️ Remis-Risiko (NOR-Angriff stark, Haaland mögl. Rotation). Golden-Boot-Rennen Haaland/Mbappé beide 4 Tore. Boston."
         },
@@ -839,7 +839,7 @@
           "tip": "1:0",
           "analysisTip": "1:0",
           "conf": "med",
-          "result": null,
+          "result": "5:0",
           "injuries": null,
           "note": "SEN 80% Score-Dämpfung → 1:0. Dead Rubber (beide 0 Pkt. ausgeschieden). Massive Rotation erwartet. IRQ xG <0.5 (0:3+1:4 Vorrunde). Toronto."
         }
@@ -899,7 +899,7 @@
           "tip": "1:1",
           "analysisTip": "1:1",
           "conf": "med",
-          "result": null,
+          "result": "3:3",
           "injuries": null,
           "note": null
         },
@@ -910,7 +910,7 @@
           "tip": "0:3",
           "analysisTip": "0:3",
           "conf": "high",
-          "result": null,
+          "result": "1:3",
           "injuries": null,
           "note": null
         }
@@ -970,7 +970,7 @@
           "tip": "2:1",
           "analysisTip": "2:1",
           "conf": "med",
-          "result": null,
+          "result": "3:1",
           "injuries": null,
           "note": null
         },
@@ -981,7 +981,7 @@
           "tip": "1:1",
           "analysisTip": "1:1",
           "conf": "med",
-          "result": null,
+          "result": "0:0",
           "injuries": null,
           "note": null
         }
@@ -1041,7 +1041,7 @@
           "tip": "2:1",
           "analysisTip": "2:1",
           "conf": "med-high",
-          "result": null,
+          "result": "2:1",
           "injuries": null,
           "note": null
         },
@@ -1052,7 +1052,7 @@
           "tip": "0:3",
           "analysisTip": "0:3",
           "conf": "high",
-          "result": null,
+          "result": "0:2",
           "injuries": "❌ Livramento (ENG)",
           "note": null
         }
