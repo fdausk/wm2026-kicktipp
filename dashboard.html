@@ -296,7 +296,8 @@
   .bracket-round { display: flex; flex-direction: column; flex: 1; min-width: 130px; }
   .bracket-round-title { font-size: 10px; text-transform: uppercase; letter-spacing: 0.6px; color: var(--muted); font-weight: 600; text-align: center; padding: 6px 0 8px; border-bottom: 1px solid var(--border); flex-shrink: 0; }
   .bracket-round-body { display: flex; flex-direction: column; justify-content: space-around; flex: 1; padding: 6px 0; }
-  .bracket-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; margin: 3px 6px; overflow: hidden; position: relative; z-index: 1; }
+  .bracket-card { background: var(--surface); border: 1px solid var(--border); border-radius: 6px; margin: 3px 6px; overflow: hidden; position: relative; z-index: 1; cursor: pointer; transition: border-color 0.15s, background 0.15s; }
+  .bracket-card:hover { border-color: var(--accent); background: rgba(99,102,241,0.06); }
   .bracket-card.final-card { border-color: var(--accent); }
   .bracket-card-date { font-size: 9px; color: var(--muted); padding: 3px 8px; border-bottom: 1px solid var(--border); }
   .bracket-card-team { display: flex; align-items: center; justify-content: space-between; padding: 4px 8px; font-size: 11px; font-weight: 600; min-height: 22px; gap: 6px; }
@@ -1039,6 +1040,48 @@ function closeModal() {
   currentModalSt = null;
 }
 
+function openBracketModal(id) {
+  // Find match across all KO rounds
+  const rounds = ['R32','R16','QF','SF','P3','F'];
+  let m = null;
+  for (const r of rounds) {
+    if (!KNOCKOUT[r]) continue;
+    m = KNOCKOUT[r].find(x => x.id === id);
+    if (m) break;
+  }
+  if (!m) return;
+
+  const roundLabels = {R32:'Runde d. letzten 32', R16:'Achtelfinale', QF:'Viertelfinale', SF:'Halbfinale', P3:'Platz 3', F:'Finale'};
+  const roundKey = rounds.find(r => KNOCKOUT[r] && KNOCKOUT[r].some(x => x.id === id));
+
+  document.getElementById('modalTitle').textContent = `${m.home} vs ${m.away}`;
+  document.getElementById('modalSubtitle').textContent = `${m.date} MESZ · ${roundLabels[roundKey] || roundKey} · ${id}`;
+
+  // Summary badges
+  let badges = '';
+  if (m.tip) {
+    badges += `<span class="mbadge mbadge-score-done">${m.tip}</span><span class="mbadge mbadge-done">Abgegeben</span>`;
+    if (m.analysisTip && m.analysisTip !== m.tip)
+      badges += `<span class="mbadge mbadge-inj">Empf: ${m.analysisTip}</span>`;
+  } else if (m.analysisTip) {
+    const cb = m.conf === 'high' ? 'mbadge-high' : m.conf === 'med-high' ? 'mbadge-mh' : 'mbadge-med';
+    const ct = m.conf === 'high' ? 'Hoch' : m.conf === 'med-high' ? 'Mittel-Hoch' : 'Mittel';
+    badges += `<span class="mbadge mbadge-score">${m.analysisTip}</span><span class="mbadge ${cb}">${ct}</span>`;
+  }
+  if (m.result) badges += `<span class="mbadge mbadge-score-done" style="background:var(--green);color:#fff">${m.result}</span>`;
+  document.getElementById('modalSummary').innerHTML = badges;
+
+  // Body: injuries + note
+  let body = '';
+  const injSection = renderInjuries(m.injuries);
+  if (injSection) body += `<div class="modal-match modal-match-${m.conf === 'high' ? 'high' : m.conf === 'med-high' ? 'mh' : 'med'}" style="margin-bottom:8px">${injSection}</div>`;
+  if (m.note) body += `<div class="modal-match-note" style="background:var(--surface2);border:1px solid var(--border);border-radius:8px;padding:10px 14px;font-size:12px;line-height:1.6;color:var(--muted)">${m.note}</div>`;
+  if (!injSection && !m.note) body = '<div style="color:var(--muted);font-size:13px;padding:8px 2px">Keine Analyse-Notizen vorhanden.</div>';
+
+  document.getElementById('modalBody').innerHTML = body;
+  document.getElementById('modalOverlay').classList.add('open');
+}
+
 function openInfoModal() {
   currentModalSt = null;
   document.getElementById('modalTitle').textContent = 'Wie funktioniert das System?';
@@ -1334,14 +1377,12 @@ function bracketCard(m, isFinal, nmKey) {
     const confPart = (m.conf && m.tip) ? confLabel(m.conf) : '';
     footer = `<div class="bracket-card-footer">${statusHtml}${statusHtml && (tipPart || confPart) ? '<span style="color:var(--border)">·</span>' : ''}${tipPart}${tipPart && confPart ? '<span style="color:var(--border)">·</span>' : ''}${confPart}</div>`;
   }
-  const noteHtml = m.note ? `<div class="modal-match-note" style="margin:4px 8px 6px;font-size:11px">${m.note}</div>` : '';
-
   const isNext = !m.result && nmKey === '__ko__' + m.id;
-  return `<div class="bracket-card${isFinal ? ' final-card' : ''}${isNext ? ' match-next' : ''}" data-id="${m.id}">
+  return `<div class="bracket-card${isFinal ? ' final-card' : ''}${isNext ? ' match-next' : ''}" data-id="${m.id}" onclick="openBracketModal('${m.id}')">
     <div class="bracket-card-date">${m.date}${isFinal ? ' <span style="color:var(--accent);font-weight:700">FINALE</span>' : ''}</div>
     <div class="bracket-card-team ${hClass}">${m.home}${tipHtml ? ' ' + tipHtml : ''}</div>
     <div class="bracket-card-team ${aClass}">${m.away}${resHtml ? ' ' + resHtml : ''}</div>
-    ${footer}${noteHtml}
+    ${footer}
   </div>`;
 }
 
@@ -1598,7 +1639,7 @@ function predCard(m, isFinal) {
   const footer   = (tipPart || confPart) ? `<div class="bracket-card-footer">${tipPart}${confPart}</div>` : '';
   const winMark  = (t) => m.predictedWinner === t && !isTbd(t) ? ' ▶' : '';
 
-  return `<div class="bracket-card${isFinal ? ' final-card' : ''}" data-id="${m.id}">
+  return `<div class="bracket-card${isFinal ? ' final-card' : ''}" data-id="${m.id}" onclick="openBracketModal('${m.id}')">
     <div class="bracket-card-date">${m.date || '—'}${isFinal ? ' <span style="color:var(--accent);font-weight:700">FINALE</span>' : ''}</div>
     <div class="bracket-card-team ${hClass}">${teamHtml(m.home)}${winMark(m.home)}</div>
     <div class="bracket-card-team ${aClass}">${teamHtml(m.away)}${winMark(m.away)}</div>
