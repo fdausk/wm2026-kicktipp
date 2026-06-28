@@ -242,7 +242,7 @@ Abrufen der Top-3 meistgehandelten Ergebnisse im Correct-Score-Markt.
 
 **Over/Under 2.5 Tore:**
 Implizierte Under-2.5-Wahrscheinlichkeit aus Betfair/Pinnacle ableiten.
-- Under 2.5 > 65% → Kein Score mit ≥3 Toren gesamt — erlaubte Scores: `1:0` oder `0:1` (kein `1:1` — Score-Dämpfung verbietet Unentschieden)
+- Under 2.5 > 65% → Kein Score mit ≥3 Toren gesamt — erlaubte Scores: `1:0` oder `0:1` (kein `1:1` in der Gruppenphase — Score-Dämpfung verbietet Unentschieden). **K.O.-Ausnahme:** `"1:1 n.E. (Team)"` ist bei Under 2.5 erlaubt (= 2 Tore reguläre Spielzeit), da es kein Remis ist.
 - Over 2.5 > 65% → Score mit ≥3 Toren gesamt bevorzugen (`2:1`, `3:0`, etc.)
 
 ---
@@ -326,10 +326,14 @@ Kicktipp-Regel K.O.: Tipp muss Ergebnis NACH Elfmeterschießen berücksichtigen 
 - Schützen-Verfügbarkeit (2%): FBref + ESPN Injury Tracker
 - Schiedsrichter-Elfmeter-Rate (aus SCHRITT 1b): hohe Rate erhöht PE-Wahrscheinlichkeit im regulären Spiel, damit auch das Risiko dass das Spiel bereits 90min entschieden wird
 
-Konfidenz-Entscheidung:
-- Klarer Favorit >65%: normaler Sieg tippen
-- Ausgeglichen 45–65%: knappes Ergebnis oder 1:1 + PE-Sieger
-- Offen <45%: 1:1 + PE-Sieger nach Torwart-Qualität (50%) + Team-Historie (30%) + Schützen (20%)
+Konfidenz-Entscheidung (nach Favorit-Gewinnwahrscheinlichkeit in 90 Min):
+- **>65%:** Normalen Sieg tippen (`"2:0"`, `"1:0"` etc.) — Elfmeterschießen unwahrscheinlich genug, um es zu ignorieren.
+- **45–65%:** `"1:1 n.E. (Team)"` bevorzugen wenn PE-Kompetenz des Favoriten klar besser ist. Andernfalls knapper regulärer Sieg (`"1:0"`). Entscheide anhand: Torwart-Bilanz (Gewicht 50%) + Team-PE-Bilanz (30%) + Schützen-Verfügbarkeit (20%).
+- **<45% (kein klarer Favorit):** `"1:1 n.E. (Team)"` mit PE-Sieger nach den gleichen Gewichten. Sieger = Team mit besserer Gesamtbewertung.
+
+**Format-Erinnerung:** `"1:1 n.E. (Kanada)"` bedeutet Kanada gewinnt nach Elfmeterschießen — kein Unentschieden. Wähle das wahrscheinlichste 90-Min-Ergebnis als Basis (bei 45–65% oft 1:1 oder 0:0 + PE-Sieger). `"1:0"` ist immer dann ausreichend, wenn regulärer Sieg das deutlich häufigere Szenario ist.
+
+**Abschluss-Pflichtcheck (K.O.-Phase):** Bevor `analysisTip` in `dashboard_data.json` geschrieben wird: Prüfe, ob der Tipp ein reines Unentschieden ist — d.h. beide Torwerte identisch und kein `n.V.`- oder `n.E.`-Suffix (Beispiele: `"1:1"`, `"0:0"`, `"2:2"`). Ist dies der Fall: Tipp ist **ungültig**, da K.O.-Spiele immer einen Sieger haben. Den Favoriten ermitteln und stattdessen `"1:0"` (bzw. `"0:1"`) tippen. Unentschieden-Tipps dürfen niemals in `dashboard_data.json` für K.O.-Matches stehen.
 
 ---
 
