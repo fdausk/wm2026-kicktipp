@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-29T19:41:40Z",
+    "aktualisiert": "2026-06-29T19:43:30Z",
     "rang": {
       "platz": "11.",
       "punkte": 148,
@@ -1054,8 +1054,8 @@
         "analysisTip": "2:0",
         "conf": "med-high",
         "result": null,
-        "note": "GER 3.7% vs PAR 0.3% — Ratio 12.3×. GER ~87% → max 3T → 2:0. ❌ Schlotterbeck, ❌ D.Gómez (gesperrt). ✅ Almiron zurück. med-high.",
-        "injuries": "❌ Schlotterbeck (Sprunggelenk) | ⚠️ N. Brown (Adduktor, fraglich) | ❌ D. Gómez (gesperrt, PAR) | ✅ Almiron (nach Sperre zurück, PAR)",
+        "note": "GER 3.7% vs PAR 0.3% — Ratio 12.3×. GER ~87% → max 3T → 2:0. ❌ Schlotterbeck, ❌ D.Gómez (gesperrt). ✅ Almiron zurück. ⚠️ Musiala Bank (taktisch, Undav statt). med-high.",
+        "injuries": "❌ Schlotterbeck (Sprunggelenk) | ✅ N. Brown (startet) | ❌ D. Gómez (gesperrt, PAR) | ✅ Almiron (startet, PAR) | ⚠️ Musiala (Bank, taktisch)",
         "feedsInto": {
           "match": "M89",
           "slot": "home"
