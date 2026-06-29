@@ -320,6 +320,11 @@
   .prognose-winner { color: var(--green) !important; font-weight: 700 !important; }
   .prognose-loser { opacity: 0.45; }
   .prognose-tbd { color: var(--muted); font-style: italic; font-weight: 400; }
+  .pred-outcome-badge { position: absolute; top: 5px; right: 6px; font-size: 13px; line-height: 1; }
+  .bracket-card.pred-correct { border-left: 3px solid var(--green); }
+  .bracket-card.pred-wrong   { border-left: 3px solid #e74c3c; }
+  .prognose-winner.pred-correct-team { background: rgba(39,174,96,0.13); border-radius: 3px; padding: 1px 4px; margin: 0 -4px; }
+  .prognose-winner.pred-wrong-team   { background: rgba(231,76,60,0.13);  border-radius: 3px; padding: 1px 4px; margin: 0 -4px; color: #e74c3c !important; }
 
   /* Responsive */
   .table-scroll-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; }
@@ -1633,14 +1638,23 @@ function buildPrediction() {
 
 function predCard(m, isFinal) {
   const isTbd = t => !t || t === '?';
-  const hClass = isTbd(m.home) ? 'prognose-tbd' : m.predictedWinner === m.home ? 'prognose-winner' : 'prognose-loser';
-  const aClass = isTbd(m.away) ? 'prognose-tbd' : m.predictedWinner === m.away ? 'prognose-winner' : 'prognose-loser';
+  const actualWinner = m.result ? extractWinnerTeam(m.result, m.home, m.away) : null;
+  const isCorrect = actualWinner && actualWinner === m.predictedWinner;
+  const isWrong   = actualWinner && actualWinner !== m.predictedWinner;
+  const outcomeClass = isCorrect ? ' pred-correct' : isWrong ? ' pred-wrong' : '';
+  const badge = isCorrect ? '<span class="pred-outcome-badge">✓</span>'
+              : isWrong   ? '<span class="pred-outcome-badge">✗</span>' : '';
+  const winTeamExtra = (t) => t === m.predictedWinner && !isTbd(t)
+    ? (isCorrect ? ' pred-correct-team' : isWrong ? ' pred-wrong-team' : '') : '';
+  const hClass = isTbd(m.home) ? 'prognose-tbd' : m.predictedWinner === m.home ? `prognose-winner${winTeamExtra(m.home)}` : 'prognose-loser';
+  const aClass = isTbd(m.away) ? 'prognose-tbd' : m.predictedWinner === m.away ? `prognose-winner${winTeamExtra(m.away)}` : 'prognose-loser';
   const confPart = m.conf ? ` ${confIcon(m.conf)}` : '';
   const tipPart  = m.analysisTip ? `<span class="bracket-analysis-tip" style="font-size:9px">${m.analysisTip}</span>` : '';
   const footer   = (tipPart || confPart) ? `<div class="bracket-card-footer">${tipPart}${confPart}</div>` : '';
   const winMark  = (t) => m.predictedWinner === t && !isTbd(t) ? ' ▶' : '';
 
-  return `<div class="bracket-card${isFinal ? ' final-card' : ''}" data-id="${m.id}" onclick="openBracketModal('${m.id}')">
+  return `<div class="bracket-card${isFinal ? ' final-card' : ''}${outcomeClass}" data-id="${m.id}" onclick="openBracketModal('${m.id}')">
+    ${badge}
     <div class="bracket-card-date">${m.date || '—'}${isFinal ? ' <span style="color:var(--accent);font-weight:700">FINALE</span>' : ''}</div>
     <div class="bracket-card-team ${hClass}">${teamHtml(m.home)}${winMark(m.home)}</div>
     <div class="bracket-card-team ${aClass}">${teamHtml(m.away)}${winMark(m.away)}</div>
