@@ -1,9 +1,9 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-29T10:20:20Z",
+    "aktualisiert": "2026-06-29T19:41:40Z",
     "rang": {
       "platz": "11.",
-      "punkte": 145,
+      "punkte": 148,
       "total": 25,
       "spieltag": "Sechzehntelfinale"
     },
@@ -1181,7 +1181,7 @@
         "tip": "1:0",
         "analysisTip": "1:0",
         "conf": "med",
-        "result": null,
+        "result": "2:1",
         "note": "BRA 6.2% vs JPN 1.0% — Ratio 6.2×. BRA ~73%. ⚠️ Raphinha fraglich; JPN ❌ Kubo (3 Sp. ausgefallen). 1:0 BRA. Remis-Risiko. med.",
         "injuries": "❌ Rodrygo (Kreuzband/Meniskus) | ⚠️ Raphinha (Oberschenkel, fraglich — Rayan als Alternative) | ❌ Kubo (Japan, 3. Sp. ausgefallen)",
         "feedsInto": {
@@ -1370,7 +1370,7 @@
       {
         "id": "M91",
         "date": "05.07 22:00",
-        "home": "W M76",
+        "home": "Brasilien",
         "away": "W M78",
         "tip": null,
         "analysisTip": null,
