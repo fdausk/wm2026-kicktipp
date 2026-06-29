@@ -1071,7 +1071,11 @@
         "conf": "med-high",
         "result": null,
         "note": "GER 4.0% vs PAR 0.1% — Ratio 40×. GER ~87% (85–92%) → max 3T → 2:0. PAR non-loss <42%. Kein Remis-Risiko (GER >75%). ❌ Schlotterbeck. med-high.",
-        "injuries": "❌ Schlotterbeck (Sprunggelenk)"
+        "injuries": "❌ Schlotterbeck (Sprunggelenk)",
+        "feedsInto": {
+          "match": "M89",
+          "slot": "home"
+        }
       },
       {
         "id": "M77",
@@ -1083,7 +1087,11 @@
         "conf": "med-high",
         "result": null,
         "note": "FRA 20.3% vs SWE 1.2% — Ratio 16.9×. FRA ~87% (85–92%) → max 3T → 2:0. SWE non-loss ~30%<42%. Kein Remis-Risiko (FRA >75%). FRA makellos 9Pkt. med-high.",
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M89",
+          "slot": "away"
+        }
       },
       {
         "id": "M73",
@@ -1095,7 +1103,11 @@
         "conf": "med",
         "result": "0:1",
         "note": "CAN 55.5% vs SAF 17.3% (normiert). Außenseiter-Regel (SAF non-loss 44.5%≥42%) → 0:1 CAN. CAN geschwächt: ❌ Davies/Kone, ⚠️ Eustaquio/Jones. SAF: 🔴 Zwane (letztes Sperrspiel). med.",
-        "injuries": "🔴 Zwane (letztes Sperrspiel) | ❌ Davies (Oberschenkel) | ❌ Kone (Schienbein) | ⚠️ Eustaquio (Muskel) | ⚠️ Jones (Fitness)"
+        "injuries": "🔴 Zwane (letztes Sperrspiel) | ❌ Davies (Oberschenkel) | ❌ Kone (Schienbein) | ⚠️ Eustaquio (Muskel) | ⚠️ Jones (Fitness)",
+        "feedsInto": {
+          "match": "M90",
+          "slot": "home"
+        }
       },
       {
         "id": "M75",
@@ -1107,7 +1119,11 @@
         "conf": "med",
         "result": null,
         "note": "NED 6.5% vs MAR 2.6% — Ratio 2.5×. NED ~70%. MAR non-loss ~48%≥42% → Außenseiter-Regel → 1:0 NED. ⚠️ Remis-Risiko: MAR xG≥0.8, NED ≤75%. ❌ Timber. med.",
-        "injuries": "❌ Timber (Leiste)"
+        "injuries": "❌ Timber (Leiste)",
+        "feedsInto": {
+          "match": "M90",
+          "slot": "away"
+        }
       },
       {
         "id": "M83",
@@ -1119,7 +1135,11 @@
         "conf": "med",
         "result": null,
         "note": "POR 6.5% vs CRO 0.7% — Ratio 9.3×. POR ~75%. CRO non-loss ~35%<42%. ⚠️ Remis-Risiko: CRO xG≥0.8, POR ≤75%. med.",
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M93",
+          "slot": "home"
+        }
       },
       {
         "id": "M84",
@@ -1131,7 +1151,11 @@
         "conf": "med-high",
         "result": null,
         "note": "ESP -1200 Advance (~87%, 85–92%) → max 3T. AUT non-loss <42%. AUT attackfreudig (6T Gruppe, 3:3 ALG) → 2:1 ESP. Kein Remis-Risiko (ESP >75%). med-high.",
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M93",
+          "slot": "away"
+        }
       },
       {
         "id": "M81",
@@ -1143,7 +1167,11 @@
         "conf": "med-high",
         "result": null,
         "note": "USA 4.8% vs BIH 0.2% — Ratio 24×. USA ~80%. BIH non-loss ~35%<42%. Kein Remis-Risiko (USA >75%). ⚠️ Pulisic fraglich. med-high.",
-        "injuries": "⚠️ Pulisic (Wade)"
+        "injuries": "⚠️ Pulisic (Wade)",
+        "feedsInto": {
+          "match": "M94",
+          "slot": "home"
+        }
       },
       {
         "id": "M82",
@@ -1155,7 +1183,11 @@
         "conf": "med",
         "result": null,
         "note": "BEL -194 Advance (~55% 90-Min). SEN non-loss 45%≥42% → Außenseiter-Regel → 1:0 BEL. ⚠️ Remis-Risiko: SEN xG≥0.8 (5:0 IRQ), BEL ≤75% → med.",
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M94",
+          "slot": "away"
+        }
       },
       {
         "id": "M76",
@@ -1167,7 +1199,11 @@
         "conf": "med",
         "result": null,
         "note": "BRA 5.8% vs JPN 2.2%. BRA ~75%. JPN non-loss ~47%≥42% → Außenseiter-Regel → 1:0 BRA. ⚠️ Remis-Risiko: JPN xG≥0.8, BRA ≤75%. ❌ Rodrygo (Kreuzband) ❌ Raphinha (Oberschenkel) schwächen Angriff. med.",
-        "injuries": "❌ Rodrygo (Kreuzband/Meniskus) | ❌ Raphinha (Oberschenkelmuskel)"
+        "injuries": "❌ Rodrygo (Kreuzband/Meniskus) | ❌ Raphinha (Oberschenkelmuskel)",
+        "feedsInto": {
+          "match": "M91",
+          "slot": "home"
+        }
       },
       {
         "id": "M78",
@@ -1179,7 +1215,11 @@
         "conf": "med-high",
         "result": null,
         "note": "NOR 4.8% vs CIV 0.4% — Ratio 12×. NOR ~80%. CIV non-loss ~35%<42%. Kein Remis-Risiko (NOR >75%). Haaland (4 Tore Gruppe) als Torjäger. med-high.",
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M91",
+          "slot": "away"
+        }
       },
       {
         "id": "M79",
@@ -1191,7 +1231,11 @@
         "conf": "med-high",
         "result": null,
         "note": "MEX 2.2% vs ECU 0.6% — Ratio 3.7×. MEX ~75% + Azteca-Höhenvorteil (2240m). ECU non-loss ~40%<42%. Kein Remis-Risiko (MEX ≥75%). MEX 9Pkt ungeschlagen. med-high.",
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M92",
+          "slot": "home"
+        }
       },
       {
         "id": "M80",
@@ -1203,7 +1247,11 @@
         "conf": "med-high",
         "result": null,
         "note": "ENG 10.1% vs DRC 0.2% — Ratio 50×. ENG ~87% (85–92%) → max 3T. DRC Low-Block → 2:0. Kein Remis-Risiko (ENG >75%). med-high.",
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M92",
+          "slot": "away"
+        }
       },
       {
         "id": "M86",
@@ -1215,7 +1263,11 @@
         "conf": "med-high",
         "result": null,
         "note": "ARG 14.2% vs CPV 0.1% — Ratio 142×. ARG -650 (~87%, 85–92%) → max 3T. CPV non-loss ~19%<42%. CPV xG~0.7<0.8, kein Remis-Risiko. 2:0 ARG. med-high.",
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M95",
+          "slot": "home"
+        }
       },
       {
         "id": "M88",
@@ -1227,7 +1279,11 @@
         "conf": "med",
         "result": null,
         "note": "EGY -140 Advance (~58%). EGY leicht favorisiert. AUS non-loss 53%≥42% → Außenseiter-Regel → 0:1 EGY. AUS xG~0.7<0.8, kein Remis-Risiko. ✅ Salah fit. med.",
-        "injuries": "✅ Salah (fit bestätigt)"
+        "injuries": "✅ Salah (fit bestätigt)",
+        "feedsInto": {
+          "match": "M95",
+          "slot": "away"
+        }
       },
       {
         "id": "M85",
@@ -1239,7 +1295,11 @@
         "conf": "med",
         "result": null,
         "note": "SUI 0.4% vs ALG 0.2%. SUI ~70%. ALG non-loss ~47%≥42% → Außenseiter-Regel → 1:0 SUI. ⚠️ Remis-Risiko: ALG xG≥0.8 (3:3 AUT), SUI ≤75% → med.",
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M96",
+          "slot": "home"
+        }
       },
       {
         "id": "M87",
@@ -1251,7 +1311,11 @@
         "conf": "med-high",
         "result": null,
         "note": "COL 3.8% vs GHA 0.3% — Ratio 12.7×. COL ~78%. GHA non-loss ~37%<42%. GHA xG<0.8. Kein Remis-Risiko (COL >75%). med-high.",
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M96",
+          "slot": "away"
+        }
       }
     ],
     "R16": [
@@ -1265,7 +1329,11 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M97",
+          "slot": "home"
+        }
       },
       {
         "id": "M90",
@@ -1277,7 +1345,11 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M97",
+          "slot": "away"
+        }
       },
       {
         "id": "M93",
@@ -1289,7 +1361,11 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M98",
+          "slot": "home"
+        }
       },
       {
         "id": "M94",
@@ -1301,7 +1377,11 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M98",
+          "slot": "away"
+        }
       },
       {
         "id": "M91",
@@ -1313,7 +1393,11 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M99",
+          "slot": "home"
+        }
       },
       {
         "id": "M92",
@@ -1325,7 +1409,11 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M99",
+          "slot": "away"
+        }
       },
       {
         "id": "M95",
@@ -1337,7 +1425,11 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M100",
+          "slot": "home"
+        }
       },
       {
         "id": "M96",
@@ -1349,7 +1441,11 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M100",
+          "slot": "away"
+        }
       }
     ],
     "QF": [
@@ -1363,7 +1459,11 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M101",
+          "slot": "home"
+        }
       },
       {
         "id": "M98",
@@ -1375,7 +1475,11 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M101",
+          "slot": "away"
+        }
       },
       {
         "id": "M99",
@@ -1387,7 +1491,11 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M102",
+          "slot": "home"
+        }
       },
       {
         "id": "M100",
@@ -1399,7 +1507,11 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M102",
+          "slot": "away"
+        }
       }
     ],
     "SF": [
@@ -1413,7 +1525,15 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M104",
+          "slot": "home"
+        },
+        "loserTo": {
+          "match": "M103",
+          "slot": "home"
+        }
       },
       {
         "id": "M102",
@@ -1425,7 +1545,15 @@
         "conf": null,
         "result": null,
         "note": null,
-        "injuries": null
+        "injuries": null,
+        "feedsInto": {
+          "match": "M104",
+          "slot": "away"
+        },
+        "loserTo": {
+          "match": "M103",
+          "slot": "away"
+        }
       }
     ],
     "P3": [
