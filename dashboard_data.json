@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-30T12:44:51Z",
+    "aktualisiert": "2026-06-30T15:45:14Z",
     "rang": {
       "platz": "12.",
       "punkte": 148,
@@ -20,9 +20,9 @@
       "Kolumbien": 0.026,
       "Belgien": 0.021,
       "Schweiz": 0.016,
-      "Norwegen": 0.010,
-      "Ecuador": 0.010,
-      "Kroatien": 0.010,
+      "Norwegen": 0.01,
+      "Ecuador": 0.01,
+      "Kroatien": 0.01,
       "Kanada": 0.008,
       "Paraguay": 0.008,
       "Senegal": 0.008,
@@ -1194,7 +1194,7 @@
         "date": "30.06 19:00",
         "home": "Elfenbeinküste",
         "away": "Norwegen",
-        "tip": "0:1",
+        "tip": "1:1 n.E. (Norwegen)",
         "analysisTip": "1:1 n.E. (Norwegen)",
         "conf": "med",
         "result": null,
