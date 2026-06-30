@@ -1641,19 +1641,28 @@ function buildPrediction() {
 function predCard(m, isFinal) {
   const isTbd = t => !t || t === '?';
   const actualWinner = m.result ? extractWinnerTeam(m.result, m.home, m.away) : null;
-  const isCorrect = actualWinner && actualWinner === m.predictedWinner;
-  const isWrong   = actualWinner && actualWinner !== m.predictedWinner;
+  // Derive original prediction from analysisTip (NOT m.predictedWinner, which is overwritten
+  // by buildPrediction() with the actual result winner once a result is known).
+  let originalPrediction;
+  if (m.analysisTip) {
+    originalPrediction = extractWinnerTeam(m.analysisTip, m.home, m.away);
+  } else if (!isTbd(m.home) && !isTbd(m.away)) {
+    const oddsH = TEAM_ODDS[m.home] || 0, oddsA = TEAM_ODDS[m.away] || 0;
+    if (oddsH !== oddsA) originalPrediction = oddsH >= oddsA ? m.home : m.away;
+  }
+  const isCorrect = !!(actualWinner && originalPrediction && actualWinner === originalPrediction);
+  const isWrong   = !!(actualWinner && originalPrediction && actualWinner !== originalPrediction);
   const outcomeClass = isCorrect ? ' pred-correct' : isWrong ? ' pred-wrong' : '';
   const badge = isCorrect ? '<span class="pred-outcome-badge correct">✓</span>'
               : isWrong   ? '<span class="pred-outcome-badge wrong">✗</span>' : '';
-  const winTeamExtra = (t) => t === m.predictedWinner && !isTbd(t)
+  const winTeamExtra = (t) => t === originalPrediction && !isTbd(t)
     ? (isCorrect ? ' pred-correct-team' : isWrong ? ' pred-wrong-team' : '') : '';
-  const hClass = isTbd(m.home) ? 'prognose-tbd' : m.predictedWinner === m.home ? `prognose-winner${winTeamExtra(m.home)}` : 'prognose-loser';
-  const aClass = isTbd(m.away) ? 'prognose-tbd' : m.predictedWinner === m.away ? `prognose-winner${winTeamExtra(m.away)}` : 'prognose-loser';
+  const hClass = isTbd(m.home) ? 'prognose-tbd' : originalPrediction === m.home ? `prognose-winner${winTeamExtra(m.home)}` : 'prognose-loser';
+  const aClass = isTbd(m.away) ? 'prognose-tbd' : originalPrediction === m.away ? `prognose-winner${winTeamExtra(m.away)}` : 'prognose-loser';
   const confPart = m.conf ? ` ${confIcon(m.conf)}` : '';
   const tipPart  = m.analysisTip ? `<span class="bracket-analysis-tip" style="font-size:9px">${m.analysisTip}</span>` : '';
   const footer   = (tipPart || confPart) ? `<div class="bracket-card-footer">${tipPart}${confPart}</div>` : '';
-  const winMark  = (t) => m.predictedWinner === t && !isTbd(t) ? ' ▶' : '';
+  const winMark  = (t) => originalPrediction === t && !isTbd(t) ? ' ▶' : '';
 
   return `<div class="bracket-card${isFinal ? ' final-card' : ''}${outcomeClass}" data-id="${m.id}" onclick="openBracketModal('${m.id}')">
     <div class="bracket-card-date" style="display:flex;justify-content:space-between;align-items:center"><span>${m.date || '—'}${isFinal ? ' <span style="color:var(--accent);font-weight:700">FINALE</span>' : ''}</span>${badge}</div>
