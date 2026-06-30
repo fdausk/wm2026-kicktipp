@@ -1,8 +1,8 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-29T19:43:30Z",
+    "aktualisiert": "2026-06-30T07:39:49Z",
     "rang": {
-      "platz": "11.",
+      "platz": "12.",
       "punkte": 148,
       "total": 25,
       "spieltag": "Sechzehntelfinale"
@@ -1053,7 +1053,7 @@
         "tip": "2:0",
         "analysisTip": "2:0",
         "conf": "med-high",
-        "result": null,
+        "result": "1:1 n.E. (Paraguay)",
         "note": "GER 3.7% vs PAR 0.3% — Ratio 12.3×. GER ~87% → max 3T → 2:0. ❌ Schlotterbeck, ❌ D.Gómez (gesperrt). ✅ Almiron zurück. ⚠️ Musiala Bank (taktisch, Undav statt). med-high.",
         "injuries": "❌ Schlotterbeck (Sprunggelenk) | ✅ N. Brown (startet) | ❌ D. Gómez (gesperrt, PAR) | ✅ Almiron (startet, PAR) | ⚠️ Musiala (Bank, taktisch)",
         "feedsInto": {
@@ -1101,7 +1101,7 @@
         "tip": "1:0",
         "analysisTip": "1:0",
         "conf": "med",
-        "result": null,
+        "result": "1:1 n.E. (Marokko)",
         "note": "NED 4.8% vs MAR 1.2% — Ratio 4×. NED ~70%. ⚠️ Remis-Risiko. MAR non-loss ~48%≥42% → 1:0 NED. Dumfries + Brobbey fit. med.",
         "injuries": null,
         "feedsInto": {
@@ -1306,7 +1306,7 @@
       {
         "id": "M89",
         "date": "04.07 23:00",
-        "home": "W M74",
+        "home": "Paraguay",
         "away": "W M77",
         "tip": null,
         "analysisTip": null,
@@ -1323,7 +1323,7 @@
         "id": "M90",
         "date": "04.07 19:00",
         "home": "Kanada",
-        "away": "W M75",
+        "away": "Marokko",
         "tip": null,
         "analysisTip": null,
         "conf": null,
