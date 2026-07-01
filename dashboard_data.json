@@ -1,16 +1,16 @@
 {
   "meta": {
-    "aktualisiert": "2026-06-30T15:45:14Z",
+    "aktualisiert": "2026-07-01T08:30:00Z",
     "rang": {
       "platz": "12.",
-      "punkte": 148,
+      "punkte": 155,
       "total": 25,
       "spieltag": "Sechzehntelfinale"
     },
     "teamOdds": {
-      "Frankreich": 0.209,
-      "Argentinien": 0.167,
-      "Spanien": 0.115,
+      "Frankreich": 0.289,
+      "Argentinien": 0.213,
+      "Spanien": 0.106,
       "England": 0.104,
       "Portugal": 0.073,
       "Brasilien": 0.063,
@@ -20,8 +20,8 @@
       "Kolumbien": 0.026,
       "Belgien": 0.021,
       "Schweiz": 0.016,
-      "Norwegen": 0.01,
-      "Ecuador": 0.01,
+      "Norwegen": 0.012,
+      "Ecuador": 0.0,
       "Kroatien": 0.01,
       "Kanada": 0.008,
       "Paraguay": 0.008,
@@ -29,19 +29,19 @@
       "Algerien": 0.008,
       "Australien": 0.005,
       "Österreich": 0.005,
-      "Elfenbeinküste": 0.005,
-      "Schweden": 0.005,
+      "Elfenbeinküste": 0.0,
+      "Schweden": 0.0,
       "Ghana": 0.004,
       "Ägypten": 0.003,
       "Bosnien-Herzegowina": 0.003,
       "Kap Verde": 0.002,
-      "DR Kongo": 0.0,
+      "DR Kongo": 0.001,
       "Japan": 0.0,
       "Deutschland": 0.0,
       "Niederlande": 0.0,
       "Südafrika": 0.0
     },
-    "teamOddsTs": "2026-06-30T12:44:51Z"
+    "teamOddsTs": "2026-07-01T08:30:00Z"
   },
   "spieltag_info": [
     {
@@ -129,7 +129,7 @@
       "label": "Runde d. letzten 32",
       "dates": "28. Jun–3. Jul",
       "phase": "ko",
-      "analysisTs": "2026-06-30T12:44:51Z",
+      "analysisTs": "2026-07-01T08:30:00Z",
       "tipsSubmitted": true
     },
     {
@@ -1069,7 +1069,7 @@
         "tip": "2:0",
         "analysisTip": "2:1",
         "conf": "med-high",
-        "result": null,
+        "result": "3:0",
         "note": "FRA 20.9% vs SWE 0.5% — Ratio 41×. FRA ~79% 90-min (≤85%) → max 1T → 2:1. ❌ Hien (SWE CB, Oberschenkel, Turnier-Ende). SWE non-loss ~21%<42%. Kein Remis-Risiko. FRA 9Pkt makellos. med-high.",
         "injuries": "❌ Hien (Schweden, Oberschenkel, Turnier-Ende)",
         "feedsInto": {
@@ -1150,8 +1150,8 @@
         "analysisTip": "1:0",
         "conf": "med-high",
         "result": null,
-        "note": "USA 4.8% vs BIH 0.2% — Ratio 24×. USA ~80%. BIH non-loss ~35%<42%. Kein Remis-Risiko (USA >75%). ⚠️ Pulisic fraglich. med-high.",
-        "injuries": "⚠️ Pulisic (Wade)",
+        "note": "USA 4.2% vs BIH 0.3% — Ratio 14×. USA -270 (~78%). BIH non-loss ~35%<42%. Kein Remis-Risiko (USA >75%). ✅ Pulisic fit (startet). Over 2.5 Tendenz, aber ≤85% → max 1T → 1:0. med-high.",
+        "injuries": "✅ Pulisic (fit bestätigt, startet)",
         "feedsInto": {
           "match": "M94",
           "slot": "home"
@@ -1166,8 +1166,8 @@
         "analysisTip": "1:0",
         "conf": "med",
         "result": null,
-        "note": "BEL -194 Advance (~55% 90-Min). SEN non-loss 45%≥42% → Außenseiter-Regel → 1:0 BEL. ⚠️ Remis-Risiko: SEN xG≥0.8 (5:0 IRQ), BEL ≤75% → med.",
-        "injuries": null,
+        "note": "BEL -162 Advance (~62% nach Mendy-Ausfall). SEN non-loss ~38%<42% (Mendy-Faktor). Score-Dämpfung ≤85% → max 1T → 1:0 BEL. ⚠️ Remis-Risiko: SEN xG offensiv ≥0.8, BEL ≤75%. med.",
+        "injuries": "❌ Mendy (Senegal, TW, Knie)",
         "feedsInto": {
           "match": "M94",
           "slot": "away"
@@ -1197,7 +1197,7 @@
         "tip": "0:1",
         "analysisTip": "1:1 n.E. (Norwegen)",
         "conf": "med",
-        "result": null,
+        "result": "1:2",
         "note": "NOR 1.0% vs CIV 0.5% — Ratio 2×. NOR ~48% 90-min (45–65%) → SCHRITT 7: n.E. prüfen. Haaland + Nyland (TW) → NOR PE-Vorteil. ⚠️ Ryerson fraglich. 1:1 n.E. NOR. med.",
         "injuries": "⚠️ Singo (CIV, Oberschenkel fraglich) | ⚠️ Ryerson (NOR, Oberschenkel fraglich)",
         "feedsInto": {
@@ -1213,7 +1213,7 @@
         "tip": "1:0",
         "analysisTip": "1:0",
         "conf": "med-high",
-        "result": null,
+        "result": "2:0",
         "note": "MEX 2.2% vs ECU 0.6% — Ratio 3.7×. MEX ~75% + Azteca-Höhenvorteil (2240m). ECU non-loss ~40%<42%. Kein Remis-Risiko (MEX ≥75%). MEX 9Pkt ungeschlagen. med-high.",
         "injuries": null,
         "feedsInto": {
@@ -1227,11 +1227,11 @@
         "home": "England",
         "away": "DR Kongo",
         "tip": "2:0",
-        "analysisTip": "2:0",
+        "analysisTip": "1:0",
         "conf": "med-high",
         "result": null,
-        "note": "ENG 10.1% vs DRC 0.2% — Ratio 50×. ENG ~87% (85–92%) → max 3T. DRC Low-Block → 2:0. Kein Remis-Risiko (ENG >75%). med-high.",
-        "injuries": null,
+        "note": "ENG 10.4% vs DRC 0.1% — Ratio 104×. ENG -370 (~78% 90-min ≤85%) → max 1T → 1:0. DRC 5-3-2 Low-Block bestätigt → Score defensiv. Under 2.5 Markt-Lean. ❌ Reece James (Oberschenkel), ❌ Quansah. Kein Remis-Risiko (ENG >75%). med-high.",
+        "injuries": "❌ Reece James (Oberschenkel) | ❌ Quansah (Knöchel) | ENG",
         "feedsInto": {
           "match": "M92",
           "slot": "away"
@@ -1307,12 +1307,12 @@
         "id": "M89",
         "date": "04.07 23:00",
         "home": "Paraguay",
-        "away": "W M77",
+        "away": "Frankreich",
         "tip": null,
         "analysisTip": "0:2",
         "conf": "med-high",
         "result": null,
-        "note": "PAR 0.8% vs W M77 (erw. FRA 20.9%). Ratio 26×. FRA ~88% 90-min (85–92%) → max 3T → 0:2 FRA. Vorläufig — abhängig von M77-Ergebnis. med-high.",
+        "note": "PAR 0.8% vs FRA 28.9%. Ratio 36×. FRA ~89% 90-min (85–92%) → max 3T → 0:2 FRA. FRA bestätigt (3:0 vs SWE). PAR Überraschungssieger via PE vs GER. med-high.",
         "injuries": null,
         "feedsInto": {
           "match": "M97",
@@ -1371,12 +1371,12 @@
         "id": "M91",
         "date": "05.07 22:00",
         "home": "Brasilien",
-        "away": "W M78",
+        "away": "Norwegen",
         "tip": null,
         "analysisTip": "1:0",
         "conf": "med-high",
         "result": null,
-        "note": "BRA 6.3% vs W M78 (erw. NOR 1.0%). Ratio 6.3×. BRA ~78% 90-min → max 1T → 1:0 BRA. Vorläufig — abhängig von M78-Ergebnis. med-high.",
+        "note": "BRA 6.3% vs NOR 1.2%. Ratio 5.3×. BRA ~78% 90-min (≤85%) → max 1T → 1:0 BRA. NOR bestätigt (2:1 vs CIV — Nusa früh, Haaland 86'). med-high.",
         "injuries": null,
         "feedsInto": {
           "match": "M99",
@@ -1386,13 +1386,13 @@
       {
         "id": "M92",
         "date": "05.07 02:00",
-        "home": "W M79",
+        "home": "Mexiko",
         "away": "W M80",
         "tip": null,
-        "analysisTip": "0:2",
+        "analysisTip": "0:1",
         "conf": "med-high",
         "result": null,
-        "note": "W M79 (erw. MEX 2.6%) vs W M80 (erw. ENG 10.4%). Ratio 4×. ENG ~85% → max 3T → 0:2 ENG. Vorläufig. med-high.",
+        "note": "MEX 2.6% vs ENG 10.4% (erw.). Ratio 4×. ENG ~80% 90-min (≤85%) → max 1T → 0:1 ENG. MEX bestätigt (2:0 vs ECU). Vorläufig — abhängig von M80. med-high.",
         "injuries": null,
         "feedsInto": {
           "match": "M99",
