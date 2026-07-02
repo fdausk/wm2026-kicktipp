@@ -302,10 +302,16 @@
   .bracket-card-date { font-size: 9px; color: var(--muted); padding: 3px 8px; border-bottom: 1px solid var(--border); }
   .bracket-card-team { display: flex; align-items: center; justify-content: space-between; padding: 4px 8px; font-size: 11px; font-weight: 600; min-height: 22px; gap: 6px; }
   .bracket-card-team.tbd { color: var(--muted); font-style: italic; font-weight: 400; }
-  .bracket-card-team.winner { color: var(--green); }
+  .bracket-card-team.winner { color: var(--green); font-weight: 700; }
+  .bracket-card-team.loser { color: var(--muted); font-weight: 400; }
   .bracket-card-team + .bracket-card-team { border-top: 1px solid var(--border); }
   .bracket-card-footer { border-top: 1px solid var(--border); padding: 3px 8px; font-size: 9px; color: var(--muted); display: flex; align-items: center; gap: 5px; }
   .bracket-card-footer .conf { font-size: 9px; padding: 1px 4px; }
+  .bracket-card-scoreline { border-top: 1px solid var(--border); padding: 3px 8px; font-size: 10px; display: flex; align-items: center; gap: 6px; }
+  .bracket-card-scoreline .bc-tip { color: var(--muted); }
+  .bracket-card-scoreline .bc-arrow { color: var(--muted); }
+  .bracket-card-scoreline .bc-result { font-weight: 700; }
+  .bracket-card-status { font-size: 11px; font-weight: 700; }
   .bracket-analysis-tip { color: var(--accent); font-weight: 600; }
   .bracket-connector { width: 24px; flex-shrink: 0; position: relative; align-self: stretch; overflow: visible; }
   .bracket-connector svg { position: absolute; top: 0; left: 0; pointer-events: none; }
@@ -1071,12 +1077,25 @@ function openBracketModal(id) {
     badges += `<span class="mbadge mbadge-score-done">${m.tip}</span><span class="mbadge mbadge-done">Abgegeben</span>`;
     if (m.analysisTip && m.analysisTip !== m.tip)
       badges += `<span class="mbadge mbadge-inj">Empf: ${m.analysisTip}</span>`;
+    if (m.conf) {
+      const cb = m.conf === 'high' ? 'mbadge-high' : m.conf === 'med-high' ? 'mbadge-mh' : 'mbadge-med';
+      const ct = m.conf === 'high' ? 'Hoch' : m.conf === 'med-high' ? 'Mittel-Hoch' : 'Mittel';
+      badges += `<span class="mbadge ${cb}">${ct}</span>`;
+    }
   } else if (m.analysisTip) {
     const cb = m.conf === 'high' ? 'mbadge-high' : m.conf === 'med-high' ? 'mbadge-mh' : 'mbadge-med';
     const ct = m.conf === 'high' ? 'Hoch' : m.conf === 'med-high' ? 'Mittel-Hoch' : 'Mittel';
     badges += `<span class="mbadge mbadge-score">${m.analysisTip}</span><span class="mbadge ${cb}">${ct}</span>`;
   }
   if (m.result) badges += `<span class="mbadge mbadge-score-done" style="background:var(--green);color:#fff">${m.result}</span>`;
+  if (m.result && m.tip) {
+    let statusLabel = '', statusBg = '';
+    if (m.tip === m.result)                             { statusLabel = '✓ Richtig'; statusBg = 'var(--green)'; }
+    else if (scoreDiff(m.tip) === scoreDiff(m.result))  { statusLabel = '± Differenz'; statusBg = 'var(--teal)'; }
+    else if (tendenz(m.tip) === tendenz(m.result))      { statusLabel = '~ Tendenz'; statusBg = 'var(--yellow)'; }
+    else                                                 { statusLabel = '✗ Falsch'; statusBg = 'var(--red)'; }
+    badges += `<span class="mbadge" style="background:${statusBg};color:#0f1117;font-weight:700">${statusLabel}</span>`;
+  }
   document.getElementById('modalSummary').innerHTML = badges;
 
   // Body: injuries + note
@@ -1362,35 +1381,41 @@ function isTbdTeam(t) {
 }
 
 function bracketCard(m, isFinal, nmKey) {
-  const hClass = isTbdTeam(m.home) ? 'tbd' : '';
-  const aClass = isTbdTeam(m.away) ? 'tbd' : '';
-  const tipHtml = m.tip    ? `<span class="score score-tip"    style="font-size:10px;padding:1px 5px">${m.tip}</span>`    : '';
-  const resHtml = m.result ? `<span class="score score-result" style="font-size:10px;padding:1px 5px">${m.result}</span>` : '';
+  const hTbd = isTbdTeam(m.home);
+  const aTbd = isTbdTeam(m.away);
 
-  let statusHtml = '';
+  let statusIcon = '⏱', statusColor = 'var(--muted)';
   if (m.result && m.tip) {
-    if (m.tip === m.result)
-      statusHtml = '<span class="status status-correct" style="font-size:11px;padding:2px 6px">✓ Richtig</span>';
-    else if (scoreDiff(m.tip) === scoreDiff(m.result))
-      statusHtml = '<span class="status status-differenz" style="font-size:11px;padding:2px 6px">± Differenz</span>';
-    else if (tendenz(m.tip) === tendenz(m.result))
-      statusHtml = '<span class="status status-tendenz" style="font-size:11px;padding:2px 6px">~ Tendenz</span>';
-    else
-      statusHtml = '<span class="status status-wrong" style="font-size:11px;padding:2px 6px">✗ Falsch</span>';
+    if (m.tip === m.result)                                   { statusIcon = '✓'; statusColor = 'var(--green)'; }
+    else if (scoreDiff(m.tip) === scoreDiff(m.result))         { statusIcon = '±'; statusColor = 'var(--teal)'; }
+    else if (tendenz(m.tip) === tendenz(m.result))             { statusIcon = '~'; statusColor = 'var(--yellow)'; }
+    else                                                       { statusIcon = '✗'; statusColor = 'var(--red)'; }
   }
 
-  let footer = '';
-  if (statusHtml || m.analysisTip || m.conf) {
-    const tipPart = m.analysisTip ? `<span class="bracket-analysis-tip">Empf: ${m.analysisTip}</span>` : '';
-    const confPart = (m.conf && m.tip) ? confLabel(m.conf) : '';
-    footer = `<div class="bracket-card-footer">${statusHtml}${statusHtml && (tipPart || confPart) ? '<span style="color:var(--border)">·</span>' : ''}${tipPart}${tipPart && confPart ? '<span style="color:var(--border)">·</span>' : ''}${confPart}</div>`;
+  const winner = m.result ? extractWinnerTeam(m.result, m.home, m.away) : null;
+  const teamClass = (team, isTbd) => {
+    if (isTbd) return 'tbd';
+    if (!winner) return '';
+    return team === winner ? 'winner' : 'loser';
+  };
+
+  let scoreline = '';
+  if (m.tip || m.result) {
+    const tipPart = m.tip ? `<span class="bc-tip">${m.tip}</span>` : '';
+    const arrow   = (m.tip && m.result) ? '<span class="bc-arrow">→</span>' : '';
+    const resPart = m.result ? `<span class="bc-result" style="color:${statusColor}">${m.result}</span>` : '';
+    scoreline = `<div class="bracket-card-scoreline">${tipPart}${arrow}${resPart}</div>`;
   }
+
   const isNext = !m.result && nmKey === '__ko__' + m.id;
   return `<div class="bracket-card${isFinal ? ' final-card' : ''}${isNext ? ' match-next' : ''}" data-id="${m.id}" onclick="openBracketModal('${m.id}')">
-    <div class="bracket-card-date">${m.date}${isFinal ? ' <span style="color:var(--accent);font-weight:700">FINALE</span>' : ''}</div>
-    <div class="bracket-card-team ${hClass}">${m.home}${tipHtml ? ' ' + tipHtml : ''}</div>
-    <div class="bracket-card-team ${aClass}">${m.away}${resHtml ? ' ' + resHtml : ''}</div>
-    ${footer}
+    <div class="bracket-card-date" style="display:flex;justify-content:space-between;align-items:center">
+      <span>${m.date}${isFinal ? ' <span style="color:var(--accent);font-weight:700">FINALE</span>' : ''}</span>
+      <span class="bracket-card-status" style="color:${statusColor}">${statusIcon}</span>
+    </div>
+    <div class="bracket-card-team ${teamClass(m.home, hTbd)}">${m.home}</div>
+    <div class="bracket-card-team ${teamClass(m.away, aTbd)}">${m.away}</div>
+    ${scoreline}
   </div>`;
 }
 
