@@ -35,9 +35,12 @@ Lies `performance.json` im Projektverzeichnis und wende die folgenden Anpassunge
 **Wichtig: Die Regeln 1–3 werden in genau dieser Reihenfolge sequentiell auf den Rohscore angewendet.** Erst Score-Dämpfung, dann Außenseiter-Regel, dann Eröffnungsspiel-Deckel. Niemals parallel oder in anderer Reihenfolge.
 
 1. **Score-Dämpfung:** Abhängig von der Gewinnwahrscheinlichkeit des Favoriten:
-   - **≤ 85%:** Vorsprung maximal 1 Tor. Aus `2:0` wird `1:0`, aus `3:1` wird `2:1`. **Kein Unentschieden** — knappe Spiele enden in WM 2026 statistisch häufiger mit knappem Sieg als mit Remis (empirisch: 0/5 korrekt). Bei Unentschieden-Tendenz: 1:0 für den Favoriten bevorzugen.
+   - **≤ 65%:** Vorsprung maximal 1 Tor. Aus `2:0` wird `1:0`, aus `3:1` wird `2:1`. **Kein Unentschieden** — knappe Spiele enden in WM 2026 statistisch häufiger mit knappem Sieg als mit Remis (empirisch: 0/5 korrekt). Bei Unentschieden-Tendenz: 1:0 für den Favoriten bevorzugen.
+   - **65–85%:** Vorsprung maximal 2 Tore. Aus `3:0` wird `2:0`. **Kein Unentschieden.** (Empirisch ab 2026-07-01: 9/9 `score_zu_konservativ`-Fehltipps mit bekanntem Favoriten-% lagen bei 75–88% — der bisherige 1-Tor-Deckel für dieses gesamte Band war systematisch zu defensiv, z.B. FRA 79% → 3:0 statt getippt 2:0, MEX 75% → 2:0 statt getippt 1:0.)
    - **85–92%:** Vorsprung maximal 3 Tore. Aus `4:0` wird `3:0`, höhere Scores bleiben bis 3-Tor-Margin. (Empirisch: Blow-out-Siege bei >85% Favoriten treten regelmäßig auf — NED 5:1, JPN 0:4, ESP 4:0; 2-Tor-Cap war zu defensiv.)
    - **> 92%:** Kein Deckel — Rohscore übernehmen. Extreme Favoriten gegen sehr schwache Gegner dominieren regelmäßig hoch (GER 7:1, USA 4:1, SWE 5:1).
+
+   **Wichtig für die K.O.-Phase:** Diese Regel steuert ausschließlich die Tordifferenz (Vorsprung), niemals das Ergebnis-Format. Sie darf unter keinen Umständen zu einem echten Unentschieden (`H == G` ohne `n.E.`/`n.V.`-Suffix) führen — das gilt unverändert und wird zusätzlich durch den Abschluss-Pflichtcheck in SCHRITT 7 abgesichert (K.O.-Spiele haben laut FIFA-Reglement immer einen Sieger, ein Kicktipp-Tipp muss das Endergebnis nach Elfmeterschießen abbilden).
 
 2. **Außenseiter ≥ 42%:** Auf das Ergebnis aus Regel 1: Score um 1 Tor defensiver tippen (aus `2:1` wird `1:1`, aus `3:1` wird `2:1`). Die nicht-Verlust-Wahrscheinlichkeit (Draw + Win) des Außenseiters muss ≥ 42% betragen. **Wenn die reduzierte Version Unentschieden ergibt** (z.B. `1:0` → `0:0`): stattdessen `1:0` für den Favoriten wählen. **Wenn der Rohscore nach Regel 1 bereits einen Außenseiter-Sieg zeigt** (z.B. `0:1`): Regel 2 entfällt — kein weiterer Eingriff, Außenseiter-Sieg so tippen.
 
@@ -262,9 +265,11 @@ Für jeden Außenseiter prüfen (WebSearch: `"[Team] defensive system WM 2026"` 
 **Remis-Risiko-Warnung:**
 WM 2026 produziert strukturell überdurchschnittlich viele Remis (~37 % beobachtet vs. ~27 % historischer WM-Schnitt). Wenn **beide** folgenden Bedingungen zutreffen, füge im `note`-Feld den Vermerk `"⚠️ Remis-Risiko"` hinzu und senke `conf` um eine Stufe (Deckel bei `med`):
 1. Außenseiter-xG der letzten 3 Spiele ≥ 0.8 pro Spiel (tatsächliche Gefährlichkeit trotz Außenseiter-Status)
-2. Favorit ≤ 75 % Gewinnwahrscheinlichkeit
+2. Favorit ≤ 85 % Gewinnwahrscheinlichkeit (angehoben von 75% am 2026-07-02 — Katar-Schweiz (84%) und England-Ghana (80%) endeten beide 0:0/1:1 und lagen außerhalb der alten Schwelle)
 
 **Keinen Remis-Tipp setzen** — das Turnier produziert Remis, aber die empirische Trefferquote von Remis-Tipps liegt bei 0 %. Stattdessen bleibt der Score-Tipp (z.B. 1:0), aber mit reduzierter Konfidenz. Der note-Vermerk hilft, das Muster in performance.json nachzuvollziehen.
+
+**K.O.-Phase:** Auch mit angehobener Schwelle gilt unverändert: Diese Regel darf niemals selbst einen Unentschieden-Tipp erzeugen. Sie senkt nur `conf` und dokumentiert das Risiko im `note`-Feld. In der K.O.-Phase greift zusätzlich SCHRITT 7 (Elfmeterschießen-Kompetenz) — ein erhöhtes Remis-Risiko bei einem Favoriten ≤85% ist dort ein zusätzliches Signal dafür, das `"1:1 n.E. (Team)"`-Format statt eines knappen reinen Sieges zu erwägen, niemals aber ein reines `H:H`-Unentschieden zu tippen.
 
 ---
 

@@ -156,12 +156,14 @@ Konfidenz-Werte: `high` | `med-high` | `med`
 | Regel | Bedingung | Wirkung |
 |-------|-----------|---------|
 | ~~Knappe Favoriten~~ | ~~Favorit 52–65%~~ | ~~Unentschieden gleichwertig tippen~~ → **abgeschafft** (0/5 Trefferquote) |
-| Score-Dämpfung | nach Favorit-% | ≤85%: max. 1 Tor Vorsprung, kein Unentschieden → 1:0 für Favoriten. 85–92%: max. 3 Tore Vorsprung. >92%: kein Deckel. |
+| Score-Dämpfung | nach Favorit-% | ≤65%: max. 1 Tor Vorsprung. 65–85%: max. 2 Tore. 85–92%: max. 3 Tore. >92%: kein Deckel. **Nie Unentschieden** — 1:0 für Favoriten bei Remis-Tendenz. |
 | Außenseiter-Regel | Außenseiter ≥ 42% non-loss (Draw + Win) | Score um 1 Tor defensiver; wenn Ergebnis Unentschieden wäre → 1:0 Favorit |
-| Remis-Risiko ⚠️ | Außenseiter xG ≥ 0.8 **UND** Favorit ≤ 75% | `conf` −1 Stufe (Deckel bei `med`); `⚠️ Remis-Risiko` in `note`. Kein Remis tippen — nur Warnsignal. |
+| Remis-Risiko ⚠️ | Außenseiter xG ≥ 0.8 **UND** Favorit ≤ 85% | `conf` −1 Stufe (Deckel bei `med`); `⚠️ Remis-Risiko` in `note`. Kein Remis tippen — nur Warnsignal. |
 | Eröffnungsspiel | Erstes Turnierspiel **+ mind. 1 Faktor**: keine Aufstellung / Schlüsselverletzung / Spielpause >6 Mo. | max. `med-high` |
 
 Liegen keine Zusatzfaktoren vor, gilt beim Eröffnungsspiel kein Konfidenz-Deckel.
+
+**Sicherheitsnetz K.O.-Phase:** Keine der obigen Regeln darf einen echten Unentschieden-Tipp (`H == G` ohne `n.E.`/`n.V.`-Suffix) für ein K.O.-Spiel erzeugen — laut FIFA-Reglement hat jedes K.O.-Spiel einen Sieger, Kicktipp verlangt das Endergebnis inklusive Elfmeterschießen. Score-Dämpfung und Remis-Risiko wirken in der K.O.-Phase nur auf Tordifferenz bzw. Konfidenz; SCHRITT 7 in `prompts/analyse.md` erzwingt bei Remis-Tendenz das Format `"1:1 n.E. (Team)"` und der Abschluss-Pflichtcheck dort blockt jeden reinen Unentschieden-Tipp endgültig ab, bevor er in `dashboard_data.json` geschrieben wird.
 
 ## Injuries-Feld Format
 
