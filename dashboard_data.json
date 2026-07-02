@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-01T15:10:00Z",
+    "aktualisiert": "2026-07-02T05:50:00Z",
     "rang": {
       "platz": "12.",
       "punkte": 155,
@@ -1149,7 +1149,7 @@
         "tip": "1:0",
         "analysisTip": "1:0",
         "conf": "med-high",
-        "result": null,
+        "result": "2:0",
         "note": "USA 4.2% vs BIH 0.3% — Ratio 14×. USA -270 (~78%). BIH non-loss ~35%<42%. Kein Remis-Risiko (USA >75%). ✅ Pulisic fit (startet). Over 2.5 Tendenz, aber ≤85% → max 1T → 1:0. med-high.",
         "injuries": "✅ Pulisic (fit bestätigt, startet)",
         "feedsInto": {
@@ -1165,7 +1165,7 @@
         "tip": "1:0",
         "analysisTip": "1:0",
         "conf": "med",
-        "result": null,
+        "result": "3:2 n.V.",
         "note": "BEL -162 Advance (~62% nach Mendy-Ausfall). SEN non-loss ~38%<42% (Mendy-Faktor). Score-Dämpfung ≤85% → max 1T → 1:0 BEL. ⚠️ Remis-Risiko: SEN xG offensiv ≥0.8, BEL ≤75%. med.",
         "injuries": "❌ Mendy (Senegal, TW, Knie)",
         "feedsInto": {
@@ -1354,8 +1354,8 @@
       {
         "id": "M94",
         "date": "06.07 02:00",
-        "home": "W M81",
-        "away": "W M82",
+        "home": "USA",
+        "away": "Belgien",
         "tip": null,
         "analysisTip": "1:0",
         "conf": "med",
