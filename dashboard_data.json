@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-02T05:50:00Z",
+    "aktualisiert": "2026-07-02T06:03:00Z",
     "rang": {
       "platz": "12.",
       "punkte": 155,
@@ -1229,7 +1229,7 @@
         "tip": "1:0",
         "analysisTip": "1:0",
         "conf": "med-high",
-        "result": null,
+        "result": "2:1",
         "note": "ENG 10.4% vs DRC 0.1% — Ratio 104×. ENG -370 (~78% 90-min ≤85%) → max 1T → 1:0. DRC 5-3-2 Low-Block bestätigt → Score defensiv. Under 2.5 Markt-Lean. ❌ Reece James (Oberschenkel), ❌ Quansah. Kein Remis-Risiko (ENG >75%). med-high.",
         "injuries": "❌ Reece James (Oberschenkel) | ❌ Quansah (Knöchel) | ENG",
         "feedsInto": {
@@ -1387,7 +1387,7 @@
         "id": "M92",
         "date": "05.07 02:00",
         "home": "Mexiko",
-        "away": "W M80",
+        "away": "England",
         "tip": null,
         "analysisTip": "0:1",
         "conf": "med-high",
