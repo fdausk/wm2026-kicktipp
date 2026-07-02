@@ -744,10 +744,10 @@ const GROUPS_PLACEHOLDER = {
 // R32 = Runde der letzten 32 (neu), R16 = Achtelfinale, QF = Viertelfinale
 const KNOCKOUT_PLACEHOLDER = {
   R32: [
-    { id:'M74', date:'29.06 22:30', home:'Deutschland', away:'Paraguay', tip:'2:0', analysisTip:'2:0', conf:'med-high', result:'4:5 n.E. (Paraguay)', injuries:'❌ Schlotterbeck (Sprunggelenk) | ✅ N. Brown (startet) | ❌ D. Gómez (gesperrt, PAR) | ✅ Almiron (startet, PAR) | ⚠️ Musiala (Bank, taktisch)', note:'GER 3.7% vs PAR 0.3% — Ratio 12.3×. GER ~87% → max 3T → 2:0. ❌ Schlotterbeck, ❌ D.Gómez (gesperrt). ✅ Almiron zurück. ⚠️ Musiala Bank (taktisch, Undav statt). med-high.' },
+    { id:'M74', date:'29.06 22:30', home:'Deutschland', away:'Paraguay', tip:'2:0', analysisTip:'2:0', conf:'med-high', result:'4:5 n.E.', injuries:'❌ Schlotterbeck (Sprunggelenk) | ✅ N. Brown (startet) | ❌ D. Gómez (gesperrt, PAR) | ✅ Almiron (startet, PAR) | ⚠️ Musiala (Bank, taktisch)', note:'GER 3.7% vs PAR 0.3% — Ratio 12.3×. GER ~87% → max 3T → 2:0. ❌ Schlotterbeck, ❌ D.Gómez (gesperrt). ✅ Almiron zurück. ⚠️ Musiala Bank (taktisch, Undav statt). med-high.' },
     { id:'M77', date:'30.06 23:00', home:'Frankreich', away:'Schweden', tip:'2:0', analysisTip:'2:1', conf:'med-high', result:'3:0', injuries:'❌ Hien (Schweden, Oberschenkel, Turnier-Ende)', note:'FRA 20.9% vs SWE 0.5% — Ratio 41×. FRA ~79% 90-min (≤85%) → max 1T → 2:1. ❌ Hien (SWE CB, Oberschenkel, Turnier-Ende). SWE non-loss ~21%<42%. Kein Remis-Risiko. FRA 9Pkt makellos. med-high.' },
     { id:'M73', date:'28.06 21:00', home:'Südafrika', away:'Kanada', tip:'0:1', analysisTip:'0:1', conf:'med', result:'0:1', injuries:'🔴 Zwane (letztes Sperrspiel) | ❌ Davies (Oberschenkel) | ❌ Kone (Schienbein) | ⚠️ Eustaquio (Muskel) | ⚠️ Jones (Fitness)', note:'CAN 55.5% vs SAF 17.3% (normiert). Außenseiter-Regel (SAF non-loss 44.5%≥42%) → 0:1 CAN. CAN geschwächt: ❌ Davies/Kone, ⚠️ Eustaquio/Jones. SAF: 🔴 Zwane (letztes Sperrspiel). med.' },
-    { id:'M75', date:'30.06 03:00', home:'Niederlande', away:'Marokko', tip:'1:0', analysisTip:'1:0', conf:'med', result:'3:4 n.E. (Marokko)', injuries:null, note:'NED 4.8% vs MAR 1.2% — Ratio 4×. NED ~70%. ⚠️ Remis-Risiko. MAR non-loss ~48%≥42% → 1:0 NED. Dumfries + Brobbey fit. med.' },
+    { id:'M75', date:'30.06 03:00', home:'Niederlande', away:'Marokko', tip:'1:0', analysisTip:'1:0', conf:'med', result:'3:4 n.E.', injuries:null, note:'NED 4.8% vs MAR 1.2% — Ratio 4×. NED ~70%. ⚠️ Remis-Risiko. MAR non-loss ~48%≥42% → 1:0 NED. Dumfries + Brobbey fit. med.' },
     { id:'M83', date:'03.07 01:00', home:'Portugal', away:'Kroatien', tip:'1:0', analysisTip:'1:0', conf:'med', result:null, injuries:null, note:'POR 6.5% vs CRO 0.7% — Ratio 9.3×. POR ~75%. CRO non-loss ~35%<42%. ⚠️ Remis-Risiko: CRO xG≥0.8, POR ≤75%. med.' },
     { id:'M84', date:'02.07 21:00', home:'Spanien', away:'Österreich', tip:'2:1', analysisTip:'2:0', conf:'med-high', result:null, injuries:'⚠️ Nico Williams (Adduktor, fraglich) | ⚠️ Pino (Schulter, fraglich) | ESP', note:'ESP 11.5% vs AUT 0.5% — Ratio 23×. ESP ~87% (85–92%) → max 3T. ⚠️ Nico Williams (Adduktor) + ❌ Pino (Schulter) fraglich → weniger Offensivfluss, aber Yamal/Olmo kompensieren. AUT non-loss ~19%<42%. ESP 2:0. med-high.' },
     { id:'M81', date:'02.07 02:00', home:'USA', away:'Bosnien-Herzegowina', tip:'1:0', analysisTip:'1:0', conf:'med-high', result:'2:0', injuries:'✅ Pulisic (fit bestätigt, startet)', note:'USA 4.2% vs BIH 0.3% — Ratio 14×. USA -270 (~78%). BIH non-loss ~35%<42%. Kein Remis-Risiko (USA >75%). ✅ Pulisic fit (startet). Over 2.5 Tendenz, aber ≤85% → max 1T → 1:0. med-high.' },
@@ -1121,7 +1121,7 @@ function openInfoModal() {
     <div class="info-modal-section">
       <div class="info-modal-tag">🔄 Automatisch</div>
       <h3>Spielbeobachter (läuft rund um die Uhr)</h3>
-      <p>Alle 15 Minuten prüft das System, ob ein Spiel kurz bevorsteht oder gerade beendet wurde. Liegt ein Anstoß in weniger als 75 Minuten, analysiert die KI das Spiel und gibt den Tipp direkt bei Kicktipp ab — ohne dass jemand eingreifen muss. Ist ein Spiel beendet, trägt das System das Ergebnis nach und bewertet, ob der Tipp richtig lag.</p>
+      <p>Alle 15 Minuten prüft das System, ob ein Spiel kurz bevorsteht oder gerade beendet wurde. Liegt ein Anstoß 5 bis 90 Minuten in der Zukunft, analysiert die KI das Spiel (oder prüft bei bereits vorliegender Empfehlung nur noch kurzfristige Aufstellungsänderungen) und gibt den Tipp direkt bei Kicktipp ab — ohne dass jemand eingreifen muss. Ist ein Spiel beendet, trägt das System das Ergebnis nach, bewertet, ob der Tipp richtig lag, und aktualisiert den aktuellen Rang.</p>
     </div>
     <div class="info-modal-section">
       <div class="info-modal-tag">🖱️ Manuell</div>
@@ -1130,7 +1130,7 @@ function openInfoModal() {
       <h3>Tipp-Eintragung</h3>
       <p>Die Tipp-Empfehlungen aus der Analyse werden angezeigt und — nach manueller Bestätigung — bei Kicktipp eingetragen. Wenn eine neuere Analyse einen anderen Tipp empfiehlt als der bereits eingetragene, wird die Änderung gesondert markiert.</p>
       <h3>Komplett-Aktualisierung</h3>
-      <p>Kombiniert Spieltagsanalyse, Tipp-Eintragung und KO-Prognose in einem Schritt. Aktualisiert außerdem die Turniersieger-Wahrscheinlichkeiten aller Teams anhand aktueller Wettquoten und berechnet, welche Teams voraussichtlich in die K.O.-Runde einziehen.</p>
+      <p>Kombiniert Spieltagsanalyse und KO-Prognose in einem Schritt (die Tipp-Eintragung bleibt ein separater, eigens bestätigter Schritt). Aktualisiert außerdem die Turniersieger-Wahrscheinlichkeiten aller Teams anhand aktueller Wettquoten und berechnet, welche Teams voraussichtlich in die K.O.-Runde einziehen.</p>
     </div>
     <div class="info-modal-section">
       <div class="info-modal-tag">📊 Dashboard</div>
