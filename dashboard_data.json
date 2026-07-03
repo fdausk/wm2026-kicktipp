@@ -1,9 +1,9 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-02T06:03:00Z",
+    "aktualisiert": "2026-07-03T08:19:21Z",
     "rang": {
-      "platz": "11.",
-      "punkte": 163,
+      "platz": "10.",
+      "punkte": 170,
       "total": 25,
       "spieltag": "Sechzehntelfinale"
     },
@@ -1117,7 +1117,7 @@
         "tip": "1:0",
         "analysisTip": "1:0",
         "conf": "med",
-        "result": null,
+        "result": "2:1",
         "note": "POR 6.5% vs CRO 0.7% — Ratio 9.3×. POR ~75%. CRO non-loss ~35%<42%. ⚠️ Remis-Risiko: CRO xG≥0.8, POR ≤75%. med.",
         "injuries": null,
         "feedsInto": {
@@ -1133,7 +1133,7 @@
         "tip": "2:1",
         "analysisTip": "2:0",
         "conf": "med-high",
-        "result": null,
+        "result": "3:0",
         "note": "ESP 11.5% vs AUT 0.5% — Ratio 23×. ESP ~87% (85–92%) → max 3T. ⚠️ Nico Williams (Adduktor) + ❌ Pino (Schulter) fraglich → weniger Offensivfluss, aber Yamal/Olmo kompensieren. AUT non-loss ~19%<42%. ESP 2:0. med-high.",
         "injuries": "⚠️ Nico Williams (Adduktor, fraglich) | ⚠️ Pino (Schulter, fraglich) | ESP",
         "feedsInto": {
@@ -1277,7 +1277,7 @@
         "tip": "1:0",
         "analysisTip": "1:0",
         "conf": "med",
-        "result": null,
+        "result": "2:0",
         "note": "SUI 0.4% vs ALG 0.2%. SUI ~70%. ALG non-loss ~47%≥42% → Außenseiter-Regel → 1:0 SUI. ⚠️ Remis-Risiko: ALG xG≥0.8 (3:3 AUT), SUI ≤75% → med.",
         "injuries": null,
         "feedsInto": {
@@ -1338,8 +1338,8 @@
       {
         "id": "M93",
         "date": "06.07 21:00",
-        "home": "W M83",
-        "away": "W M84",
+        "home": "Portugal",
+        "away": "Spanien",
         "tip": null,
         "analysisTip": "0:1",
         "conf": "med",
@@ -1418,7 +1418,7 @@
       {
         "id": "M96",
         "date": "07.07 03:00",
-        "home": "W M85",
+        "home": "Schweiz",
         "away": "W M87",
         "tip": null,
         "analysisTip": "0:1",
