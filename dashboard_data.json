@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-03T15:46:47Z",
+    "aktualisiert": "2026-07-03T16:54:04Z",
     "rang": {
       "platz": "10.",
       "punkte": 170,
@@ -1262,8 +1262,8 @@
         "analysisTip": "1:1 n.E. (Ägypten)",
         "conf": "med",
         "result": null,
-        "note": "EGY 40% vs AUS 29% vs Remis 33-35% (Bet365/Kalshi) — EGY <45% 90-min → SCHRITT 7: kein klarer Favorit. Salah PE-Erfahrung + El Shenawy-Bilanz → PE-Vorteil EGY. ⚠️ Salah (Kniesehne) Spieleinsatz fraglich. Hohe Remis-Wahrscheinlichkeit im Markt. 1:1 n.E. EGY. med.",
-        "injuries": "⚠️ Salah (Kniesehne, Spieleinsatz fraglich) | AUS ohne Ausfälle",
+        "note": "EGY 40% vs AUS 29% vs Remis 33-35% (Bet365/Kalshi) — EGY <45% 90-min → SCHRITT 7: kein klarer Favorit. Salah PE-Erfahrung + El Shenawy-Bilanz → PE-Vorteil EGY. ✅ Salah bestätigt in Startelf. Hohe Remis-Wahrscheinlichkeit im Markt. 1:1 n.E. EGY. med.",
+        "injuries": "✅ Salah (fit, startet) | AUS ohne Ausfälle",
         "feedsInto": {
           "match": "M95",
           "slot": "away"
