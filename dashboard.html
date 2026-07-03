@@ -1154,15 +1154,15 @@ function openInfoModal() {
 
 // ── Render ────────────────────────────────────────────────────────────
 function tendenz(score) {
-  if (!score) return null;
-  const [h, a] = score.split(':').map(Number);
-  return h > a ? 'H' : h < a ? 'A' : 'D';
+  const g = parseScoreGoals(score);
+  if (!g) return null;
+  return g.h > g.a ? 'H' : g.h < g.a ? 'A' : 'D';
 }
 
 function scoreDiff(score) {
-  if (!score) return null;
-  const [h, a] = score.split(':').map(Number);
-  return h - a;
+  const g = parseScoreGoals(score);
+  if (!g) return null;
+  return g.h - g.a;
 }
 
 const TEAMS_ABBR = {
