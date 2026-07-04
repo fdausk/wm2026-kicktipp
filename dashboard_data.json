@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-04T10:45:00Z",
+    "aktualisiert": "2026-07-04T14:20:00Z",
     "rang": {
       "platz": "10.",
       "punkte": 178,
@@ -8,25 +8,22 @@
       "spieltag": "Sechzehntelfinale"
     },
     "teamOdds": {
-      "Frankreich": 0.347,
-      "Argentinien": 0.184,
-      "Spanien": 0.118,
-      "England": 0.10,
-      "Brasilien": 0.09,
-      "Portugal": 0.07,
-      "Marokko": 0.04,
-      "Mexiko": 0.03,
-      "Kolumbien": 0.03,
-      "USA": 0.035,
+      "Frankreich": 0.341,
+      "Argentinien": 0.19,
+      "Spanien": 0.131,
+      "England": 0.073,
+      "Portugal": 0.072,
+      "Brasilien": 0.071,
+      "Kolumbien": 0.036,
+      "Mexiko": 0.032,
+      "Marokko": 0.028,
+      "Norwegen": 0.024,
+      "USA": 0.04,
       "Belgien": 0.02,
-      "Schweiz": 0.02,
-      "Norwegen": 0.012,
+      "Schweiz": 0.013,
       "Kanada": 0.008,
-      "Australien": 0.01,
-      "Ägypten": 0.01,
-      "Ghana": 0.005,
-      "Kap Verde": 0.002,
-      "Paraguay": 0.008,
+      "Paraguay": 0.005,
+      "Ägypten": 0.004,
       "Ecuador": 0.0,
       "Kroatien": 0.0,
       "Senegal": 0.0,
@@ -39,9 +36,12 @@
       "Japan": 0.0,
       "Deutschland": 0.0,
       "Niederlande": 0.0,
-      "Südafrika": 0.0
+      "Südafrika": 0.0,
+      "Australien": 0.0,
+      "Ghana": 0.0,
+      "Kap Verde": 0.0
     },
-    "teamOddsTs": "2026-07-03T15:20:46Z"
+    "teamOddsTs": "2026-07-04T14:20:00Z"
   },
   "spieltag_info": [
     {
@@ -137,7 +137,7 @@
       "label": "Achtelfinale",
       "dates": "4.–7. Jul",
       "phase": "ko",
-      "analysisTs": null,
+      "analysisTs": "2026-07-04T14:18:05Z",
       "tipsSubmitted": true
     },
     {
@@ -1312,7 +1312,7 @@
         "analysisTip": "0:2",
         "conf": "med-high",
         "result": null,
-        "note": "PAR 0.8% vs FRA 34.7% (outright) — Ratio ~43×. FRA ~89% 90-min (85–92%) → max 3T → 0:2 FRA. FRA bestätigt (3:0 vs SWE). PAR Überraschungssieger via PE vs GER. med-high.",
+        "note": "Opta: FRA 78.8% vs PAR 7.6% (90-min, Remis 13.7%). 65–85%-Band → max 2T → 0:2. Mbappé topform (18 WM-Tore). Keine Ausfälle bekannt. Kein Remis-Risiko. med-high.",
         "injuries": null,
         "feedsInto": {
           "match": "M97",
@@ -1328,8 +1328,8 @@
         "analysisTip": "0:1",
         "conf": "med-high",
         "result": null,
-        "note": "KAN 0.8% vs MAR 4.2% — Ratio 5.3×. MAR ~70% nach NED-Penalty-Upset. KAN geschwächt ohne Davies+Kone. Score-Dämpfung ≤85% → max 1T → 0:1 MAR. med-high.",
-        "injuries": null,
+        "note": "Opta: MAR 52.7% vs CAN 21.7% (90-min, Remis 25.6%). ≤65%-Band → max 1T → 0:1. CAN: ❌ Koné (Knöchelbruch), Davies erst zurück nach Verletzungspause. Außenseiter-Regel (CAN non-loss 47%≥42%) bereits am Minimum. med-high.",
+        "injuries": "❌ Koné (Kanada, Knöchelbruch) | ⚠️ Davies (Kanada, erste Einsätze nach Verletzungspause)",
         "feedsInto": {
           "match": "M97",
           "slot": "away"
@@ -1344,8 +1344,8 @@
         "analysisTip": "0:1",
         "conf": "med",
         "result": null,
-        "note": "W M83 (erw. POR 7.3%) vs W M84 (erw. ESP 11.5%). Iberian Derby. Ratio 1.6×. ESP leicht fav ~52%. Außenseiter-Regel → max 1T → 0:1 ESP. Vorläufig. med.",
-        "injuries": null,
+        "note": "ESP ~52-54% 90-min vs POR ~24-25% (Remis ~28%). Iberian Derby, ESP ungeschlagen/ohne Gegentor im Turnier. ⚠️ Remis-Risiko: Ronaldo xG 4.15 (hohe Gefährlichkeit) + ESP ≤85%. ESP: ❌ Nico Williams, ⚠️ Pino/Muñoz fraglich. Außenseiter-Regel (POR non-loss ~52%≥42%) bereits am Minimum → 0:1 ESP. med.",
+        "injuries": "❌ Nico Williams (Spanien) | ⚠️ Yeremy Pino, ⚠️ Víctor Muñoz (Spanien, fraglich) | POR ohne Ausfälle (bis auf A. Silva/Palhinha nicht im Kader)",
         "feedsInto": {
           "match": "M98",
           "slot": "home"
@@ -1357,11 +1357,11 @@
         "home": "USA",
         "away": "Belgien",
         "tip": "1:0",
-        "analysisTip": "1:0",
+        "analysisTip": "1:1 n.E. (Belgien)",
         "conf": "med",
         "result": null,
-        "note": "W M81 (erw. USA 4.2%) vs W M82 (erw. BEL 2.1%). Ratio 2×. USA leicht fav ~57%. Außenseiter-Regel (BEL non-loss ~43%) → max 1T → 1:0 USA. Vorläufig. med.",
-        "injuries": null,
+        "note": "Kalshi: USA 37% vs BEL 36% (Remis 29%!) — praktisch Patt, SCHRITT 7 <45% kein klarer Favorit. USA: 🔴 Balogun (Rotsperre, Ersatz Wright). BEL komplett (De Bruyne/Lukaku/Trossard). PE-Vorteil BEL via Courtois (Weltklasse-Bilanz im Elfmeterschießen). 1:1 n.E. BEL. med.",
+        "injuries": "🔴 Balogun (USA, Rotsperre) | BEL ohne Ausfälle",
         "feedsInto": {
           "match": "M98",
           "slot": "away"
@@ -1373,11 +1373,11 @@
         "home": "Brasilien",
         "away": "Norwegen",
         "tip": "2:0",
-        "analysisTip": "2:0",
-        "conf": "med-high",
+        "analysisTip": "1:0",
+        "conf": "med",
         "result": null,
-        "note": "BRA 9% vs NOR 1.2% (outright) — Ratio 7.5×. BRA ~78-80% 90-min (65–85%-Band) → max 2T → 2:0. NOR bestätigt (2:1 vs CIV — Nusa früh, Haaland 86'). Vorläufig, Vollanalyse folgt näher am Anstoß. med-high.",
-        "injuries": null,
+        "note": "BRA ~54% 90-min (45–65%-Band, nicht 78-80% wie vorläufig angenommen) → max 1T → 1:0 (Korrektur von 2:0). ⚠️ Remis-Risiko: Haaland-Bedrohung (NOR bislang gegen BRA in 4 direkten Duellen ungeschlagen) + BRA ≤85%. BRA: ❌ Raphinha, ❌ Paquetá, ⚠️ Casemiro (fraglich nach Humpeln). NOR: ⚠️ Ryerson fraglich. med.",
+        "injuries": "❌ Raphinha, ❌ Paquetá (Brasilien) | ⚠️ Casemiro (Brasilien, fraglich) | ⚠️ Ryerson (Norwegen, fraglich)",
         "feedsInto": {
           "match": "M99",
           "slot": "home"
@@ -1389,11 +1389,11 @@
         "home": "Mexiko",
         "away": "England",
         "tip": "0:1",
-        "analysisTip": "0:1",
-        "conf": "med-high",
+        "analysisTip": "1:1 n.E. (England)",
+        "conf": "med",
         "result": null,
-        "note": "MEX 2.6% vs ENG 10.4% (erw.). Ratio 4×. ENG ~80% 90-min (≤85%) → max 1T → 0:1 ENG. MEX bestätigt (2:0 vs ECU). Vorläufig — abhängig von M80. med-high.",
-        "injuries": null,
+        "note": "ENG ~41-42% vs MEX ~31% (Remis ~32%, eine der höchsten Remis-Quoten des Achtelfinals) — SCHRITT 7 <45% kein klarer Favorit. MEX-Heimvorteil Mexico City. Kane in Form, ⚠️ Bellingham gelb-vorbelastet. PE-Vorteil ENG via Kane/Bellingham + Pickford (PE-Save 2018 vs COL). 1:1 n.E. ENG. med.",
+        "injuries": "⚠️ Bellingham (England, 1 Gelb)",
         "feedsInto": {
           "match": "M99",
           "slot": "away"
@@ -1406,9 +1406,9 @@
         "away": "Ägypten",
         "tip": null,
         "analysisTip": "2:0",
-        "conf": "high",
+        "conf": "med-high",
         "result": null,
-        "note": "W M86 (erw. ARG 16.7%) vs W M88 (erw. EGY 0.3%). Ratio 55.7×. ARG >90% → high, kein Deckel. 2:0 ARG. Vorläufig. high.",
+        "note": "ARG ~73-75% 90-min (65–85%-Band, nicht >90% wie vorläufig angenommen) vs EGY ~12-17% (Remis ~20%) → max 2T → 2:0 (Konfidenz von high auf med-high korrigiert, M5). Messi 30. WM-Einsatz, ARG 10 Siege in Serie seit 2022. EGY nach Verlängerung+Elfmeter gegen AUS evtl. körperlich/mental belastet. Kein Remis-Risiko. med-high.",
         "injuries": null,
         "feedsInto": {
           "match": "M100",
@@ -1424,8 +1424,8 @@
         "analysisTip": "0:1",
         "conf": "med",
         "result": null,
-        "note": "W M85 (erw. SUI 1.6%) vs W M87 (erw. COL 2.6%). Ratio 1.6×. COL leicht fav ~57%. Außenseiter-Regel (SUI non-loss ~43%) → max 1T → 0:1 COL. Vorläufig. med.",
-        "injuries": null,
+        "note": "COL ~57-60% (Weiterkommens-Markt) vs SUI ~43%. 45–65%-Band → max 1T → 0:1 COL. COL: ❌ J. Córdoba. SUI 1 Tag mehr Ruhezeit als COL (Anreise aus Kansas City). Außenseiter-Regel (SUI non-loss ~43%≥42%) bereits am Minimum. med.",
+        "injuries": "❌ J. Córdoba (Kolumbien) | SUI ohne Ausfälle",
         "feedsInto": {
           "match": "M100",
           "slot": "away"
