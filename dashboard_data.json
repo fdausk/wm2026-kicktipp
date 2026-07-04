@@ -1,9 +1,9 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-03T16:54:04Z",
+    "aktualisiert": "2026-07-04T10:45:00Z",
     "rang": {
       "platz": "10.",
-      "punkte": 170,
+      "punkte": 178,
       "total": 25,
       "spieltag": "Sechzehntelfinale"
     },
@@ -1245,7 +1245,7 @@
         "tip": "2:0",
         "analysisTip": "2:0",
         "conf": "med-high",
-        "result": null,
+        "result": "3:2 n.V.",
         "note": "ARG 18.4% vs CPV 0.2% (outright) — Ratio ~92×. ARG -650 (~83% normiert 90-min, 65–85%-Band) → max 2T → 2:0. CPV non-loss ~17%<42%. Kein Remis-Risiko. ❌ Arcanjo (CPV). med-high (M5: ARG <90% → kein high).",
         "injuries": "❌ Arcanjo (Kap Verde, Oberschenkel) | ARG ohne Ausfälle",
         "feedsInto": {
@@ -1261,7 +1261,7 @@
         "tip": "0:1",
         "analysisTip": "1:1 n.E. (Ägypten)",
         "conf": "med",
-        "result": null,
+        "result": "3:5 n.E.",
         "note": "EGY 40% vs AUS 29% vs Remis 33-35% (Bet365/Kalshi) — EGY <45% 90-min → SCHRITT 7: kein klarer Favorit. Salah PE-Erfahrung + El Shenawy-Bilanz → PE-Vorteil EGY. ✅ Salah bestätigt in Startelf. Hohe Remis-Wahrscheinlichkeit im Markt. 1:1 n.E. EGY. med.",
         "injuries": "✅ Salah (fit, startet) | AUS ohne Ausfälle",
         "feedsInto": {
@@ -1293,7 +1293,7 @@
         "tip": "1:0",
         "analysisTip": "1:0",
         "conf": "med-high",
-        "result": null,
+        "result": "1:0",
         "note": "COL -188 (~64% normiert 90-min, ≤65%-Band) → max 1T → 1:0. GHA non-loss ~36%<42%. J. Rodríguez fit, Luis Díaz Schlüsselspieler. ⚠️ Ati-Zigi (GHA TW) fraglich. med-high.",
         "injuries": "⚠️ Ati-Zigi (Ghana, TW, fraglich) | ⚠️ Semenyo (Ghana, Anschlag, soll starten)",
         "feedsInto": {
@@ -1353,7 +1353,7 @@
       },
       {
         "id": "M94",
-        "date": "06.07 02:00",
+        "date": "07.07 02:00",
         "home": "USA",
         "away": "Belgien",
         "tip": "1:0",
@@ -1385,7 +1385,7 @@
       },
       {
         "id": "M92",
-        "date": "05.07 02:00",
+        "date": "06.07 02:00",
         "home": "Mexiko",
         "away": "England",
         "tip": "0:1",
@@ -1401,9 +1401,9 @@
       },
       {
         "id": "M95",
-        "date": "07.07 20:00",
-        "home": "W M86",
-        "away": "W M88",
+        "date": "07.07 18:00",
+        "home": "Argentinien",
+        "away": "Ägypten",
         "tip": null,
         "analysisTip": "2:0",
         "conf": "high",
@@ -1417,9 +1417,9 @@
       },
       {
         "id": "M96",
-        "date": "07.07 03:00",
+        "date": "07.07 22:00",
         "home": "Schweiz",
-        "away": "W M87",
+        "away": "Kolumbien",
         "tip": null,
         "analysisTip": "0:1",
         "conf": "med",
