@@ -1,9 +1,9 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-04T15:39:57Z",
+    "aktualisiert": "2026-07-05T11:48:08Z",
     "rang": {
       "platz": "10.",
-      "punkte": 178,
+      "punkte": 182,
       "total": 25,
       "spieltag": "Achtelfinale"
     },
@@ -1311,7 +1311,7 @@
         "tip": "0:2",
         "analysisTip": "0:2",
         "conf": "med-high",
-        "result": null,
+        "result": "0:1",
         "note": "Opta: FRA 78.8% vs PAR 7.6% (90-min, Remis 13.7%). 65–85%-Band → max 2T → 0:2. Mbappé topform (18 WM-Tore). Keine Ausfälle bekannt. Kein Remis-Risiko. med-high.",
         "injuries": null,
         "feedsInto": {
@@ -1327,7 +1327,7 @@
         "tip": "0:1",
         "analysisTip": "0:1",
         "conf": "med-high",
-        "result": null,
+        "result": "0:3",
         "note": "Opta: MAR 52.7% vs CAN 21.7% (90-min, Remis 25.6%). ≤65%-Band → max 1T → 0:1. CAN: ❌ Koné (Knöchelbruch), Davies erst zurück nach Verletzungspause. Außenseiter-Regel (CAN non-loss 47%≥42%) bereits am Minimum. med-high.",
         "injuries": "❌ Koné (Kanada, Knöchelbruch) | ⚠️ Davies (Kanada, erste Einsätze nach Verletzungspause)",
         "feedsInto": {
@@ -1436,8 +1436,8 @@
       {
         "id": "M97",
         "date": "09.07 22:00",
-        "home": "W M89",
-        "away": "W M90",
+        "home": "Frankreich",
+        "away": "Marokko",
         "tip": null,
         "analysisTip": null,
         "conf": null,
