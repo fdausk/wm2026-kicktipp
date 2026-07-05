@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-05T11:48:08Z",
+    "aktualisiert": "2026-07-05T15:13:44Z",
     "rang": {
       "platz": "10.",
       "punkte": 182,
@@ -41,7 +41,7 @@
       "Ghana": 0.0,
       "Kap Verde": 0.0
     },
-    "teamOddsTs": "2026-07-04T14:20:00Z"
+    "teamOddsTs": "2026-07-05T15:13:44Z"
   },
   "spieltag_info": [
     {
@@ -1439,10 +1439,10 @@
         "home": "Frankreich",
         "away": "Marokko",
         "tip": null,
-        "analysisTip": null,
-        "conf": null,
+        "analysisTip": "2:0",
+        "conf": "med-high",
         "result": null,
-        "note": null,
+        "note": "FRA 34.1% vs MAR 2.8% (outright) — Ratio ~12×. FRA turnierstärkstes Team, aber MAR als Überraschungsteam (Siege via PE vs NED, klar vs CAN) ernstzunehmend defensiv organisiert → ~75-80% statt höher → 65–85%-Band → max 2T → 2:0. Vorläufig, volle Analyse folgt. med-high.",
         "injuries": null,
         "feedsInto": {
           "match": "M101",
