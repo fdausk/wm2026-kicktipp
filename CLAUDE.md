@@ -85,7 +85,7 @@ Single Source of Truth für alle Spieldaten. Struktur:
   "groups": {
     "A": { "teams": "...", "matches": [
       { "date": "DD.MM HH:MM", "home": "...", "away": "...",
-        "tip": "2:1", "analysisTip": "2:1", "conf": "high", "quelle": "kalshi",
+        "tip": "2:1", "analysisTip": "2:1", "conf": "high",
         "result": null, "injuries": "❌ ...", "note": "..." }
     ]}
   },
@@ -156,10 +156,12 @@ Konfidenz-Werte: `high` | `med-high` | `med`
 | Regel | Bedingung | Wirkung |
 |-------|-----------|---------|
 | ~~Knappe Favoriten~~ | ~~Favorit 52–65%~~ | ~~Unentschieden gleichwertig tippen~~ → **abgeschafft** (0/5 Trefferquote) |
-| Score-Dämpfung | nach Favorit-% | ≤65%: max. 1 Tor Vorsprung. 65–85%: max. 2 Tore. 85–92%: max. 3 Tore. >92%: kein Deckel. **Nie Unentschieden** — 1:0 für Favoriten bei Remis-Tendenz. |
+| Score-Dämpfung (Gruppenphase) | nach Favorit-% | ≤65%: max. 1 Tor Vorsprung. 65–85%: max. 2 Tore. 85–92%: max. 3 Tore. >92%: kein Deckel. **Nie Unentschieden** — 1:0 für Favoriten bei Remis-Tendenz. |
+| **K.O.-Score-Wahl-Override** (ab 06.07.) | K.O.-Phase, überschreibt obige Bänder | ≤85%: Standard **`2:1`**/`1:2` (Margin 1, nicht `1:0`). 85–92%: Standard **`3:0`** voll ausschöpfen. >92%: unverändert. Ausnahme: Under-2.5-Signal >65% → `1:0`. Grund: häufigstes K.O.-Ergebnis war 2:1 (5×) nicht 1:0 (3×); FRA/ESP gewannen im 85–92%-Band beide exakt 3:0. |
 | Außenseiter-Regel | Außenseiter ≥ 42% non-loss (Draw + Win) | Score um 1 Tor defensiver; wenn Ergebnis Unentschieden wäre → 1:0 Favorit |
 | Remis-Risiko ⚠️ | Außenseiter xG ≥ 0.8 **UND** Favorit ≤ 85% | `conf` −1 Stufe (Deckel bei `med`); `⚠️ Remis-Risiko` in `note`. Kein Remis tippen — nur Warnsignal. |
 | Eröffnungsspiel | Erstes Turnierspiel **+ mind. 1 Faktor**: keine Aufstellung / Schlüsselverletzung / Spielpause >6 Mo. | max. `med-high` |
+| **M5 K.O.-Verschärfung** (ab 06.07.) | K.O.-Phase | `high`-Konfidenz komplett deaktiviert, Maximum `med-high` — unabhängig von Favoriten-%. Grund: `high`-Quote (46.7%) bleibt unter `med-high` (53.1%) trotz 90%-Schwelle aus M5. |
 
 Liegen keine Zusatzfaktoren vor, gilt beim Eröffnungsspiel kein Konfidenz-Deckel.
 
@@ -222,4 +224,4 @@ TypeScript CLI + MCP-Server für kicktipp.com. Nutzt Playwright/Chromium für He
 `performance.json` protokolliert jeden abgegebenen Tipp nach Spielende:
 - Kategorien: `korrekt` / `tendenz` (Sieger richtig, Score falsch) / `falsch`
 - `fehltipp_log`: Fehlschläge mit Typ (`unentschieden_uebergewichtet` etc.) für Bias-Erkennung
-- `quellen_tracking`: Genauigkeit pro Quelle → beeinflusst Quellen-Gewichtung in SCHRITT 0b
+- `quellen_tracking`: **eingestellt seit 06.07.2026** (Feld in 92 Spielen nur 6× gepflegt — Datenbasis unbrauchbar). Block bleibt als historischer Datensatz erhalten, wird nicht mehr aktualisiert.

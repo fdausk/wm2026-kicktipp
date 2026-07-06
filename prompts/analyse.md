@@ -42,6 +42,14 @@ Lies `performance.json` im Projektverzeichnis und wende die folgenden Anpassunge
 
    **Wichtig für die K.O.-Phase:** Diese Regel steuert ausschließlich die Tordifferenz (Vorsprung), niemals das Ergebnis-Format. Sie darf unter keinen Umständen zu einem echten Unentschieden (`H == G` ohne `n.E.`/`n.V.`-Suffix) führen — das gilt unverändert und wird zusätzlich durch den Abschluss-Pflichtcheck in SCHRITT 7 abgesichert (K.O.-Spiele haben laut FIFA-Reglement immer einen Sieger, ein Kicktipp-Tipp muss das Endergebnis nach Elfmeterschießen abbilden).
 
+   **K.O.-Score-Wahl-Override (ab 2026-07-06 — überschreibt die obigen Bänder für K.O.-Spiele):**
+   - **Favorit ≤ 85% (90 Min):** Standard-Score `"2:1"` (bzw. `"1:2"` bei Auswärtsfavorit) — Margin 1, aber nicht der minimale `"1:0"`-Tipp. Das 65–85%-Band mit max. 2 Toren aus Regel 1 gilt in der K.O.-Phase **nicht**.
+   - **Favorit 85–92%:** Standard-Score `"3:0"` — das erlaubte 3-Tor-Band voll ausschöpfen, nicht defensiv auf `"2:0"`/`"2:1"` ausweichen.
+   - **Favorit > 92%:** unverändert, kein Deckel.
+   - **Ausnahme:** Bei Under-2.5-Marktsignal > 65% bleibt `"1:0"`/`"0:1"` der Standard (siehe SCHRITT 2).
+
+   Begründung: Selbstaudit vom 2026-07-06 (20 K.O.-Spiele, 17/20 korrekte Sieger). 65% der Spiele endeten mit Margin 1, aber das häufigste konkrete Ergebnis war `2:1` (5×) — nicht `1:0` (3×). `2:1` schlägt `1:0` strategisch: korrekt bei `2:1`-Ergebnissen, Differenz sowohl bei `1:0` als auch bei `3:2` (inkl. n.V.-Aggregaten wie Belgien 3:2). Counterfactual: +4 Punkte auf 17 Spiele bei durchgängigem `2:1`-Tipp statt der bisherigen Praxis. Zusätzlich gewannen Frankreich (89%) und Spanien (87%) im 85–92%-Band beide exakt `3:0` — defensive `2:0`/`2:1`-Tipps kosteten dort weitere 4 Punkte, weil das erlaubte 3-Tor-Band nicht ausgeschöpft wurde.
+
 2. **Außenseiter ≥ 42%:** Auf das Ergebnis aus Regel 1: Score um 1 Tor defensiver tippen (aus `2:1` wird `1:1`, aus `3:1` wird `2:1`). Die nicht-Verlust-Wahrscheinlichkeit (Draw + Win) des Außenseiters muss ≥ 42% betragen. **Wenn die reduzierte Version Unentschieden ergibt** (z.B. `1:0` → `0:0`): stattdessen `1:0` für den Favoriten wählen. **Wenn der Rohscore nach Regel 1 bereits einen Außenseiter-Sieg zeigt** (z.B. `0:1`): Regel 2 entfällt — kein weiterer Eingriff, Außenseiter-Sieg so tippen.
 
 3. **Eröffnungsspiel eines Teams im Turnier:** Konfidenz maximal `mittel-hoch` **nur wenn** mindestens einer der folgenden Faktoren vorliegt:
@@ -50,10 +58,6 @@ Lies `performance.json` im Projektverzeichnis und wende die folgenden Anpassunge
    - Team ohne Pflichtspieleinsatz in den letzten 6 Monaten
    
    Liegt keiner dieser Faktoren vor, gilt kein Deckel — ein 90%+-Favorit kann weiterhin `hoch` erhalten.
-
-### Quellen-Kalibrierung
-
-Lies `performance.json → quellen_tracking`. Falls für eine Quelle mehr als 5 Spiele geloggt sind und die Fehlerquote >50% ist, diese Quelle nur als Sekundärquelle verwenden und mit Betfair gegenchecken.
 
 ### Ausgabe
 
@@ -332,11 +336,11 @@ Kicktipp-Regel K.O.: Tipp muss Ergebnis NACH Elfmeterschießen berücksichtigen 
 - Schiedsrichter-Elfmeter-Rate (aus SCHRITT 1b): hohe Rate erhöht PE-Wahrscheinlichkeit im regulären Spiel, damit auch das Risiko dass das Spiel bereits 90min entschieden wird
 
 Konfidenz-Entscheidung (nach Favorit-Gewinnwahrscheinlichkeit in 90 Min):
-- **>65%:** Normalen Sieg tippen (`"2:0"`, `"1:0"` etc.) — Elfmeterschießen unwahrscheinlich genug, um es zu ignorieren.
-- **45–65%:** `"1:1 n.E. (Team)"` bevorzugen wenn PE-Kompetenz des Favoriten klar besser ist. Andernfalls knapper regulärer Sieg (`"1:0"`). Entscheide anhand: Torwart-Bilanz (Gewicht 50%) + Team-PE-Bilanz (30%) + Schützen-Verfügbarkeit (20%).
+- **>65%:** Normalen Sieg tippen — Score gemäß K.O.-Score-Wahl-Override in SCHRITT 0b (Standard `"2:1"`/`"1:2"` bei ≤85%, `"3:0"` bei 85–92%) — Elfmeterschießen unwahrscheinlich genug, um es zu ignorieren.
+- **45–65%:** `"1:1 n.E. (Team)"` bevorzugen wenn PE-Kompetenz des Favoriten klar besser ist. Andernfalls knapper regulärer Sieg gemäß K.O.-Score-Wahl-Override. Entscheide anhand: Torwart-Bilanz (Gewicht 50%) + Team-PE-Bilanz (30%) + Schützen-Verfügbarkeit (20%).
 - **<45% (kein klarer Favorit):** `"1:1 n.E. (Team)"` mit PE-Sieger nach den gleichen Gewichten. Sieger = Team mit besserer Gesamtbewertung.
 
-**Format-Erinnerung:** `"1:1 n.E. (Kanada)"` bedeutet Kanada gewinnt nach Elfmeterschießen — kein Unentschieden. Wähle das wahrscheinlichste 90-Min-Ergebnis als Basis (bei 45–65% oft 1:1 oder 0:0 + PE-Sieger). `"1:0"` ist immer dann ausreichend, wenn regulärer Sieg das deutlich häufigere Szenario ist.
+**Format-Erinnerung:** `"1:1 n.E. (Kanada)"` bedeutet Kanada gewinnt nach Elfmeterschießen — kein Unentschieden. Wähle das wahrscheinlichste 90-Min-Ergebnis als Basis (bei 45–65% oft 1:1 oder 0:0 + PE-Sieger). Der reguläre Sieg gemäß K.O.-Score-Wahl-Override ist immer dann ausreichend, wenn er das deutlich häufigere Szenario ist.
 
 **Abschluss-Pflichtcheck (K.O.-Phase):** Bevor `analysisTip` in `dashboard_data.json` geschrieben wird: Prüfe, ob der Tipp ein reines Unentschieden ist — d.h. beide Torwerte identisch und kein `n.V.`- oder `n.E.`-Suffix (Beispiele: `"1:1"`, `"0:0"`, `"2:2"`). Ist dies der Fall: Tipp ist **ungültig**, da K.O.-Spiele immer einen Sieger haben. Den Favoriten ermitteln und stattdessen `"1:0"` (bzw. `"0:1"`) tippen. Unentschieden-Tipps dürfen niemals in `dashboard_data.json` für K.O.-Matches stehen.
 
@@ -363,7 +367,6 @@ Speichere die Tipp-Empfehlungen in `tipps_aktuell.json` im Projektverzeichnis:
       "deadline": "2026-06-15T21:00:00Z",
       "empfehlung": "2:1",
       "konfidenz": "hoch",
-      "quelle": "betfair",
       "begruendung": "Deutschland klarer Favorit (Betfair 72%), starke xG-Werte..."
     }
   ]
@@ -371,8 +374,6 @@ Speichere die Tipp-Empfehlungen in `tipps_aktuell.json` im Projektverzeichnis:
 ```
 
 Konfidenz-Werte: `hoch` | `mittel-hoch` | `mittel` (in `tipps_aktuell.json`). Für `dashboard_data.json` → `"conf": "high"` | `"med-high"` | `"med"` (englische Bezeichnungen laut Schema).
-
-**`quelle`-Feld** (Pflicht, pro Tipp): Die für die Quoten-Hauptentscheidung genutzte Primärquelle — einer von: `kalshi` | `betfair` | `oddschecker`. Wird in `performance.json → quellen_tracking` ausgewertet, sobald das Spielergebnis bekannt ist.
 
 **Konfidenz-Abzüge** (automatisch anwenden, wenn ein Kriterium zutrifft):
 - Keine bestätigte Startelf verfügbar → max. `mittel-hoch`
@@ -382,6 +383,8 @@ Konfidenz-Werte: `hoch` | `mittel-hoch` | `mittel` (in `tipps_aktuell.json`). F�
 - Diaspora-Faktor stark zugunsten des nominellen Außenseiters → Score defensiver tippen
 
 **Empirisch (M5 — ab 2026-06-25):** `high` nur bei Favorit >90% ODER (bestätigte Startelf beider Teams UND Außenseiter xG < 0.5 in letzten 3 Spielen). Bei ≤90% Favorit ohne beide Bedingungen: max. `med-high`. (Basis: 10 Spiele, high 45% vs. med-high 50% — Übervertrauen bei Dominanzprognosen gegen kompakte Außenseiter.)
+
+**M5-Verschärfung K.O.-Phase (ab 2026-07-06):** `high` ist für die gesamte restliche K.O.-Phase deaktiviert — Maximum ist `med-high`, unabhängig von der Favoriten-Wahrscheinlichkeit. (Basis: ST11-Review, n=15 `high`-Tipps, Quote 46.7% vs. 53.1% bei `med-high` — die Inversion aus der ursprünglichen M5-Analyse besteht seit ST7 trotz der 90%-Schwelle fort. K.O.-Einzelspiele sind volatiler als Formkurven-basierte Gruppenspiele, Dominanzprognosen bleiben unzuverlässig.)
 
 ---
 
@@ -416,17 +419,15 @@ Felder:
 
 **Gruppenphase** — in `groups.X.matches` per `home` + `away` suchen:
 ```json
-{ "home": "Katar", "away": "Schweiz", "analysisTip": null, "conf": null, "note": null, "quelle": null }
-→ { "home": "Katar", "away": "Schweiz", "analysisTip": "0:2", "conf": "high", "note": "Schweiz klarer Favorit (Kalshi 81%), Katar ohne WM-Sieg seit 2022.", "quelle": "kalshi" }
+{ "home": "Katar", "away": "Schweiz", "analysisTip": null, "conf": null, "note": null }
+→ { "home": "Katar", "away": "Schweiz", "analysisTip": "0:2", "conf": "high", "note": "Schweiz klarer Favorit (Kalshi 81%), Katar ohne WM-Sieg seit 2022." }
 ```
 
 **K.O.-Phase** — in `knockout.X` per `id` suchen:
 ```json
-{ "id": "M73", "analysisTip": null, "conf": null, "note": null, "quelle": null }
-→ { "id": "M73", "analysisTip": "2:1", "conf": "med-high", "note": "Spanien Favorit (Betfair 68%), USA Heimvorteil begrenzt durch starken Gegner.", "quelle": "betfair" }
+{ "id": "M73", "analysisTip": null, "conf": null, "note": null }
+→ { "id": "M73", "analysisTip": "2:1", "conf": "med-high", "note": "Spanien Favorit (Betfair 68%), USA Heimvorteil begrenzt durch starken Gegner." }
 ```
-
-**`quelle`-Feld** (Pflicht ab sofort): Die für die Wahrscheinlichkeits-Hauptentscheidung genutzte Primärquelle — einer von: `kalshi` | `betfair` | `oddschecker`. Wird vom Watcher in `performance.json → quellen_tracking` ausgewertet, sobald das Spielergebnis bekannt ist. Damit wird die Quellen-Qualität messbar.
 
 ### 3. Spielergebnisse eintragen
 
