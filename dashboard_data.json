@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-06T06:55:57Z",
+    "aktualisiert": "2026-07-06T10:51:03Z",
     "rang": {
       "platz": "9.",
       "punkte": 185,
@@ -8,22 +8,22 @@
       "spieltag": "Achtelfinale"
     },
     "teamOdds": {
-      "Frankreich": 0.341,
-      "Argentinien": 0.19,
-      "Spanien": 0.131,
-      "England": 0.073,
-      "Portugal": 0.072,
-      "Brasilien": 0.071,
-      "Kolumbien": 0.036,
-      "Mexiko": 0.032,
-      "Marokko": 0.028,
-      "Norwegen": 0.024,
-      "USA": 0.04,
+      "Frankreich": 0.35,
+      "Argentinien": 0.2,
+      "Spanien": 0.12,
+      "England": 0.1,
+      "Portugal": 0.077,
+      "Kolumbien": 0.048,
+      "USA": 0.048,
+      "Marokko": 0.038,
+      "Norwegen": 0.038,
       "Belgien": 0.02,
       "Schweiz": 0.013,
-      "Kanada": 0.008,
-      "Paraguay": 0.005,
       "Ägypten": 0.004,
+      "Brasilien": 0.0,
+      "Mexiko": 0.0,
+      "Kanada": 0.0,
+      "Paraguay": 0.0,
       "Ecuador": 0.0,
       "Kroatien": 0.0,
       "Senegal": 0.0,
@@ -41,7 +41,7 @@
       "Ghana": 0.0,
       "Kap Verde": 0.0
     },
-    "teamOddsTs": "2026-07-05T15:13:44Z"
+    "teamOddsTs": "2026-07-06T10:51:03Z"
   },
   "spieltag_info": [
     {
@@ -1471,10 +1471,10 @@
         "home": "Norwegen",
         "away": "England",
         "tip": null,
-        "analysisTip": null,
-        "conf": null,
+        "analysisTip": "0:1",
+        "conf": "med",
         "result": null,
-        "note": null,
+        "note": "ENG 10% vs NOR 3.8% (outright) — Ratio ~2.6×. ENG leicht fav ~65-72%, aber Haaland in Ausnahmeform (3. Turnier-Doppelpack, Sieg vs BRA) → defensiv gedeckelt statt 2T-Band voll auszuschöpfen. 65–85%-Band → 0:1. Vorläufig, volle Analyse folgt. med.",
         "injuries": null,
         "feedsInto": {
           "match": "M102",
