@@ -1,9 +1,9 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-05T15:13:44Z",
+    "aktualisiert": "2026-07-06T06:55:57Z",
     "rang": {
-      "platz": "10.",
-      "punkte": 182,
+      "platz": "9.",
+      "punkte": 185,
       "total": 25,
       "spieltag": "Achtelfinale"
     },
@@ -1375,7 +1375,7 @@
         "tip": "2:0",
         "analysisTip": "1:0",
         "conf": "med",
-        "result": null,
+        "result": "1:2",
         "note": "BRA ~54% 90-min (45–65%-Band, nicht 78-80% wie vorläufig angenommen) → max 1T → 1:0 (Korrektur von 2:0). ⚠️ Remis-Risiko: Haaland-Bedrohung (NOR bislang gegen BRA in 4 direkten Duellen ungeschlagen) + BRA ≤85%. BRA: ❌ Raphinha, ❌ Paquetá, ⚠️ Casemiro (fraglich nach Humpeln). NOR: ⚠️ Ryerson fraglich. med.",
         "injuries": "❌ Raphinha, ❌ Paquetá (Brasilien) | ⚠️ Casemiro (Brasilien, fraglich) | ⚠️ Ryerson (Norwegen, fraglich)",
         "feedsInto": {
@@ -1391,7 +1391,7 @@
         "tip": "0:1",
         "analysisTip": "1:1 n.E. (England)",
         "conf": "med",
-        "result": null,
+        "result": "2:3",
         "note": "ENG ~41-42% vs MEX ~31% (Remis ~32%, eine der höchsten Remis-Quoten des Achtelfinals) — SCHRITT 7 <45% kein klarer Favorit. MEX-Heimvorteil Mexico City. Kane in Form, ⚠️ Bellingham gelb-vorbelastet. PE-Vorteil ENG via Kane/Bellingham + Pickford (PE-Save 2018 vs COL). 1:1 n.E. ENG. med.",
         "injuries": "⚠️ Bellingham (England, 1 Gelb)",
         "feedsInto": {
@@ -1468,8 +1468,8 @@
       {
         "id": "M99",
         "date": "11.07 23:00",
-        "home": "W M91",
-        "away": "W M92",
+        "home": "Norwegen",
+        "away": "England",
         "tip": null,
         "analysisTip": null,
         "conf": null,
