@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-06T10:51:03Z",
+    "aktualisiert": "2026-07-06T11:15:53Z",
     "rang": {
       "platz": "9.",
       "punkte": 185,
@@ -1357,11 +1357,11 @@
         "home": "USA",
         "away": "Belgien",
         "tip": "1:0",
-        "analysisTip": "1:1 n.E. (Belgien)",
+        "analysisTip": "1:1 n.E. (USA)",
         "conf": "med",
         "result": null,
-        "note": "Kalshi: USA 37% vs BEL 36% (Remis 29%!) — praktisch Patt, SCHRITT 7 <45% kein klarer Favorit. USA: 🔴 Balogun (Rotsperre, Ersatz Wright). BEL komplett (De Bruyne/Lukaku/Trossard). PE-Vorteil BEL via Courtois (Weltklasse-Bilanz im Elfmeterschießen). 1:1 n.E. BEL. med.",
-        "injuries": "🔴 Balogun (USA, Rotsperre) | BEL ohne Ausfälle",
+        "note": "Update 06.07.: FIFA hat Balogun-Rotsperre (kontrovers, mit politischer Einmischung) aufgehoben — spielberechtigt. Markt verschob sich auf USA ~37.7% vs BEL ~33.7% (Remis ~28.6%) — weiterhin <45% (SCHRITT 7), aber USA jetzt leicht vorne statt Patt. Bester USA-Angreifer zurück im Kader, BEL evtl. durch Kontroverse abgelenkt/verärgert. PE-Einschätzung von BEL auf USA gedreht (Courtois-Vorteil bleibt Faktor, aber USA insgesamt runder). 1:1 n.E. USA. med.",
+        "injuries": "✅ Balogun (USA, Rotsperre von FIFA aufgehoben, spielberechtigt) | BEL ohne Ausfälle",
         "feedsInto": {
           "match": "M98",
           "slot": "away"
@@ -1404,7 +1404,7 @@
         "date": "07.07 18:00",
         "home": "Argentinien",
         "away": "Ägypten",
-        "tip": null,
+        "tip": "2:0",
         "analysisTip": "2:0",
         "conf": "med-high",
         "result": null,
@@ -1420,7 +1420,7 @@
         "date": "07.07 22:00",
         "home": "Schweiz",
         "away": "Kolumbien",
-        "tip": null,
+        "tip": "0:1",
         "analysisTip": "0:1",
         "conf": "med",
         "result": null,
