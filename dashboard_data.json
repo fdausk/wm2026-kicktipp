@@ -1,9 +1,9 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-06T11:15:53Z",
+    "aktualisiert": "2026-07-07T09:30:58Z",
     "rang": {
       "platz": "9.",
-      "punkte": 185,
+      "punkte": 189,
       "total": 25,
       "spieltag": "Achtelfinale"
     },
@@ -1343,7 +1343,7 @@
         "tip": "0:1",
         "analysisTip": "0:1",
         "conf": "med",
-        "result": null,
+        "result": "0:1",
         "note": "ESP ~52-54% 90-min vs POR ~24-25% (Remis ~28%). Iberian Derby, ESP ungeschlagen/ohne Gegentor im Turnier. ⚠️ Remis-Risiko: Ronaldo xG 4.15 (hohe Gefährlichkeit) + ESP ≤85%. ESP: ❌ Nico Williams, ⚠️ Pino/Muñoz fraglich. Außenseiter-Regel (POR non-loss ~52%≥42%) bereits am Minimum → 0:1 ESP. med.",
         "injuries": "❌ Nico Williams (Spanien) | ⚠️ Yeremy Pino, ⚠️ Víctor Muñoz (Spanien, fraglich) | POR ohne Ausfälle (bis auf A. Silva/Palhinha nicht im Kader)",
         "feedsInto": {
@@ -1359,7 +1359,7 @@
         "tip": "1:0",
         "analysisTip": "1:1 n.E. (USA)",
         "conf": "med",
-        "result": null,
+        "result": "1:4",
         "note": "Update 06.07.: FIFA hat Balogun-Rotsperre (kontrovers, mit politischer Einmischung) aufgehoben — spielberechtigt. Markt verschob sich auf USA ~37.7% vs BEL ~33.7% (Remis ~28.6%) — weiterhin <45% (SCHRITT 7), aber USA jetzt leicht vorne statt Patt. Bester USA-Angreifer zurück im Kader, BEL evtl. durch Kontroverse abgelenkt/verärgert. PE-Einschätzung von BEL auf USA gedreht (Courtois-Vorteil bleibt Faktor, aber USA insgesamt runder). 1:1 n.E. USA. med.",
         "injuries": "✅ Balogun (USA, Rotsperre von FIFA aufgehoben, spielberechtigt) | BEL ohne Ausfälle",
         "feedsInto": {
@@ -1452,8 +1452,8 @@
       {
         "id": "M98",
         "date": "10.07 21:00",
-        "home": "W M93",
-        "away": "W M94",
+        "home": "Spanien",
+        "away": "Belgien",
         "tip": null,
         "analysisTip": null,
         "conf": null,
