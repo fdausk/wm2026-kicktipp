@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-08T08:34:25Z",
+    "aktualisiert": "2026-07-08T08:53:40Z",
     "rang": {
       "platz": "10.",
       "punkte": 191,
@@ -8,18 +8,18 @@
       "spieltag": "Achtelfinale"
     },
     "teamOdds": {
-      "Frankreich": 0.35,
-      "Argentinien": 0.2,
-      "Spanien": 0.12,
-      "England": 0.1,
-      "Portugal": 0.077,
-      "Kolumbien": 0.048,
-      "USA": 0.048,
-      "Marokko": 0.038,
-      "Norwegen": 0.038,
-      "Belgien": 0.02,
-      "Schweiz": 0.013,
-      "Ägypten": 0.004,
+      "Frankreich": 0.33,
+      "Spanien": 0.19,
+      "Argentinien": 0.16,
+      "England": 0.10,
+      "Belgien": 0.05,
+      "Marokko": 0.04,
+      "Norwegen": 0.04,
+      "Schweiz": 0.02,
+      "Portugal": 0.0,
+      "Kolumbien": 0.0,
+      "USA": 0.0,
+      "Ägypten": 0.0,
       "Brasilien": 0.0,
       "Mexiko": 0.0,
       "Kanada": 0.0,
@@ -41,7 +41,7 @@
       "Ghana": 0.0,
       "Kap Verde": 0.0
     },
-    "teamOddsTs": "2026-07-06T10:51:03Z"
+    "teamOddsTs": "2026-07-08T08:44:29Z"
   },
   "spieltag_info": [
     {
@@ -145,7 +145,7 @@
       "label": "Viertelfinale",
       "dates": "9.–12. Jul",
       "phase": "ko",
-      "analysisTs": null,
+      "analysisTs": "2026-07-08T08:53:40Z",
       "tipsSubmitted": false
     },
     {
@@ -1439,11 +1439,11 @@
         "home": "Frankreich",
         "away": "Marokko",
         "tip": null,
-        "analysisTip": "2:0",
+        "analysisTip": "2:1",
         "conf": "med-high",
         "result": null,
-        "note": "FRA 34.1% vs MAR 2.8% (outright) — Ratio ~12×. FRA turnierstärkstes Team, aber MAR als Überraschungsteam (Siege via PE vs NED, klar vs CAN) ernstzunehmend defensiv organisiert → ~75-80% statt höher → 65–85%-Band → max 2T → 2:0. Vorläufig, volle Analyse folgt. med-high.",
-        "injuries": null,
+        "note": "FRA ~62-63% 90-min (Kalshi/bet365), Remis ~25-26%. K.O.-Score-Wahl ≤85% → Standard 2:1. MAR non-loss ~41.5%<42% (knapp keine Außenseiter-Regel). ⚠️ Tchouaméni/Thuram fraglich, MAR-Giant-Killer-Lauf (PE vs NED) mahnt zur Vorsicht. Gelbsperren beider Teams betreffen nur ein mögliches HF, nicht dieses Spiel. med-high (M5: K.O.-Deckel).",
+        "injuries": "⚠️ Tchouaméni (Oberschenkel, fraglich) | ⚠️ Thuram (Wade, fraglich) | ⚠️ Saibari (Marokko, Hamstring, wahrscheinlich raus)",
         "feedsInto": {
           "match": "M101",
           "slot": "home"
@@ -1455,11 +1455,11 @@
         "home": "Spanien",
         "away": "Belgien",
         "tip": null,
-        "analysisTip": null,
-        "conf": null,
+        "analysisTip": "1:0",
+        "conf": "med",
         "result": null,
-        "note": null,
-        "injuries": null,
+        "note": "ESP ~62-63% 90-min, Remis ~25-26%, BEL ~17-19%. K.O.-Score-Wahl ≤85% → Basis 2:1, aber BEL non-loss ~43.5%≥42% → Außenseiter-Regel reduziert auf 1:1 → kein Remis → 1:0 ESP. ⚠️ Remis-Risiko: BEL bestes Offensivteam des Turniers (9 Tore/5 Sp., 4:1 vs USA), ❌ Onana (Knie, turnierbeendend) schwächt BEL-Abwehr aber auch PE-Kompetenz. ESP 5 Clean Sheets, ohne Ausfälle. med.",
+        "injuries": "❌ Onana (Belgien, Knie, turnierbeendend) | ⚠️ Trossard (Belgien, Muskelproblem, fraglich) | ESP ohne Ausfälle",
         "feedsInto": {
           "match": "M101",
           "slot": "away"
@@ -1474,8 +1474,8 @@
         "analysisTip": "0:1",
         "conf": "med",
         "result": null,
-        "note": "ENG 10% vs NOR 3.8% (outright) — Ratio ~2.6×. ENG leicht fav ~65-72%, aber Haaland in Ausnahmeform (3. Turnier-Doppelpack, Sieg vs BRA) → defensiv gedeckelt statt 2T-Band voll auszuschöpfen. 65–85%-Band → 0:1. Vorläufig, volle Analyse folgt. med.",
-        "injuries": null,
+        "note": "ENG ~51-52% 90-min (engstes Spiel der Runde), Remis ~26%, NOR ~24%. K.O.-Score-Wahl Basis 1:2, aber NOR non-loss ~50%≥42% → Außenseiter-Regel → 1:1 → kein Remis → 0:1 ENG. Keine belegte PE-Überlegenheit ENG vs Haaland-NOR → SCHRITT 7 Default statt n.E. ⚠️ Remis-Risiko: Haaland topform (7 Turniertore), ENG ≤85%. 🔴 Quansah (ENG) gesperrt. med.",
+        "injuries": "🔴 Quansah (England, Rotsperre) | Haaland topfit (7 Turniertore)",
         "feedsInto": {
           "match": "M102",
           "slot": "home"
@@ -1487,11 +1487,11 @@
         "home": "Argentinien",
         "away": "Schweiz",
         "tip": null,
-        "analysisTip": null,
-        "conf": null,
+        "analysisTip": "1:0",
+        "conf": "med",
         "result": null,
-        "note": null,
-        "injuries": null,
+        "note": "ARG ~55-58% 90-min, Remis ~27-29% (zweithöchste der Runde), SUI ~18-19%. K.O.-Score-Wahl Basis 2:1, aber SUI non-loss ~46.5%≥42% → Außenseiter-Regel → 1:1 → kein Remis → 1:0 ARG. SUI bereits PE-erprobt (4:3 n.E. vs COL) — SCHRITT 7 Default (kein belegter PE-Vorteil ARG), knapper Sieg statt n.E. ⚠️ Manzambi (SUI) Status unklar. ARG ohne Ausfälle nach 3:2-Comeback. med.",
+        "injuries": "⚠️ Manzambi (Schweiz, Status nach Elfmeter-Sieg unklar) | ARG ohne Ausfälle",
         "feedsInto": {
           "match": "M102",
           "slot": "away"
