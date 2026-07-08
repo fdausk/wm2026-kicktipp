@@ -1,9 +1,9 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-07T09:30:58Z",
+    "aktualisiert": "2026-07-08T08:34:25Z",
     "rang": {
-      "platz": "9.",
-      "punkte": 189,
+      "platz": "10.",
+      "punkte": 191,
       "total": 25,
       "spieltag": "Achtelfinale"
     },
@@ -1407,7 +1407,7 @@
         "tip": "2:0",
         "analysisTip": "2:0",
         "conf": "med-high",
-        "result": null,
+        "result": "3:2",
         "note": "ARG ~73-75% 90-min (65–85%-Band, nicht >90% wie vorläufig angenommen) vs EGY ~12-17% (Remis ~20%) → max 2T → 2:0 (Konfidenz von high auf med-high korrigiert, M5). Messi 30. WM-Einsatz, ARG 10 Siege in Serie seit 2022. EGY nach Verlängerung+Elfmeter gegen AUS evtl. körperlich/mental belastet. Kein Remis-Risiko. med-high.",
         "injuries": null,
         "feedsInto": {
@@ -1423,7 +1423,7 @@
         "tip": "0:1",
         "analysisTip": "0:1",
         "conf": "med",
-        "result": null,
+        "result": "4:3 n.E.",
         "note": "COL ~57-60% (Weiterkommens-Markt) vs SUI ~43%. 45–65%-Band → max 1T → 0:1 COL. COL: ❌ J. Córdoba. SUI 1 Tag mehr Ruhezeit als COL (Anreise aus Kansas City). Außenseiter-Regel (SUI non-loss ~43%≥42%) bereits am Minimum. med.",
         "injuries": "❌ J. Córdoba (Kolumbien) | SUI ohne Ausfälle",
         "feedsInto": {
@@ -1484,8 +1484,8 @@
       {
         "id": "M100",
         "date": "12.07 03:00",
-        "home": "W M95",
-        "away": "W M96",
+        "home": "Argentinien",
+        "away": "Schweiz",
         "tip": null,
         "analysisTip": null,
         "conf": null,
