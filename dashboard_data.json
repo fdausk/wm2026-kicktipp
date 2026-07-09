@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-09T09:54:53Z",
+    "aktualisiert": "2026-07-09T11:08:17Z",
     "rang": {
       "platz": "10.",
       "punkte": 191,
@@ -146,7 +146,7 @@
       "dates": "9.–12. Jul",
       "phase": "ko",
       "analysisTs": "2026-07-09T09:54:53Z",
-      "tipsSubmitted": false
+      "tipsSubmitted": true
     },
     {
       "nr": 14,
@@ -1438,7 +1438,7 @@
         "date": "09.07 22:00",
         "home": "Frankreich",
         "away": "Marokko",
-        "tip": null,
+        "tip": "2:1",
         "analysisTip": "2:1",
         "conf": "med-high",
         "result": null,
@@ -1454,7 +1454,7 @@
         "date": "10.07 21:00",
         "home": "Spanien",
         "away": "Belgien",
-        "tip": null,
+        "tip": "1:0",
         "analysisTip": "1:0",
         "conf": "med",
         "result": null,
@@ -1470,7 +1470,7 @@
         "date": "11.07 23:00",
         "home": "Norwegen",
         "away": "England",
-        "tip": null,
+        "tip": "0:1",
         "analysisTip": "0:1",
         "conf": "med",
         "result": null,
@@ -1486,7 +1486,7 @@
         "date": "12.07 03:00",
         "home": "Argentinien",
         "away": "Schweiz",
-        "tip": null,
+        "tip": "1:0",
         "analysisTip": "1:0",
         "conf": "med",
         "result": null,
