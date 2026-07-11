@@ -1,9 +1,9 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-09T11:08:17Z",
+    "aktualisiert": "2026-07-11T17:11:55Z",
     "rang": {
-      "platz": "10.",
-      "punkte": 191,
+      "platz": "8.",
+      "punkte": 204,
       "total": 25,
       "spieltag": "Viertelfinale"
     },
@@ -1441,7 +1441,7 @@
         "tip": "2:1",
         "analysisTip": "2:1",
         "conf": "med-high",
-        "result": null,
+        "result": "2:0",
         "note": "Update 09.07.: FRA ~62-64% 90-min unverändert, Remis ~25-26%. K.O.-Score-Wahl ≤85% → Standard 2:1. MAR verliert mit Saibari (Top-Torschütze, 3 Tore) zusätzlich Ezzalzouli+Aguerd — non-loss jetzt deutlich <42%, keine Außenseiter-Regel. Tchouaméni (FRA) tendenziell Ausfall (Adduktoren, Koné Ersatz), Thuram fit/einsatzbereit. Gelbsperren beider Teams betreffen nur mögliches HF. med-high (M5: K.O.-Deckel).",
         "injuries": "❌ Tchouaméni (Frankreich, Adduktoren, Ausfall wahrscheinlich, Ersatz Koné) | ✅ Thuram (Frankreich, fit) | ❌ Saibari, ❌ Ezzalzouli, ❌ Aguerd (Marokko)",
         "feedsInto": {
@@ -1457,7 +1457,7 @@
         "tip": "1:0",
         "analysisTip": "1:0",
         "conf": "med",
-        "result": null,
+        "result": "2:1",
         "note": "Update 09.07.: ESP ~62% (-160) unverändert, Remis ~29%, BEL ~17%. K.O.-Score-Wahl ≤85% → Basis 2:1, BEL non-loss ~46%≥42% → Außenseiter-Regel → 1:1 → kein Remis → 1:0 ESP. ⚠️ Remis-Risiko: BEL bestes Offensivteam des Turniers (9 Tore/5 Sp.), Trossard im prognostizierten Aufgebot trotz Muskelproblem. ❌ Onana turnierbeendend. ESP 5 Clean Sheets, ohne Ausfälle. med.",
         "injuries": "❌ Onana (Belgien, Knie, turnierbeendend) | ⚠️ Trossard (Belgien, Muskelproblem, im Kader gelistet) | ESP ohne Ausfälle",
         "feedsInto": {
@@ -1502,8 +1502,8 @@
       {
         "id": "M101",
         "date": "14.07 21:00",
-        "home": "W M97",
-        "away": "W M98",
+        "home": "Frankreich",
+        "away": "Spanien",
         "tip": null,
         "analysisTip": null,
         "conf": null,
