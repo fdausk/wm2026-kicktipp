@@ -1,9 +1,9 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-11T17:14:51Z",
+    "aktualisiert": "2026-07-12T14:42:58Z",
     "rang": {
-      "platz": "8.",
-      "punkte": 204,
+      "platz": "6.",
+      "punkte": 217,
       "total": 25,
       "spieltag": "Viertelfinale"
     },
@@ -1473,7 +1473,7 @@
         "tip": "0:1",
         "analysisTip": "0:1",
         "conf": "med",
-        "result": null,
+        "result": "1:2 n.V.",
         "note": "Update 11.07.: ENG nur noch ~48.6% (fast Patt!), Remis ~26.4%, NOR ~25%. K.O.-Score-Wahl Basis 1:2, NOR non-loss ~51%≥42% → Außenseiter-Regel → 1:1 → kein Remis → 0:1 ENG. Keine belegte PE-Überlegenheit ENG vs Haaland-NOR → SCHRITT 7 Default statt n.E. ⚠️ Remis-Risiko bleibt hoch: engstes Spiel des Turniers. 🔴 Quansah gesperrt, D. Spence ersetzt (nicht R. James wie vorläufig angenommen — James weiterhin fraglich). med.",
         "injuries": "🔴 Quansah (England, Rotsperre) | ✅ Djed Spence (England, startet für Quansah) | ⚠️ Reece James (England, weiter fraglich) | Haaland topfit (Torschützenkönig)",
         "feedsInto": {
@@ -1489,7 +1489,7 @@
         "tip": "1:0",
         "analysisTip": "1:0",
         "conf": "med",
-        "result": null,
+        "result": "3:1 n.V.",
         "note": "Update 11.07.: ARG ~56% (DraftKings), Remis ~26.7%, SUI ~17.2%. K.O.-Score-Wahl Basis 2:1, SUI non-loss ~43.9%≥42% → Außenseiter-Regel → 1:1 → kein Remis → 1:0 ARG. SUI PE-erprobt (4:3 n.E. vs COL) — SCHRITT 7 Default (kein belegter PE-Vorteil ARG), knapper Sieg statt n.E. ❌ Manzambi UND ❌ Jaquez bestätigt out, ⚠️ Aebischer fraglich — SUI-Angriff jetzt dreifach geschwächt. ARG 11/12 Siege Serie, ohne Ausfälle. med.",
         "injuries": "❌ Manzambi (Schweiz, Knie) | ❌ Jaquez (Schweiz, Muskel) | ⚠️ Aebischer (Schweiz, fraglich) | ARG ohne Ausfälle",
         "feedsInto": {
@@ -1522,8 +1522,8 @@
       {
         "id": "M102",
         "date": "15.07 21:00",
-        "home": "W M99",
-        "away": "W M100",
+        "home": "England",
+        "away": "Argentinien",
         "tip": null,
         "analysisTip": null,
         "conf": null,
