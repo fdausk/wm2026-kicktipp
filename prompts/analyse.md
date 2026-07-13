@@ -335,12 +335,14 @@ Kicktipp-Regel K.O.: Tipp muss Ergebnis NACH Elfmeterschießen berücksichtigen 
 - Schützen-Verfügbarkeit (2%): FBref + ESPN Injury Tracker
 - Schiedsrichter-Elfmeter-Rate (aus SCHRITT 1b): hohe Rate erhöht PE-Wahrscheinlichkeit im regulären Spiel, damit auch das Risiko dass das Spiel bereits 90min entschieden wird
 
-Konfidenz-Entscheidung (nach Favorit-Gewinnwahrscheinlichkeit in 90 Min):
-- **>65%:** Normalen Sieg tippen — Score gemäß K.O.-Score-Wahl-Override in SCHRITT 0b (Standard `"2:1"`/`"1:2"` bei ≤85%, `"3:0"` bei 85–92%) — Elfmeterschießen unwahrscheinlich genug, um es zu ignorieren.
-- **45–65%:** `"1:1 n.E. (Team)"` bevorzugen wenn PE-Kompetenz des Favoriten klar besser ist. Andernfalls knapper regulärer Sieg gemäß K.O.-Score-Wahl-Override. Entscheide anhand: Torwart-Bilanz (Gewicht 50%) + Team-PE-Bilanz (30%) + Schützen-Verfügbarkeit (20%).
-- **<45% (kein klarer Favorit):** `"1:1 n.E. (Team)"` mit PE-Sieger nach den gleichen Gewichten. Sieger = Team mit besserer Gesamtbewertung.
+**Wichtig (Korrektur 2026-07-13):** `"1:1 n.E. (Team)"` behauptet wörtlich, dass das Spiel nach Elfmeterschießen entschieden wird — die maximal mögliche Spieldauer. Empirisch traf das nur 1 von 4 bisher gespielten `n.E.`-Tipps zu (M78, M92, M94 wurden alle in der regulären Spielzeit entschieden, nur M88 ging tatsächlich in die Verlängerung/Elfmeter). Da der K.O.-Pflicht-Check beim Eintragen ohnehin **immer** einen normalen entscheidenden Score ableitet (`submitTip` = `"2:1"`/`"1:2"`, niemals der `n.E.`-String selbst), bringt das Format keinen Punktevorteil — es behauptet nur einen meist falschen Spielverlauf. Die Elfmeter-Kompetenz dient daher nur noch als **Tiebreaker für die Sieger-Wahl**, nicht mehr als Format-Entscheidung.
 
-**Format-Erinnerung:** `"1:1 n.E. (Kanada)"` bedeutet Kanada gewinnt nach Elfmeterschießen — kein Unentschieden. Wähle das wahrscheinlichste 90-Min-Ergebnis als Basis (bei 45–65% oft 1:1 oder 0:0 + PE-Sieger). Der reguläre Sieg gemäß K.O.-Score-Wahl-Override ist immer dann ausreichend, wenn er das deutlich häufigere Szenario ist.
+Konfidenz-Entscheidung (nach Favorit-Gewinnwahrscheinlichkeit in 90 Min) — Score in allen Fällen gemäß K.O.-Score-Wahl-Override in SCHRITT 0b (`"2:1"`/`"1:2"` bei ≤85%, `"3:0"` bei 85–92%):
+- **>65%:** Sieger = Favorit aus Wettquoten. Normaler Fall, keine Elfmeter-Erwägung nötig.
+- **45–65%:** Sieger = Favorit aus Wettquoten, **außer** die Elfmeter-Kompetenz des Außenseiters ist eindeutig überlegen (Torwart-Bilanz 50% + Team-PE-Bilanz 30% + Schützen-Verfügbarkeit 20%) — dann Sieger = Außenseiter.
+- **<45% (kein klarer Favorit):** Sieger = Team mit der besseren Gesamtbewertung aus den gleichen drei Elfmeter-Kriterien. Score direkt als normalen Sieg tippen (z.B. `"2:1"` wenn Sieger Heimteam, `"1:2"` wenn Auswärtsteam) — **kein** `n.E.`-Suffix.
+
+`"1:1 n.V. (Team)"`/`"1:1 n.E. (Team)"` bleibt als Format verfügbar, aber nur wenn ein **konkretes, matchspezifisches Signal** für eine sehr lange Spieldauer vorliegt (z.B. beide Teams historisch extrem defensiv/kartenscheu, Schiedsrichter-Profil mit auffällig wenig Elfmetern und Karten, explizite Marktdaten mit hoher Over-120-Minuten-Quote) — nicht als Standardformat für „knapp"/„kein klarer Favorit".
 
 **Abschluss-Pflichtcheck (K.O.-Phase):** Bevor `analysisTip` in `dashboard_data.json` geschrieben wird: Prüfe, ob der Tipp ein reines Unentschieden ist — d.h. beide Torwerte identisch und kein `n.V.`- oder `n.E.`-Suffix (Beispiele: `"1:1"`, `"0:0"`, `"2:2"`). Ist dies der Fall: Tipp ist **ungültig**, da K.O.-Spiele immer einen Sieger haben. Den Favoriten ermitteln und stattdessen `"1:0"` (bzw. `"0:1"`) tippen. Unentschieden-Tipps dürfen niemals in `dashboard_data.json` für K.O.-Matches stehen.
 

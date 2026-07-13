@@ -1,6 +1,6 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-12T15:32:04Z",
+    "aktualisiert": "2026-07-13T10:04:57Z",
     "rang": {
       "platz": "6.",
       "punkte": 217,
@@ -1505,10 +1505,10 @@
         "home": "Frankreich",
         "away": "Spanien",
         "tip": null,
-        "analysisTip": "1:1 n.E. (Frankreich)",
+        "analysisTip": "2:1",
         "conf": "med",
         "result": null,
-        "note": "Update 12.07.: Echtes Kopf-an-Kopf-Rennen — Kalshi/DraftKings knapp FRA (FRA +135 90-min), aber unabhängiges Signal-Modell sieht ESP bei 51%. Beide Serien ungeschlagen, je nur 1 Gegentor. SCHRITT 7 <45-50%: kein klarer Favorit → 1:1 n.E. PE-Vorteil FRA via Maignan + Offensivtiefe (Mbappé/Dembélé/Doué als Schützen). ⚠️ Tchouaméni weiter nicht voll fit, Mbappé Knöchel-Blessur (soll spielen). ESP: Nico Williams + Pino weiter out. med.",
+        "note": "Update 13.07.: Echtes Kopf-an-Kopf-Rennen — Kalshi/DraftKings knapp FRA (FRA +135 90-min), aber unabhängiges Signal-Modell sieht ESP bei 51%. Beide Serien ungeschlagen, je nur 1 Gegentor. SCHRITT 7 <45-50%: kein klarer Favorit, Sieger FRA via PE-Tiebreaker (Maignan + Offensivtiefe Mbappé/Dembélé/Doué) → K.O.-Score-Wahl 2:1 (kein n.E.-Format, da keine matchspezifische Verlängerungs-Evidenz). ⚠️ Tchouaméni weiter nicht voll fit, Mbappé Knöchel-Blessur (soll spielen). ESP: Nico Williams + Pino weiter out. med.",
         "injuries": "⚠️ Tchouaméni (Frankreich, nicht voll fit) | ⚠️ Mbappé (Frankreich, Knöchel, soll spielen) | ❌ Nico Williams, ❌ Pino (Spanien, seit Gruppenphase out)",
         "feedsInto": {
           "match": "M104",
@@ -1525,10 +1525,10 @@
         "home": "England",
         "away": "Argentinien",
         "tip": null,
-        "analysisTip": "1:1 n.E. (Argentinien)",
+        "analysisTip": "1:2",
         "conf": "med",
         "result": null,
-        "note": "Kalshi: ENG 52% vs ARG 50% Finaleinzug — erstes Mal im Turnier, dass ARG Außenseiter ist. SCHRITT 7 <45-50%: kein klarer Favorit → 1:1 n.E. PE-Vorteil ARG via Emi Martínez (Elfmeter-Ikone WM 2022 + Copa América) und Turniererfahrung (Titelverteidiger). ⚠️ Rice (ENG) zur Halbzeit ausgewechselt vs NOR, Fitness unklar. ARG nach 3:1 n.V. gegen SUI weitgehend fit. med.",
+        "note": "Kalshi: ENG 52% vs ARG 50% Finaleinzug — erstes Mal im Turnier, dass ARG Außenseiter ist. SCHRITT 7 <45-50%: kein klarer Favorit, Sieger ARG via PE-Tiebreaker (Emi Martínez, Elfmeter-Ikone WM 2022 + Copa América, Titelverteidiger-Erfahrung) → K.O.-Score-Wahl 1:2 (kein n.E.-Format, da keine matchspezifische Verlängerungs-Evidenz). ⚠️ Rice (ENG) zur Halbzeit ausgewechselt vs NOR, Fitness unklar. ARG nach 3:1 n.V. gegen SUI weitgehend fit. med.",
         "injuries": "⚠️ Rice (England, wurde gegen Norwegen zur Halbzeit ausgewechselt, Fitness unklar) | ARG weitgehend fit nach Verlängerung",
         "feedsInto": {
           "match": "M104",
