@@ -1,17 +1,17 @@
 {
   "meta": {
-    "aktualisiert": "2026-07-13T10:04:57Z",
+    "aktualisiert": "2026-07-14T09:21:23Z",
     "rang": {
       "platz": "6.",
       "punkte": 217,
       "total": 25,
-      "spieltag": "Viertelfinale"
+      "spieltag": "Halbfinale"
     },
     "teamOdds": {
-      "Frankreich": 0.39,
+      "Frankreich": 0.40,
+      "England": 0.21,
       "Spanien": 0.20,
-      "England": 0.209,
-      "Argentinien": 0.18,
+      "Argentinien": 0.19,
       "Norwegen": 0.0,
       "Schweiz": 0.0,
       "Marokko": 0.0,
@@ -41,7 +41,7 @@
       "Ghana": 0.0,
       "Kap Verde": 0.0
     },
-    "teamOddsTs": "2026-07-12T15:32:04Z"
+    "teamOddsTs": "2026-07-14T09:21:23Z"
   },
   "spieltag_info": [
     {
@@ -153,7 +153,7 @@
       "label": "Halbfinale",
       "dates": "14.–15. Jul",
       "phase": "ko",
-      "analysisTs": "2026-07-12T15:32:04Z",
+      "analysisTs": "2026-07-14T09:21:23Z",
       "tipsSubmitted": false
     },
     {
@@ -1505,11 +1505,11 @@
         "home": "Frankreich",
         "away": "Spanien",
         "tip": null,
-        "analysisTip": "2:1",
+        "analysisTip": "1:0",
         "conf": "med",
         "result": null,
-        "note": "Update 13.07.: Echtes Kopf-an-Kopf-Rennen — Kalshi/DraftKings knapp FRA (FRA +135 90-min), aber unabhängiges Signal-Modell sieht ESP bei 51%. Beide Serien ungeschlagen, je nur 1 Gegentor. SCHRITT 7 <45-50%: kein klarer Favorit, Sieger FRA via PE-Tiebreaker (Maignan + Offensivtiefe Mbappé/Dembélé/Doué) → K.O.-Score-Wahl 2:1 (kein n.E.-Format, da keine matchspezifische Verlängerungs-Evidenz). ⚠️ Tchouaméni weiter nicht voll fit, Mbappé Knöchel-Blessur (soll spielen). ESP: Nico Williams + Pino weiter out. med.",
-        "injuries": "⚠️ Tchouaméni (Frankreich, nicht voll fit) | ⚠️ Mbappé (Frankreich, Knöchel, soll spielen) | ❌ Nico Williams, ❌ Pino (Spanien, seit Gruppenphase out)",
+        "note": "Update 14.07.: FRA ~39.7% 90-min vs ESP ~30.1% (Remis ~30.1%, sehr eng) — FanDuel FRA +135/ESP +210/Remis +210. Advance-Markt FRA 57.8% vs ESP 42.2%. Beide <45% → kein klarer Favorit, FRA knapp vorn als Tiebreaker. K.O.-Score-Wahl Basis 2:1, ESP non-loss ~60%≥42% → Außenseiter-Regel → 1:1 → kein Remis → 1:0 FRA (Korrektur von 2:1, Regel zuvor nicht angewandt). ✅ Nico Williams zurück im Kader (Einwechslung vs BEL) — Korrektur ggü. vorheriger Notiz. ⚠️ Mbappé (Knöchel) + Tchouaméni (Oberschenkel) fraglich. ⚠️ Remis-Risiko hoch. med.",
+        "injuries": "⚠️ Mbappé (Frankreich, Knöchel, Einsatz fraglich) | ⚠️ Tchouaméni (Frankreich, Oberschenkel, Koné als Ersatz) | ✅ Nico Williams (Spanien, zurück im Kader, könnte erstmals starten)",
         "feedsInto": {
           "match": "M104",
           "slot": "home"
@@ -1528,8 +1528,8 @@
         "analysisTip": "1:2",
         "conf": "med",
         "result": null,
-        "note": "Kalshi: ENG 52% vs ARG 50% Finaleinzug — erstes Mal im Turnier, dass ARG Außenseiter ist. SCHRITT 7 <45-50%: kein klarer Favorit, Sieger ARG via PE-Tiebreaker (Emi Martínez, Elfmeter-Ikone WM 2022 + Copa América, Titelverteidiger-Erfahrung) → K.O.-Score-Wahl 1:2 (kein n.E.-Format, da keine matchspezifische Verlängerungs-Evidenz). ⚠️ Rice (ENG) zur Halbzeit ausgewechselt vs NOR, Fitness unklar. ARG nach 3:1 n.V. gegen SUI weitgehend fit. med.",
-        "injuries": "⚠️ Rice (England, wurde gegen Norwegen zur Halbzeit ausgewechselt, Fitness unklar) | ARG weitgehend fit nach Verlängerung",
+        "note": "Update 14.07.: ENG ~39-40% 90-min vs ARG ~33% (Remis ~27%, Advance-Markt 57.45% ENG vs ~50/50 gefühlt) — erstes Mal im Turnier, dass ARG Außenseiter ist, aber weiterhin <45% für ENG. SCHRITT 7: kein klarer Favorit, Sieger ARG via PE-Tiebreaker (Emi Martínez, Elfmeter-Ikone WM 2022 + Copa América) → K.O.-Score-Wahl 1:2 (kein n.E.-Format). 🔴 Konsa (ENG) gesperrt, Quansah rückt nach — zusätzliche Abwehr-Schwächung. ❌ Henderson (ENG) turnierbeendend (Handgelenk-OP). ARG nach 3:1 n.V. gegen SUI weitgehend fit, Messi topform (8 Turniertore). ⚠️ Remis-Risiko: als „von einem Moment entschieden“ bezeichnetes enges Spiel erwartet. med.",
+        "injuries": "🔴 Konsa (England, Rotsperre) | ❌ Henderson (England, turnierbeendend, Handgelenk-OP) | ARG weitgehend fit, Messi topform (8 Turniertore)",
         "feedsInto": {
           "match": "M104",
           "slot": "away"
